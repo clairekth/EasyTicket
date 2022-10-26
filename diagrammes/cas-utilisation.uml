@@ -10,12 +10,12 @@ skinparam actor {
   FontSize 18
 }
 
-actor "Client (*)" as client #16A6EE
+actor "Client" as client #16A6EE
 rectangle "Support informatique" as support {
-	actor "Ingénieur (*)" as inge #FF7C00
-	actor "Technicien (*)" as tech #FF7C00
+	actor "Ingénieur" as inge #FF7C00
+	actor "Technicien" as tech #FF7C00
 }
-actor "Administrateur (*)" as admin #90E03C
+actor "Administrateur" as admin #90E03C
 
 (Créer un ticket) as ct
 (Consulter historique des tickets) as ht
