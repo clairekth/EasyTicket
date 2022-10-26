@@ -1,0 +1,25 @@
+@startuml
+skinparam actorStyle awesome
+
+skinparam usecase {
+  FontSize 20
+}
+
+skinparam actor {
+  FontSize 18
+}
+
+usecase EasyTicket as model #FF0000
+actor "Client (*)" as c #16A6EE
+actor "Ingénieur (*)" as inge #FF7C00
+actor "Technicien (*)" as tech #FF7C00
+actor "Serveur mail (1)" as serv #BFBCB9
+actor "Administrateur (*)" as admin #90E03C
+
+c -up- model
+inge -- model
+tech -- model
+serv -left- model
+admin -right- model
+
+@enduml
