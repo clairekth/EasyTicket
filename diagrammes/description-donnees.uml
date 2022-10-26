@@ -1,0 +1,65 @@
+@startuml
+
+class EasyTicket {}
+
+abstract class Utilisateur {
+  - String id
+  - String prenom
+  - String nom
+  - String email
+}
+
+class Client {}
+
+abstract class Personnel {}
+
+class Technicien {}
+
+class Ingenieur {
+  
+}
+
+class Administrateur {}
+
+class Ticket {
+}
+
+class Message {}
+
+enum Categorie {
+  String IncidentLogiciel
+  String AideLogiciel
+  String MessageGeneral
+}
+
+enum Logiciel {
+  String Word
+  String Excel
+  String Intellij
+  String AndroidStudio
+}
+
+enum Systeme {
+    String Window
+    String Linux
+    String MacOS
+    String Android
+    String iOS
+}
+
+Client -->Utilisateur 
+Personnel --> Utilisateur
+Technicien --> Personnel
+Ingenieur --> Personnel
+Administrateur --> Utilisateur
+
+EasyTicket --"*" Ticket
+EasyTicket --"*" Utilisateur
+Ticket -- "*" Message
+Categorie "1" -- Ticket
+Categorie "*"-- Technicien
+Ticket --"1" Logiciel
+Ticket --"1" Systeme
+Utilisateur -- "*" Ticket
+
+@enduml
