@@ -1,0 +1,39 @@
+@startuml
+
+left to right direction
+skinparam actorStyle awesome
+skinparam usecase {
+  FontSize 20
+}
+
+skinparam actor {
+  FontSize 18
+}
+
+actor "Client (*)" as client #16A6EE
+rectangle "Support informatique" as support {
+	actor "Ingénieur (*)" as inge #FF7C00
+	actor "Technicien (*)" as tech #FF7C00
+}
+actor "Administrateur (*)" as admin #90E03C
+
+(Créer un ticket) as ct
+(Consulter historique des tickets) as ht
+(Echanger sur le ticket / Ajouter des commentaires) as ect
+(Changer la catégorie du ticket) as cct
+(Clore un ticket) as closet
+(Réattribuer un ticket) as rt
+(Consulter les statistiques) as cs
+
+client --> ct
+client --> ht
+client --> ect
+
+support --> ect
+support --> cct
+support --> closet
+support --> rt
+
+admin --> cs
+
+@enduml
