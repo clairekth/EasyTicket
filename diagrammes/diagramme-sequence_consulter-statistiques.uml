@@ -1,0 +1,17 @@
+@startuml
+
+title Consultation des statistiques
+skinparam sequenceMessageAlign center
+skinparam ActorStyle awesome
+
+actor Administrateur as a
+participant EasyTicket as t
+
+a -> t: Authentification
+t -> t: Vérification authentification
+alt Administrateur inconnu
+  t -> a: Authentification impossible
+else
+  t -> a: Envoi des statistiques
+end
+@enduml
