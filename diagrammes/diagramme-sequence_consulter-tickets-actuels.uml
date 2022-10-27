@@ -1,0 +1,18 @@
+@startuml
+
+title Consultation des tickets en cours
+skinparam sequenceMessageAlign center
+skinparam ActorStyle awesome
+
+actor "Support informatique" as a
+participant EasyTicket as t
+
+a -> t: Authentification
+t -> t: Vérification authentification
+alt Technicien ou ingénieur inconnu
+  t -> a: Authentification impossible
+else
+  a -> t: Consulter les tickets en cours
+  t -> a: Envoi des tickets en cours
+end
+@enduml
