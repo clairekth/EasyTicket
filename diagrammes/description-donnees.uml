@@ -98,10 +98,10 @@ AndroidStudio : Le logiciel concerné par le ticket est AndroidStudio
 Autre : Le logiciel concerné par le ticket est Autre
 
 Windows : Le système d'exploitation concerné par le ticket est Windows
-Linux : Le système d'exploitation concerné par le ticket es Linux
-MacOS : Le système d'exploitation concerné par le ticket es MacOS
-Android : Le système d'exploitation concerné par le ticket es Android
-iOS : Le système d'exploitation concerné par le ticket es iOS
+Linux : Le système d'exploitation concerné par le ticket est Linux
+MacOS : Le système d'exploitation concerné par le ticket est MacOS
+Android : Le système d'exploitation concerné par le ticket est Android
+iOS : Le système d'exploitation concerné par le ticket est iOS
 
 EnCours : Le ticket est en cours de traitement. Il peut encore recevoir des commentaires
 Clos : Le ticket est clos. Il ne peut plus recevoir de commentaires.
