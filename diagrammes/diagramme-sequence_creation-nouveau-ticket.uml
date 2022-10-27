@@ -1,0 +1,35 @@
+@startuml
+
+title Création d'un nouveau ticket
+skinparam sequenceMessageAlign center
+skinparam ActorStyle awesome
+
+actor Client as c
+participant EasyTicket as t
+c -> t: Authentification
+t -> t: Vérification authentification
+
+alt Client inconnu
+	t -> c: Authentification impossible
+else
+	c -> t: Création d'un nouveau ticket
+	c <- t: Saisir catégorie
+    c <- t: Saisir système
+    c <- t: Saisir logiciel
+    c <- t: Saisir message
+    
+    t <- c: Envoi catégorie
+    t <- c: Envoi système    
+    t <- c: Envoi logiciel
+    t <- c: Envoi message
+    
+    t -> t: Vérification présence catégorie et message
+
+	alt Message ou catégorie manquant
+		t -> c: Création ticket impossible
+	else
+      t -> t: Création du ticket
+	end
+end
+
+@enduml
