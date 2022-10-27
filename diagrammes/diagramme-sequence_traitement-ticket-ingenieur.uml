@@ -1,0 +1,31 @@
+@startuml
+
+title Traitement d'un nouveau ticket (Ingénieur)
+skinparam sequenceMessageAlign center
+skinparam ActorStyle awesome
+
+actor Ingénieur as a
+participant EasyTicket as t
+
+a -> t: Authentification
+t -> t: Vérification authentification
+alt Ingénieur inconnu
+  t -> a: Authentification impossible
+else
+  a -> t: Demande d'un ticket
+  t -> t: Tri des tickets par ordre chronologique
+  t -> t: Choisi le ticket le plus ancien
+  t -> t: Récupération du ticket
+  a <- t: Attribution du ticket
+  a <- t: Envoi du ticket
+  
+  alt Le client a choisi une mauvaise catégorie
+    a -> t: Changement de catégorie
+  else
+    alt Le problème est résolu ou insoluble
+      a -> t: Fermeture du ticket
+      t -> t: Archivage du ticket
+    end
+  end
+end
+@enduml
