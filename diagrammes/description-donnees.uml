@@ -1,5 +1,4 @@
 @startuml
-
 class EasyTicket {}
 
 abstract class Utilisateur {
@@ -75,4 +74,36 @@ Utilisateur "2" -- "*" Ticket
 Message -- "1" Utilisateur
 Ticket -- "1" Status
 
+note as Dictionnaire
+**Dictionnaire :**
+idUtilisateur : Identifiant de l'utilisateur
+prenom : Prénom de l'utilisateur
+nom : Nom de l'utilisateur
+email : Adresse email de l'utilisateur
+
+idTicket : Identifiant d'un ticket
+dateTicket : Date à laquelle a été créé le ticket
+
+message : Contenu d'un commentaire sur un ticket
+dateMessage : Date à laquelle le message a été créé 
+
+IncidentLogiciel : Le ticket concerne un incident logiciel 
+AideLogiciel : Le ticket concerne une aide logiciel
+MessageGeneral : Le ticket concerne un message général
+
+Word : Le logiciel concerné par le ticket est Word
+Excel : Le logiciel concerné par le ticket est Excel
+Intellij : Le logiciel concerné par le ticket est Intellij
+AndroidStudio : Le logiciel concerné par le ticket est AndroidStudio
+Autre : Le logiciel concerné par le ticket est Autre
+
+Windows : Le système d'exploitation concerné par le ticket est Windows
+Linux : Le système d'exploitation concerné par le ticket es Linux
+MacOS : Le système d'exploitation concerné par le ticket es MacOS
+Android : Le système d'exploitation concerné par le ticket es Android
+iOS : Le système d'exploitation concerné par le ticket es iOS
+
+EnCours : Le ticket est en cours de traitement. Il peut encore recevoir des commentaires
+Clos : Le ticket est clos. Il ne peut plus recevoir de commentaires.
+end note
 @enduml
