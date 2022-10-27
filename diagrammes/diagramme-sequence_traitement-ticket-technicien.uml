@@ -6,25 +6,31 @@ skinparam ActorStyle awesome
 
 actor Technicien as a
 participant EasyTicket as t
-a -> t: Demande d'un ticket
-t -> t: Vérification catégorie technicien
-t -> t: Tri des tickets par ordre chronologique
-t -> t: Choisi le ticket le plus ancien
-t -> t: Récupération du ticket
-a <- t: Attribution du ticket
-a <- t: Envoi du ticket
 
-alt Le client a choisi une mauvaise catégorie
-  a -> t: Changement de catégorie
+a -> t: Authentification
+t -> t: Vérification authentification
+alt Technicien inconnu
+  t -> a: Authentification impossible
 else
-  alt le technicien ne sait pas résoudre le problème
-    a -> t: Réassigner le ticket \nà un autre technicien ou à un ingénieur
+  a -> t: Demande d'un ticket
+  t -> t: Vérification catégorie technicien
+  t -> t: Tri des tickets par ordre chronologique
+  t -> t: Choisi le ticket le plus ancien
+  t -> t: Récupération du ticket
+  a <- t: Attribution du ticket
+  a <- t: Envoi du ticket
+  
+  alt Le client a choisi une mauvaise catégorie
+    a -> t: Changement de catégorie
   else
-    alt Le problème est résolu
-      a -> t: Fermeture du ticket
-      t -> t: Archivage du ticket
+    alt Le technicien ne sait pas résoudre le problème
+      a -> t: Réassigner le ticket \nà un autre technicien ou à un ingénieur
+    else
+      alt Le problème est résolu ou insoluble
+        a -> t: Fermeture du ticket
+        t -> t: Archivage du ticket
+      end
     end
   end
 end
-
 @enduml
