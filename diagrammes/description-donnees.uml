@@ -3,7 +3,7 @@
 class EasyTicket {}
 
 abstract class Utilisateur {
-  - String id
+  - String idUtilisateur
   - String prenom
   - String nom
   - String email
@@ -22,12 +22,13 @@ class Ingenieur {
 class Administrateur {}
 
 class Ticket {
-  - time_t Date
+  - String idTicket
+  - time_t dateTicket
 }
 
 class Message {
   - String message
-  - time_t Date
+  - time_t dateMessage
   }
 
 enum Categorie {
@@ -52,6 +53,11 @@ enum Systeme {
     String iOS
 }
 
+enum Status {
+  String EnCours
+  String Clos
+}
+
 Client -->Utilisateur 
 Personnel --> Utilisateur
 Technicien --> Personnel
@@ -65,7 +71,8 @@ Categorie "1" -- Ticket
 Categorie "*"-- Technicien
 Ticket --"1" Logiciel
 Ticket --"1" Systeme
-Utilisateur -- "*" Ticket
+Utilisateur "2" -- "*" Ticket
 Message -- "1" Utilisateur
+Ticket -- "1" Status
 
 @enduml
