@@ -1,0 +1,20 @@
+@startuml
+
+title Consulter l'historique des tickets
+skinparam sequenceMessageAlign center
+skinparam ActorStyle awesome
+
+actor Client as c
+participant EasyTicket as e
+
+c -> e: Authentification
+e -> e: Vérification authentification
+
+alt Client inconnu
+	e -> c: Authentification impossible
+else
+  c -> e: Consulter l'historique des tickets
+  e -> c: Envoi de l'historique des fichiers
+end
+
+@enduml
