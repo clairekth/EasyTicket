@@ -22,6 +22,7 @@ actor "Administrateur" as admin #90E03C
 (Echanger sur le ticket / Ajouter des commentaires) as ect
 (Changer la catégorie du ticket) as cct
 (Clore un ticket) as closet
+(Consulter les tickets en cours) as ctc
 (Réattribuer un ticket) as rt
 (Consulter les statistiques) as cs
 
@@ -33,6 +34,7 @@ support --> ect
 support --> cct
 support --> closet
 support --> rt
+support --> ctc
 
 admin --> cs
 
