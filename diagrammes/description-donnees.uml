@@ -22,9 +22,13 @@ class Ingenieur {
 class Administrateur {}
 
 class Ticket {
+  - time_t Date
 }
 
-class Message {}
+class Message {
+  - String message
+  - time_t Date
+  }
 
 enum Categorie {
   String IncidentLogiciel
@@ -37,6 +41,7 @@ enum Logiciel {
   String Excel
   String Intellij
   String AndroidStudio
+  String Autre
 }
 
 enum Systeme {
@@ -61,5 +66,6 @@ Categorie "*"-- Technicien
 Ticket --"1" Logiciel
 Ticket --"1" Systeme
 Utilisateur -- "*" Ticket
+Message -- "1" Utilisateur
 
 @enduml
