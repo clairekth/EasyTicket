@@ -45,7 +45,7 @@ enum Logiciel {
 }
 
 enum Systeme {
-    String Window
+    String Windows
     String Linux
     String MacOS
     String Android
