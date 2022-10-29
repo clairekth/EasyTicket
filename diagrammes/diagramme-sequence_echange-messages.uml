@@ -1,0 +1,20 @@
+@startuml
+
+title Echange de messages
+skinparam sequenceMessageAlign center
+skinparam ActorStyle awesome
+
+actor "Client et support informatique" as c
+participant EasyTicket as e
+participant "Serveru mail" as s
+
+c -> e: Authentification
+e -> e: Vérification authentification
+alt Client ou technicien ou ingénieur inconnu
+  e -> c: Authentification impossible
+else
+  c -> e: Saisie d'un nouveau message sur le ticket
+  e -> s: Envoi d'un mail aux utilisateurs du ticket
+end
+
+@enduml
