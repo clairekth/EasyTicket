@@ -1,0 +1,44 @@
+@startuml
+
+title Création d'un nouveau ticket
+skinparam sequenceMessageAlign center
+skinparam ActorStyle awesome
+
+actor Client as c
+participant GestionnaireDialogue as t
+participant "c:Client" as cc
+participant "c:Ticket" as ct
+participant "c:Message" as cm
+
+c -> t: Authentification
+t -> t: c = verificationAuthentification(id,mdp)
+
+alt Client inconnu
+	t -> c: Authentification impossible
+else
+	c -> t: Création d'un nouveau ticket
+	c <- t: Saisir catégorie
+    c <- t: Saisir système
+    c <- t: Saisir logiciel
+    c <- t: Saisir message
+    
+    t <- c: Envoi catégorie
+    t <- c: Envoi système    
+    t <- c: Envoi logiciel
+    t <- c: Envoi message
+    
+    t -> t: b = verificationCategorie(categorie)
+    t -> t :  b = verificationMessage(message)
+
+	alt Message ou catégorie manquant
+		t -> c: Création ticket impossible
+	else
+	    t -> cc: t = creationTicket(message,categorie,logiciel,message)
+      cc -> ct : t = creationTicket(message,categorie,logiciel,message, client)
+      ct -> cm : m = ajouterMessage(message,client)
+      
+      
+	end
+end
+
+@enduml
