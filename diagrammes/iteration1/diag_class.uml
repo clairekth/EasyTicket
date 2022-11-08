@@ -1,0 +1,35 @@
+@startuml
+
+class Client{
+  Ticket creationTicket(String message, Categorie categorie, Logiciel logiciel, Systeme systeme)
+  
+}
+
+class Ticket {
+  - String idTicket
+  - time_t dateTicket
+  ....
+    Ticket creationTicket(Client client, String message, Categorie categorie, Logiciel logiciel, Systeme systeme)
+
+}
+
+class Message {
+  - String message
+  - time_t dateMessage
+  ..
+    Message ajouterMessage(Utilisateur auteur, String message)
+  }
+
+class GestionnaireDialogue{
+boolean verificationAuthentification(String id, String mdp)
+Client authentification(String id, String mdp)
+boolean verificationMessage(String message)
+boolean verificationCategorie(Categorie c)
+}
+
+GestionnaireDialogue -- "*" Client
+Client -- "*" Ticket
+Ticket -- "*" Message
+Message -- "1" Client
+
+@enduml
