@@ -11,11 +11,12 @@ participant "c:Ticket" as ct
 participant "c:Message" as cm
 
 c -> t: Authentification
-t -> t: c = verificationAuthentification(id,mdp)
+t -> t: b = verificationAuthentification(id,mdp)
 
 alt Client inconnu
 	t -> c: Authentification impossible
 else
+  t -> t : c = authentification(id,mdp)
 	c -> t: Création d'un nouveau ticket
 	c <- t: Saisir catégorie
     c <- t: Saisir système
