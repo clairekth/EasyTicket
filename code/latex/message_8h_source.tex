@@ -1,0 +1,44 @@
+\hypertarget{message_8h_source}{}\doxysection{message.\+h}
+\label{message_8h_source}\index{include/message.h@{include/message.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MESSAGE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MESSAGE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// pour les affichages}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}users.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}ticket.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{classMessage}{Message}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     std::string id\_message;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{double} date\_envoie;}
+\DoxyCodeLine{19     \mbox{\hyperlink{classUsers}{Users}} user;}
+\DoxyCodeLine{20     \mbox{\hyperlink{classTicket}{Ticket}} ticket;}
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{classMessage}{Message}}();}
+\DoxyCodeLine{24     \mbox{\hyperlink{classMessage_a444472926e80688465252b37877afecf}{Message}}(std::string id\_message, \textcolor{keywordtype}{double} date\_envoie, \mbox{\hyperlink{classUsers}{Users}} user, \mbox{\hyperlink{classTicket}{Ticket}} ticket);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{28     std::string \mbox{\hyperlink{classMessage_aaaeb7119e465d8d2193db7c7e338a99e}{getId\_message}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMessage_a45ce613b07e8f6b5c2b50fca43218099}{setId\_message}}(\textcolor{keyword}{const} std::string \&value);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{36     \textcolor{keywordtype}{double} \mbox{\hyperlink{classMessage_ab9ef92e3a9773e9641f35d4b4c2f9a09}{getDate\_envoie}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMessage_a22ef0739d95fd1b190b72f2b16a7fbd0}{setDate\_envoie}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{44     \mbox{\hyperlink{classUsers}{Users}} \mbox{\hyperlink{classMessage_ab964a986f7e10e33f320f63213ee51a1}{getUser}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMessage_a4540de146a35b91ed37c9f55cee36cef}{setUser}}(\textcolor{keyword}{const} \mbox{\hyperlink{classUsers}{Users}} \&value);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{52     \mbox{\hyperlink{classTicket}{Ticket}} \mbox{\hyperlink{classMessage_a2b526296adb53392ebc73cae307ce6dd}{getTicket}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{classMessage_ab6c4bfbae99449b4f5dc79519cbba6ba}{setTicket}}(\textcolor{keyword}{const} \mbox{\hyperlink{classTicket}{Ticket}} \&value);}
+\DoxyCodeLine{57 \}; \textcolor{comment}{// fin de la classe Message}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MESSAGE\_H}}
+
+\end{DoxyCode}

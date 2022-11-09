@@ -1,0 +1,60 @@
+\hypertarget{ticket_8h_source}{}\doxysection{ticket.\+h}
+\label{ticket_8h_source}\index{include/ticket.h@{include/ticket.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TICKET\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TICKET\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}systeme.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}logiciel.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}message.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{classTicket}{Ticket}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 \textcolor{keyword}{private}:}
+\DoxyCodeLine{13     std::string id\_ticket;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{double} date\_creation;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{double} date\_fermeture;}
+\DoxyCodeLine{16     \mbox{\hyperlink{classSysteme}{Systeme}} systeme;}
+\DoxyCodeLine{17     \mbox{\hyperlink{classLogiciel}{Logiciel}} logiciel;}
+\DoxyCodeLine{18     std::vector<*Message> liste\_messages;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{classTicket}{Ticket}}();}
+\DoxyCodeLine{28     \mbox{\hyperlink{classTicket_a4873ddce9499b21b40140b49c964696d}{Ticket}}(}
+\DoxyCodeLine{29             std::string id\_ticket,}
+\DoxyCodeLine{30             \textcolor{keywordtype}{double} date\_creation,}
+\DoxyCodeLine{31             \textcolor{keywordtype}{double} date\_fermeture,}
+\DoxyCodeLine{32             \mbox{\hyperlink{classSysteme}{Systeme}} systeme,}
+\DoxyCodeLine{33             \mbox{\hyperlink{classTicket}{Ticket}} ticket);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{37     std::string \mbox{\hyperlink{classTicket_a2a0f5d1c8f94b85e59b7337892cc6f80}{getId\_ticket}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_abbd33913e1d68e39713b77f9872c685b}{setId\_ticket}}(\textcolor{keyword}{const} std::string \&value);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{double} \mbox{\hyperlink{classTicket_aba1375ff7519e070fc2d30c518e05508}{getDate\_creation}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_a92cbebde3b7df6370af090ed9cfcf5b7}{setDate\_creation}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{double} \mbox{\hyperlink{classTicket_a8735ce35c88f62795da2bf0ecfd74445}{getDate\_fermeture}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_aab90f27a96328411032aab7eed432779}{setDate\_fermeture}}(\textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{61     \mbox{\hyperlink{classSysteme}{Systeme}} \mbox{\hyperlink{classTicket_a71ea6606cc7b0d580b554dd94916dcc9}{getSysteme}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_a3ce88e0ac87f037ec8e3d3a85a378771}{setSysteme}}(\textcolor{keyword}{const} \mbox{\hyperlink{classSysteme}{Systeme}} \&value);}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{69     \mbox{\hyperlink{classLogiciel}{Logiciel}} \mbox{\hyperlink{classTicket_a44050094872a8786ea7d5f5c18b50356}{getLogiciel}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_aec217e45dcf9b9860c46c9998c24d082}{setLogiciel}}(\textcolor{keyword}{const} \mbox{\hyperlink{classLogiciel}{Logiciel}} \&value);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{77     std::vector<*Message> \mbox{\hyperlink{classTicket_ae29293a367bf87746f61460d5c469ec8}{getListeMessages}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{classTicket_a679c62c788d8f8950d6b3e5d7e9a9b51}{setListeMessages}}(\textcolor{keyword}{const} std::vector<*Message> \&value);}
+\DoxyCodeLine{82 \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TICKET\_H}}
+
+\end{DoxyCode}
