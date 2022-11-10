@@ -16,7 +16,7 @@ t -> t: c = authentification(id, mdp)
 alt utilisateur inconnu
 	t -> c: Authentification impossible
 else
-  t -> cc: b = estUnClient(c)
+  t -> cc: b = estUnClient()
   alt l'utilisateur n'est pas un client
     t -> c: Accès à la création d'un ticket impossible
   else
