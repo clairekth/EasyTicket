@@ -11,13 +11,15 @@ participant "t:Ticket" as ct
 participant "m:Message" as cm
 
 c -> t: Authentification
-t -> t: c = verificationAuthentification(id,mdp)
-t -> cc : estUnClient()
+t -> t: c = authentification(id, mdp)
 
-
-alt Client inconnu
+alt utilisateur inconnu
 	t -> c: Authentification impossible
 else
+  t -> cc: b = estUnClient(c)
+  alt l'utilisateur n'est pas un client
+    t -> c: Accès à la création d'un ticket impossible
+  else
 	  c -> t: Création d'un nouveau ticket
 	  c <- t: Saisir catégorie
     c <- t: Saisir système
@@ -39,6 +41,7 @@ else
       cc -> ct : t = Ticket(client, message,categorie,logiciel,message)
       ct -> cm : m = Message(client, message)
       cc -> ct : ajouterMessage(message)
+    end
 	end
 end
 
