@@ -17,7 +17,7 @@ private:
     double date_fermeture;
     Systeme systeme;
     Logiciel logiciel;
-    std::vector<*Message> liste_messages;
+    std::vector<Message*> liste_messages;
     Client client;
     Personnel personnel;
 
@@ -78,11 +78,11 @@ public:
 
     /// @brief Cette méthode permet de récupérer la liste des @ref Message concerné par le @ref Ticket
     /// @return la liste de @ref Message concerné par le ticket
-    std::vector<*Message> getListeMessages() const;
+    std::vector<Message*> getListeMessages() const;
 
     /// @brief Cette méthode permet de définir la liste des @Message concerné par le @ref Ticket
     /// @param  value   la nouvelle liste de @ref Message
-    void setListeMessages(const std::vector<*Message> &value);
+    void setListeMessages(const std::vector<Message*> &value);
 
     void setClient(const Client &value);
     Client getClient();

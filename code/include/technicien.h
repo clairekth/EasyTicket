@@ -7,7 +7,7 @@
 class Technicien : public Personnel
 {
 private :
-    std::vector<Categorie> categories;
+    std::vector<Categorie*> categories;
 
 public:
     Technicien();
@@ -25,7 +25,7 @@ public:
             std::string p,
             std::string motdepasse,
             std::string email,
-            std::vector<Categorie> liste_categories);
+            std::vector<Categorie*> liste_categories);
 
 
     /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Technicien
