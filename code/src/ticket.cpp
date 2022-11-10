@@ -1,5 +1,10 @@
 #include "ticket.h"
 
+Ticket::Ticket()
+{
+    
+}
+
 std::vector<_Tp1> Ticket::getListeMessages() const
 {
     return listeMessages;
@@ -8,11 +13,6 @@ std::vector<_Tp1> Ticket::getListeMessages() const
 void Ticket::setListeMessages(const std::vector<_Tp1> &value)
 {
     listeMessages = value;
-}
-
-Ticket::Ticket()
-{
-    
 }
 
 double Ticket::getDate_creation() const
@@ -64,3 +64,18 @@ void Ticket::setId_ticket(const std::string &value)
 {
     id_ticket = value;
 }
+
+void setClient(const Client &value){
+    client = value;
+}
+Client getClient(){
+    return client;
+}
+
+void setPersonnel(const Personnel &value){
+    personnel = value;
+}
+Personnel getPersonnel(){
+    return personnel;
+}
+

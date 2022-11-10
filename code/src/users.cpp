@@ -4,7 +4,11 @@
 
 Users::Users()
 {
+}
 
+Users::Users(std::string id_u, std::string n, std::string p, std::string motdepasse, std::string email) :
+    id(id_u), nom(n), prenom(p), mdp(motdepasse), mail(email)
+{
 }
 
 std::string Users::getNom() const
@@ -37,16 +41,6 @@ void Users::setMdp(const std::string &value)
     mdp = value;
 }
 
-std::string Users::getId() const
-{
-    return id;
-}
-
-void Users::setId(const std::string &value)
-{
-    id = value;
-}
-
 std::string Users::getMail() const
 {
     return mail;
@@ -65,4 +59,16 @@ std::string Users::getId_users() const
 void Users::setId_users(const std::string &value)
 {
     id_users = value;
+}
+
+bool Users::estUnClient(){
+    return false;
+}
+
+bool Users::estUnAdmin(){
+    return false;
+}
+
+bool Users::estUnPersonnel(){
+    return false;
 }

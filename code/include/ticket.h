@@ -6,6 +6,8 @@
 #include "systeme.h"
 #include "logiciel.h"
 #include "message.h"
+#include "client.h"
+#include "personnel.h"
 
 class Ticket
 {
@@ -16,21 +18,23 @@ private:
     Systeme systeme;
     Logiciel logiciel;
     std::vector<*Message> liste_messages;
+    Client client;
+    Personnel personnel;
 
 public:
     Ticket();
     /// @brief la classe @ref Ticket permet de décrire un ticket dans l'application EasyTicket.
     /// @param  id_ticket       l'identifiant du ticket
     /// @param  date_creation   la date de création du ticket
-    /// @param  date_fermeture  la date de fermeture du ticket
     /// @param  systeme         le @ref Systeme concerné par le ticket
     /// @param  logiciel        le @ref Logiciel concerné par le ticket
+    /// @param  auteur          le @ref Client auteur du ticket
     Ticket(
             std::string id_ticket,
             double date_creation,
-            double date_fermeture,
             Systeme systeme,
-            Ticket ticket);
+            Logiciel logiciel,
+            Client auteur);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du @ref Ticket
     /// @return l'identifiant du ticket
@@ -79,6 +83,13 @@ public:
     /// @brief Cette méthode permet de définir la liste des @Message concerné par le @ref Ticket
     /// @param  value   la nouvelle liste de @ref Message
     void setListeMessages(const std::vector<*Message> &value);
+
+    void setClient(const Client &value);
+    Client getClient();
+
+    void setPersonnel(const Personnel &value);
+    Personnel getPersonnel();
+
 };
 
 #endif // TICKET_H

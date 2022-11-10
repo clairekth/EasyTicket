@@ -8,12 +8,13 @@ class Ingenieur : public Personnel
 public:
     Ingenieur();
     Ingenieur(
-            std::string id_users,
-            std::string nom,
-            std::string prenom,
-            std::string mdp,
-            std::string id,
-            std::string mail);
+            std::string id_u,
+            std::string n,
+            std::string p,
+            std::string motdepasse,
+            std::string email);
+
+    bool estUnIngenieur();
 };
 
 #endif // INGENIEUR_H

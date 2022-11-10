@@ -8,13 +8,16 @@ class Personnel : public Users
 public:
     Personnel();
     Personnel(
-            std::string id_users,
-            std::string nom,
-            std::string prenom,
-            std::string mdp,
-            std::string id,
-            std::string mail);
+            std::string id_u,
+            std::string n,
+            std::string p,
+            std::string motdepasse,
+            std::string email);
     ~Personnel();
+
+    bool estUnPersonnel();
+    bool estUnIngenieur();
+    bool estUnTechnicien();
 };
 
 #endif // PERSONNEL_H
