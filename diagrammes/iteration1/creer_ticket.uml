@@ -37,10 +37,10 @@ else
 	alt Message ou catégorie manquant
 		t -> c: Création ticket impossible
 	else
-	    t -> cc: ajouterTicket(message,categorie,logiciel,message)
-      cc -> ct : t = Ticket(client, message,categorie,logiciel,message)
-      ct -> cm : m = Message(client, message)
-      cc -> ct : ajouterMessage(message)
+	    t -> ct: Ticket(message,categorie,logiciel,systeme,client)
+      t -> cm : Message(message, utilisateur)
+      t -> ct : ajouterMessage(Message)
+      t -> t : ajouterTicket(Ticket)
     end
 	end
 end
