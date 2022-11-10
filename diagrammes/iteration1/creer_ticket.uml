@@ -7,18 +7,19 @@ skinparam ActorStyle awesome
 actor Client as c
 participant GestionnaireDialogue as t
 participant "c:Client" as cc
-participant "c:Ticket" as ct
-participant "c:Message" as cm
+participant "t:Ticket" as ct
+participant "m:Message" as cm
 
 c -> t: Authentification
-t -> t: b = verificationAuthentification(id,mdp)
+t -> t: c = verificationAuthentification(id,mdp)
+t -> cc : estUnClient()
+
 
 alt Client inconnu
 	t -> c: Authentification impossible
 else
-  t -> t : c = authentification(id,mdp)
-	c -> t: Création d'un nouveau ticket
-	c <- t: Saisir catégorie
+	  c -> t: Création d'un nouveau ticket
+	  c <- t: Saisir catégorie
     c <- t: Saisir système
     c <- t: Saisir logiciel
     c <- t: Saisir message
@@ -28,17 +29,16 @@ else
     t <- c: Envoi logiciel
     t <- c: Envoi message
     
-    t -> t: b = verificationCategorie(categorie)
-    t -> t :  b = verificationMessage(message)
+    t -> t: verificationCategorie(categorie)
+    t -> t :  verificationMessage(message)
 
 	alt Message ou catégorie manquant
 		t -> c: Création ticket impossible
 	else
-	    t -> cc: t = creationTicket(message,categorie,logiciel,message)
-      cc -> ct : t = creationTicket(message,categorie,logiciel,message, client)
-      ct -> cm : m = ajouterMessage(message,client)
-      
-      
+	    t -> cc: ajouterTicket(message,categorie,logiciel,message)
+      cc -> ct : t = Ticket(client, message,categorie,logiciel,message)
+      ct -> cm : m = Message(client, message)
+      cc -> ct : ajouterMessage(message)
 	end
 end
 
