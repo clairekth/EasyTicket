@@ -30,7 +30,7 @@ SOURCES += \
     src/systeme.cpp \
     src/technicien.cpp \
     src/ticket.cpp \
-    src/users.cpp
+    src/utilisateur.cpp
 
 HEADERS += \
     include/admin.h \
@@ -44,7 +44,7 @@ HEADERS += \
     include/systeme.h \
     include/technicien.h \
     include/ticket.h \
-    include/users.h
+    include/utilisateur.h
 
 FORMS += \
     mainwindow.ui

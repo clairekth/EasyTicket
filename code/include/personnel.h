@@ -1,9 +1,9 @@
 #ifndef PERSONNEL_H
 #define PERSONNEL_H
 
-#include "users.h"
+#include "Utilisateur.h"
 
-class Personnel : public Users
+class Personnel : public Utilisateur
 {
 public:
     Personnel();
@@ -19,20 +19,17 @@ public:
             std::string p,
             std::string motdepasse,
             std::string email);
-    ~Personnel();
 
-    /// @brief  Cette méthode permet de vérifier si l'@ref Utilisateur est un @ref Personnel
+    /// @brief Déconstructeur virtuel pour rendre la classe Personnel abstraite
+    virtual ~Personnel() = default;
+
+    /// @brief  Cette méthode permet de vérifier si le @ref Personnel est un @ref Personnel
     /// @return ???
-    bool estUnPersonnel();
+    bool estUnIngenieur(Personnel *personnel);
 
-    /// @brief  Cette méthode permet de vérifier si l'@ref Ingenieur est un @ref Personnel
+    /// @brief Cette méthode permet de vérifier si un @ref Personnel est un @ref Technicien
     /// @return ???
-    bool estUnIngenieur();
-
-    /// @brief  Cette méthode permet de vérifier si le @ref Technicien est un @ref Personnel
-    /// @return ???
-
-    bool estUnTechnicien();
+    bool estUnTechnicien(Personnel *personnel);
 };
 
 #endif // PERSONNEL_H

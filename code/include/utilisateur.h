@@ -4,7 +4,7 @@
 #include <iostream>
 #include <ticket.h>
 
-class Users
+class Utilisateur
 {
 public:
 
@@ -17,19 +17,22 @@ private:
     std::vector<Ticket> liste_tickets;
 
 public:
-    Users();
-    /// @brief  La classe @ref Users permet de décrire un Utilisateur dans l'application EasyTicket.
+    Utilisateur();
+    /// @brief  La classe @ref Utilisateur est une classe abstraite qui permet de décrire un Utilisateur dans l'application EasyTicket.
     /// @param  id_u        L'identifiant de l'utilisateur
     /// @param  n           Le nom de l'utilisateur
     /// @param  p           Le prénm de l'utilisateur
     /// @param  motdepasse  Le mot de passe de l'utilisateur
     /// @param  email       Le mail de l'utilisateur
-    Users(
+    Utilisateur(
             std::string id_u,
             std::string n,
             std::string p,
             std::string motdepasse,
             std::string email);
+
+    /// @brief Déconstructeur virtuel pour rendre la classe
+    virtual ~Utilisateur() = default;
 
     /// @brief Cette méthode permet de récupérer l'identifiant de l'utilisateur.
     /// @return L'identifiant de l'utilisateur.
@@ -72,10 +75,17 @@ public:
     void setMail(const std::string &value);
 
 
-    bool estUnClient();
-    bool estUnPersonnel();
-    bool estUnAdmin();
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un client
+    /// @return ???
+    bool estUnClient(Utilisateur *utilisateur);
 
+    /// @brief  Cette méthode permet de vérifier si le @ref Utilisateur est un @ref Personnel
+    /// @return ???
+    bool estUnPersonnel(Utilisateur *utilisateur);
+
+    /// @brief  Cette méthode permet de vérifier si un @ref Utilisateur est un admin
+    /// @return ???
+    bool estUnAdmin(Utilisateur *utilisateur);
 };
 
 #endif // USERS_H

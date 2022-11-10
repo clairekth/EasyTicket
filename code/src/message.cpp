@@ -20,12 +20,12 @@ void Message::setDate_envoie(double value)
     date_envoie = value;
 }
 
-Users Message::getUser() const
+Utilisateur Message::getUser() const
 {
     return user;
 }
 
-void Message::setUser(const Users &value)
+void Message::setUser(const Utilisateur &value)
 {
     user = value;
 }

@@ -20,10 +20,6 @@ public:
             std::string p,
             std::string motdepasse,
             std::string email);
-
-    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Ingénieur
-    /// @return ???
-    bool estUnIngenieur();
 };
 
 #endif // INGENIEUR_H

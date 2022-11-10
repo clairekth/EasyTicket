@@ -1,9 +1,9 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
-#include "users.h"
+#include "Utilisateur.h"
 
-class Client : public Users
+class Client : public Utilisateur
 {
 
 public:
@@ -21,11 +21,6 @@ public:
             std::string motdepasse,
             std::string email);
     ~Client();
-
-
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un @ref Client ou non
-    /// @return
-    bool estUnClient();
 };
 
 #endif // CLIENT_H
