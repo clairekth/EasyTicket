@@ -1,35 +1,44 @@
 @startuml
 
-class Client{
-  Ticket creationTicket(String message, Categorie categorie, Logiciel logiciel, Systeme systeme)
-  
-}
-
-class Ticket {
-  - String idTicket
-  - time_t dateTicket
-  ....
-    Ticket creationTicket(Client client, String message, Categorie categorie, Logiciel logiciel, Systeme systeme)
-
-}
-
-class Message {
-  - String message
-  - time_t dateMessage
+class GestionnaireDialogue{
   ..
-    Message ajouterMessage(Utilisateur auteur, String message)
+  + Client authentification(String id, String mdp)
+  + boolean verificationMessage(String message)
+  + boolean verificationCategorie(Categorie cat)
+  + void ajouterTicket(Ticket ticket)
+}
+
+class Ticket{
+  - Categorie cat
+  - Logiciel logiciel
+  - time_t Date
+  ..
+  - ajouterMessage(Message m)
   }
 
-class GestionnaireDialogue{
-boolean verificationAuthentification(String id, String mdp)
-Client authentification(String id, String mdp)
-boolean verificationMessage(String message)
-boolean verificationCategorie(Categorie c)
-}
-
-GestionnaireDialogue -- "*" Client
-Client -- "*" Ticket
+class Message{
+  - time_t Date
+  }
+  
+class Utilisateur{
+  - String nom
+  - String prenom
+  - String id
+  - String mdp
+  - String mail
+  ..
+  + boolean estUnClient()
+  }
+class Client{
+  ..
+  + boolean estUnClient()
+  }
+  
+GestionnaireDialogue -- "*" Ticket
 Ticket -- "*" Message
-Message -- "1" Client
+Ticket -- "1" Client
+Message -- "1" Utilisateur
+Client --|> Utilisateur
+
 
 @enduml
