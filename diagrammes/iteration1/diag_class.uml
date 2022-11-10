@@ -13,7 +13,7 @@ class Ticket{
   - Logiciel logiciel
   - time_t Date
   ..
-  - ajouterMessage(Message m)
+  + ajouterMessage(Message m)
   }
 
 class Message{
