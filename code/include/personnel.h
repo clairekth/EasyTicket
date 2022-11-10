@@ -22,16 +22,15 @@ public:
     ~Personnel();
 
     /// @brief  Cette méthode permet de vérifier si l'@ref Utilisateur est un @ref Personnel
-    /// @return ???
+    /// @return true
     bool estUnPersonnel();
 
     /// @brief  Cette méthode permet de vérifier si l'@ref Ingenieur est un @ref Personnel
-    /// @return ???
+    /// @return false
     bool estUnIngenieur();
 
     /// @brief  Cette méthode permet de vérifier si le @ref Technicien est un @ref Personnel
-    /// @return ???
-
+    /// @return false
     bool estUnTechnicien();
 };
 

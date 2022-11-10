@@ -22,7 +22,7 @@ public:
             std::string email);
 
     /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Ingénieur
-    /// @return ???
+    /// @return true
     bool estUnIngenieur();
 };
 

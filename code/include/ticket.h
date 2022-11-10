@@ -84,10 +84,20 @@ public:
     /// @param  value   la nouvelle liste de @ref Message
     void setListeMessages(const std::vector<Message*> &value);
 
+    /// @brief Cette méthode permet de définir le @ref Client auteur du @ref Ticket
+    /// @param value    le @ref Client auteur du @ref Ticket
     void setClient(const Client &value);
+
+    /// @brief Cette méthode permet de récupérer le @ref Client auteur du @ref Ticket
+    /// @return Le @ref Client auteur du @ref Ticket
     Client getClient();
 
+    /// @brief Cette méthode permet de définir le @ref Personnel qui traite le @ref Ticket
+    /// @param value    le nouveau @ref Personnel
     void setPersonnel(const Personnel &value);
+
+    /// @brief Cette méthode permet de récupérer le @ref Personnel qui traite le @ref Ticket
+    /// @return le @ref Personel traitant le @ref Ticket
     Personnel getPersonnel();
 
 };

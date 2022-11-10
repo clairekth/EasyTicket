@@ -23,8 +23,8 @@ public:
     ~Client();
 
 
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un @ref Client ou non
-    /// @return
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Client
+    /// @return true
     bool estUnClient();
 };
 

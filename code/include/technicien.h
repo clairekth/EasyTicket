@@ -29,7 +29,7 @@ public:
 
 
     /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Technicien
-    /// @return ???
+    /// @return true
     bool estUnTechnicien();
 };
 

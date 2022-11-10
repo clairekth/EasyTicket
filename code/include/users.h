@@ -71,9 +71,16 @@ public:
     /// @param value le mail
     void setMail(const std::string &value);
 
-
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Client
+    /// @return false
     bool estUnClient();
+
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Personnel
+    /// @return false
     bool estUnPersonnel();
+
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Admin
+    /// @return false
     bool estUnAdmin();
 
 };
