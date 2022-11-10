@@ -22,6 +22,9 @@ public:
             std::string email);
     ~Client();
 
+
+    /// @brief Cette méthode permet de vérifier si l'utilisateur est un @ref Client ou non
+    /// @return
     bool estUnClient();
 };
 

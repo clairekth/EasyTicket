@@ -7,6 +7,13 @@ class Ingenieur : public Personnel
 {
 public:
     Ingenieur();
+
+    /// @brief La classe @ref Ingenieur permet de décrire un ingénieur dans l'application EasyTicket
+    /// @param  id_u        l'identifiant de l'ingénieur
+    /// @param  n           le nom de l'ingénieur
+    /// @param  p           le prénom de l'ingénieur
+    /// @param  motdepasse  le mot de passe de l'ingénieur
+    /// @param  email       l'email de l'ingénieur
     Ingenieur(
             std::string id_u,
             std::string n,
@@ -14,6 +21,8 @@ public:
             std::string motdepasse,
             std::string email);
 
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Ingénieur
+    /// @return ???
     bool estUnIngenieur();
 };
 

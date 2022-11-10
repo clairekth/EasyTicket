@@ -17,9 +17,20 @@ public:
             std::string id_systeme,
             std::string nom);
 
+    /// @brief Cette méthode permet de récupérer l'identifiant du système
+    /// @return l'identifiant du système
     std::string getId_systeme() const;
+
+    /// @brief Cette méthode permet de définir l'identifiant du système
+    /// @param  value   l'identifiant du système
     void setId_systeme(const std::string &value);
+
+    /// @brief Cette méthode permet de récupérer le nom du système
+    /// @return le nom du système
     std::string getNom() const;
+
+    /// @brief Cette méthode permet de définir le nom du système
+    /// @param  value   le nouveau nom du système
     void setNom(const std::string &value);
 };
 
