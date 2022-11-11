@@ -5,14 +5,20 @@ Ticket::Ticket()
     
 }
 
-std::vector<_Tp1> Ticket::getListeMessages() const
+Ticket::Ticket(std::string id_ticket, double date_creation, Systeme systeme, Logiciel logiciel, Client auteur) :
+    id_ticket(id_ticket),date_creation(date_creation), systeme(systeme), logiciel(logiciel), client(auteur)
 {
-    return listeMessages;
+
 }
 
-void Ticket::setListeMessages(const std::vector<_Tp1> &value)
+std::vector<Message*> Ticket::getListeMessages() const
 {
-    listeMessages = value;
+    return liste_messages;
+}
+
+void Ticket::setListeMessages(const std::vector<Message*> &value)
+{
+    liste_messages = value;
 }
 
 double Ticket::getDate_creation() const
@@ -65,14 +71,14 @@ void Ticket::setId_ticket(const std::string &value)
     id_ticket = value;
 }
 
-void setClient(const Client &value){
+void setClient(Client &value){
     client = value;
 }
 Client getClient(){
     return client;
 }
 
-void setPersonnel(const Personnel &value){
+void setPersonnel(Personnel &value){
     personnel = value;
 }
 Personnel getPersonnel(){

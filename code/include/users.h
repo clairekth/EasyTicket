@@ -2,7 +2,8 @@
 #define USERS_H
 
 #include <iostream>
-#include <ticket.h>
+#include <vector>
+class Ticket;
 
 class Users
 {
@@ -83,6 +84,7 @@ public:
     /// @return false
     bool estUnAdmin();
 
+     ~Users();
 };
 
 #endif // USERS_H

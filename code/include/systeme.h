@@ -32,6 +32,8 @@ public:
     /// @brief Cette méthode permet de définir le nom du système
     /// @param  value   le nouveau nom du système
     void setNom(const std::string &value);
+
+    ~Systeme();
 };
 
 #endif // SYSTEME_H

@@ -3,7 +3,6 @@
 
 // pour les affichages
 #include <iostream>
-
 #include "users.h"
 #include "ticket.h"
 
@@ -54,6 +53,8 @@ public:
     /// @brief Cette méthode définis le @ref Ticket dans lequel se trouve le message.
     /// @param  value   le nouveau @ref Ticket
     void setTicket(const Ticket &value);
+
+    ~Message();
 }; // fin de la classe Message
 
 #endif // MESSAGE_H

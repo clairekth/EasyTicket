@@ -5,7 +5,6 @@
 
 class Client : public Users
 {
-
 public:
     Client();
     /// @brief  La classe @ref Client permet de décrire un Client dans l'application EasyTicket.

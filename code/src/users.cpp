@@ -7,7 +7,7 @@ Users::Users()
 }
 
 Users::Users(std::string id_u, std::string n, std::string p, std::string motdepasse, std::string email) :
-    id(id_u), nom(n), prenom(p), mdp(motdepasse), mail(email)
+    id_user(id_u), nom(n), prenom(p), mdp(motdepasse), mail(email)
 {
 }
 
@@ -53,12 +53,12 @@ void Users::setMail(const std::string &value)
 
 std::string Users::getId_users() const
 {
-    return id_users;
+    return id_user;
 }
 
 void Users::setId_users(const std::string &value)
 {
-    id_users = value;
+    id_user = value;
 }
 
 bool Users::estUnClient(){
