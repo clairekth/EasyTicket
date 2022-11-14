@@ -1,11 +1,12 @@
 #include "message.h"
+#include "ticket.h"
 
-Ticket Message::getTicket() const
+Ticket* Message::getTicket() const
 {
     return ticket;
 }
 
-void Message::setTicket(const Ticket &value)
+void Message::setTicket(Ticket* &value)
 {
     ticket = value;
 }
@@ -20,12 +21,12 @@ void Message::setDate_envoie(double value)
     date_envoie = value;
 }
 
-Users Message::getUser() const
+Utilisateur* Message::getUser() const
 {
     return user;
 }
 
-void Message::setUser(const Users &value)
+void Message::setUser(Utilisateur* &value)
 {
     user = value;
 }

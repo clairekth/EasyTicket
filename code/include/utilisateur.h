@@ -1,20 +1,20 @@
-#ifndef USERS_H
-#define USERS_H
+#ifndef UTILISATEUR_H
+#define UTILISATEUR_H
 
+#include <vector>
 #include <iostream>
-#include <ticket.h>
+// #include <ticket.h>
+class Ticket; // forward declaration https://stackoverflow.com/a/8526965
 
 class Utilisateur
 {
-public:
-
 private:
     std::string id_user;
     std::string nom;
     std::string prenom;
     std::string mdp;
     std::string mail;
-    std::vector<Ticket> liste_tickets;
+    std::vector<Ticket*> liste_tickets;
 
 public:
     Utilisateur();
@@ -88,4 +88,4 @@ public:
     bool estUnAdmin(Utilisateur *utilisateur);
 };
 
-#endif // USERS_H
+#endif // UTILISATEUR_H

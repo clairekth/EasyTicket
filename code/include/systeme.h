@@ -33,7 +33,7 @@ public:
     /// @param  value   le nouveau nom du système
     void setNom(const std::string &value);
 
-    ~Systeme();
+    ~Systeme() {}
 };
 
 #endif // SYSTEME_H

@@ -1,6 +1,8 @@
 #ifndef TECHNICIEN_H
 #define TECHNICIEN_H
 
+#include <vector>
+
 #include "personnel.h"
 #include "categorie.h"
 
@@ -26,11 +28,6 @@ public:
             std::string motdepasse,
             std::string email,
             std::vector<Categorie*> liste_categories);
-
-
-    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Technicien
-    /// @return true
-    bool estUnTechnicien();
 };
 
 #endif // TECHNICIEN_H

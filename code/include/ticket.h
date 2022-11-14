@@ -1,13 +1,15 @@
 #ifndef TICKET_H
 #define TICKET_H
 
+#include <vector>
+
 #include "systeme.h"
 #include "logiciel.h"
-class Message;
 #include "client.h"
 #include "personnel.h"
-class Ticket
+#include "message.h"
 
+class Ticket
 {
 private:
     std::string id_ticket;
@@ -76,7 +78,7 @@ public:
 
     /// @brief Cette méthode permet de récupérer la liste des @ref Message concerné par le @ref Ticket
     /// @return la liste de @ref Message concerné par le ticket
-    std::vector<Message*> getListeMessages();
+    std::vector<Message*> getListeMessages() const;
 
     /// @brief Cette méthode permet de définir la liste des @Message concerné par le @ref Ticket
     /// @param  value   la nouvelle liste de @ref Message
@@ -98,7 +100,7 @@ public:
     /// @return le @ref Personel traitant le @ref Ticket
     Personnel getPersonnel();
 
-    ~Ticket();
+    ~Ticket() {}
 };
 
 #endif // TICKET_H

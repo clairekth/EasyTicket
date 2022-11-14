@@ -3,8 +3,9 @@
 
 // pour les affichages
 #include <iostream>
-#include "users.h"
-#include "ticket.h"
+#include "utilisateur.h"
+// #include "ticket.h"
+class Ticket;
 
 class Message
 {
@@ -15,12 +16,12 @@ class Message
 private:
     std::string id_message;
     double date_envoie;
-    Users user;
-    Ticket ticket;
+    Utilisateur *user;
+    Ticket *ticket;
 public:
     Message();
     /// @brief Le constructeur par défaut
-    Message(std::string id_message, double date_envoie, Users user, Ticket ticket);
+    Message(std::string id_message, double date_envoie, Utilisateur user, Ticket ticket);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du message.
     /// @return l'identifiant du message
@@ -40,21 +41,21 @@ public:
 
     /// @brief Cette méthode permet de récupérer l' @ref Users qui est l'auteur du message.
     /// @param  value   le nouveau @ref Users
-    Users getUser() const;
+    Utilisateur* getUser() const;
 
     /// @brief Cette méthode permet de définir l' @ref Utilisateur qui l'auteur du message.
     /// @param  value   le nouveau @ref Users
-    void setUser(const Users &value);
+    void setUser(Utilisateur* &value);
 
     /// @brief Cette méthode permet de récupérer le @ref Ticket dans lequel se trouve le message.
     /// @return la classe @ref Users
-    Ticket getTicket() const;
+    Ticket* getTicket() const;
 
     /// @brief Cette méthode définis le @ref Ticket dans lequel se trouve le message.
     /// @param  value   le nouveau @ref Ticket
-    void setTicket(const Ticket &value);
+    void setTicket(Ticket* &value);
 
-    ~Message();
+    ~Message() {}
 }; // fin de la classe Message
 
 #endif // MESSAGE_H

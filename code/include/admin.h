@@ -1,9 +1,9 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
-#include "users.h"
+#include "utilisateur.h"
 
-class Admin : public Users
+class Admin : public Utilisateur
 {
 public:
     /// @brief La classe @ref Admin permet de décrire un Administrateur dans l'application EasyTicket
@@ -24,7 +24,7 @@ public:
     /// @return true
     bool estUnAdmin();
 
-    ~Admin();
+    ~Admin() {}
 };
 
 #endif // ADMIN_H
