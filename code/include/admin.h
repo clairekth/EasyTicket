@@ -12,6 +12,7 @@ public:
     /// @param  prenom  le prenom de l'administrateur
     /// @param  mail    le mail de l'administrateur
     Admin();
+
     Admin (
         std::string id,
         std::string nom,
@@ -24,7 +25,7 @@ public:
     /// @return true
     bool estUnAdmin();
 
-    ~Admin() {}
+    ~Admin();
 };
 
 #endif // ADMIN_H

@@ -43,7 +43,7 @@ public:
     );
 
     /// @brief Destructeur virtuel pour rendre la classe abstraite.
-    virtual ~Utilisateur() = default;
+    virtual ~Utilisateur();
 
     /// @brief Cette méthode permet de récupérer l'identifiant de l'utilisateur.
     /// @return L'identifiant de l'utilisateur.

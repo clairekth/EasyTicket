@@ -9,9 +9,9 @@ Utilisateur::Utilisateur()
 }
 
 Utilisateur::Utilisateur(std::string id, std::string n, std::string p, std::string mdp, std::string email) :
-    id(id), nom(n), prenom(p), mdp(mdp), mail(email)
-{
-}
+    id(id), nom(n), prenom(p), mdp(mdp), mail(email) {}
+
+Utilisateur::~Utilisateur() {}
 
 std::string Utilisateur::getNom() const
 {
