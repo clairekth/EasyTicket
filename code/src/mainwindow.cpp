@@ -12,10 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
     page_login = new PageLogin;
 
     //Insertion des différentes pages
-    stack->insertWidget(PAGE_LOGIN , page_login);
+    stack->insertWidget(LOGIN_PAGE, page_login);
 
     //Set l'index actuelle sur la page de login
-    stack->setCurrentIndex(PAGE_LOGIN);
+    stack->setCurrentIndex(LOGIN_PAGE);
 
 }
 

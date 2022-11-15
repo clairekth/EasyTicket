@@ -31,7 +31,7 @@ SOURCES += \
     src/ingenieur.cpp \
     src/technicien.cpp \
     src/main.cpp \
-    pagelogin.cpp
+    src/pagelogin.cpp
 
 HEADERS += \
     include/systeme.h \
@@ -47,11 +47,11 @@ HEADERS += \
     include/ingenieur.h \
     include/technicien.h \
     include/constantes.h \
-    pagelogin.h
+    include/pagelogin.h
 
 FORMS += \
-    mainwindow.ui \
-    pagelogin.ui
+    forms/mainwindow.ui \
+    forms/pagelogin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
