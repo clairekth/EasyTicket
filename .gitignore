@@ -60,3 +60,5 @@ compile_commands.json
 *.ilg
 *.ind
 *.toc
+*.eps
+*.log
