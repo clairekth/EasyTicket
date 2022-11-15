@@ -1,5 +1,4 @@
 #include "utilisateur.h"
-
 #include <string>
 #include "admin.h"
 #include "client.h"
@@ -10,7 +9,7 @@ Utilisateur::Utilisateur()
 }
 
 Utilisateur::Utilisateur(std::string id_user, std::string n, std::string p, std::string motdepasse, std::string email) :
-    id_user(id_user), nom(n), prenom(p), mdp(motdepasse), mail(email)
+    id(id_user), nom(n), prenom(p), mdp(motdepasse), mail(email)
 {
 }
 
@@ -34,12 +33,12 @@ void Utilisateur::setPrenom(const std::string &value)
     prenom = value;
 }
 
-std::string Utilisateur::getMdp() const
+std::string Utilisateur::getMDP() const
 {
     return mdp;
 }
 
-void Utilisateur::setMdp(const std::string &value)
+void Utilisateur::setMDP(const std::string &value)
 {
     mdp = value;
 }
@@ -54,14 +53,14 @@ void Utilisateur::setMail(const std::string &value)
     mail = value;
 }
 
-std::string Utilisateur::getId_users() const
+std::string Utilisateur::getID() const
 {
-    return id_user;
+    return id;
 }
 
-void Utilisateur::setId_users(const std::string &value)
+void Utilisateur::setID(const std::string &value)
 {
-    id_user = value;
+    id = value;
 }
 
 bool Utilisateur::estUnClient(){

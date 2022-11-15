@@ -25,9 +25,9 @@ void PageLogin::handle_validation()
         idU = idU.trimmed(); //Enlève espaces
         QString mdpU = mdp->text();
         mdpU = mdpU.trimmed();
-        if(idU == "" || mdpU==""){
+        if(idU == "" || mdpU=="") {
                 QMessageBox::warning(this,"PageLogin","Password not correct.");
-        } else{
+        } else {
             QMessageBox::information(this,"PageLogin","Client");
         }
 }

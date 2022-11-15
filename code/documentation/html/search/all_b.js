@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7epersonnel_54',['~Personnel',['../classPersonnel.html#a2ab674db5e14d86bb5671497c13107fa',1,'Personnel']]],
-  ['_7eutilisateur_55',['~Utilisateur',['../classUtilisateur.html#a25cdd20bdeeae356c7aedb9e6d2bf8c1',1,'Utilisateur']]]
+  ['utilisateur_59',['Utilisateur',['../classUtilisateur.html',1,'Utilisateur'],['../classUtilisateur.html#ae76433a6d353c5f5ad0c6a6af64022ad',1,'Utilisateur::Utilisateur()'],['../classUtilisateur.html#a463f7864d33d7fc4236a5cd4072d7dfb',1,'Utilisateur::Utilisateur(std::string id, std::string nom, std::string prenom, std::string mdp, std::string mail)']]]
 ];

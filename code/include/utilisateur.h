@@ -6,48 +6,59 @@
 // #include <ticket.h>
 class Ticket; // forward declaration https://stackoverflow.com/a/8526965
 
-class Utilisateur
-{
-private:
-    std::string id_user;
+/// @brief La classe Utilisateur est une classe abstraite qui permet de décrire l'ensemble des utilisateurs dans l'application EasyTicket.
+///
+/// Elle sert de bloc de base aux autres classes comme Client, Personnel, Admin, Technicien et Ingenieur.
+class Utilisateur {
+protected:
+    /// @brief Champs contenant l'identifiant de l'utilisateur.
+    std::string id;
+    /// @brief Champs contenant le nom de l'utilisateur.
     std::string nom;
+    /// @brief Champs contenant le prénom de l'utilisateur.
     std::string prenom;
+    /// @brief Champs contenant le mot de passe de l'utilisateur.
     std::string mdp;
+    /// @brief Champs contenant l'adresse e-mail de l'utilisateur.
     std::string mail;
+    /// @brief Champs contenant la liste des tickets associée à l'utilisateur.
     std::vector<Ticket*> liste_tickets;
 
 public:
+    /// @brief Constructeur par défaut de la classe.
     Utilisateur();
-    /// @brief  La classe @ref Utilisateur est une classe abstraite qui permet de décrire un Utilisateur dans l'application EasyTicket.
-    /// @param  id_u        L'identifiant de l'utilisateur
-    /// @param  n           Le nom de l'utilisateur
-    /// @param  p           Le prénm de l'utilisateur
-    /// @param  motdepasse  Le mot de passe de l'utilisateur
-    /// @param  email       Le mail de l'utilisateur
-    Utilisateur(
-            std::string id_u,
-            std::string n,
-            std::string p,
-            std::string motdepasse,
-            std::string email);
 
-    /// @brief Déconstructeur virtuel pour rendre la classe
+    /// @brief Constructeur utilisant les données personnelles de l'utilisateur.
+    /// @param  id          L'identifiant de l'utilisateur.
+    /// @param  nom         Le nom de l'utilisateur.
+    /// @param  prenom      Le prénom de l'utilisateur.
+    /// @param  mdp         Le mot de passe de l'utilisateur.
+    /// @param  mail        Le mail de l'utilisateur.
+    Utilisateur(
+            std::string id,
+            std::string nom,
+            std::string prenom,
+            std::string mdp,
+            std::string mail
+    );
+
+    /// @brief Destructeur virtuel pour rendre la classe abstraite.
     virtual ~Utilisateur() = default;
 
     /// @brief Cette méthode permet de récupérer l'identifiant de l'utilisateur.
     /// @return L'identifiant de l'utilisateur.
-    std::string getId_users() const;
+    std::string getID() const;
 
     /// @brief Cette méthode permet de définir l'identifiant de l'utilisateur.
-    /// @param value le nouvel identifiant de l'utilisateur.
-    void setId_users(const std::string &value);
+    /// @param value Le nouvel identifiant de l'utilisateur.
+    void setID(const std::string &value);
 
     /// @brief Cette méthode permet de récupérer le nom de l'utilisateur.
     /// @return Le nom de l'utilisateur.
     std::string getNom() const;
 
     /// @brief Cette méthode permet de définir le nom de l'utilisateur.
-    /// @param value le nouveau nom de l'utilisateur.
+    /// @param value Le nouveau nom de l'utilisateur.
     void setNom(const std::string &value);
 
     /// @brief Cette méthode permet de récupérer le prénom de l'utilisateur.
@@ -60,30 +71,29 @@ public:
 
     /// @brief Cette métode permet de récupérer le mot de passe de l'utilisateur.
     /// @return Le mot de passe de l'utilisateur.
-    std::string getMdp() const;
+    std::string getMDP() const;
 
     /// @brief Cette méthode permet de définir le mot de passe de l'utilisateur.
     /// @param value Le nouveau mot de passe de l'utilisateur.
-    void setMdp(const std::string &value);
+    void setMDP(const std::string &value);
 
     /// @brief Cette méthode permet de récupérer le mail de l'utilisateur.
     /// @return Le mail de l'utilisateur.
     std::string getMail() const;
 
     /// @brief Cette méthode permet de définir le mail de l'utilisateur.
-    /// @param value le mail
+    /// @param value Le nouveau mail de l'utilisateur.
     void setMail(const std::string &value);
 
-
-    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Client
+    /// @brief Cette méthode permet de vérifier si un utilisateur est un Client.
     /// @return false
     bool estUnClient();
 
-    /// @brief  Cette méthode permet de vérifier si le @ref Utilisateur est un @ref Personnel
+    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Personnel.
     /// @return false
     bool estUnPersonnel();
 
-    /// @brief  Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Admin
+    /// @brief Cette méthode permet de vérifier si un utilisateur est un Admin.
     /// @return false
     bool estUnAdmin();
 };

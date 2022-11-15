@@ -79,23 +79,26 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classAdmin.html#a7b21d01e6b55b0d9afb7d44e8e6e2738">Admin</a>();</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classAdmin.html#a7b21d01e6b55b0d9afb7d44e8e6e2738">Admin</a>(</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            std::string id_user,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            std::string nom,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            std::string prenom,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            std::string mdp,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            std::string <span class="keywordtype">id</span>,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            std::string mail);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classAdmin.html#ac21ea8b37a665519520b555b3f61ad82">   25</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classAdmin.html#ac21ea8b37a665519520b555b3f61ad82">estUnAdmin</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ~<a class="code" href="classAdmin.html">Admin</a>() {}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ADMIN_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            std::string <span class="keywordtype">id</span>,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            std::string <a class="code" href="classUtilisateur.html#a04d1879dcf1e157f8606cc97b44b0cf6">nom</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            std::string <a class="code" href="classUtilisateur.html#a7cbd4b405cdff4fed665d74ddca1a61f">prenom</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            std::string <a class="code" href="classUtilisateur.html#a49dcd340777b84cfd397c1249e7521d5">mdp</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            std::string <a class="code" href="classUtilisateur.html#abaabdf27157a48a5fb05be8d02362771">mail</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classAdmin.html#ac21ea8b37a665519520b555b3f61ad82">   24</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classAdmin.html#ac21ea8b37a665519520b555b3f61ad82">estUnAdmin</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ~<a class="code" href="classAdmin.html">Admin</a>() {}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ADMIN_H</span></div>
 <div class="ttc" id="aclassAdmin_html"><div class="ttname"><a href="classAdmin.html">Admin</a></div><div class="ttdef"><b>Definition:</b> admin.h:7</div></div>
 <div class="ttc" id="aclassAdmin_html_a7b21d01e6b55b0d9afb7d44e8e6e2738"><div class="ttname"><a href="classAdmin.html#a7b21d01e6b55b0d9afb7d44e8e6e2738">Admin::Admin</a></div><div class="ttdeci">Admin()</div><div class="ttdoc">La classe Admin permet de décrire un Administrateur dans l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> admin.cpp:3</div></div>
 <div class="ttc" id="aclassAdmin_html_ac21ea8b37a665519520b555b3f61ad82"><div class="ttname"><a href="classAdmin.html#ac21ea8b37a665519520b555b3f61ad82">Admin::estUnAdmin</a></div><div class="ttdeci">bool estUnAdmin()</div><div class="ttdoc">Cette méthode permet de vérifier si un Utilisateur est un Admin.</div></div>
-<div class="ttc" id="aclassUtilisateur_html"><div class="ttname"><a href="classUtilisateur.html">Utilisateur</a></div><div class="ttdef"><b>Definition:</b> utilisateur.h:10</div></div>
+<div class="ttc" id="aclassUtilisateur_html"><div class="ttname"><a href="classUtilisateur.html">Utilisateur</a></div><div class="ttdoc">La classe Utilisateur est une classe abstraite qui permet de décrire l'ensemble des utilisateurs dans...</div><div class="ttdef"><b>Definition:</b> utilisateur.h:12</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a04d1879dcf1e157f8606cc97b44b0cf6"><div class="ttname"><a href="classUtilisateur.html#a04d1879dcf1e157f8606cc97b44b0cf6">Utilisateur::nom</a></div><div class="ttdeci">std::string nom</div><div class="ttdoc">Champs contenant le nom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:17</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a49dcd340777b84cfd397c1249e7521d5"><div class="ttname"><a href="classUtilisateur.html#a49dcd340777b84cfd397c1249e7521d5">Utilisateur::mdp</a></div><div class="ttdeci">std::string mdp</div><div class="ttdoc">Champs contenant le mot de passe de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:21</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a7cbd4b405cdff4fed665d74ddca1a61f"><div class="ttname"><a href="classUtilisateur.html#a7cbd4b405cdff4fed665d74ddca1a61f">Utilisateur::prenom</a></div><div class="ttdeci">std::string prenom</div><div class="ttdoc">Champs contenant le prénom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:19</div></div>
+<div class="ttc" id="aclassUtilisateur_html_abaabdf27157a48a5fb05be8d02362771"><div class="ttname"><a href="classUtilisateur.html#abaabdf27157a48a5fb05be8d02362771">Utilisateur::mail</a></div><div class="ttdeci">std::string mail</div><div class="ttdoc">Champs contenant l'adresse e-mail de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
