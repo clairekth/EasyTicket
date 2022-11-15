@@ -35,11 +35,11 @@ public:
     /// @param  mdp         Le mot de passe de l'utilisateur.
     /// @param  mail        Le mail de l'utilisateur.
     Utilisateur(
-            std::string id,
-            std::string nom,
-            std::string prenom,
-            std::string mdp,
-            std::string mail
+        std::string id,
+        std::string nom,
+        std::string prenom,
+        std::string mdp,
+        std::string mail
     );
 
     /// @brief Destructeur virtuel pour rendre la classe abstraite.

@@ -12,12 +12,13 @@ public:
     /// @param  prenom  le prenom de l'administrateur
     /// @param  mail    le mail de l'administrateur
     Admin();
-    Admin(
-            std::string id,
-            std::string nom,
-            std::string prenom,
-            std::string mdp,
-            std::string mail);
+    Admin (
+        std::string id,
+        std::string nom,
+        std::string prenom,
+        std::string mdp,
+        std::string mail
+    );
 
     /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Admin
     /// @return true
