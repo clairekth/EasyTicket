@@ -17,3 +17,7 @@ Technicien::Technicien(
 {
     this->categories= liste_categorie;
 }
+
+bool Technicien::estUnTechnicien(){
+    return true;
+}

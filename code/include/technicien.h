@@ -28,6 +28,11 @@ public:
             std::string motdepasse,
             std::string email,
             std::vector<Categorie*> liste_categories);
+
+    /// @brief Cette méthode permet de vérifier si un @ref Personnel est un @ref Technicien
+    /// @return true
+    bool estUnTechnicien();
+
 };
 
 #endif // TECHNICIEN_H

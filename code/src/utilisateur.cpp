@@ -64,14 +64,14 @@ void Utilisateur::setId_users(const std::string &value)
     id_user = value;
 }
 
-bool Utilisateur::estUnClient(Utilisateur *utilisateur){
-    return dynamic_cast<Client*>(utilisateur) != nullptr;
+bool Utilisateur::estUnClient(){
+    return false;
 }
 
-bool Utilisateur::estUnAdmin(Utilisateur *utilisateur){
-    return dynamic_cast<Admin*>(utilisateur) != nullptr;
+bool Utilisateur::estUnAdmin(){
+    return false;
 }
 
-bool Utilisateur::estUnPersonnel(Utilisateur *utilisateur){
-    return dynamic_cast<Personnel*>(utilisateur) != nullptr;
+bool Utilisateur::estUnPersonnel(){
+    return false;
 }

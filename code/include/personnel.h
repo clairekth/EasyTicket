@@ -23,13 +23,17 @@ public:
     /// @brief Déconstructeur virtuel pour rendre la classe Personnel abstraite
     virtual ~Personnel() = default;
 
+    /// @brief  Cette méthode permet de vérifier si le @ref Utilisateur est un @ref Personnel
+    /// @return true
+    bool estUnPersonnel();
+
     /// @brief  Cette méthode permet de vérifier si le @ref Personnel est un @ref Personnel
-    /// @return ???
-    bool estUnIngenieur(Personnel *personnel);
+    /// @return false
+    bool estUnIngenieur();
 
     /// @brief Cette méthode permet de vérifier si un @ref Personnel est un @ref Technicien
-    /// @return ???
-    bool estUnTechnicien(Personnel *personnel);
+    /// @return false
+    bool estUnTechnicien();
 };
 
 #endif // PERSONNEL_H

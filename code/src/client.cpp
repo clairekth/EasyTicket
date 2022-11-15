@@ -14,3 +14,7 @@ Client::Client(
 {
 
 }
+
+bool Client::estUnClient(){
+    return true;
+}

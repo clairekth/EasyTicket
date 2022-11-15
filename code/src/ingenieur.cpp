@@ -4,3 +4,8 @@ Ingenieur::Ingenieur()
 {
 
 }
+
+
+bool Ingenieur::estUnIngenieur() {
+    return true;
+}

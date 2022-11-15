@@ -20,7 +20,7 @@ public:
             std::string id,
             std::string mail);
 
-    /// @brief Cette méthode permet de savoir si un utilisateur est un @ref Admin ou non
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Admin
     /// @return true
     bool estUnAdmin();
 

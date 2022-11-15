@@ -75,17 +75,17 @@ public:
     void setMail(const std::string &value);
 
 
-    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un client
-    /// @return ???
-    bool estUnClient(Utilisateur *utilisateur);
+    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Client
+    /// @return false
+    bool estUnClient();
 
     /// @brief  Cette méthode permet de vérifier si le @ref Utilisateur est un @ref Personnel
-    /// @return ???
-    bool estUnPersonnel(Utilisateur *utilisateur);
+    /// @return false
+    bool estUnPersonnel();
 
-    /// @brief  Cette méthode permet de vérifier si un @ref Utilisateur est un admin
-    /// @return ???
-    bool estUnAdmin(Utilisateur *utilisateur);
+    /// @brief  Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Admin
+    /// @return false
+    bool estUnAdmin();
 };
 
 #endif // UTILISATEUR_H

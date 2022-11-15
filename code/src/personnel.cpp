@@ -18,10 +18,14 @@ Personnel::Personnel(
 
 }
 
-bool Personnel::estUnIngenieur(Personnel *personnel) {
-    return dynamic_cast<Ingenieur*>(personnel) != nullptr;
+bool Personnel::estUnIngenieur() {
+    return false;
 }
 
-bool Personnel::estUnTechnicien(Personnel *personnel) {
-    return dynamic_cast<Technicien*>(personnel) != nullptr;
+bool Personnel::estUnTechnicien() {
+    return false;
+}
+
+bool Personnel::estUnPersonnel() {
+    return true;
 }
