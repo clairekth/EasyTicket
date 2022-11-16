@@ -6,6 +6,8 @@
 /// @brief La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des Utilisateur appartenant au personnel dans l'application EasyTicket.
 ///
 /// Elle sert de classe mère aux autres classes comme Ingenieur et Technicien.
+/// @authors Claire Kurth, Nicolas Robert, Victor Dallé
+/// @version 1.1
 class Personnel : public Utilisateur {
 public:
     /// @brief Constructeur par défaut de la classe.
