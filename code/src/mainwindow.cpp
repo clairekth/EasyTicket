@@ -1,9 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-<<<<<<< HEAD
-=======
-#include "include/constantes.h"
->>>>>>> 6659fb35b76d3156d828a44ed8fad442682fca6d
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
