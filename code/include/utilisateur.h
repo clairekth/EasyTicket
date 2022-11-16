@@ -85,23 +85,23 @@ public:
     /// @param value Le nouveau mail de l'utilisateur.
     void setMail(const std::string &value);
 
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Client.
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Client.
     /// @return false
     bool estUnClient();
 
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Personnel.
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Personnel.
     /// @return false
     bool estUnPersonnel();
 
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Admin.
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Admin.
     /// @return false
     bool estUnAdmin();
 
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Technicien.
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Technicien.
     /// @return false
     bool estUnTechnicien();
 
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Ingenieur.
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Ingenieur.
     /// @return false
     bool estUnIngenieur();
 };

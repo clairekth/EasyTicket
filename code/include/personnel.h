@@ -3,7 +3,7 @@
 
 #include "utilisateur.h"
 
-/// @brief La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des utilisateurs de la catégorie personnel dans l'application EasyTicket.
+/// @brief La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des Utilisateur appartenant au personnel dans l'application EasyTicket.
 ///
 /// Elle sert de classe mère aux autres classes comme Ingenieur et Technicien.
 class Personnel : public Utilisateur {
@@ -28,7 +28,7 @@ public:
     /// @brief Destructeur virtuel pour rendre la classe Personnel abstraite.
     virtual ~Personnel();
 
-    /// @brief  Cette méthode permet de vérifier si l'utilisateur est un Personnel.
+    /// @brief  Cette méthode permet de vérifier si l'Utilisateur est un Personnel.
     /// @return true
     bool estUnPersonnel();
 };

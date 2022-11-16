@@ -36,7 +36,7 @@ public:
     /// @brief Destructeur de la classe.
     ~Technicien();
 
-    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un technicien.
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Technicien.
     /// @return true
     bool estUnTechnicien();
 

@@ -26,7 +26,7 @@ public:
     /// @brief Destructeur de la classe.
     ~Admin();
 
-    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Admin.
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Admin.
     /// @return true
     bool estUnAdmin();
 };
