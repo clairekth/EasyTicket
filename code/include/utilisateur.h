@@ -8,7 +8,7 @@ class Ticket; // forward declaration https://stackoverflow.com/a/8526965
 
 /// @brief La classe Utilisateur est une classe abstraite qui permet de décrire l'ensemble des utilisateurs dans l'application EasyTicket.
 ///
-/// Elle sert de bloc de base aux autres classes comme Client, Personnel, Admin, Technicien et Ingenieur.
+/// Elle sert de classe mère aux autres classes comme Client, Personnel et Admin.
 class Utilisateur {
 protected:
     /// @brief Champs contenant l'identifiant de l'utilisateur.
@@ -29,12 +29,12 @@ public:
     Utilisateur();
 
     /// @brief Constructeur utilisant les données personnelles de l'utilisateur.
-    /// @param  id          L'identifiant de l'utilisateur.
-    /// @param  nom         Le nom de l'utilisateur.
-    /// @param  prenom      Le prénom de l'utilisateur.
-    /// @param  mdp         Le mot de passe de l'utilisateur.
-    /// @param  mail        Le mail de l'utilisateur.
-    Utilisateur(
+    /// @param id          L'identifiant de l'utilisateur.
+    /// @param nom         Le nom de l'utilisateur.
+    /// @param prenom      Le prénom de l'utilisateur.
+    /// @param mdp         Le mot de passe de l'utilisateur.
+    /// @param mail        Le mail de l'utilisateur.
+    Utilisateur (
         std::string id,
         std::string nom,
         std::string prenom,
@@ -96,6 +96,14 @@ public:
     /// @brief Cette méthode permet de vérifier si un utilisateur est un Admin.
     /// @return false
     bool estUnAdmin();
+
+    /// @brief Cette méthode permet de vérifier si un utilisateur est un Technicien.
+    /// @return false
+    bool estUnTechnicien();
+
+    /// @brief Cette méthode permet de vérifier si un utilisateur est un Ingenieur.
+    /// @return false
+    bool estUnIngenieur();
 };
 
 #endif // UTILISATEUR_H

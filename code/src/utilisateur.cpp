@@ -63,14 +63,22 @@ void Utilisateur::setID(const std::string &value)
     id = value;
 }
 
-bool Utilisateur::estUnClient(){
+bool Utilisateur::estUnClient() {
     return false;
 }
 
-bool Utilisateur::estUnAdmin(){
+bool Utilisateur::estUnAdmin() {
     return false;
 }
 
-bool Utilisateur::estUnPersonnel(){
+bool Utilisateur::estUnPersonnel() {
+    return false;
+}
+
+bool Utilisateur::estUnIngenieur() {
+    return false;
+}
+
+bool Utilisateur::estUnTechnicien() {
     return false;
 }

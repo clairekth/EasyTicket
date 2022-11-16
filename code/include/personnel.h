@@ -3,37 +3,34 @@
 
 #include "utilisateur.h"
 
-class Personnel : public Utilisateur
-{
+/// @brief La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des utilisateurs de la catégorie personnel dans l'application EasyTicket.
+///
+/// Elle sert de classe mère aux autres classes comme Ingenieur et Technicien.
+class Personnel : public Utilisateur {
 public:
+    /// @brief Constructeur par défaut de la classe.
     Personnel();
 
-    /// @brief La classe @ref Personnel permet de décrire un membre du personnel dans l'application EasyTicket
-    /// @param  id_u    l'identifiant du personnel
-    /// @param  n       le nom du personnel
-    /// @param  p       le prénom du personnel
-    /// @param  email   l'email du personnel
-    Personnel(
-            std::string id_u,
-            std::string n,
-            std::string p,
-            std::string motdepasse,
-            std::string email);
+    /// @brief Constructeur utilisant les données personnelles du personnel.
+    /// @param id          L'identifiant du personnel.
+    /// @param nom         Le nom du personnel.
+    /// @param prenom      Le prénom du personnel.
+    /// @param mdp         Le mot de passe du personnel.
+    /// @param mail        Le mail du personnel.
+    Personnel (
+        std::string id,
+        std::string nom,
+        std::string prenom,
+        std::string mdp,
+        std::string mail
+    );
 
-    /// @brief Déconstructeur virtuel pour rendre la classe Personnel abstraite
-    virtual ~Personnel() = default;
+    /// @brief Destructeur virtuel pour rendre la classe Personnel abstraite.
+    virtual ~Personnel();
 
-    /// @brief  Cette méthode permet de vérifier si le @ref Utilisateur est un @ref Personnel
+    /// @brief  Cette méthode permet de vérifier si l'utilisateur est un Personnel.
     /// @return true
     bool estUnPersonnel();
-
-    /// @brief  Cette méthode permet de vérifier si le @ref Personnel est un @ref Personnel
-    /// @return false
-    bool estUnIngenieur();
-
-    /// @brief Cette méthode permet de vérifier si un @ref Personnel est un @ref Technicien
-    /// @return false
-    bool estUnTechnicien();
 };
 
 #endif // PERSONNEL_H
