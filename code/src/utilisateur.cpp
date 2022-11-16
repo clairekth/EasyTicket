@@ -79,6 +79,16 @@ bool Utilisateur::estUnIngenieur() {
     return false;
 }
 
+std::string Utilisateur::toString()
+{
+    return "Utilisateur = {\n\
+            \tid: '" + id + "',\n\
+            \tnom: '" + nom + "'\n\
+            \tprenom: '" + prenom + "'\n\
+            \tmdp: '" + mdp + "'\n\
+            \tmail: '" + mail + "'\n}";
+}
+
 bool Utilisateur::estUnTechnicien() {
     return false;
 }

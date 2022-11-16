@@ -104,6 +104,9 @@ public:
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Ingenieur.
     /// @return false
     bool estUnIngenieur();
+
+    /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
+    std::string toString();
 };
 
 #endif // UTILISATEUR_H

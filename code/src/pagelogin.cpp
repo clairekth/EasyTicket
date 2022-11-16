@@ -1,5 +1,6 @@
 #include "pagelogin.h"
 #include "ui_pagelogin.h"
+#include "client.h"
 #include <QMessageBox>
 
 PageLogin::PageLogin(QWidget *parent) :
@@ -22,12 +23,13 @@ PageLogin::~PageLogin()
 void PageLogin::handle_validation()
 {
     QString idU = id->text();
-        idU = idU.trimmed(); //Enlève espaces
-        QString mdpU = mdp->text();
-        mdpU = mdpU.trimmed();
-        if(idU == "" || mdpU=="") {
-                QMessageBox::warning(this,"PageLogin","Password not correct.");
-        } else {
-            QMessageBox::information(this,"PageLogin","Client");
-        }
+    idU = idU.trimmed(); //Enlève espaces
+    QString mdpU = mdp->text();
+    mdpU = mdpU.trimmed();
+    if(idU == "" || mdpU == "") {
+        QMessageBox::warning(this,"PageLogin","Identifiant ou mot de passe incorrect.");
+    } else {
+        Client client1 = Client(idU.toLower().toStdString(), "Vous", "Même", mdpU.toStdString(), idU.toLower().toStdString() + "@easyticket.fr");
+        QMessageBox::information(this,"Interface Client",QString::fromStdString(client1.toString()));
+    }
 }
