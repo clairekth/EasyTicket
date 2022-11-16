@@ -6,30 +6,37 @@
 #include "personnel.h"
 #include "categorie.h"
 
+/// @brief La classe Technicien permet de décrire un utilisateur appartenant au Personnel avec les droits technicien sur le programme EasyTicket.
 class Technicien : public Personnel
 {
 private :
+    /// @brief Catégories maitrisées par le technicien.
     std::vector<Categorie*> categories;
 
 public:
+    /// @brief Constructeur par défaut de la classe.
     Technicien();
 
-    /// @brief Cette classe permet de décrire un @ref Technicien dans l'application EasyTicket
-    /// @param  id_u                l'identifiant du technicien
-    /// @param  n                   le nom du technicien
-    /// @param  p                   le prénom du technicien
-    /// @param  motdepasse          le mot de passe du technicien
-    /// @param  mail                le mail du technicien
-    /// @param  liste_categories    la liste des catégories que peut traiter le technicien
-    Technicien(
-            std::string id_u,
-            std::string n,
-            std::string p,
-            std::string motdepasse,
-            std::string email,
-            std::vector<Categorie*> liste_categories);
+    /// @brief Constructeur utilisant les données personnelles du technicien.
+    /// @param id          L'identifiant du technicien.
+    /// @param nom         Le nom du technicien.
+    /// @param prenom      Le prénom du technicien.
+    /// @param mdp         Le mot de passe du technicien.
+    /// @param mail        Le mail du technicien.
+    /// @param categories  La liste de catégories maitrisées par le technicien.
+    Technicien (
+        std::string id,
+        std::string nom,
+        std::string prenom,
+        std::string mdp,
+        std::string mail,
+        std::vector<Categorie*> categories
+    );
 
-    /// @brief Cette méthode permet de vérifier si un @ref Personnel est un @ref Technicien
+    /// @brief Destructeur de la classe.
+    ~Technicien();
+
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un technicien.
     /// @return true
     bool estUnTechnicien();
 
