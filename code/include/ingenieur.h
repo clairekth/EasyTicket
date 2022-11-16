@@ -3,25 +3,30 @@
 
 #include "personnel.h"
 
-class Ingenieur : public Personnel
-{
+/// @brief La classe Ingenieur permet de décrire un utilisateur appartenant au Personnel avec les droits ingénieur sur le programme EasyTicket.
+class Ingenieur : public Personnel {
 public:
+    /// @brief Constructeur par défaut de la classe.
     Ingenieur();
 
-    /// @brief La classe @ref Ingenieur permet de décrire un ingénieur dans l'application EasyTicket
-    /// @param  id_u        l'identifiant de l'ingénieur
-    /// @param  n           le nom de l'ingénieur
-    /// @param  p           le prénom de l'ingénieur
-    /// @param  motdepasse  le mot de passe de l'ingénieur
-    /// @param  email       l'email de l'ingénieur
-    Ingenieur(
-            std::string id_u,
-            std::string n,
-            std::string p,
-            std::string motdepasse,
-            std::string email);
+    /// @brief Constructeur utilisant les données personnelles de l'ingénieur.
+    /// @param id          L'identifiant de l'ingénieur.
+    /// @param nom         Le nom de l'ingénieur.
+    /// @param prenom      Le prénom de l'ingénieur.
+    /// @param mdp         Le mot de passe de l'ingénieur.
+    /// @param mail        Le mail de l'ingénieur.
+    Ingenieur (
+        std::string id,
+        std::string nom,
+        std::string prenom,
+        std::string mdp,
+        std::string mail
+    );
 
-    /// @brief Cette méthode permet de vérifier si un @ref Personnel est un @ref Ingénieur
+    /// @brief Destructeur de la classe.
+    ~Ingenieur();
+
+    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Ingénieur.
     /// @return true
     bool estUnIngenieur();
 };
