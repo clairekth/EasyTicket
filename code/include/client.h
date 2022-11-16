@@ -3,25 +3,30 @@
 
 #include "utilisateur.h"
 
-class Client : public Utilisateur
-{
+/// @brief La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket.
+class Client : public Utilisateur {
 public:
+    /// @brief Constructeur par défaut de la classe.
     Client();
-    /// @brief  La classe @ref Client permet de décrire un Client dans l'application EasyTicket.
-    /// @param  id_u        L'identifiant de l'utilisateur
-    /// @param  n           Le nom de l'utilisateur
-    /// @param  p           Le prénm de l'utilisateur
-    /// @param  motdepasse  Le mot de passe de l'utilisateur
-    /// @param  email       Le mail de l'utilisateur
-    Client(
-            std::string id_u,
-            std::string n,
-            std::string p,
-            std::string motdepasse,
-            std::string email);
-    ~Client() {}
 
-    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Client
+    /// @brief Constructeur utilisant les données personnelles du client.
+    /// @param id          L'identifiant du client.
+    /// @param nom         Le nom du client.
+    /// @param prenom      Le prénom du client.
+    /// @param mdp         Le mot de passe du client.
+    /// @param mail        Le mail du client.
+    Client(
+        std::string id,
+        std::string nom,
+        std::string prenom,
+        std::string mdp,
+        std::string mail
+    );
+
+    /// @brief Destructeur de la classe.
+    ~Client();
+
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Client.
     /// @return true
     bool estUnClient();
 };

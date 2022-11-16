@@ -1,20 +1,15 @@
 #include "client.h"
 
-Client::Client()
-{
+Client::Client() {}
+
+Client::Client(std::string id, std::string nom, std::string prenom, std::string mdp, std::string mail) :
+    Utilisateur(id, nom, prenom, mdp, mail) {
 }
 
-Client::Client(
-        std::string id_u,
-        std::string n,
-        std::string p,
-        std::string motdepasse,
-        std::string email) :
-    Utilisateur(id_u,n,p,motdepasse,email)
-{
+Client::~Client() {}
 
-}
 
-bool Client::estUnClient(){
+
+bool Client::estUnClient() {
     return true;
 }

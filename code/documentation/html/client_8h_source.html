@@ -74,25 +74,33 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;utilisateur.h&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classClient.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classClient.html">Client</a> : <span class="keyword">public</span> <a class="code" href="classUtilisateur.html">Utilisateur</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classClient.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classClient.html">Client</a> : <span class="keyword">public</span> <a class="code" href="classUtilisateur.html">Utilisateur</a> {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classClient.html">Client</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classClient.html">Client</a>(</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            std::string id_u,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            std::string n,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            std::string p,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            std::string motdepasse,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            std::string email);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ~<a class="code" href="classClient.html">Client</a>() {}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classClient.html#ad8ed8aa77481689155922d48fefd94d9">estUnClient</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classClient.html#ae51af7aa6b8f591496a8f6a4a87a14bf">Client</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classClient.html#ae51af7aa6b8f591496a8f6a4a87a14bf">Client</a>(</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        std::string <span class="keywordtype">id</span>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::string <a class="code" href="classUtilisateur.html#a04d1879dcf1e157f8606cc97b44b0cf6">nom</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::string <a class="code" href="classUtilisateur.html#a7cbd4b405cdff4fed665d74ddca1a61f">prenom</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string <a class="code" href="classUtilisateur.html#a49dcd340777b84cfd397c1249e7521d5">mdp</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::string <a class="code" href="classUtilisateur.html#abaabdf27157a48a5fb05be8d02362771">mail</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">~Client</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CLIENT_H</span></div>
-<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> client.h:7</div></div>
-<div class="ttc" id="aclassClient_html_ad8ed8aa77481689155922d48fefd94d9"><div class="ttname"><a href="classClient.html#ad8ed8aa77481689155922d48fefd94d9">Client::estUnClient</a></div><div class="ttdeci">bool estUnClient()</div><div class="ttdoc">Cette méthode permet de vérifier si un Utilisateur est un Client.</div><div class="ttdef"><b>Definition:</b> client.cpp:18</div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classClient.html#ad8ed8aa77481689155922d48fefd94d9">estUnClient</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CLIENT_H</span></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdoc">La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket...</div><div class="ttdef"><b>Definition:</b> client.h:7</div></div>
+<div class="ttc" id="aclassClient_html_a840e519ca781888cbd54181572ebe3a7"><div class="ttname"><a href="classClient.html#a840e519ca781888cbd54181572ebe3a7">Client::~Client</a></div><div class="ttdeci">~Client()</div><div class="ttdoc">Destructeur de la classe.</div><div class="ttdef"><b>Definition:</b> client.cpp:9</div></div>
+<div class="ttc" id="aclassClient_html_ad8ed8aa77481689155922d48fefd94d9"><div class="ttname"><a href="classClient.html#ad8ed8aa77481689155922d48fefd94d9">Client::estUnClient</a></div><div class="ttdeci">bool estUnClient()</div><div class="ttdoc">Cette méthode permet de vérifier si l'Utilisateur est un Client.</div><div class="ttdef"><b>Definition:</b> client.cpp:13</div></div>
+<div class="ttc" id="aclassClient_html_ae51af7aa6b8f591496a8f6a4a87a14bf"><div class="ttname"><a href="classClient.html#ae51af7aa6b8f591496a8f6a4a87a14bf">Client::Client</a></div><div class="ttdeci">Client()</div><div class="ttdoc">Constructeur par défaut de la classe.</div><div class="ttdef"><b>Definition:</b> client.cpp:3</div></div>
 <div class="ttc" id="aclassUtilisateur_html"><div class="ttname"><a href="classUtilisateur.html">Utilisateur</a></div><div class="ttdoc">La classe Utilisateur est une classe abstraite qui permet de décrire l'ensemble des utilisateurs dans...</div><div class="ttdef"><b>Definition:</b> utilisateur.h:12</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a04d1879dcf1e157f8606cc97b44b0cf6"><div class="ttname"><a href="classUtilisateur.html#a04d1879dcf1e157f8606cc97b44b0cf6">Utilisateur::nom</a></div><div class="ttdeci">std::string nom</div><div class="ttdoc">Champs contenant le nom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:17</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a49dcd340777b84cfd397c1249e7521d5"><div class="ttname"><a href="classUtilisateur.html#a49dcd340777b84cfd397c1249e7521d5">Utilisateur::mdp</a></div><div class="ttdeci">std::string mdp</div><div class="ttdoc">Champs contenant le mot de passe de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:21</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a7cbd4b405cdff4fed665d74ddca1a61f"><div class="ttname"><a href="classUtilisateur.html#a7cbd4b405cdff4fed665d74ddca1a61f">Utilisateur::prenom</a></div><div class="ttdeci">std::string prenom</div><div class="ttdoc">Champs contenant le prénom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:19</div></div>
+<div class="ttc" id="aclassUtilisateur_html_abaabdf27157a48a5fb05be8d02362771"><div class="ttname"><a href="classUtilisateur.html#abaabdf27157a48a5fb05be8d02362771">Utilisateur::mail</a></div><div class="ttdeci">std::string mail</div><div class="ttdoc">Champs contenant l'adresse e-mail de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
