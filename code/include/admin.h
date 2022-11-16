@@ -3,16 +3,18 @@
 
 #include "utilisateur.h"
 
-class Admin : public Utilisateur
-{
+/// @brief La classe Admin permet de décrire un utilisateur avec les droits administrateurs sur le programme EasyTicket.
+class Admin : public Utilisateur {
 public:
-    /// @brief La classe @ref Admin permet de décrire un Administrateur dans l'application EasyTicket
-    /// @param  id l'identifiant de l'administrateur
-    /// @param  nom     le nom de l'administrateur
-    /// @param  prenom  le prenom de l'administrateur
-    /// @param  mail    le mail de l'administrateur
+    /// @brief Constructeur par défaut de la classe.
     Admin();
 
+    /// @brief Constructeur utilisant les données personnelles de l'admin.
+    /// @param id          L'identifiant de l'admin.
+    /// @param nom         Le nom de l'admin.
+    /// @param prenom      Le prénom de l'admin.
+    /// @param mdp         Le mot de passe de l'admin.
+    /// @param mail        Le mail de l'admin.
     Admin (
         std::string id,
         std::string nom,
@@ -21,11 +23,12 @@ public:
         std::string mail
     );
 
-    /// @brief Cette méthode permet de vérifier si un @ref Utilisateur est un @ref Admin
+    /// @brief Destructeur de la classe.
+    ~Admin();
+
+    /// @brief Cette méthode permet de vérifier si l'utilisateur est un Admin.
     /// @return true
     bool estUnAdmin();
-
-    ~Admin();
 };
 
 #endif // ADMIN_H

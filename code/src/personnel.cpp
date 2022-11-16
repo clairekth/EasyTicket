@@ -8,8 +8,8 @@ Personnel::Personnel()
 {
 }
 
-Personnel::Personnel(std::string id, std::string n, std::string p, std::string mdp, std::string email) :
-    Utilisateur(id,n,p,mdp,email) {
+Personnel::Personnel(std::string id, std::string nom, std::string prenom, std::string mdp, std::string mail) :
+    Utilisateur(id,nom,prenom,mdp,mail) {
 }
 
 Personnel::~Personnel() {}
