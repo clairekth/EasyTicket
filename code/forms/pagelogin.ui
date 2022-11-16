@@ -56,7 +56,7 @@
          <string>Mot de passe</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="valider_boutton">
+       <widget class="QPushButton" name="valider_bouton">
         <property name="geometry">
          <rect>
           <x>170</x>

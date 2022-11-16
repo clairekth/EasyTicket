@@ -8,10 +8,10 @@ PageLogin::PageLogin(QWidget *parent) :
     ui(new Ui::PageLogin)
 {
     ui->setupUi(this);
-    validation_boutton = ui->valider_boutton;
+    validation_bouton = ui->valider_bouton;
     id = ui->identifiant;
     mdp = ui->password;
-    connect(validation_boutton, &QPushButton::clicked,this,&PageLogin::handle_validation);
+    connect(validation_bouton, &QPushButton::clicked,this,&PageLogin::handle_validation);
 
 }
 
