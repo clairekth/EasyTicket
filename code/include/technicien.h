@@ -7,6 +7,8 @@
 #include "categorie.h"
 
 /// @brief La classe Technicien permet de décrire un utilisateur appartenant au Personnel avec les droits technicien sur le programme EasyTicket.
+/// @authors Claire Kurth, Nicolas Robert, Victor Dallé
+/// @version 1.1
 class Technicien : public Personnel
 {
 private :

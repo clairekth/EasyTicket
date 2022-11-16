@@ -4,6 +4,8 @@
 #include "personnel.h"
 
 /// @brief La classe Ingenieur permet de décrire un utilisateur appartenant au Personnel avec les droits ingénieur sur le programme EasyTicket.
+/// @authors Claire Kurth, Nicolas Robert, Victor Dallé
+/// @version 1.1
 class Ingenieur : public Personnel {
 public:
     /// @brief Constructeur par défaut de la classe.

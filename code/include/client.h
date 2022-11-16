@@ -4,6 +4,8 @@
 #include "utilisateur.h"
 
 /// @brief La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket.
+/// @authors Claire Kurth, Nicolas Robert, Victor Dallé
+/// @version 1.1
 class Client : public Utilisateur {
 public:
     /// @brief Constructeur par défaut de la classe.

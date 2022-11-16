@@ -9,6 +9,8 @@ class Ticket; // forward declaration https://stackoverflow.com/a/8526965
 /// @brief La classe Utilisateur est une classe abstraite qui permet de décrire l'ensemble des utilisateurs dans l'application EasyTicket.
 ///
 /// Elle sert de classe mère aux autres classes comme Client, Personnel et Admin.
+/// @authors Claire Kurth, Nicolas Robert, Victor Dallé
+/// @version 1.1
 class Utilisateur {
 protected:
     /// @brief Champs contenant l'identifiant de l'utilisateur.

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QStackedWidget>
 #include "pagelogin.h"
+#include "constantes.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
