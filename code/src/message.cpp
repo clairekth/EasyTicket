@@ -1,6 +1,12 @@
 #include "message.h"
 #include "ticket.h"
 
+
+Message::Message(std::string id_message, double date_envoie, Utilisateur *user, Ticket *ticket):
+    id_message(id_message), date_envoie(date_envoie), user(user), ticket(ticket)
+{}
+
+
 Ticket* Message::getTicket() const
 {
     return ticket;

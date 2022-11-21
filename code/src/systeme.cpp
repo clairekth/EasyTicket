@@ -2,8 +2,11 @@
 
 Systeme::Systeme()
 {
-
 }
+
+Systeme::Systeme(std::string id_systeme, std::string nom) :
+    id_systeme(id_systeme), nom(nom)
+{}
 
 std::string Systeme::getNom() const
 {

@@ -7,3 +7,7 @@ Admin::Admin(std::string id, std::string nom, std::string prenom, std::string md
 }
 
 Admin::~Admin() {}
+
+bool Admin::estUnAdmin(){
+    return true;
+}

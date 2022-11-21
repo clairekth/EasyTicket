@@ -21,7 +21,7 @@ private:
 public:
     Message();
     /// @brief Le constructeur par défaut
-    Message(std::string id_message, double date_envoie, Utilisateur user, Ticket ticket);
+    Message(std::string id_message, double date_envoie, Utilisateur *user, Ticket *ticket);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du message.
     /// @return l'identifiant du message
