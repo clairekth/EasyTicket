@@ -4,23 +4,32 @@
 // pour les affichages
 #include <iostream>
 #include "utilisateur.h"
-// #include "ticket.h"
 class Ticket;
 
+/// @brief La classe Message est la classe correspondant à un Message sur un Ticket.
+/// @authors Nicolas Robert, Victor Dallé, Claire Kurth
+/// @version 1.1
 class Message
 {
-    /** @brief La classe Message est la qui gère les messages de l'application
-     ** Elle contient x méthodes @ref getId_Message()
-     ** @version 1.0
-     **/
 private:
+    /// @brief Champs contenant l'id du message.
     std::string id_message;
+    /// @brief Champs contenant la date d'envoie du message.
     double date_envoie;
+    /// @brief Champs contenant l'Utilisateur auteur du message.
     Utilisateur *user;
+    /// @brief Champs contenant le Ticket auquel est rattaché le message.
     Ticket *ticket;
+
 public:
+    /// @brief Le constructeur par défaut de la classe.
     Message();
-    /// @brief Le constructeur par défaut
+
+    /// @brief Constructeur de message.
+    /// @param id_message   L'id du message.
+    /// @param date_envoie  La date d'envoie du message.
+    /// @param *user        Pointeur sur l'Utilisateur à l'origine du message.
+    /// @param *ticket      Pointeur sur le Ticket rattaché au message.
     Message(std::string id_message, double date_envoie, Utilisateur *user, Ticket *ticket);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du message.
@@ -55,6 +64,7 @@ public:
     /// @param  value   le nouveau @ref Ticket
     void setTicket(Ticket* &value);
 
+    /// @brief Descructeur de la classe.
     ~Message() {}
 }; // fin de la classe Message
 

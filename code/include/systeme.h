@@ -3,14 +3,22 @@
 
 #include <string>
 
+/// @brief La classe Systeme permet de décrire un système d'exploitation dans l'application EasyTicket.
+/// @authors Nicolas Robert, Victor Dallé, Claire Kurth
+/// @version 1.1
 class Systeme
 {
 private:
+    /// @brief Champs contenant l'id du Système.
     std::string id_systeme;
+    /// @brief Champs contenant le nom du Système.
     std::string nom;
+
 public:
+    /// @brief Constructeur par défaut.
     Systeme();
-    /// @brief La classe @ref Systeme permet de décrire un système d'exploitation dans l'application EasyTicket.
+
+    /// @brief  Constructeur de la classe Systeme.
     /// @param  id_systeme  L'identifiant du système d'exploitation
     /// @param  nom         Le nom du système d'exploitation
     Systeme(

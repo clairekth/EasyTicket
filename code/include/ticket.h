@@ -2,33 +2,46 @@
 #define TICKET_H
 
 #include <vector>
-
 #include "systeme.h"
 #include "logiciel.h"
 #include "client.h"
 #include "personnel.h"
 #include "message.h"
 
+/// @brief La classe Ticket permet de décrire un ticket dans l'application EasyTicket.
+/// @authors Nicolas Robert, Victor Dallé, Claire Kurth
+/// @version 1.1
+
 class Ticket
 {
 private:
+    /// @brief Champs contenant l'id du Ticket.
     std::string id_ticket;
+    /// @brief Champs contenant la date de création du Ticket.
     double date_creation;
+    /// @brief Champs contenant la date de fermeture du Ticket.
     double date_fermeture;
+    /// @brief Champs contenant le Systeme d'exploitation du Client auteur du Ticket.
     Systeme systeme;
+    /// @brief Champs contenant le Logiciel sur lequel il y a un problème.
     Logiciel logiciel;
+    /// @brief Champs contenant la liste des Messages du Ticket.
     std::vector<Message*> liste_messages;
+    /// @brief Champs contenant le Client à l'origine du Ticket.
     Client client;
+    /// @brief Champs contenant le Personnel attitré à la résolution du Ticket.
     Personnel personnel;
 
 public:
+    /// @brief Constructeur par défaut.
     Ticket();
-    /// @brief la classe @ref Ticket permet de décrire un ticket dans l'application EasyTicket.
+
+    /// @brief  Constructeur de la classe Ticket.
     /// @param  id_ticket       l'identifiant du ticket
     /// @param  date_creation   la date de création du ticket
-    /// @param  systeme         le @ref Systeme concerné par le ticket
-    /// @param  logiciel        le @ref Logiciel concerné par le ticket
-    /// @param  auteur          le @ref Client auteur du ticket
+    /// @param  systeme         le Systeme concerné par le ticket
+    /// @param  logiciel        le Logiciel concerné par le ticket
+    /// @param  auteur          le Client auteur du ticket
     Ticket(
             std::string id_ticket,
             double date_creation,
@@ -100,6 +113,7 @@ public:
     /// @return le @ref Personel traitant le @ref Ticket
     Personnel getPersonnel();
 
+    /// @brief Destructeur.
     ~Ticket() {}
 };
 
