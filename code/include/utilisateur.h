@@ -89,23 +89,23 @@ public:
 
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Client.
     /// @return false
-    bool estUnClient();
+    virtual bool estUnClient();
 
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Personnel.
     /// @return false
-    bool estUnPersonnel();
+    virtual bool estUnPersonnel();
 
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Admin.
     /// @return false
-    bool estUnAdmin();
+    virtual bool estUnAdmin();
 
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Technicien.
     /// @return false
-    bool estUnTechnicien();
+    virtual bool estUnTechnicien();
 
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Ingenieur.
     /// @return false
-    bool estUnIngenieur();
+    virtual bool estUnIngenieur();
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
     std::string toString();

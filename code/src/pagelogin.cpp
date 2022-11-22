@@ -2,6 +2,8 @@
 #include "ui_pagelogin.h"
 #include "client.h"
 #include <QMessageBox>
+#include <QStackedWidget>
+#include "include/constantes.h"
 
 PageLogin::PageLogin(QWidget *parent) :
     QWidget(parent),
@@ -15,6 +17,11 @@ PageLogin::PageLogin(QWidget *parent) :
 
 }
 
+void PageLogin::setGestionnaireDialogue(GestionnaireDialogue *g)
+{
+    gestionnaire_dialogue = g;
+}
+
 PageLogin::~PageLogin()
 {
     delete ui;
@@ -23,13 +30,22 @@ PageLogin::~PageLogin()
 void PageLogin::handle_validation()
 {
     QString idU = id->text();
-    idU = idU.trimmed(); //Enlève espaces
     QString mdpU = mdp->text();
-    mdpU = mdpU.trimmed();
-    if(idU == "" || mdpU == "") {
-        QMessageBox::warning(this,"PageLogin","Identifiant ou mot de passe incorrect.");
+
+    std::string typeUser = gestionnaire_dialogue->typeUtilisateur(idU.toStdString(), mdpU.toStdString());
+
+
+    if (typeUser == "client"){
+        Client c = gestionnaire_dialogue->authentification(idU.toStdString(), mdpU.toStdString());
+        QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
+        if(stack){
+            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Login correct -> Accueil client
+       }
     } else {
-        Client client1 = Client(idU.toLower().toStdString(), "Vous", "Même", mdpU.toStdString(), idU.toLower().toStdString() + "@easyticket.fr");
-        QMessageBox::information(this,"Interface Client",QString::fromStdString(client1.toString()));
+        QMessageBox::warning(this,"PageLogin","Identifiant ou mot de passe incorrect.");
+
     }
+
+
+
 }

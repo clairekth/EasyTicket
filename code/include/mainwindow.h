@@ -5,10 +5,12 @@
 #include <QStackedWidget>
 #include "pagelogin.h"
 #include "constantes.h"
+#include "gestionnairedialogue.h"
+#include "pageaccueilclient.h"
 
 /// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.1
+/// @version 1.2
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,13 +23,22 @@ class MainWindow : public QMainWindow
 protected :
     /// @brief Champs contenant le StackedWidget qui stock les différentes Page de l'application.
     QStackedWidget *stack;
+    /// @brief Champs contenant le GestionnaireDialogue.
+    GestionnaireDialogue *gestionnaire_dialogue;
+
     /// @brief Champs contenant la PageLogin.
     PageLogin *page_login;
+    /// @brief Champs contenant la PageAccueilClient.
+    PageAccueilClient *page_accueil_client;
 
 public:
     /// @brief Constructeur.
     /// @param  *parent Pointeur sur le Widget Parent.
     MainWindow(QWidget *parent = nullptr);
+
+    /// @brief Méthode pour set le GestionnaireDialogue.
+    /// @param g    Pointeur sur le GestionnaireDialogue.
+    void setGestionnaireDialogue(GestionnaireDialogue *g);
 
     /// @brief Destructeur.
     ~MainWindow();

@@ -32,7 +32,7 @@ public:
 
     /// @brief  Cette méthode permet de vérifier si l'Utilisateur est un Personnel.
     /// @return true
-    bool estUnPersonnel();
+    virtual bool estUnPersonnel();
 };
 
 #endif // PERSONNEL_H
