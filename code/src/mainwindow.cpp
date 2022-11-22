@@ -22,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::setGestionnaireDialogue(GestionnaireDialogue *g)
 {
     gestionnaire_dialogue = g;
+
+    //Set les gestionnaires dialogues des Pages du StackedWidget.
     page_login->setGestionnaireDialogue(gestionnaire_dialogue);
     page_accueil_client->setGestionnaireDialogue(gestionnaire_dialogue);
 }

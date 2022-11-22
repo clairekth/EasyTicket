@@ -32,14 +32,16 @@ void PageLogin::handle_validation()
     QString idU = id->text();
     QString mdpU = mdp->text();
 
+    //Récupère le type d'utilisateur, "null" si inconnu
     std::string typeUser = gestionnaire_dialogue->typeUtilisateur(idU.toStdString(), mdpU.toStdString());
 
 
     if (typeUser == "client"){
         Client c = gestionnaire_dialogue->authentification(idU.toStdString(), mdpU.toStdString());
+        //Récupère le stack parent.
         QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
         if(stack){
-            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Login correct -> Accueil client
+            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
        }
     } else {
         QMessageBox::warning(this,"PageLogin","Identifiant ou mot de passe incorrect.");

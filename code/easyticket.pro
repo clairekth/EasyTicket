@@ -32,8 +32,8 @@ SOURCES += \
     src/technicien.cpp \
     src/main.cpp \
     src/pagelogin.cpp \
-    pageaccueilclient.cpp \
-    gestionnairedialogue.cpp
+    src/pageaccueilclient.cpp \
+    src/gestionnairedialogue.cpp
 
 HEADERS += \
     include/systeme.h \
@@ -50,13 +50,13 @@ HEADERS += \
     include/technicien.h \
     include/constantes.h \
     include/pagelogin.h \
-    pageaccueilclient.h \
-    gestionnairedialogue.h
+    include/pageaccueilclient.h \
+    include/gestionnairedialogue.h
 
 FORMS += \
     forms/mainwindow.ui \
     forms/pagelogin.ui \
-    pageaccueilclient.ui
+    forms/pageaccueilclient.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

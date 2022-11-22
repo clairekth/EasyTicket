@@ -17,6 +17,7 @@ std::string GestionnaireDialogue::typeUtilisateur(std::string id, std::string md
 
 Client GestionnaireDialogue::authentification(std::string id, std::string mdp)
 {
+    //Récupère les info du Client dans la BDD
     Client c = Client(id, "Vous", "Même", mdp, id + "@easyticket.fr");
     return c;
 }
