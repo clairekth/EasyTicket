@@ -33,11 +33,11 @@ protected:
 public:
     /// @brief Constructeur
     /// @param parent   Widget parent.
-    explicit PageLogin(QWidget *parent = nullptr);
+    explicit PageLogin(QWidget *parent = nullptr, GestionnaireDialogue *gd = nullptr);
 
-    /// @brief Méthode pour set le GestionnaireDialogue.
-    /// @param g    Pointeur sur le GestionnaireDialogue.
-    void setGestionnaireDialogue(GestionnaireDialogue *g);
+//    /// @brief Méthode pour set le GestionnaireDialogue.
+//    /// @param g    Pointeur sur le GestionnaireDialogue.
+//    void setGestionnaireDialogue(GestionnaireDialogue *g);
 
     /// @brief Destructeur.
     ~PageLogin();
@@ -49,6 +49,7 @@ public slots:
 private:
     /// @brief Champs correspondant à la vue de PageLogin.
     Ui::PageLogin *ui;
+    GestionnaireDialogue *gd;
 };
 
 #endif // PAGELOGIN_H

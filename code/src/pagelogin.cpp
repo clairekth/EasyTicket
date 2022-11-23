@@ -5,7 +5,7 @@
 #include <QStackedWidget>
 #include "include/constantes.h"
 
-PageLogin::PageLogin(QWidget *parent) :
+PageLogin::PageLogin(QWidget *parent, GestionnaireDialogue *gd) :
     QWidget(parent),
     ui(new Ui::PageLogin)
 {
@@ -15,12 +15,14 @@ PageLogin::PageLogin(QWidget *parent) :
     mdp = ui->password;
     connect(validation_bouton, &QPushButton::clicked,this,&PageLogin::handle_validation);
 
+    this->gd = gd;
+
 }
 
-void PageLogin::setGestionnaireDialogue(GestionnaireDialogue *g)
-{
-    gestionnaire_dialogue = g;
-}
+//void PageLogin::setGestionnaireDialogue(GestionnaireDialogue *g)
+//{
+//    gestionnaire_dialogue = g;
+//}
 
 PageLogin::~PageLogin()
 {
@@ -33,11 +35,11 @@ void PageLogin::handle_validation()
     QString mdpU = mdp->text();
 
     //Récupère le type d'utilisateur, "null" si inconnu
-    std::string typeUser = gestionnaire_dialogue->typeUtilisateur(idU.toStdString(), mdpU.toStdString());
+    std::string typeUser = gd->typeUtilisateur(idU.toStdString(), mdpU.toStdString());
 
 
     if (typeUser == "client"){
-        Client c = gestionnaire_dialogue->authentification(idU.toStdString(), mdpU.toStdString());
+        Client c = gd->authentification(idU.toStdString(), mdpU.toStdString());
         //Récupère le stack parent.
         QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
         if(stack){
