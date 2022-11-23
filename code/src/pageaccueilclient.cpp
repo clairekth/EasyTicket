@@ -5,18 +5,15 @@
 
 #include "constantes.h"
 
-PageAccueilClient::PageAccueilClient(QWidget *parent) :
+PageAccueilClient::PageAccueilClient(QWidget *parent, GestionnaireDialogue *gestionnaire_dialogue) :
     QWidget(parent),
     ui(new Ui::PageAccueilClient)
 {
     ui->setupUi(this);
     creer_ticket_bouton = ui->creer_ticket_bouton;
     historique_tickets_bouton = ui->historique_tickets_bouton;
-}
 
-void PageAccueilClient::setGestionnaireDialogue(GestionnaireDialogue *g)
-{
-    gestionnaire_dialogue = g;
+    this->gestionnaire_dialogue = gestionnaire_dialogue;
 }
 
 PageAccueilClient::~PageAccueilClient()

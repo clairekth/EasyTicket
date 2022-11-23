@@ -31,11 +31,8 @@ protected :
 public:
     /// @brief Constructeur par défaut.
     /// @param *parent  Widget parent.
-    explicit PageAccueilClient(QWidget *parent = nullptr);
-
-    /// @brief Méthode pour set le GestionnaireDialogue.
-    /// @param g    Pointeur sur le GestionnaireDialogue.
-    void setGestionnaireDialogue(GestionnaireDialogue *g);
+    /// @param *gestionnaire_dialogue le @ref GestionnaireDialogue de l'application
+    explicit PageAccueilClient(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
 
     /// @brief Destructeur.
     ~PageAccueilClient();

@@ -28,16 +28,14 @@ protected:
     /// @brief Champs où l'Utilisateur rentre son mot de passe.
     QLineEdit *mdp;
 
+    /// @brief le @ref GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
 
 public:
     /// @brief Constructeur
     /// @param parent   Widget parent.
-    explicit PageLogin(QWidget *parent = nullptr, GestionnaireDialogue *gd = nullptr);
-
-//    /// @brief Méthode pour set le GestionnaireDialogue.
-//    /// @param g    Pointeur sur le GestionnaireDialogue.
-//    void setGestionnaireDialogue(GestionnaireDialogue *g);
+    /// @param *gestionnaire_dialogue le @ref GestionnaireDialogue de l'application
+    explicit PageLogin(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
 
     /// @brief Destructeur.
     ~PageLogin();
@@ -49,7 +47,6 @@ public slots:
 private:
     /// @brief Champs correspondant à la vue de PageLogin.
     Ui::PageLogin *ui;
-    GestionnaireDialogue *gd;
 };
 
 #endif // PAGELOGIN_H

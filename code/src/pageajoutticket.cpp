@@ -4,11 +4,12 @@
 #include <QStackedWidget>
 #include <constantes.h>
 
-PageAjoutTicket::PageAjoutTicket(QWidget *parent) :
+PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionnaire_dialogue) :
     QWidget(parent),
     ui(new Ui::PageAjoutTicket)
 {
     ui->setupUi(this);
+    this->gestionnaire_dialogue = gestionnaire_dialogue;
 }
 
 PageAjoutTicket::~PageAjoutTicket()

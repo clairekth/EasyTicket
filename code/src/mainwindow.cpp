@@ -6,11 +6,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     //Initialisation des données
     stack = ui->stackedWidget;
     page_login = new PageLogin(parent, gestionnaire_dialogue);
-    page_accueil_client = new PageAccueilClient();
-    page_ajout_ticket = new PageAjoutTicket();
+    page_accueil_client = new PageAccueilClient(parent, gestionnaire_dialogue);
+    page_ajout_ticket = new PageAjoutTicket(parent, gestionnaire_dialogue);
 
     //Insertion des différentes pages
     stack->insertWidget(LOGIN_PAGE, page_login);
@@ -18,16 +19,6 @@ MainWindow::MainWindow(QWidget *parent)
     stack->insertWidget(AJOUT_TICKET_PAGE, page_ajout_ticket);
     //Set l'index actuelle sur la page de login
     stack->setCurrentIndex(LOGIN_PAGE);
-
-}
-
-void MainWindow::setGestionnaireDialogue(GestionnaireDialogue *g)
-{
-    gestionnaire_dialogue = g;
-
-    //Set les gestionnaires dialogues des Pages du StackedWidget.
-    //    page_login->setGestionnaireDialogue(gestionnaire_dialogue);
-    page_accueil_client->setGestionnaireDialogue(gestionnaire_dialogue);
 }
 
 MainWindow::~MainWindow()
@@ -35,3 +26,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::setGestionnaireDialogue(GestionnaireDialogue *gestionnaire_dialogue) {
+    this->gestionnaire_dialogue = gestionnaire_dialogue;
+}
