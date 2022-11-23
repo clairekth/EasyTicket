@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/pageajoutticket.cpp \
     src/systeme.cpp \
     src/logiciel.cpp \
     src/mainwindow.cpp \
@@ -51,14 +52,17 @@ HEADERS += \
     include/constantes.h \
     include/pagelogin.h \
     include/pageaccueilclient.h \
-    include/gestionnairedialogue.h
+    include/gestionnairedialogue.h \
+    include/pageajoutticket.h
 
 FORMS += \
     forms/mainwindow.ui \
     forms/pagelogin.ui \
-    forms/pageaccueilclient.ui
+    forms/pageaccueilclient.ui \
+    forms/pageajoutticket.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+

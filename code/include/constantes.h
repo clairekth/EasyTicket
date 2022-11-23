@@ -9,7 +9,10 @@
 /// @brief Define de l'index de PageLogin
 #define LOGIN_PAGE 0
 
-/// @brief DEfine de l'index de PageAccueilClient
+/// @brief Define de l'index de PageAccueilClient
 #define ACCUEIL_CLIENT_PAGE 1
+
+/// @brief Definede l'index de PageAjoutTicket
+#define AJOUT_TICKET_PAGE 2
 
 #endif // CONSTANTES_H

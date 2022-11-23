@@ -44,6 +44,9 @@ public slots:
     /// @brief Cette méthode est appelée lors d'un click sur le bouton creer_ticket_bouton. Elle permet la création d'un nouveau Ticket.
     void creation_ticket();
 
+private slots:
+    void on_creer_ticket_bouton_clicked();
+
 private:
     /// @brief Champs correspondant à la vue de PageAccueilClient.
     Ui::PageAccueilClient *ui;

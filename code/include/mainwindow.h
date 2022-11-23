@@ -7,6 +7,7 @@
 #include "constantes.h"
 #include "gestionnairedialogue.h"
 #include "pageaccueilclient.h"
+#include "pageajoutticket.h"
 
 /// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
@@ -30,6 +31,8 @@ protected :
     PageLogin *page_login;
     /// @brief Champs contenant la PageAccueilClient.
     PageAccueilClient *page_accueil_client;
+    /// @brief Champs contenant la PageAjoutTicket
+    PageAjoutTicket *page_ajout_ticket;
 
 public:
     /// @brief Constructeur.
