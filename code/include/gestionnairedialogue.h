@@ -1,11 +1,11 @@
 #ifndef GESTIONNAIREDIALOGUE_H
 #define GESTIONNAIREDIALOGUE_H
 
-#include "client.h"
+#include "ticket.h"
 
 /// @brief Classe correspondant au Gestionnaire de Dialogue entre l'Utilisateur et le modèle.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.2
+/// @version 1.5
 class GestionnaireDialogue
 {
 public:
@@ -23,6 +23,10 @@ public:
     /// @param mdp  Le mot de passe du Client.
     /// @return le Client identifié.
     Client authentification(std::string id, std::string mdp);
+
+    /// @brief Méthode permettant de vérifier que le message est bon.
+    /// @return true si le message est bon, false sinon.
+    bool verificationMessage(std::string message);
 };
 
 #endif // GESTIONNAIREDIALOGUE_H

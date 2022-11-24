@@ -1,6 +1,4 @@
 #include "personnel.h"
-#include "ingenieur.h"
-#include "technicien.h"
 
 #include <iostream>
 

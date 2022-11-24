@@ -1,6 +1,6 @@
 #include "pageaccueilclient.h"
 #include "ui_pageaccueilclient.h"
-
+#include "pageajoutticket.h"
 #include <QStackedWidget>
 
 #include "constantes.h"
@@ -16,6 +16,12 @@ PageAccueilClient::PageAccueilClient(QWidget *parent, GestionnaireDialogue *gest
     this->gestionnaire_dialogue = gestionnaire_dialogue;
 }
 
+void PageAccueilClient::setClient(Client client)
+{
+    this->client = client;
+
+}
+
 PageAccueilClient::~PageAccueilClient()
 {
     delete ui;
@@ -25,6 +31,9 @@ void PageAccueilClient::creation_ticket()
 {
     QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
     if(stack){
-        stack->setCurrentIndex(AJOUT_TICKET_PAGE); //Connexion correct -> Accueil client
+        auto *widget = stack->widget(AJOUT_TICKET_PAGE);
+        auto *ajoutticket = qobject_cast<PageAjoutTicket*>(widget);
+        ajoutticket->setClient(this->client);
+        stack->setCurrentIndex(AJOUT_TICKET_PAGE);
     }
 }

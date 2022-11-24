@@ -1,5 +1,4 @@
 #include "message.h"
-#include "ticket.h"
 
 
 Message::Message(std::string id_message, double date_envoie, Utilisateur *user, Ticket *ticket):

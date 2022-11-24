@@ -1,9 +1,9 @@
 #include "pagelogin.h"
 #include "ui_pagelogin.h"
-#include "client.h"
 #include <QMessageBox>
 #include <QStackedWidget>
 #include "include/constantes.h"
+#include "pageaccueilclient.h"
 
 PageLogin::PageLogin(QWidget *parent, GestionnaireDialogue *gestionnaire_dialogue) :
     QWidget(parent),
@@ -38,6 +38,10 @@ void PageLogin::handle_validation()
         //Récupère le stack parent.
         QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
         if(stack){
+            //On récupère le widget suivant pour lui set le client actuellement connecté.
+            auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
+            auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
+            pageaccueil->setClient(c);
             stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
        }
     } else {

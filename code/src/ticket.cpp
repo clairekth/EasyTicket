@@ -5,14 +5,21 @@ Ticket::Ticket()
     
 }
 
+Ticket::Ticket(std::string id_ticket, std::string date_creation, Categorie categorie, Client auteur) :
+    id_ticket(id_ticket), date_creation(date_creation), categorie(categorie), client(auteur)
+{
+
+}
+
 Ticket::Ticket(
         std::string id_ticket,
-        double date_creation,
+        std::string date_creation,
         Systeme systeme,
         Logiciel logiciel,
+        Categorie categorie,
         Client auteur) :
 
-        id_ticket(id_ticket),date_creation(date_creation), systeme(systeme), logiciel(logiciel), client(auteur)
+        id_ticket(id_ticket),date_creation(date_creation), systeme(systeme), logiciel(logiciel), categorie(categorie), client(auteur)
 {
     this->liste_messages = std::vector<Message*>{};
 }
@@ -29,7 +36,7 @@ void Ticket::setListeMessages(const std::vector<Message*> &value)
     liste_messages = value;
 }
 
-double Ticket::getDate_creation() const
+std::string Ticket::getDate_creation() const
 {
     return date_creation;
 }
@@ -39,7 +46,7 @@ void Ticket::setDate_creation(double value)
     date_creation = value;
 }
 
-double Ticket::getDate_fermeture() const
+std::string Ticket::getDate_fermeture() const
 {
     return date_fermeture;
 }
@@ -91,5 +98,17 @@ void Ticket::setPersonnel(Personnel &value){
 }
 Personnel Ticket::getPersonnel(){
     return personnel;
+}
+
+std::string Ticket::toString()
+{
+    return "Ticket = {\n\
+            \tid: '" + id_ticket + "',\n\
+            \tdate_creation: '" + date_creation + "'\n\
+            \tdate_fermeture: '" + date_fermeture + "'\n\
+            \tauteur: '" + client.toString() + "'\n\
+            \tcategorie: '" + categorie.getNom() + "'\n\
+            \tsysteme: '" + systeme.getNom() + "'\n\
+            \tlogiciel: '" + logiciel.getNom() + "'\n}";
 }
 

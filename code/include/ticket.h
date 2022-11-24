@@ -7,10 +7,11 @@
 #include "client.h"
 #include "personnel.h"
 #include "message.h"
+#include "categorie.h"
 
 /// @brief La classe Ticket permet de décrire un ticket dans l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.1
+/// @version 1.5
 
 class Ticket
 {
@@ -18,13 +19,15 @@ private:
     /// @brief Champs contenant l'id du Ticket.
     std::string id_ticket;
     /// @brief Champs contenant la date de création du Ticket.
-    double date_creation;
+    std::string date_creation;
     /// @brief Champs contenant la date de fermeture du Ticket.
-    double date_fermeture;
+    std::string date_fermeture;
     /// @brief Champs contenant le Systeme d'exploitation du Client auteur du Ticket.
     Systeme systeme;
     /// @brief Champs contenant le Logiciel sur lequel il y a un problème.
     Logiciel logiciel;
+    /// @brief Champs contenant la Categorie du Ticket.
+    Categorie categorie;
     /// @brief Champs contenant la liste des Messages du Ticket.
     std::vector<Message*> liste_messages;
     /// @brief Champs contenant le Client à l'origine du Ticket.
@@ -41,13 +44,25 @@ public:
     /// @param  date_creation   la date de création du ticket
     /// @param  systeme         le Systeme concerné par le ticket
     /// @param  logiciel        le Logiciel concerné par le ticket
+    /// @param  categorie       la Categorie concernée par le ticket
     /// @param  auteur          le Client auteur du ticket
     Ticket(
             std::string id_ticket,
-            double date_creation,
+            std::string date_creation,
             Systeme systeme,
             Logiciel logiciel,
+            Categorie categorie,
             Client auteur);
+
+    /// @brief Constructeur de la classe Ticket.
+    /// @param  id_ticket       l'identifiant du ticket
+    /// @param  date_creation   la date de création du ticket
+    /// @param  categorie       la Categorie concernée par le ticket
+    /// @param  auteur          le Client auteur du ticket
+    Ticket(std::string id_ticket,
+           std::string date_creation,
+           Categorie categorie,
+           Client auteur);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du @ref Ticket
     /// @return l'identifiant du ticket
@@ -59,7 +74,7 @@ public:
 
     /// @brief Cette méthode permet de récupérer la date de création du @ref ticket
     /// @return la date de création du ticket
-    double getDate_creation() const;
+    std::string getDate_creation() const;
 
     /// @brief Cette méthode permet de définir la date de création du @ref Ticket
     /// @param  value   la nouvelle date de création du @ref Ticket
@@ -67,7 +82,7 @@ public:
 
     /// @brief Cette méthode permet de récupére la date de fermeture du @ref Ticket
     /// @return la date de fermeture du ticket
-    double getDate_fermeture() const;
+    std::string getDate_fermeture() const;
 
     /// @brief Cette méthode permet de définir la date de fermeture du @ref Ticket
     /// @param  value   la nouvelle date de fermeture du @ref Ticket
@@ -112,6 +127,9 @@ public:
     /// @brief Cette méthode permet de récupérer le @ref Personnel qui traite le @ref Ticket
     /// @return le @ref Personel traitant le @ref Ticket
     Personnel getPersonnel();
+
+    /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
+    std::string toString();
 
     /// @brief Destructeur.
     ~Ticket() {}

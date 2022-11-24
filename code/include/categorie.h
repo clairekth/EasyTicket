@@ -5,7 +5,7 @@
 
 /// @brief La classe Categorie permet de décrire les différentes catégories d'un Ticket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.3
+/// @version 1.5
 class Categorie
 {
 private:
@@ -23,6 +23,10 @@ public:
     Categorie(
             std::string id_categorie,
             std::string nom_categorie);
+
+    /// @brief Méthode permettant de récupérer le nom de la Categorie.
+    /// @return nom_categorie
+    std::string getNom();
 
 };
 

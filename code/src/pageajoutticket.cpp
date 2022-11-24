@@ -4,6 +4,8 @@
 #include <QStackedWidget>
 #include "constantes.h"
 #include "categorie.h"
+#include <QDateTime>
+#include <QMessageBox>
 
 PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionnaire_dialogue) :
     QWidget(parent),
@@ -26,6 +28,11 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
 
 }
 
+void PageAjoutTicket::setClient(Client client)
+{
+    this->client = client;
+}
+
 PageAjoutTicket::~PageAjoutTicket()
 {
     delete ui;
@@ -45,25 +52,15 @@ void PageAjoutTicket::creer_le_ticket_clicked()
     QString systeme = systeme_box->currentText();
     QString logiciel = logiciel_box->currentText();
     QString message = message_text->toPlainText();
-    std::cout << "Categorie :" + categorie.toStdString() << std::endl;
-
-    if (systeme == ""){
-        std::cout << "Pas de systeme selectionne." << std::endl;
-    }else {
-        std::cout << "Systeme :" + systeme.toStdString() << std::endl;
-    }
-    if (logiciel == ""){
-        std::cout << "Pas de logiciel selectionne." << std::endl;
+    if (gestionnaire_dialogue->verificationMessage(message.toStdString())){
+        //Récupère la date+heure.
+        QString date = QDateTime::currentDateTime().toString("dddd dd MMMM yyyy hh:mm:ss");
+        Categorie cat = Categorie("C1", categorie.toStdString());
+        Ticket t = Ticket("T1",date.toStdString(), cat, client);
+        QMessageBox::information(this,"Ticket créé.",QString::fromStdString(t.toString()));
     } else {
-        std::cout << "Logiciel :" + logiciel.toStdString() << std::endl;
+        QMessageBox::warning(this,"Erreur","Il n'y a pas de messages.");
     }
-
-    if (message == ""){
-        std::cout << "Pas de message." << std::endl;
-    } else {
-        std::cout << message.toStdString() << std::endl;
-    }
-    fflush(stderr);
 
 
 

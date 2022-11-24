@@ -1,8 +1,6 @@
 #include "utilisateur.h"
 #include <string>
-#include "admin.h"
-#include "client.h"
-#include "personnel.h"
+
 
 Utilisateur::Utilisateur()
 {

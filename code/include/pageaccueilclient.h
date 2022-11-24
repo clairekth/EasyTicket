@@ -7,7 +7,7 @@
 
 /// @brief La classe PageAccueilClient correspond à la vue de la page d'accueil pour les Client.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
-/// @version 1.2
+/// @version 1.5
 
 namespace Ui {
 class PageAccueilClient;
@@ -23,6 +23,10 @@ public:
     /// @param *parent                  Widget parent.
     /// @param *gestionnaire_dialogue   le GestionnaireDialogue de l'application
     explicit PageAccueilClient(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
+
+    /// @brief Méthode permettant de set le Client actuellement connecté.
+    /// @param client   le Client connecté.
+    void setClient(Client client);
 
     /// @brief Destructeur.
     ~PageAccueilClient();
@@ -42,6 +46,9 @@ private:
 
     /// @brief Champs correspondant au GestionnaireDialogue.
     GestionnaireDialogue *gestionnaire_dialogue;
+
+    /// @brief Champs contenant le Client connecté.
+    Client client;
 };
 
 #endif // PAGEACCUEILCLIENT_H
