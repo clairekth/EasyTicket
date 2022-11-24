@@ -31,6 +31,7 @@ void PageAccueilClient::creation_ticket()
 {
     QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
     if(stack){
+        //On transfère le client à la page suivante.
         auto *widget = stack->widget(AJOUT_TICKET_PAGE);
         auto *ajoutticket = qobject_cast<PageAjoutTicket*>(widget);
         ajoutticket->setClient(this->client);
