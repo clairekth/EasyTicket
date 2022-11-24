@@ -39,22 +39,7 @@ public:
     /// @brief Constructeur par défaut.
     Ticket();
 
-    /// @brief  Constructeur de la classe Ticket.
-    /// @param  id_ticket       l'identifiant du ticket
-    /// @param  date_creation   la date de création du ticket
-    /// @param  systeme         le Systeme concerné par le ticket
-    /// @param  logiciel        le Logiciel concerné par le ticket
-    /// @param  categorie       la Categorie concernée par le ticket
-    /// @param  auteur          le Client auteur du ticket
-    Ticket(
-            std::string id_ticket,
-            std::string date_creation,
-            Systeme systeme,
-            Logiciel logiciel,
-            Categorie categorie,
-            Client auteur);
-
-    /// @brief Constructeur de la classe Ticket.
+    /// @brief Constructeur de la classe Ticket avec les informations obligatoires.
     /// @param  id_ticket       l'identifiant du ticket
     /// @param  date_creation   la date de création du ticket
     /// @param  categorie       la Categorie concernée par le ticket
@@ -108,9 +93,13 @@ public:
     /// @return la liste de @ref Message concerné par le ticket
     std::vector<Message*> getListeMessages() const;
 
-    /// @brief Cette méthode permet de définir la liste des @Message concerné par le @ref Ticket
+    /// @brief Cette méthode permet d'ajouter un Message concerné par le @ref Ticket
     /// @param  value   la nouvelle liste de @ref Message
     void setListeMessages(const std::vector<Message*> &value);
+
+    /// @brief Cette méthode permet de définir la liste des @Message concerné par le @ref Ticket
+    /// @param  value   la nouvelle liste de @ref Message
+    void addMessage(const Message &message);
 
     /// @brief Cette méthode permet de définir le @ref Client auteur du @ref Ticket
     /// @param value    le @ref Client auteur du @ref Ticket

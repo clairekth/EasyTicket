@@ -8,32 +8,21 @@ Ticket::Ticket()
 Ticket::Ticket(std::string id_ticket, std::string date_creation, Categorie categorie, Client auteur) :
     id_ticket(id_ticket), date_creation(date_creation), categorie(categorie), client(auteur)
 {
-
-}
-
-Ticket::Ticket(
-        std::string id_ticket,
-        std::string date_creation,
-        Systeme systeme,
-        Logiciel logiciel,
-        Categorie categorie,
-        Client auteur) :
-
-        id_ticket(id_ticket),date_creation(date_creation), systeme(systeme), logiciel(logiciel), categorie(categorie), client(auteur)
-{
     this->liste_messages = std::vector<Message*>{};
 }
-
-
 
 std::vector<Message*> Ticket::getListeMessages() const
 {
     return liste_messages;
 }
 
-void Ticket::setListeMessages(const std::vector<Message*> &value)
-{
+void Ticket::setListeMessages(const std::vector<Message*> &value) {
     liste_messages = value;
+}
+
+void Ticket::addMessage(const Message &message)
+{
+    //liste_messages.push_back(message);
 }
 
 std::string Ticket::getDate_creation() const
