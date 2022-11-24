@@ -9,7 +9,10 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
     ui(new Ui::PageAjoutTicket)
 {
     ui->setupUi(this);
+    this->bouton_retour = ui->bouton_retour;
     this->gestionnaire_dialogue = gestionnaire_dialogue;
+    connect(bouton_retour, &QPushButton::clicked,this,&PageAjoutTicket::retour_bouton_clicked);
+
 }
 
 PageAjoutTicket::~PageAjoutTicket()
@@ -17,7 +20,7 @@ PageAjoutTicket::~PageAjoutTicket()
     delete ui;
 }
 
-void PageAjoutTicket::on_bouton_ajout_ticket_clicked()
+void PageAjoutTicket::retour_bouton_clicked()
 {
     QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
     if(stack){

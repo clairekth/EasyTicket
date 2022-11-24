@@ -18,15 +18,7 @@ class PageAccueilClient : public QWidget
 {
     Q_OBJECT
 
-protected :
-    /// @brief Bouton de création d'un ticket.
-    QPushButton *creer_ticket_bouton;
 
-    /// @brief Bouton pour voir l'historique des tickets.
-    QPushButton *historique_tickets_bouton;
-
-    /// @brief Champs correspondant au GestionnaireDialogue.
-    GestionnaireDialogue *gestionnaire_dialogue;
 
 public:
     /// @brief Constructeur par défaut.
@@ -47,6 +39,14 @@ private slots:
 private:
     /// @brief Champs correspondant à la vue de PageAccueilClient.
     Ui::PageAccueilClient *ui;
+    /// @brief Bouton de création d'un ticket.
+    QPushButton *creer_ticket_bouton;
+
+    /// @brief Bouton pour voir l'historique des tickets.
+    QPushButton *historique_tickets_bouton;
+
+    /// @brief Champs correspondant au GestionnaireDialogue.
+    GestionnaireDialogue *gestionnaire_dialogue;
 };
 
 #endif // PAGEACCUEILCLIENT_H

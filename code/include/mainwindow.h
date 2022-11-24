@@ -11,7 +11,7 @@
 
 /// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.2
+/// @version 1.3
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,7 +26,6 @@ protected :
     QStackedWidget *stack;
     /// @brief Champs contenant le GestionnaireDialogue.
     GestionnaireDialogue *gestionnaire_dialogue;
-
     /// @brief Champs contenant la PageLogin.
     PageLogin *page_login;
     /// @brief Champs contenant la PageAccueilClient.

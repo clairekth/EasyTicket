@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="bouton_ajout_ticket">
+  <widget class="QPushButton" name="bouton_retour">
    <property name="geometry">
     <rect>
      <x>140</x>

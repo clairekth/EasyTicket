@@ -18,18 +18,7 @@ class PageLogin : public QWidget
 {
     Q_OBJECT
 
-protected:
-    /// @brief Bouton de validation de la connexion.
-    QPushButton *validation_bouton;
 
-    /// @brief Champs où l'Utilisateur rentre son identifiant.
-    QLineEdit *id;
-
-    /// @brief Champs où l'Utilisateur rentre son mot de passe.
-    QLineEdit *mdp;
-
-    /// @brief le @ref GestionnaireDialogue de l'application
-    GestionnaireDialogue *gestionnaire_dialogue;
 
 public:
     /// @brief Constructeur
@@ -47,6 +36,17 @@ public slots:
 private:
     /// @brief Champs correspondant à la vue de PageLogin.
     Ui::PageLogin *ui;
+    /// @brief Bouton de validation de la connexion.
+    QPushButton *validation_bouton;
+
+    /// @brief Champs où l'Utilisateur rentre son identifiant.
+    QLineEdit *id;
+
+    /// @brief Champs où l'Utilisateur rentre son mot de passe.
+    QLineEdit *mdp;
+
+    /// @brief le @ref GestionnaireDialogue de l'application
+    GestionnaireDialogue *gestionnaire_dialogue;
 };
 
 #endif // PAGELOGIN_H
