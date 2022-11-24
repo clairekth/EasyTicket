@@ -12,7 +12,7 @@ PageAccueilClient::PageAccueilClient(QWidget *parent, GestionnaireDialogue *gest
     ui->setupUi(this);
     creer_ticket_bouton = ui->creer_ticket_bouton;
     historique_tickets_bouton = ui->historique_tickets_bouton;
-
+    connect(creer_ticket_bouton, &QPushButton::clicked, this, &PageAccueilClient::creation_ticket);
     this->gestionnaire_dialogue = gestionnaire_dialogue;
 }
 
@@ -22,11 +22,6 @@ PageAccueilClient::~PageAccueilClient()
 }
 
 void PageAccueilClient::creation_ticket()
-{
-
-}
-
-void PageAccueilClient::on_creer_ticket_bouton_clicked()
 {
     QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
     if(stack){

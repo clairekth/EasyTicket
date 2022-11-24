@@ -4,10 +4,12 @@
 #include <QWidget>
 #include "gestionnairedialogue.h"
 #include <QPushButton>
+#include <QComboBox>
+#include <QTextEdit>
 
 /// @brief La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un nouveau Ticket.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
-/// @version 1.3
+/// @version 1.4
 namespace Ui {
 class PageAjoutTicket;
 }
@@ -27,14 +29,28 @@ public:
 private slots:
     /// @brief Le bouton bouton_retour est cliqué. Il permet de retourner à PageAccueilClient.
     void retour_bouton_clicked();
+    /// @brief Le bouton creer_le_ticket_clicked est cliqué.
+    void creer_le_ticket_clicked();
 
 private:
     Ui::PageAjoutTicket *ui;
-    /// @brief le @ref GestionnaireDialogue de l'application
+    /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
 
     /// @brief Bouton de retour à la PageAccueilClient.
     QPushButton *bouton_retour;
+
+    /// @brief Bouton de retour qui créer le Ticket.
+    QPushButton *bouton_creer_le_ticket;
+
+    /// @brief ComboBox correspondant aux différentes catégories disponibles.
+    QComboBox *categorie_box;
+    /// @brief ComboBox correspondant aux différents systèmes disponibles.
+    QComboBox *systeme_box;
+    /// @brief ComboBox correspondant aux différents logiciels disponibles.
+    QComboBox *logiciel_box;
+    /// @brief Zone de de texte pour entrer le message.
+    QTextEdit *message_text;
 
 
 };

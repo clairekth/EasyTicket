@@ -6,26 +6,152 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>921</width>
+    <height>732</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="bouton_retour">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>120</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Retour</string>
-   </property>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="1">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Catégorie</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QComboBox" name="categorie_box">
+     <item>
+      <property name="text">
+       <string>Incident logiciel</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Aide logiciel</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Message général</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Autres</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Système</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QComboBox" name="systeme_box">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Windows</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>MacOS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Linux</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Android</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>iOS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Autre</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Logiciel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QComboBox" name="logiciel_box">
+     <item>
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Word</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Excell</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Intellij</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Autre</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="2">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Entrez votre message :</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="QTextEdit" name="message_text"/>
+   </item>
+   <item row="6" column="2">
+    <widget class="QPushButton" name="creer_le_ticket_bouton">
+     <property name="text">
+      <string>Créer le ticket</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="bouton_retour">
+     <property name="text">
+      <string>Retour</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
