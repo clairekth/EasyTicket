@@ -3,7 +3,7 @@
 
 /// @brief Header qui permet de définir un nom pour chaque index de Page du QStackedWiget de MainWindow
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.2
+/// @version 1.3
 
 
 /// @brief Define de l'index de PageLogin
@@ -12,7 +12,7 @@
 /// @brief Define de l'index de PageAccueilClient
 #define ACCUEIL_CLIENT_PAGE 1
 
-/// @brief Definede l'index de PageAjoutTicket
+/// @brief Define de l'index de PageAjoutTicket
 #define AJOUT_TICKET_PAGE 2
 
 #endif // CONSTANTES_H
