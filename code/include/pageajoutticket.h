@@ -22,7 +22,7 @@ class PageAjoutTicket : public QWidget
 public:
     /// @brief Constructeur
     /// @param parent                   Widget parent.
-    /// @param *gestionnaire_dialogue   le @ref GestionnaireDialogue de l'application
+    /// @param *gestionnaire_dialogue   le GestionnaireDialogue de l'application
     explicit PageAjoutTicket(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
     ~PageAjoutTicket();
 

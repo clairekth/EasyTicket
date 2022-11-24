@@ -20,8 +20,8 @@ class PageAccueilClient : public QWidget
 
 public:
     /// @brief Constructeur par défaut.
-    /// @param *parent  Widget parent.
-    /// @param *gestionnaire_dialogue le @ref GestionnaireDialogue de l'application
+    /// @param *parent                  Widget parent.
+    /// @param *gestionnaire_dialogue   le GestionnaireDialogue de l'application
     explicit PageAccueilClient(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
 
     /// @brief Destructeur.
