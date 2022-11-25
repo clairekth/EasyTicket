@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,6 +18,7 @@ INCLUDEPATH = include/
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/gestionnairebdd.cpp \
     src/pageajoutticket.cpp \
     src/systeme.cpp \
     src/logiciel.cpp \
@@ -53,7 +54,8 @@ HEADERS += \
     include/pagelogin.h \
     include/pageaccueilclient.h \
     include/gestionnairedialogue.h \
-    include/pageajoutticket.h
+    include/pageajoutticket.h \
+    include/gestionnairebdd.h
 
 FORMS += \
     forms/mainwindow.ui \
