@@ -2,10 +2,10 @@
 
 GestionnaireDialogue::GestionnaireDialogue()
 {
-    //bdd = GestionnaireBDD();
+    bdd = GestionnaireBDD();
 
     //bdd.select("SELECT * FROM utilisateur");
-    QSqlDatabase::removeDatabase("QSQLITE");
+    //QSqlDatabase::removeDatabase("QSQLITE");
     QSqlDatabase my_db = QSqlDatabase::addDatabase("QSQLITE");
     //Récupère le path absolue de l'exécutable
     QString p = qApp->QCoreApplication::applicationDirPath() ;
@@ -25,6 +25,7 @@ GestionnaireDialogue::GestionnaireDialogue()
     {
         qDebug() <<"Connexion réussie à la BDD";
         QSqlQuery statement;
+        //bdd.select("SELECT * FROM utilisateur");
         statement.exec("SELECT * FROM utilisateur");
         QString res;
         while (statement.next())
@@ -64,6 +65,7 @@ bool GestionnaireDialogue::verificationMessage(std::string message)
     }
     return true;
 }
+
 
 
 

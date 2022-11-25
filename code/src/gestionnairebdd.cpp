@@ -2,7 +2,7 @@
 
 GestionnaireBDD::GestionnaireBDD()
 {
-    my_db = QSqlDatabase::addDatabase("QSQLITE");
+    //my_db = QSqlDatabase::addDatabase("QSQLITE");
     //Récupère le path absolue de l'exécutable
     QString p = qApp->QCoreApplication::applicationDirPath() ;
     //On coupe le lien en 2 avec EasyTicket/
@@ -10,7 +10,7 @@ GestionnaireBDD::GestionnaireBDD()
     QStringList firstList = p.split(tagExp);
     //Ajoute ce qui manque pour arriver au file
     QString path = firstList.takeFirst() +"EasyTicket/code/resources/database.db";
-    my_db.setDatabaseName(path);
+    /*my_db.setDatabaseName(path);
 
     if (!my_db.open())
     {
@@ -22,7 +22,7 @@ GestionnaireBDD::GestionnaireBDD()
     {
         qDebug() <<"Connexion réussie à la BDD";
         created = true;
-    }
+    }*/
 }
 
 void GestionnaireBDD::select(QString query)
@@ -38,3 +38,4 @@ void GestionnaireBDD::select(QString query)
         statement->clear();
     }
 }
+
