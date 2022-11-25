@@ -1,4 +1,6 @@
 #include "gestionnairebdd.h"
+#include <iostream>
+
 
 GestionnaireBDD::GestionnaireBDD()
 {
@@ -40,7 +42,12 @@ void GestionnaireBDD::select(QString query)
         QString res;
         while (statement->next())
         {
-            qDebug() << statement->value(0).toString();
+            for (int i = 0; i < statement->record().count(); i ++){
+                qDebug() << statement->value(i).toString();
+
+            }
+            qDebug() << "----------";
+
         }
         statement->clear();
         my_db.close();

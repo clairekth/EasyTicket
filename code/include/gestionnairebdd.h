@@ -11,7 +11,7 @@ public:
     GestionnaireBDD();
     void select(QString query);
 
-protected:
+private:
     bool created;
     QSqlDatabase my_db;
 };
