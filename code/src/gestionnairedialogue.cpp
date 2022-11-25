@@ -4,9 +4,6 @@ GestionnaireDialogue::GestionnaireDialogue()
 {
     bdd = GestionnaireBDD();
 
-    //bdd.select("SELECT * FROM utilisateur");
-    //QSqlDatabase::removeDatabase("QSQLITE");
-    QSqlDatabase my_db = QSqlDatabase::addDatabase("QSQLITE");
     //Récupère le path absolue de l'exécutable
     QString p = qApp->QCoreApplication::applicationDirPath() ;
     //On coupe le lien en 2 avec EasyTicket/
@@ -14,26 +11,9 @@ GestionnaireDialogue::GestionnaireDialogue()
     QStringList firstList = p.split(tagExp);
     //Ajoute ce qui manque pour arriver au file
     QString path = firstList.takeFirst() +"EasyTicket/code/resources/database.db";
-    my_db.setDatabaseName(path);
+    bdd.select("SELECT * FROM utilisateur");
+    bdd.select("SELECT * FROM utilisateur");
 
-    if (!my_db.open())
-    {
-        qDebug() << "Erreur de connexion à la BDD";
-    }
-
-    else
-    {
-        qDebug() <<"Connexion réussie à la BDD";
-        QSqlQuery statement;
-        //bdd.select("SELECT * FROM utilisateur");
-        statement.exec("SELECT * FROM utilisateur");
-        QString res;
-        while (statement.next())
-        {
-            qDebug() << statement.value(1).toString();
-        }
-        statement.clear();
-    }
 }
 
 std::string GestionnaireDialogue::typeUtilisateur(std::string id, std::string mdp)
