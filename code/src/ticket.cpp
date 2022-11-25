@@ -30,7 +30,7 @@ std::string Ticket::getDate_creation() const
     return date_creation;
 }
 
-void Ticket::setDate_creation(double value)
+void Ticket::setDate_creation(std::string value)
 {
     date_creation = value;
 }
@@ -40,7 +40,7 @@ std::string Ticket::getDate_fermeture() const
     return date_fermeture;
 }
 
-void Ticket::setDate_fermeture(double value)
+void Ticket::setDate_fermeture(std::string value)
 {
     date_fermeture = value;
 }

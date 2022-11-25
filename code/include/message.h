@@ -48,7 +48,7 @@ public:
 
     /// @brief Cette méthode permet de définir la date à laquelle a été envoyé le message.
     /// @param  value la nouvelle date d'envoi
-    void setDate_envoi(double value);
+    void setDate_envoi(std::string value);
 
     /// @brief Cette méthode permet de récupérer l'Utilisateur auteur du message.
     /// @return le nouvel Utilisateur.

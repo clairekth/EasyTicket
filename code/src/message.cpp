@@ -21,7 +21,7 @@ std::string Message::getDate_envoi() const
     return date_envoi;
 }
 
-void Message::setDate_envoi(double value)
+void Message::setDate_envoi(std::string value)
 {
     date_envoi = value;
 }

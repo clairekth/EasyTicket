@@ -63,7 +63,7 @@ public:
 
     /// @brief Cette méthode permet de définir la date de création du @ref Ticket
     /// @param  value   la nouvelle date de création du @ref Ticket
-    void setDate_creation(double value);
+    void setDate_creation(std::string value);
 
     /// @brief Cette méthode permet de récupére la date de fermeture du @ref Ticket
     /// @return la date de fermeture du ticket
@@ -71,7 +71,7 @@ public:
 
     /// @brief Cette méthode permet de définir la date de fermeture du @ref Ticket
     /// @param  value   la nouvelle date de fermeture du @ref Ticket
-    void setDate_fermeture(double value);
+    void setDate_fermeture(std::string value);
 
     /// @brief Cette méthode permet de récupérer le système d'exploitation concerné par le @ref Ticket
     /// @return la date de fermeture du ticket
