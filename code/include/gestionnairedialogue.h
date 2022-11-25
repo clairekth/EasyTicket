@@ -27,6 +27,7 @@ public:
     /// @brief Méthode permettant de vérifier que le message est bon.
     /// @return true si le message est bon, false sinon.
     bool verificationMessage(std::string message);
+
 };
 
 #endif // GESTIONNAIREDIALOGUE_H

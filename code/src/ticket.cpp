@@ -20,9 +20,9 @@ void Ticket::setListeMessages(const std::vector<Message*> &value) {
     liste_messages = value;
 }
 
-void Ticket::addMessage(const Message &message)
+void Ticket::addMessage(Message &message)
 {
-    //liste_messages.push_back(message);
+    liste_messages.push_back(&message);
 }
 
 std::string Ticket::getDate_creation() const
@@ -30,7 +30,7 @@ std::string Ticket::getDate_creation() const
     return date_creation;
 }
 
-void Ticket::setDate_creation(double value)
+void Ticket::setDate_creation(std::string value)
 {
     date_creation = value;
 }
@@ -40,7 +40,7 @@ std::string Ticket::getDate_fermeture() const
     return date_fermeture;
 }
 
-void Ticket::setDate_fermeture(double value)
+void Ticket::setDate_fermeture(std::string value)
 {
     date_fermeture = value;
 }
@@ -98,6 +98,8 @@ std::string Ticket::toString()
             \tauteur: '" + client.toString() + "'\n\
             \tcategorie: '" + categorie.getNom() + "'\n\
             \tsysteme: '" + systeme.getNom() + "'\n\
-            \tlogiciel: '" + logiciel.getNom() + "'\n}";
+            \tlogiciel: '" + logiciel.getNom() + "'\n\
+            \tmessage_auteur: '" + liste_messages[0]->toString() + "'\n}";
+
 }
 

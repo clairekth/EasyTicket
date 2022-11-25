@@ -64,7 +64,15 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         if (!logiciel.isEmpty()) {
             t.setLogiciel(Logiciel("L1", logiciel.toStdString()));
         }
+        Message m = Message("M1", date.toStdString(), &client,&t, message.toStdString());
+        t.addMessage(m);
         QMessageBox::information(this,"Ticket créé.",QString::fromStdString(t.toString()));
+
+        //Retour page accueil si tout est ok
+        QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
+        if(stack){
+            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
+        }
     } else {
         QMessageBox::warning(this,"Erreur","Il n'y a pas de messages ou votre message est trop court.");
     }

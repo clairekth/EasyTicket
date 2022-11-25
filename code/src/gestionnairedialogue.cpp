@@ -37,3 +37,4 @@ bool GestionnaireDialogue::verificationMessage(std::string message)
 }
 
 
+
