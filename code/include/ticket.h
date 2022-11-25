@@ -49,73 +49,73 @@ public:
            Categorie categorie,
            Client auteur);
 
-    /// @brief Cette méthode permet de récupérer l'identifiant du @ref Ticket
-    /// @return l'identifiant du ticket
+    /// @brief Cette méthode permet de récupérer l'identifiant du Ticket
+    /// @return L'identifiant du ticket
     std::string getId_ticket() const;
 
-    /// @brief Cette méthode permet de définir l'identifiant du @ref Ticket
-    /// @param  value   le nouvel identifiant du ticket
+    /// @brief Cette méthode permet de définir l'identifiant du Ticket
+    /// @param  value Le nouvel identifiant du ticket
     void setId_ticket(const std::string &value);
 
-    /// @brief Cette méthode permet de récupérer la date de création du @ref ticket
-    /// @return la date de création du ticket
+    /// @brief Cette méthode permet de récupérer la date de création du Ticket
+    /// @return La date de création du ticket
     std::string getDate_creation() const;
 
-    /// @brief Cette méthode permet de définir la date de création du @ref Ticket
-    /// @param  value   la nouvelle date de création du @ref Ticket
+    /// @brief Cette méthode permet de définir la date de création du Ticket
+    /// @param  value La nouvelle date de création du Ticket
     void setDate_creation(std::string value);
 
-    /// @brief Cette méthode permet de récupére la date de fermeture du @ref Ticket
-    /// @return la date de fermeture du ticket
+    /// @brief Cette méthode permet de récupérer la date de fermeture du Ticket
+    /// @return La date de fermeture du ticket
     std::string getDate_fermeture() const;
 
-    /// @brief Cette méthode permet de définir la date de fermeture du @ref Ticket
-    /// @param  value   la nouvelle date de fermeture du @ref Ticket
+    /// @brief Cette méthode permet de définir la date de fermeture du Ticket
+    /// @param  value La nouvelle date de fermeture du Ticket
     void setDate_fermeture(std::string value);
 
-    /// @brief Cette méthode permet de récupérer le système d'exploitation concerné par le @ref Ticket
-    /// @return la date de fermeture du ticket
+    /// @brief Cette méthode permet de récupérer le système d'exploitation concerné par le Ticket
+    /// @return La date de fermeture du ticket
     Systeme getSysteme() const;
 
-    /// @brief Cette méthode permet de définir le @ref Systeme concerné par le @ref Ticket
-    /// @param  value   le nouveau @ref Systeme concerné par le @ref Ticket
+    /// @brief Cette méthode permet de définir le Systeme concerné par le Ticket
+    /// @param  value Le nouveau Systeme concerné par le Ticket
     void setSysteme(const Systeme &value);
 
-    /// @brief Cette méthode permet récupérer le @ref Logiciel concerné par le @ref Ticket
-    /// @return le @ref Logiciel concerné par le @ref Ticket
+    /// @brief Cette méthode permet récupérer le Logiciel concerné par le Ticket
+    /// @return Le Logiciel concerné par le Ticket
     Logiciel getLogiciel() const;
 
-    /// @brief Cette méthode permet définir le @ref Logiciel concerné par le @ref Ticket
-    /// @param  value   le nouveau @ref Logiciel concerné par le @ref Ticket
+    /// @brief Cette méthode permet définir le Logiciel concerné par le Ticket
+    /// @param  value Le nouveau Logiciel concerné par le Ticket
     void setLogiciel(const Logiciel &value);
 
-    /// @brief Cette méthode permet de récupérer la liste des @ref Message concerné par le @ref Ticket
-    /// @return la liste de @ref Message concerné par le ticket
+    /// @brief Cette méthode permet de récupérer la liste des Message concerné par le Ticket
+    /// @return La liste de Message concerné par le ticket
     std::vector<Message*> getListeMessages() const;
 
-    /// @brief Cette méthode permet d'ajouter un Message concerné par le @ref Ticket
-    /// @param  value   la nouvelle liste de @ref Message
+    /// @brief Cette méthode permet d'ajouter un Message concerné par le Ticket
+    /// @param  value La nouvelle liste de Message
     void addMessage(Message &message);
 
-    /// @brief Cette méthode permet de définir la liste des @Message concerné par le @ref Ticket
-    /// @param  value   la nouvelle liste de @ref Message
+    /// @brief Cette méthode permet de définir la liste des @Message concerné par le Ticket
+    /// @param  value La nouvelle liste de Message
     void setListeMessages(const std::vector<Message*> &value);
 
 
-    /// @brief Cette méthode permet de définir le @ref Client auteur du @ref Ticket
-    /// @param value    le @ref Client auteur du @ref Ticket
+    /// @brief Cette méthode permet de définir le Client auteur du Ticket
+    /// @param value    Le Client auteur du Ticket
     void setClient(Client &value);
 
-    /// @brief Cette méthode permet de récupérer le @ref Client auteur du @ref Ticket
-    /// @return Le @ref Client auteur du @ref Ticket
+    /// @brief Cette méthode permet de récupérer le Client auteur du Ticket
+    /// @return Le Client auteur du Ticket
     Client getClient();
 
-    /// @brief Cette méthode permet de définir le @ref Personnel qui traite le @ref Ticket
-    /// @param value    le nouveau @ref Personnel
+    /// @brief Cette méthode permet de définir le Personnel qui traite le Ticket
+    /// @param value Le nouveau Personnel
     void setPersonnel(Personnel &value);
 
-    /// @brief Cette méthode permet de récupérer le @ref Personnel qui traite le @ref Ticket
-    /// @return le @ref Personel traitant le @ref Ticket
+    /// @brief Cette méthode permet de récupérer le Personnel qui traite le Ticket
+    /// @return Le Personel traitant le Ticket
     Personnel getPersonnel();
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
