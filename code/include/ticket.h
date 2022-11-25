@@ -11,7 +11,7 @@
 
 /// @brief La classe Ticket permet de décrire un ticket dans l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.5
+/// @version 1.6
 
 class Ticket
 {
@@ -95,11 +95,12 @@ public:
 
     /// @brief Cette méthode permet d'ajouter un Message concerné par le @ref Ticket
     /// @param  value   la nouvelle liste de @ref Message
-    void setListeMessages(const std::vector<Message*> &value);
+    void addMessage(Message &message);
 
     /// @brief Cette méthode permet de définir la liste des @Message concerné par le @ref Ticket
     /// @param  value   la nouvelle liste de @ref Message
-    void addMessage(const Message &message);
+    void setListeMessages(const std::vector<Message*> &value);
+
 
     /// @brief Cette méthode permet de définir le @ref Client auteur du @ref Ticket
     /// @param value    le @ref Client auteur du @ref Ticket
