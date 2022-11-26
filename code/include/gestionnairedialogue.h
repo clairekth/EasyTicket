@@ -1,7 +1,14 @@
 #ifndef GESTIONNAIREDIALOGUE_H
 #define GESTIONNAIREDIALOGUE_H
 
+#include <iostream>
+#include <QtSql>
+#include <QSqlDatabase>
+#include <QSqlQuery>
 #include "ticket.h"
+#include "gestionnairebdd.h"
+
+
 
 /// @brief Classe correspondant au Gestionnaire de Dialogue entre l'Utilisateur et le modèle.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
@@ -27,6 +34,9 @@ public:
     /// @brief Méthode permettant de vérifier que le message est bon.
     /// @return true si le message est bon, false sinon.
     bool verificationMessage(std::string message);
+
+private:
+    GestionnaireBDD bdd;
 
 };
 
