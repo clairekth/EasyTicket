@@ -68,47 +68,125 @@ $(function() {
 <div class="title">Message Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>La classe <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> est la classe correspondant à un <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> sur un <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a>.  
+ <a href="classMessage.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="message_8h_source.html">message.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0b5ed72ebe343fab7c1bc0a03f9a4fb9"><td class="memItemLeft" align="right" valign="top"><a id="a0b5ed72ebe343fab7c1bc0a03f9a4fb9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a0b5ed72ebe343fab7c1bc0a03f9a4fb9">Message</a> (std::string id_message, double date_envoie, <a class="el" href="classUtilisateur.html">Utilisateur</a> user, <a class="el" href="classTicket.html">Ticket</a> ticket)</td></tr>
-<tr class="memdesc:a0b5ed72ebe343fab7c1bc0a03f9a4fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le constructeur par défaut. <br /></td></tr>
-<tr class="separator:a0b5ed72ebe343fab7c1bc0a03f9a4fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc4f717b634e66070366cb7722d7761"><td class="memItemLeft" align="right" valign="top"><a id="a4fc4f717b634e66070366cb7722d7761"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a4fc4f717b634e66070366cb7722d7761">Message</a> ()</td></tr>
+<tr class="memdesc:a4fc4f717b634e66070366cb7722d7761"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le constructeur par défaut de la classe. <br /></td></tr>
+<tr class="separator:a4fc4f717b634e66070366cb7722d7761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1293d13ed556f24745ab71692143d48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#ad1293d13ed556f24745ab71692143d48">Message</a> (std::string id_message, std::string date_envoi, <a class="el" href="classUtilisateur.html">Utilisateur</a> *user, <a class="el" href="classTicket.html">Ticket</a> *ticket, std::string message)</td></tr>
+<tr class="memdesc:ad1293d13ed556f24745ab71692143d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de message.  <a href="classMessage.html#ad1293d13ed556f24745ab71692143d48">More...</a><br /></td></tr>
+<tr class="separator:ad1293d13ed556f24745ab71692143d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaeb7119e465d8d2193db7c7e338a99e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#aaaeb7119e465d8d2193db7c7e338a99e">getId_message</a> () const</td></tr>
 <tr class="memdesc:aaaeb7119e465d8d2193db7c7e338a99e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de récupérer l'identifiant du message.  <a href="classMessage.html#aaaeb7119e465d8d2193db7c7e338a99e">More...</a><br /></td></tr>
 <tr class="separator:aaaeb7119e465d8d2193db7c7e338a99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45ce613b07e8f6b5c2b50fca43218099"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a45ce613b07e8f6b5c2b50fca43218099">setId_message</a> (const std::string &amp;value)</td></tr>
 <tr class="memdesc:a45ce613b07e8f6b5c2b50fca43218099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de définir l'identifiant du message.  <a href="classMessage.html#a45ce613b07e8f6b5c2b50fca43218099">More...</a><br /></td></tr>
 <tr class="separator:a45ce613b07e8f6b5c2b50fca43218099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9ef92e3a9773e9641f35d4b4c2f9a09"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#ab9ef92e3a9773e9641f35d4b4c2f9a09">getDate_envoie</a> () const</td></tr>
-<tr class="memdesc:ab9ef92e3a9773e9641f35d4b4c2f9a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de récupérer la date à laquelle le message a été envoyé.  <a href="classMessage.html#ab9ef92e3a9773e9641f35d4b4c2f9a09">More...</a><br /></td></tr>
-<tr class="separator:ab9ef92e3a9773e9641f35d4b4c2f9a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22ef0739d95fd1b190b72f2b16a7fbd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a22ef0739d95fd1b190b72f2b16a7fbd0">setDate_envoie</a> (double value)</td></tr>
-<tr class="memdesc:a22ef0739d95fd1b190b72f2b16a7fbd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de définir la date à laquelle a été envoyé le message.  <a href="classMessage.html#a22ef0739d95fd1b190b72f2b16a7fbd0">More...</a><br /></td></tr>
-<tr class="separator:a22ef0739d95fd1b190b72f2b16a7fbd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529b094816d67f9654b34c6c8ca9313c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a529b094816d67f9654b34c6c8ca9313c">getDate_envoi</a> () const</td></tr>
+<tr class="memdesc:a529b094816d67f9654b34c6c8ca9313c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de récupérer la date à laquelle le message a été envoyé.  <a href="classMessage.html#a529b094816d67f9654b34c6c8ca9313c">More...</a><br /></td></tr>
+<tr class="separator:a529b094816d67f9654b34c6c8ca9313c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144b1f0424494881f0af3756930eb5c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a144b1f0424494881f0af3756930eb5c0">setDate_envoi</a> (std::string value)</td></tr>
+<tr class="memdesc:a144b1f0424494881f0af3756930eb5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de définir la date à laquelle a été envoyé le message.  <a href="classMessage.html#a144b1f0424494881f0af3756930eb5c0">More...</a><br /></td></tr>
+<tr class="separator:a144b1f0424494881f0af3756930eb5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab13f9620abfe30c51bb0e45ee72a00c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUtilisateur.html">Utilisateur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#ab13f9620abfe30c51bb0e45ee72a00c8">getUser</a> () const</td></tr>
-<tr class="memdesc:ab13f9620abfe30c51bb0e45ee72a00c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de récupérer l' Users qui est l'auteur du message.  <a href="classMessage.html#ab13f9620abfe30c51bb0e45ee72a00c8">More...</a><br /></td></tr>
+<tr class="memdesc:ab13f9620abfe30c51bb0e45ee72a00c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de récupérer l'<a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a> auteur du message.  <a href="classMessage.html#ab13f9620abfe30c51bb0e45ee72a00c8">More...</a><br /></td></tr>
 <tr class="separator:ab13f9620abfe30c51bb0e45ee72a00c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a2bb63b67cc4de6f9f95a259df0228f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a7a2bb63b67cc4de6f9f95a259df0228f">setUser</a> (<a class="el" href="classUtilisateur.html">Utilisateur</a> *&amp;value)</td></tr>
-<tr class="memdesc:a7a2bb63b67cc4de6f9f95a259df0228f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de définir l' <a class="el" href="classUtilisateur.html">Utilisateur</a> qui l'auteur du message.  <a href="classMessage.html#a7a2bb63b67cc4de6f9f95a259df0228f">More...</a><br /></td></tr>
+<tr class="memdesc:a7a2bb63b67cc4de6f9f95a259df0228f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de définir l'<a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a> auteur du message.  <a href="classMessage.html#a7a2bb63b67cc4de6f9f95a259df0228f">More...</a><br /></td></tr>
 <tr class="separator:a7a2bb63b67cc4de6f9f95a259df0228f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab67949f6c9bea2d3c4d6a94179ca64b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTicket.html">Ticket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#ab67949f6c9bea2d3c4d6a94179ca64b5">getTicket</a> () const</td></tr>
-<tr class="memdesc:ab67949f6c9bea2d3c4d6a94179ca64b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de récupérer le <a class="el" href="classTicket.html">Ticket</a> dans lequel se trouve le message.  <a href="classMessage.html#ab67949f6c9bea2d3c4d6a94179ca64b5">More...</a><br /></td></tr>
+<tr class="memdesc:ab67949f6c9bea2d3c4d6a94179ca64b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet de récupérer le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> dans lequel se trouve le message.  <a href="classMessage.html#ab67949f6c9bea2d3c4d6a94179ca64b5">More...</a><br /></td></tr>
 <tr class="separator:ab67949f6c9bea2d3c4d6a94179ca64b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26cbc78781783f4e474eb627d991cfb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a26cbc78781783f4e474eb627d991cfb5">setTicket</a> (<a class="el" href="classTicket.html">Ticket</a> *&amp;value)</td></tr>
-<tr class="memdesc:a26cbc78781783f4e474eb627d991cfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode définis le <a class="el" href="classTicket.html">Ticket</a> dans lequel se trouve le message.  <a href="classMessage.html#a26cbc78781783f4e474eb627d991cfb5">More...</a><br /></td></tr>
+<tr class="memdesc:a26cbc78781783f4e474eb627d991cfb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode définis le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> dans lequel se trouve le message.  <a href="classMessage.html#a26cbc78781783f4e474eb627d991cfb5">More...</a><br /></td></tr>
 <tr class="separator:a26cbc78781783f4e474eb627d991cfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae74ebccee4951d32db11fbd54dec4e02"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#ae74ebccee4951d32db11fbd54dec4e02">toString</a> ()</td></tr>
+<tr class="memdesc:ae74ebccee4951d32db11fbd54dec4e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette méthode permet d'afficher les attributs de la classe pour le débug.  <a href="classMessage.html#ae74ebccee4951d32db11fbd54dec4e02">More...</a><br /></td></tr>
+<tr class="separator:ae74ebccee4951d32db11fbd54dec4e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7275462831f787a861271687bcad67"><td class="memItemLeft" align="right" valign="top"><a id="a3f7275462831f787a861271687bcad67"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMessage.html#a3f7275462831f787a861271687bcad67">~Message</a> ()</td></tr>
+<tr class="memdesc:a3f7275462831f787a861271687bcad67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Descructeur de la classe. <br /></td></tr>
+<tr class="separator:a3f7275462831f787a861271687bcad67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab9ef92e3a9773e9641f35d4b4c2f9a09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9ef92e3a9773e9641f35d4b4c2f9a09">&#9670;&nbsp;</a></span>getDate_envoie()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>La classe <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> est la classe correspondant à un <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> sur un <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a>. </p>
+<dl class="section author"><dt>Authors</dt><dd>Nicolas Robert, Victor Dallé, Claire Kurth </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.6 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad1293d13ed556f24745ab71692143d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1293d13ed556f24745ab71692143d48">&#9670;&nbsp;</a></span>Message()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Message::getDate_envoie </td>
+          <td class="memname">Message::Message </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>id_message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>date_envoi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classUtilisateur.html">Utilisateur</a> *&#160;</td>
+          <td class="paramname"><em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTicket.html">Ticket</a> *&#160;</td>
+          <td class="paramname"><em>ticket</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur de message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id_message</td><td>L'id du message. </td></tr>
+    <tr><td class="paramname">date_envoie</td><td>La date d'envoi du message. </td></tr>
+    <tr><td class="paramname">*user</td><td>Pointeur sur l'<a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a> à l'origine du message. </td></tr>
+    <tr><td class="paramname">*ticket</td><td>Pointeur sur le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> rattaché au message. </td></tr>
+    <tr><td class="paramname">message</td><td>Le message du <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a529b094816d67f9654b34c6c8ca9313c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529b094816d67f9654b34c6c8ca9313c">&#9670;&nbsp;</a></span>getDate_envoi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Message::getDate_envoi </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -117,7 +195,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cette méthode permet de récupérer la date à laquelle le message a été envoyé. </p>
-<dl class="section return"><dt>Returns</dt><dd>la date d'envoie du message </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>la date d'envoi du message </dd></dl>
 
 </div>
 </div>
@@ -156,8 +234,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cette méthode permet de récupérer le <a class="el" href="classTicket.html">Ticket</a> dans lequel se trouve le message. </p>
-<dl class="section return"><dt>Returns</dt><dd>la classe Users </dd></dl>
+<p>Cette méthode permet de récupérer le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> dans lequel se trouve le message. </p>
+<dl class="section return"><dt>Returns</dt><dd>la classe <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> </dd></dl>
 
 </div>
 </div>
@@ -176,26 +254,21 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cette méthode permet de récupérer l' Users qui est l'auteur du message. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>le nouveau Users </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Cette méthode permet de récupérer l'<a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a> auteur du message. </p>
+<dl class="section return"><dt>Returns</dt><dd>le nouvel <a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a>. </dd></dl>
 
 </div>
 </div>
-<a id="a22ef0739d95fd1b190b72f2b16a7fbd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22ef0739d95fd1b190b72f2b16a7fbd0">&#9670;&nbsp;</a></span>setDate_envoie()</h2>
+<a id="a144b1f0424494881f0af3756930eb5c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144b1f0424494881f0af3756930eb5c0">&#9670;&nbsp;</a></span>setDate_envoi()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Message::setDate_envoie </td>
+          <td class="memname">void Message::setDate_envoi </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -205,7 +278,7 @@ Public Member Functions</h2></td></tr>
 <p>Cette méthode permet de définir la date à laquelle a été envoyé le message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>la nouvelle date d'envoie </td></tr>
+    <tr><td class="paramname">value</td><td>la nouvelle date d'envoi </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,10 +327,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cette méthode définis le <a class="el" href="classTicket.html">Ticket</a> dans lequel se trouve le message. </p>
+<p>Cette méthode définis le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> dans lequel se trouve le message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>le nouveau <a class="el" href="classTicket.html">Ticket</a> </td></tr>
+    <tr><td class="paramname">value</td><td>Le nouveau <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -280,13 +353,33 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cette méthode permet de définir l' <a class="el" href="classUtilisateur.html">Utilisateur</a> qui l'auteur du message. </p>
+<p>Cette méthode permet de définir l'<a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a> auteur du message. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>le nouveau Users </td></tr>
+    <tr><td class="paramname">value</td><td>Le nouvel <a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a>. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ae74ebccee4951d32db11fbd54dec4e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae74ebccee4951d32db11fbd54dec4e02">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Message::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cette méthode permet d'afficher les attributs de la classe pour le débug. </p>
+<dl class="section return"><dt>Returns</dt><dd>String avec les infos de la classe. </dd></dl>
 
 </div>
 </div>

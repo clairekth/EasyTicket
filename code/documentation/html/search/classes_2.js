@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ingenieur_70',['Ingenieur',['../classIngenieur.html',1,'']]]
+  ['gestionnairebdd_94',['GestionnaireBDD',['../classGestionnaireBDD.html',1,'']]],
+  ['gestionnairedialogue_95',['GestionnaireDialogue',['../classGestionnaireDialogue.html',1,'']]]
 ];

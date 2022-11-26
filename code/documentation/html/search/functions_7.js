@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['personnel_109',['Personnel',['../classPersonnel.html#a96840b35bd30d6010480a32cd296068b',1,'Personnel::Personnel()'],['../classPersonnel.html#afa357ca8b9572bc77fa5a80cb29e962e',1,'Personnel::Personnel(std::string id, std::string nom, std::string prenom, std::string mdp, std::string mail)']]]
+  ['mainwindow_142',['MainWindow',['../classMainWindow.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow']]],
+  ['message_143',['Message',['../classMessage.html#a4fc4f717b634e66070366cb7722d7761',1,'Message::Message()'],['../classMessage.html#ad1293d13ed556f24745ab71692143d48',1,'Message::Message(std::string id_message, std::string date_envoi, Utilisateur *user, Ticket *ticket, std::string message)']]]
 ];

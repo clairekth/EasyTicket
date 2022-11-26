@@ -74,35 +74,37 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classSysteme.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSysteme.html">Systeme</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::string id_systeme;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::string nom;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classSysteme.html">Systeme</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classSysteme.html#a85e950a9fbb195bcde607277f928d112">   16</a></span>&#160;    <a class="code" href="classSysteme.html#a85e950a9fbb195bcde607277f928d112">Systeme</a>(</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            std::string id_systeme,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            std::string nom);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::string <a class="code" href="classSysteme.html#a4e2d7c40a764976124c5efa251b7714a">getId_systeme</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSysteme.html#aae7d0fa3f76d60246bf73d1ef14bc0d2">setId_systeme</a>(<span class="keyword">const</span> std::string &amp;value);</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classSysteme.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSysteme.html">Systeme</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::string id_systeme;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::string nom;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classSysteme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classSysteme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme</a>(</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            std::string id_systeme,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            std::string nom);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string <a class="code" href="classSysteme.html#a9c2a6f4cf3e05c349f52a3ae5e9d1024">getNom</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string <a class="code" href="classSysteme.html#a4e2d7c40a764976124c5efa251b7714a">getId_systeme</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSysteme.html#af29c0988838d96faccca3bf0366bc1bb">setNom</a>(<span class="keyword">const</span> std::string &amp;value);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSysteme.html#aae7d0fa3f76d60246bf73d1ef14bc0d2">setId_systeme</a>(<span class="keyword">const</span> std::string &amp;value);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ~<a class="code" href="classSysteme.html">Systeme</a>() {}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SYSTEME_H</span></div>
-<div class="ttc" id="aclassSysteme_html"><div class="ttname"><a href="classSysteme.html">Systeme</a></div><div class="ttdef"><b>Definition:</b> systeme.h:7</div></div>
-<div class="ttc" id="aclassSysteme_html_a4e2d7c40a764976124c5efa251b7714a"><div class="ttname"><a href="classSysteme.html#a4e2d7c40a764976124c5efa251b7714a">Systeme::getId_systeme</a></div><div class="ttdeci">std::string getId_systeme() const</div><div class="ttdoc">Cette méthode permet de récupérer l'identifiant du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:18</div></div>
-<div class="ttc" id="aclassSysteme_html_a85e950a9fbb195bcde607277f928d112"><div class="ttname"><a href="classSysteme.html#a85e950a9fbb195bcde607277f928d112">Systeme::Systeme</a></div><div class="ttdeci">Systeme(std::string id_systeme, std::string nom)</div><div class="ttdoc">La classe Systeme permet de décrire un système d'exploitation dans l'application EasyTicket.</div></div>
-<div class="ttc" id="aclassSysteme_html_a9c2a6f4cf3e05c349f52a3ae5e9d1024"><div class="ttname"><a href="classSysteme.html#a9c2a6f4cf3e05c349f52a3ae5e9d1024">Systeme::getNom</a></div><div class="ttdeci">std::string getNom() const</div><div class="ttdoc">Cette méthode permet de récupérer le nom du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:8</div></div>
-<div class="ttc" id="aclassSysteme_html_aae7d0fa3f76d60246bf73d1ef14bc0d2"><div class="ttname"><a href="classSysteme.html#aae7d0fa3f76d60246bf73d1ef14bc0d2">Systeme::setId_systeme</a></div><div class="ttdeci">void setId_systeme(const std::string &amp;value)</div><div class="ttdoc">Cette méthode permet de définir l'identifiant du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:23</div></div>
-<div class="ttc" id="aclassSysteme_html_af29c0988838d96faccca3bf0366bc1bb"><div class="ttname"><a href="classSysteme.html#af29c0988838d96faccca3bf0366bc1bb">Systeme::setNom</a></div><div class="ttdeci">void setNom(const std::string &amp;value)</div><div class="ttdoc">Cette méthode permet de définir le nom du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:13</div></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string <a class="code" href="classSysteme.html#a9c2a6f4cf3e05c349f52a3ae5e9d1024">getNom</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSysteme.html#af29c0988838d96faccca3bf0366bc1bb">setNom</a>(<span class="keyword">const</span> std::string &amp;value);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ~<a class="code" href="classSysteme.html">Systeme</a>() {}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SYSTEME_H</span></div>
+<div class="ttc" id="aclassSysteme_html"><div class="ttname"><a href="classSysteme.html">Systeme</a></div><div class="ttdoc">La classe Systeme permet de décrire un système d'exploitation dans l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> systeme.h:10</div></div>
+<div class="ttc" id="aclassSysteme_html_a2599ade4fd47e65b7192d227f60a5482"><div class="ttname"><a href="classSysteme.html#a2599ade4fd47e65b7192d227f60a5482">Systeme::Systeme</a></div><div class="ttdeci">Systeme()</div><div class="ttdoc">Constructeur par défaut.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:3</div></div>
+<div class="ttc" id="aclassSysteme_html_a4e2d7c40a764976124c5efa251b7714a"><div class="ttname"><a href="classSysteme.html#a4e2d7c40a764976124c5efa251b7714a">Systeme::getId_systeme</a></div><div class="ttdeci">std::string getId_systeme() const</div><div class="ttdoc">Cette méthode permet de récupérer l'identifiant du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:21</div></div>
+<div class="ttc" id="aclassSysteme_html_a9c2a6f4cf3e05c349f52a3ae5e9d1024"><div class="ttname"><a href="classSysteme.html#a9c2a6f4cf3e05c349f52a3ae5e9d1024">Systeme::getNom</a></div><div class="ttdeci">std::string getNom() const</div><div class="ttdoc">Cette méthode permet de récupérer le nom du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:11</div></div>
+<div class="ttc" id="aclassSysteme_html_aae7d0fa3f76d60246bf73d1ef14bc0d2"><div class="ttname"><a href="classSysteme.html#aae7d0fa3f76d60246bf73d1ef14bc0d2">Systeme::setId_systeme</a></div><div class="ttdeci">void setId_systeme(const std::string &amp;value)</div><div class="ttdoc">Cette méthode permet de définir l'identifiant du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:26</div></div>
+<div class="ttc" id="aclassSysteme_html_af29c0988838d96faccca3bf0366bc1bb"><div class="ttname"><a href="classSysteme.html#af29c0988838d96faccca3bf0366bc1bb">Systeme::setNom</a></div><div class="ttdeci">void setNom(const std::string &amp;value)</div><div class="ttdoc">Cette méthode permet de définir le nom du système.</div><div class="ttdef"><b>Definition:</b> systeme.cpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

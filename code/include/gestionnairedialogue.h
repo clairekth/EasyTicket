@@ -10,7 +10,7 @@
 
 
 
-/// @brief Classe correspondant au Gestionnaire de Dialogue entre l'Utilisateur et le modèle.
+/// @brief La classe GestionnaireDialogue correspond à l'interface de communication entre l'Utilisateur et le modèle.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
 /// @version 1.5
 class GestionnaireDialogue
@@ -36,6 +36,7 @@ public:
     bool verificationMessage(std::string message);
 
 private:
+    /// @brief Champs servant à communiquer avec la bdd, (interface de communication).
     GestionnaireBDD bdd;
 
 };

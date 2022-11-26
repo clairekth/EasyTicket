@@ -36,6 +36,12 @@
 ///
 /// \subsection v1_7_subsec v1.7
 /// Ajout de la base de donnée au format db avec SQLite.
+///
+/// Ajout d'une classe GestionnaireBDD pour gérer l'interfaçage avec le bdd.
+///
+/// - Importer la bdd.
+///
+/// - Faire un select sur la bdd, etc.
 
 #include <QMainWindow>
 #include <QStackedWidget>

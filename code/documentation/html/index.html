@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EasyTicket: Main Page</title>
+<title>EasyTicket: Documentation EasyTicket</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,11 +60,46 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">EasyTicket Documentation</div>  </div>
+<div class="title">Documentation EasyTicket </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1><a class="anchor" id="versions_sec"></a>
+Version</h1>
+<h2><a class="anchor" id="v1_1_subsec"></a>
+v1.1</h2>
+<p>Page de connexion avec au moment de la connexion, la création d'un objet <a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a>.</p>
+<p>Peut importe le login et le mot de passe, on affiche un message contenant le 'toString' de notre objet <a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a>.</p>
+<h2><a class="anchor" id="v1_2_subsec"></a>
+v1.2</h2>
+<p>Une fois connecté avec un compte 'client', l'utilisateur accède à la page d'accueil (<a class="el" href="classPageAccueilClient.html">PageAccueilClient</a>).</p>
+<p>Ajout d'un <a class="el" href="classGestionnaireDialogue.html" title="La classe GestionnaireDialogue correspond à l&#39;interface de communication entre l&#39;Utilisateur et le mo...">GestionnaireDialogue</a> qui fait le lien entre l'utilisateur et les données.</p>
+<h2><a class="anchor" id="v1_3_subsec"></a>
+v1.3</h2>
+<p>Le bouton de création de ticket mène à une page vierge qui servira pour créer les tickets (<a class="el" href="classPageAjoutTicket.html">PageAjoutTicket</a>).</p>
+<p>Ajout d'un bouton de retour à la page d'accueil quand on est sur la page de création de ticket.</p>
+<h2><a class="anchor" id="v1_4_subsec"></a>
+v1.4</h2>
+<p>Création de la mise en page du formulaire pour créer le ticket.</p>
+<p>Affiche le resultat sur la sortie standard et si jamais il y a des champs invalides.</p>
+<h2><a class="anchor" id="v1_5_subsec"></a>
+v1.5</h2>
+<p>Vérification des champs saisis par l'utilisation lors de la création d'un nouveau ticket.</p>
+<p>Fonctions de vérifications pour le <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> du ticket et génération d'un message contenant le descriptif du <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> créé (sans encore le message).</p>
+<h2><a class="anchor" id="v1_6_subsec"></a>
+v1.6</h2>
+<p>Implémentation de l'ajout de <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> dans le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> au moment de sa création. Au moment du clic pour créer le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a>, on affiche les données du <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> ainsi que le <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> ajouté.</p>
+<p>Si tout est ok, on retourne à la page d'accueil (<a class="el" href="classPageAccueilClient.html">PageAccueilClient</a>).</p>
+<h2><a class="anchor" id="v1_7_subsec"></a>
+v1.7</h2>
+<p>Ajout de la base de donnée au format db avec SQLite.</p>
+<p>Ajout d'une classe <a class="el" href="classGestionnaireBDD.html" title="La classe GestionnaireBDD correspond à l&#39;interface de communication entre les données du projet et le...">GestionnaireBDD</a> pour gérer l'interfaçage avec le bdd.</p>
+<ul>
+<li>Importer la bdd.</li>
+<li>Faire un select sur la bdd, etc. </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,21 +1,8 @@
 var searchData=
 [
-  ['getclient_8',['getClient',['../classTicket.html#aa44d539be6addc6433dec590e308a8e3',1,'Ticket']]],
-  ['getdate_5fcreation_9',['getDate_creation',['../classTicket.html#aba1375ff7519e070fc2d30c518e05508',1,'Ticket']]],
-  ['getdate_5fenvoie_10',['getDate_envoie',['../classMessage.html#ab9ef92e3a9773e9641f35d4b4c2f9a09',1,'Message']]],
-  ['getdate_5ffermeture_11',['getDate_fermeture',['../classTicket.html#a8735ce35c88f62795da2bf0ecfd74445',1,'Ticket']]],
-  ['getid_12',['getID',['../classUtilisateur.html#ad972f6468d0676abe0745ad7bdbb7bcf',1,'Utilisateur']]],
-  ['getid_5fmessage_13',['getId_message',['../classMessage.html#aaaeb7119e465d8d2193db7c7e338a99e',1,'Message']]],
-  ['getid_5fsysteme_14',['getId_systeme',['../classSysteme.html#a4e2d7c40a764976124c5efa251b7714a',1,'Systeme']]],
-  ['getid_5fticket_15',['getId_ticket',['../classTicket.html#a2a0f5d1c8f94b85e59b7337892cc6f80',1,'Ticket']]],
-  ['getlistemessages_16',['getListeMessages',['../classTicket.html#a29623c53265c6c60f6e1ff3071f45ca9',1,'Ticket']]],
-  ['getlogiciel_17',['getLogiciel',['../classTicket.html#a44050094872a8786ea7d5f5c18b50356',1,'Ticket']]],
-  ['getmail_18',['getMail',['../classUtilisateur.html#a7de36b5c63c8221b3b92042b14cfbbb5',1,'Utilisateur']]],
-  ['getmdp_19',['getMDP',['../classUtilisateur.html#a64cf22d041547d93cbe5da7214f21716',1,'Utilisateur']]],
-  ['getnom_20',['getNom',['../classSysteme.html#a9c2a6f4cf3e05c349f52a3ae5e9d1024',1,'Systeme::getNom()'],['../classUtilisateur.html#a496673f5b164b67d383bae0cf5931ec7',1,'Utilisateur::getNom()']]],
-  ['getpersonnel_21',['getPersonnel',['../classTicket.html#a924a54267509f16c59b87ffe326dec7a',1,'Ticket']]],
-  ['getprenom_22',['getPrenom',['../classUtilisateur.html#a6b8b43bf70400331cddb4a8976b9d465',1,'Utilisateur']]],
-  ['getsysteme_23',['getSysteme',['../classTicket.html#a71ea6606cc7b0d580b554dd94916dcc9',1,'Ticket']]],
-  ['getticket_24',['getTicket',['../classMessage.html#ab67949f6c9bea2d3c4d6a94179ca64b5',1,'Message']]],
-  ['getuser_25',['getUser',['../classMessage.html#ab13f9620abfe30c51bb0e45ee72a00c8',1,'Message']]]
+  ['estunadmin_6',['estUnAdmin',['../classAdmin.html#ac21ea8b37a665519520b555b3f61ad82',1,'Admin::estUnAdmin()'],['../classUtilisateur.html#ab33cf6e5d54ad8ea164a5dadee78663c',1,'Utilisateur::estUnAdmin()']]],
+  ['estunclient_7',['estUnClient',['../classClient.html#ad8ed8aa77481689155922d48fefd94d9',1,'Client::estUnClient()'],['../classUtilisateur.html#a3cf4dde77f219497cbbcc91157892cb0',1,'Utilisateur::estUnClient()']]],
+  ['estuningenieur_8',['estUnIngenieur',['../classIngenieur.html#a7d3169d9d28d2210e17513db0f3ee5b0',1,'Ingenieur::estUnIngenieur()'],['../classUtilisateur.html#a24f61ae4d2d697f8a218e1411638d99d',1,'Utilisateur::estUnIngenieur()']]],
+  ['estunpersonnel_9',['estUnPersonnel',['../classPersonnel.html#a75a23cc3fb43f11df069450e1a21a3fd',1,'Personnel::estUnPersonnel()'],['../classUtilisateur.html#a5fbfe86e8c39b3d946cc4449e4d9d7af',1,'Utilisateur::estUnPersonnel()']]],
+  ['estuntechnicien_10',['estUnTechnicien',['../classTechnicien.html#aecba0d9b4c0486dbe0cb86a05c7070da',1,'Technicien::estUnTechnicien()'],['../classUtilisateur.html#a7badec07e9f35998b62fc3ef4b272e81',1,'Utilisateur::estUnTechnicien()']]]
 ];
