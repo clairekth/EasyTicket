@@ -12,8 +12,6 @@ GestionnaireDialogue::GestionnaireDialogue()
     //Ajoute ce qui manque pour arriver au file
     QString path = firstList.takeFirst() +"EasyTicket/code/resources/database.db";
     bdd.select("SELECT * FROM utilisateur");
-    bdd.select("SELECT * FROM utilisateur");
-
 }
 
 std::string GestionnaireDialogue::typeUtilisateur(std::string id, std::string mdp)
