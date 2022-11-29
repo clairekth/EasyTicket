@@ -80,8 +80,8 @@ Client GestionnaireBDD::authentifier(QString id, QString mdp)
 
         client = *new Client(
                     query->value(0).toString().toStdString(),  // Convertion : value -> QString -> std::string
-                    query->value(1).toString().toStdString(),
                     query->value(2).toString().toStdString(),
+                    query->value(1).toString().toStdString(),
                     query->value(3).toString().toStdString(),
                     query->value(4).toString().toStdString());
 
