@@ -32,7 +32,6 @@ void PageLogin::handle_validation()
     //Récupère le type d'utilisateur, "null" si inconnu
     std::string typeUser = gestionnaire_dialogue->typeUtilisateur(idU.toStdString(), mdpU.toStdString());
 
-
     if (typeUser == "client"){
         Client c = gestionnaire_dialogue->authentification(idU.toStdString(), mdpU.toStdString());
         //Récupère le stack parent.
