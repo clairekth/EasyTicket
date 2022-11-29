@@ -46,16 +46,16 @@ void GestionnaireBDD::select(QString query)
 
 }
 
-std::string GestionnaireBDD::type_utilisateur(QString id_utilisateur) {
-    std::string res;
+std::string GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString mdp) {
+    std::string res = "null";
 
     QSqlQuery *query = new QSqlQuery();
-    query->prepare("select * from client where id_utilisateur = :id_utilisateur");
+    query->prepare("select * from client natural join utilisateur where id_utilisateur = :id_utilisateur and mot_de_passe= :mdp");
     query->bindValue(":id_utilisateur", id_utilisateur);
+    query->bindValue(":mdp", mdp);
     query->exec();
-
     while (query->next()) {
-        res = query->value(0).toString().toStdString();
+        res = "client";
     }
     query->clear();
 
@@ -84,6 +84,8 @@ Client GestionnaireBDD::authentifier(QString id, QString mdp)
                     query->value(2).toString().toStdString(),
                     query->value(3).toString().toStdString(),
                     query->value(4).toString().toStdString());
+
+
         qDebug() << "----------";
 
     }

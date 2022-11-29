@@ -8,12 +8,9 @@ GestionnaireDialogue::GestionnaireDialogue()
 std::string GestionnaireDialogue::typeUtilisateur(std::string id, std::string mdp)
 {
     //BDD check de savoir quel type d'utilisateur correspondent les id & mdp et renvoie le type. Si null -> user existe pas. ?
-    std::string id_categorie = bdd.type_utilisateur(QString::fromStdString(id));
+    std::string id_categorie = bdd.type_utilisateur(QString::fromStdString(id), QString::fromStdString(mdp));
 
-    if (id_categorie == "client"){
-        return "client";
-    }
-    return "null";
+    return id_categorie;
 }
 
 Client GestionnaireDialogue::authentification(std::string id, std::string mdp)

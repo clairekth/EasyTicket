@@ -23,13 +23,14 @@ public:
     /// @brief  Méthode qui permet d'authentifier un client.
     /// @param  id  L'identifiant du client.
     /// @param  mdp Le mot de passe du client.
-    /// @return  l'utilisateur en question s'il existe, null sinon.
+    /// @return  le Client identifié.
     Client authentifier(QString id, QString mdp);
 
     /// @brief  Méthode qui permet de récupérer la catégorie d'un Utilisateur.
     /// @param  id_utilisateur  l'identifiant de l'Utilisateur.
+    /// @param  mdp             le mot de passe de l'Utilisateur.
     /// @return la catégorie de l'utilisateur s'il existe, null sinon
-    std::string type_utilisateur(QString id_utilisateur);
+    std::string type_utilisateur(QString id_utilisateur, QString mdp);
 
 protected:
     /// @brief La base de donnée SQLite.
