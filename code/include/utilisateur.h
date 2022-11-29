@@ -11,7 +11,7 @@ class Ticket;
 /// Elle sert de classe mère aux autres classes comme Client, Personnel et Admin.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
 /// @version 1.1
-class Utilisateur {
+class   Utilisateur {
 protected:
     /// @brief Champs contenant l'identifiant de l'utilisateur.
     std::string id;
