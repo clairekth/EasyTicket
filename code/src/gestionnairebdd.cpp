@@ -14,21 +14,6 @@ GestionnaireBDD::GestionnaireBDD()
     QString path = firstList.takeFirst() +"EasyTicket/code/resources/database.db";
     my_db.setDatabaseName(path);
 
-    /*if (!my_db.open())
-    {
-        qDebug() << "Erreur de connexion à la BDD";
-        created = false;
-    }
-
-    else
-    {
-        qDebug() <<"Connexion réussie à la BDD";
-        created = true;
-    }*/
-}
-
-void GestionnaireBDD::select(QString query)
-{
     if (!my_db.open())
     {
         qDebug() << "Erreur de connexion à la BDD";
@@ -36,6 +21,13 @@ void GestionnaireBDD::select(QString query)
 
     else
     {
+        qDebug() <<"Connexion réussie à la BDD";
+    }
+}
+
+void GestionnaireBDD::select(QString query)
+{
+
         qDebug() <<"Connexion réussie à la BDD";
         QSqlQuery *statement = new QSqlQuery();
         statement->exec(query);
@@ -50,8 +42,7 @@ void GestionnaireBDD::select(QString query)
 
         }
         statement->clear();
-        my_db.close();
-    }
+
 
 }
 

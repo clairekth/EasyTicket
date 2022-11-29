@@ -2,21 +2,14 @@
 
 GestionnaireDialogue::GestionnaireDialogue()
 {
-    bdd = GestionnaireBDD();
-
-    //Récupère le path absolue de l'exécutable
-    QString p = qApp->QCoreApplication::applicationDirPath() ;
-    //On coupe le lien en 2 avec EasyTicket/
-    QRegExp tagExp("EasyTicket/");
-    QStringList firstList = p.split(tagExp);
-    //Ajoute ce qui manque pour arriver au file
-    QString path = firstList.takeFirst() +"EasyTicket/code/resources/database.db";
     bdd.select("SELECT * FROM utilisateur");
 }
 
 std::string GestionnaireDialogue::typeUtilisateur(std::string id, std::string mdp)
 {
     //BDD check de savoir quel type d'utilisateur correspondent les id & mdp et renvoie le type. Si null -> user existe pas. ?
+    bdd.select("SELECT * FROM utilisateur");
+
     if (id == "client"){
         return "client";
     }
