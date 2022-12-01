@@ -3,7 +3,6 @@
 GestionnaireDialogue::GestionnaireDialogue()
 {
     // bdd.select("SELECT * FROM utilisateur");
-    bdd.select("ALTER TABLE ticket RENAME COLUMN status to date_fermeture");
 }
 
 QString GestionnaireDialogue::typeUtilisateur(QString id, QString mdp)

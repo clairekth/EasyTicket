@@ -49,7 +49,6 @@ void GestionnaireBDD::select(QString query)
 
 QString GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString mdp) {
     QString res = "null";
-    std::cout << id_utilisateur.toStdString() << " et " << mdp.toStdString() << std::endl;
     QSqlQuery *query = new QSqlQuery();
     query->prepare("SELECT type_utilisateur FROM utilisateur WHERE id_utilisateur = :id_utilisateur AND mot_de_passe= :mdp");
     query->bindValue(":id_utilisateur", id_utilisateur);
