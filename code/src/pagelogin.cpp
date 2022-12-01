@@ -30,10 +30,10 @@ void PageLogin::handle_validation()
     QString mdpU = mdp->text();
 
     //Récupère le type d'utilisateur, "null" si inconnu
-    std::string typeUser = gestionnaire_dialogue->typeUtilisateur(idU.toStdString(), mdpU.toStdString());
+    QString typeUser = gestionnaire_dialogue->typeUtilisateur(idU, mdpU);
 
     if (typeUser == "client"){
-        Client c = gestionnaire_dialogue->authentification(idU.toStdString(), mdpU.toStdString());
+        Client c = gestionnaire_dialogue->authentification(idU, mdpU);
         //Récupère le stack parent.
         QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
         if(stack){

@@ -2,6 +2,7 @@
 #define ADMIN_H
 
 #include "utilisateur.h"
+#include <QString>
 
 /// @brief La classe Admin permet de décrire un utilisateur avec les droits administrateurs sur le programme EasyTicket.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
@@ -18,11 +19,11 @@ public:
     /// @param mdp         Le mot de passe de l'admin.
     /// @param mail        Le mail de l'admin.
     Admin (
-        std::string id,
-        std::string nom,
-        std::string prenom,
-        std::string mdp,
-        std::string mail
+        QString id,
+        QString nom,
+        QString prenom,
+        QString mdp,
+        QString mail
     );
 
     /// @brief Destructeur de la classe.

@@ -52,21 +52,21 @@ void PageAjoutTicket::creer_le_ticket_clicked()
     QString systeme = systeme_box->currentText();
     QString logiciel = logiciel_box->currentText();
     QString message = message_text->toPlainText();
-    if (gestionnaire_dialogue->verificationMessage(message.toStdString())){
+    if (gestionnaire_dialogue->verificationMessage(message)){
         //Récupère la date+heure.
         QString date = QDateTime::currentDateTime().toString("dddd dd MMMM yyyy hh:mm:ss");
-        Categorie cat = Categorie("C1", categorie.toStdString());
-        Ticket t = Ticket("T1",date.toStdString(), cat, client);
+        Categorie cat = Categorie("C1", categorie);
+        Ticket t = Ticket("T1",date, cat, client);
         if (!systeme.isEmpty()) {
-            t.setSysteme(Systeme("S1", systeme.toStdString()));
+            t.setSysteme(Systeme("S1", systeme));
         }
 
         if (!logiciel.isEmpty()) {
-            t.setLogiciel(Logiciel("L1", logiciel.toStdString()));
+            t.setLogiciel(Logiciel("L1", logiciel));
         }
-        Message m = Message("M1", date.toStdString(), &client,&t, message.toStdString());
+        Message m = Message("M1", date, &client,&t, message);
         t.addMessage(m);
-        QMessageBox::information(this,"Ticket créé.",QString::fromStdString(t.toString()));
+        QMessageBox::information(this,"Ticket créé.",t.toString());
 
         //Retour page accueil si tout est ok
         QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());

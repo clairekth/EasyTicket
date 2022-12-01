@@ -1,7 +1,7 @@
 #ifndef SYSTEME_H
 #define SYSTEME_H
 
-#include <string>
+#include <QString>
 
 /// @brief La classe Systeme permet de décrire un système d'exploitation dans l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
@@ -10,9 +10,9 @@ class Systeme
 {
 private:
     /// @brief Champs contenant l'id du Système.
-    std::string id_systeme;
+    QString id_systeme;
     /// @brief Champs contenant le nom du Système.
-    std::string nom;
+    QString nom;
 
 public:
     /// @brief Constructeur par défaut.
@@ -22,24 +22,24 @@ public:
     /// @param  id_systeme  L'identifiant du système d'exploitation
     /// @param  nom         Le nom du système d'exploitation
     Systeme(
-            std::string id_systeme,
-            std::string nom);
+            QString id_systeme,
+            QString nom);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du système
     /// @return l'identifiant du système
-    std::string getId_systeme() const;
+    QString getId_systeme() const;
 
     /// @brief Cette méthode permet de définir l'identifiant du système
     /// @param  value   l'identifiant du système
-    void setId_systeme(const std::string &value);
+    void setId_systeme(const QString &value);
 
     /// @brief Cette méthode permet de récupérer le nom du système
     /// @return le nom du système
-    std::string getNom() const;
+    QString getNom() const;
 
     /// @brief Cette méthode permet de définir le nom du système
     /// @param  value   le nouveau nom du système
-    void setNom(const std::string &value);
+    void setNom(const QString &value);
 
     ~Systeme() {}
 };

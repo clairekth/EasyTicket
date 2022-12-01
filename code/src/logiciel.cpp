@@ -4,11 +4,11 @@ Logiciel::Logiciel()
 {
 }
 
-Logiciel::Logiciel(std::string id_logiciel, std::string nom) :
+Logiciel::Logiciel(QString id_logiciel, QString nom) :
     id_logiciel(id_logiciel), nom(nom)
 {}
 
-std::string Logiciel::getNom()
+QString Logiciel::getNom()
 {
     return nom;
 }

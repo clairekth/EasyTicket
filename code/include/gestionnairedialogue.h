@@ -23,17 +23,17 @@ public:
     /// @param id   L'identifiant de l'Utilisateur.
     /// @param mdp  Le mot de passe de l'Utilisateur.
     /// @return le nom du type d'utilisateur, null si l'utilisateur n'existe pas.
-    std::string typeUtilisateur(std::string id, std::string mdp);
+    QString typeUtilisateur(QString id, QString mdp);
 
     /// @brief Méthode qui permet d'identifier un Client.
     /// @param id   L'identifiant du Client.
     /// @param mdp  Le mot de passe du Client.
     /// @return le Client identifié.
-    Client authentification(std::string id, std::string mdp);
+    Client authentification(QString id, QString mdp);
 
     /// @brief Méthode permettant de vérifier que le message est bon.
     /// @return true si le message est bon, false sinon.
-    bool verificationMessage(std::string message);
+    bool verificationMessage(QString message);
 
 private:
     /// @brief Champs servant à communiquer avec la bdd, (interface de communication).

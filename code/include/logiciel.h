@@ -1,7 +1,7 @@
 #ifndef LOGICIEL_H
 #define LOGICIEL_H
 
-#include <string>
+#include <QString>
 
 /// @brief La classe Logiciel permet de décrire un logiciel dans l'application EasyTicket
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
@@ -10,9 +10,9 @@ class Logiciel
 {
 private:
     /// @brief Champs contenant l'id du logiciel.
-    std::string id_logiciel;
+    QString id_logiciel;
     /// @brief Champs contenant le nom du logiciel.
-    std::string nom;
+    QString nom;
 
 public:
     /// @brief Constructeur par défaut.
@@ -21,11 +21,11 @@ public:
     /// @brief  Constructeur de la classe logiciel.
     /// @param  id_logiciel     l'identifiant du logiciel
     /// @param  nom             le nom du logiciel
-    Logiciel(std::string id_logiciel, std::string nom);
+    Logiciel(QString id_logiciel, QString nom);
 
     /// @brief Méthode permettant de récupérer le nom du Logiciel.
     /// @return nom
-    std::string getNom();
+    QString getNom();
 };
 
 #endif // LOGICIEL_H

@@ -2,6 +2,7 @@
 #define INGENIEUR_H
 
 #include "personnel.h"
+#include <QString>
 
 /// @brief La classe Ingenieur permet de décrire un utilisateur appartenant au Personnel avec les droits ingénieur sur le programme EasyTicket.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
@@ -18,11 +19,11 @@ public:
     /// @param mdp         Le mot de passe de l'ingénieur.
     /// @param mail        Le mail de l'ingénieur.
     Ingenieur (
-        std::string id,
-        std::string nom,
-        std::string prenom,
-        std::string mdp,
-        std::string mail
+        QString id,
+        QString nom,
+        QString prenom,
+        QString mdp,
+        QString mail
     );
 
     /// @brief Destructeur de la classe.

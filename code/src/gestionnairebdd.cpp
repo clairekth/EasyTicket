@@ -36,7 +36,6 @@ void GestionnaireBDD::select(QString query)
         {
             for (int i = 0; i < statement->record().count(); i ++){
                 qDebug() << statement->value(i).toString();
-
             }
             qDebug() << "----------";
 
@@ -46,17 +45,16 @@ void GestionnaireBDD::select(QString query)
 
 }
 
-std::string GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString mdp) {
-    std::string res = "null";
-
+QString GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString mdp) {
+    QString res = "null";
+    std::cout << id_utilisateur.toStdString() << " et " << mdp.toStdString() << std::endl;
     QSqlQuery *query = new QSqlQuery();
-    query->prepare("select * from client natural join utilisateur where id_utilisateur = :id_utilisateur and mot_de_passe= :mdp");
+    query->prepare("SELECT type_utilisateur FROM utilisateur WHERE id_utilisateur = :id_utilisateur AND mot_de_passe= :mdp");
     query->bindValue(":id_utilisateur", id_utilisateur);
     query->bindValue(":mdp", mdp);
     query->exec();
-    while (query->next()) {
-        res = "client";
-    }
+    if (query->first())
+        res = query->value("type_utilisateur").toString();
     query->clear();
 
     return res;
@@ -65,25 +63,25 @@ std::string GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString md
 Client GestionnaireBDD::authentifier(QString id, QString mdp)
 {
     QSqlQuery *query = new QSqlQuery();
-    query->prepare("select * from utilisateur where id_utilisateur = :id and mot_de_passe = :mdp");
+    query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");
     query->bindValue(":id", id);
     query->bindValue(":mdp", mdp);
     query->exec();
 
     Client client;
 
-    while (query->next())
+    if (query->first())
     {
-        for (int i = 0; i < query->record().count(); i ++) {
-            qDebug() << query->value(i).toString();
-        }
+//        for (int i = 0; i < query->record().count(); i ++) {
+//            qDebug() << query->value(i).toString();
+//        }
 
-        client = *new Client(
-                    query->value(0).toString().toStdString(),  // Convertion : value -> QString -> std::string
-                    query->value(2).toString().toStdString(),
-                    query->value(1).toString().toStdString(),
-                    query->value(3).toString().toStdString(),
-                    query->value(4).toString().toStdString());
+        client = Client(
+                    query->value(0).toString(),  // Convertion : value -> QString -> QString
+                    query->value(2).toString(),
+                    query->value(1).toString(),
+                    query->value(3).toString(),
+                    query->value(4).toString());
 
 
         qDebug() << "----------";

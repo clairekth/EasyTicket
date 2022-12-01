@@ -21,7 +21,7 @@ void PageAccueilClient::setClient(Client client)
 {
     this->client = client;
     QLabel *bonjour = ui->bonjour_client;
-    bonjour->setText("Bonjour, " + QString::fromStdString(client.getPrenom()));
+    bonjour->setText("Bonjour, " + (client.getPrenom()) + " " + (client.getNom()));
 
 }
 

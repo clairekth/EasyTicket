@@ -2,6 +2,7 @@
 #define PERSONNEL_H
 
 #include "utilisateur.h"
+#include <QString>
 
 /// @brief La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des Utilisateur appartenant au personnel dans l'application EasyTicket.
 ///
@@ -20,11 +21,11 @@ public:
     /// @param mdp         Le mot de passe du personnel.
     /// @param mail        Le mail du personnel.
     Personnel (
-        std::string id,
-        std::string nom,
-        std::string prenom,
-        std::string mdp,
-        std::string mail
+        QString id,
+        QString nom,
+        QString prenom,
+        QString mdp,
+        QString mail
     );
 
     /// @brief Destructeur virtuel pour rendre la classe Personnel abstraite.

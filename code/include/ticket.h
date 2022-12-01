@@ -2,6 +2,8 @@
 #define TICKET_H
 
 #include <vector>
+#include <QString>
+
 #include "systeme.h"
 #include "logiciel.h"
 #include "client.h"
@@ -17,11 +19,11 @@ class Ticket
 {
 private:
     /// @brief Champs contenant l'id du Ticket.
-    std::string id_ticket;
+    QString id_ticket;
     /// @brief Champs contenant la date de création du Ticket.
-    std::string date_creation;
+    QString date_creation;
     /// @brief Champs contenant la date de fermeture du Ticket.
-    std::string date_fermeture;
+    QString date_fermeture;
     /// @brief Champs contenant le Systeme d'exploitation du Client auteur du Ticket.
     Systeme systeme;
     /// @brief Champs contenant le Logiciel sur lequel il y a un problème.
@@ -44,34 +46,34 @@ public:
     /// @param  date_creation   la date de création du ticket
     /// @param  categorie       la Categorie concernée par le ticket
     /// @param  auteur          le Client auteur du ticket
-    Ticket(std::string id_ticket,
-           std::string date_creation,
+    Ticket(QString id_ticket,
+           QString date_creation,
            Categorie categorie,
            Client auteur);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du Ticket
     /// @return L'identifiant du ticket
-    std::string getId_ticket() const;
+    QString getId_ticket() const;
 
     /// @brief Cette méthode permet de définir l'identifiant du Ticket
     /// @param  value Le nouvel identifiant du ticket
-    void setId_ticket(const std::string &value);
+    void setId_ticket(const QString &value);
 
     /// @brief Cette méthode permet de récupérer la date de création du Ticket
     /// @return La date de création du ticket
-    std::string getDate_creation() const;
+    QString getDate_creation() const;
 
     /// @brief Cette méthode permet de définir la date de création du Ticket
     /// @param  value La nouvelle date de création du Ticket
-    void setDate_creation(std::string value);
+    void setDate_creation(QString value);
 
     /// @brief Cette méthode permet de récupérer la date de fermeture du Ticket
     /// @return La date de fermeture du ticket
-    std::string getDate_fermeture() const;
+    QString getDate_fermeture() const;
 
     /// @brief Cette méthode permet de définir la date de fermeture du Ticket
     /// @param  value La nouvelle date de fermeture du Ticket
-    void setDate_fermeture(std::string value);
+    void setDate_fermeture(QString value);
 
     /// @brief Cette méthode permet de récupérer le système d'exploitation concerné par le Ticket
     /// @return La date de fermeture du ticket
@@ -119,7 +121,7 @@ public:
     Personnel getPersonnel();
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
-    std::string toString();
+    QString toString();
 
     /// @brief Destructeur.
     ~Ticket() {}

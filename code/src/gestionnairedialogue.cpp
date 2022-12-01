@@ -5,28 +5,28 @@ GestionnaireDialogue::GestionnaireDialogue()
     // bdd.select("SELECT * FROM utilisateur");
 }
 
-std::string GestionnaireDialogue::typeUtilisateur(std::string id, std::string mdp)
+QString GestionnaireDialogue::typeUtilisateur(QString id, QString mdp)
 {
     //BDD check de savoir quel type d'utilisateur correspondent les id & mdp et renvoie le type. Si null -> user existe pas. ?
-    std::string id_categorie = bdd.type_utilisateur(QString::fromStdString(id), QString::fromStdString(mdp));
+    QString id_categorie = bdd.type_utilisateur(id, mdp);
 
     return id_categorie;
 }
 
-Client GestionnaireDialogue::authentification(std::string id, std::string mdp)
+Client GestionnaireDialogue::authentification(QString id, QString mdp)
 {
 
     //Récupère les info du Client dans la BDD
     // Client c = Client(id, "Vous", "Même", mdp, id + "@easyticket.fr");
-    return bdd.authentifier(QString::fromStdString(id), QString::fromStdString(mdp));
+    return bdd.authentifier(id, mdp);
 }
 
-bool GestionnaireDialogue::verificationMessage(std::string message)
+bool GestionnaireDialogue::verificationMessage(QString message)
 {
     //Supprime tous les espaces
     for (int i = message.length() - 1 ; i > -1 ; i--){
         if(message[i]==' '){
-            message.erase(i,1);
+            message.remove(i, 1);
         }
     }
     if (message == "" || message.length() < 15){

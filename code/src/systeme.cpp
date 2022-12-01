@@ -4,26 +4,26 @@ Systeme::Systeme()
 {
 }
 
-Systeme::Systeme(std::string id_systeme, std::string nom) :
+Systeme::Systeme(QString id_systeme, QString nom) :
     id_systeme(id_systeme), nom(nom)
 {}
 
-std::string Systeme::getNom() const
+QString Systeme::getNom() const
 {
     return nom;
 }
 
-void Systeme::setNom(const std::string &value)
+void Systeme::setNom(const QString &value)
 {
     nom = value;
 }
 
-std::string Systeme::getId_systeme() const
+QString Systeme::getId_systeme() const
 {
     return id_systeme;
 }
 
-void Systeme::setId_systeme(const std::string &value)
+void Systeme::setId_systeme(const QString &value)
 {
     id_systeme = value;
 }

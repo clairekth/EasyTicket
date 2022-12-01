@@ -2,6 +2,7 @@
 #define CLIENT_H
 
 #include "utilisateur.h"
+#include <QString>
 
 /// @brief La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
@@ -18,11 +19,11 @@ public:
     /// @param mdp         Le mot de passe du client.
     /// @param mail        Le mail du client.
     Client(
-        std::string id,
-        std::string nom,
-        std::string prenom,
-        std::string mdp,
-        std::string mail
+        QString id,
+        QString nom,
+        QString prenom,
+        QString mdp,
+        QString mail
     );
 
     /// @brief Destructeur de la classe.

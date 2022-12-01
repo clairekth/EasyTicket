@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <QString>
 
 class Ticket;
 
@@ -14,15 +15,15 @@ class Ticket;
 class   Utilisateur {
 protected:
     /// @brief Champs contenant l'identifiant de l'utilisateur.
-    std::string id;
+    QString id;
     /// @brief Champs contenant le nom de l'utilisateur.
-    std::string nom;
+    QString nom;
     /// @brief Champs contenant le prénom de l'utilisateur.
-    std::string prenom;
+    QString prenom;
     /// @brief Champs contenant le mot de passe de l'utilisateur.
-    std::string mdp;
+    QString mdp;
     /// @brief Champs contenant l'adresse e-mail de l'utilisateur.
-    std::string mail;
+    QString mail;
     /// @brief Champs contenant la liste des tickets associée à l'utilisateur.
     std::vector<Ticket*> liste_tickets;
 
@@ -37,11 +38,11 @@ public:
     /// @param mdp         Le mot de passe de l'utilisateur.
     /// @param mail        Le mail de l'utilisateur.
     Utilisateur (
-        std::string id,
-        std::string nom,
-        std::string prenom,
-        std::string mdp,
-        std::string mail
+        QString id,
+        QString nom,
+        QString prenom,
+        QString mdp,
+        QString mail
     );
 
     /// @brief Destructeur virtuel pour rendre la classe abstraite.
@@ -49,43 +50,43 @@ public:
 
     /// @brief Cette méthode permet de récupérer l'identifiant de l'utilisateur.
     /// @return L'identifiant de l'utilisateur.
-    std::string getID() const;
+    QString getID() const;
 
     /// @brief Cette méthode permet de définir l'identifiant de l'utilisateur.
     /// @param value Le nouvel identifiant de l'utilisateur.
-    void setID(const std::string &value);
+    void setID(const QString &value);
 
     /// @brief Cette méthode permet de récupérer le nom de l'utilisateur.
     /// @return Le nom de l'utilisateur.
-    std::string getNom() const;
+    QString getNom() const;
 
     /// @brief Cette méthode permet de définir le nom de l'utilisateur.
     /// @param value Le nouveau nom de l'utilisateur.
-    void setNom(const std::string &value);
+    void setNom(const QString &value);
 
     /// @brief Cette méthode permet de récupérer le prénom de l'utilisateur.
     /// @return Le prénom de l'utilisateur.
-    std::string getPrenom() const;
+    QString getPrenom() const;
 
     /// @brief Cette méthode permet de définir le prénom de l'utilisateur.
     /// @param value Le nouveau prénom de l'utilisateur.
-    void setPrenom(const std::string &value);
+    void setPrenom(const QString &value);
 
     /// @brief Cette métode permet de récupérer le mot de passe de l'utilisateur.
     /// @return Le mot de passe de l'utilisateur.
-    std::string getMDP() const;
+    QString getMDP() const;
 
     /// @brief Cette méthode permet de définir le mot de passe de l'utilisateur.
     /// @param value Le nouveau mot de passe de l'utilisateur.
-    void setMDP(const std::string &value);
+    void setMDP(const QString &value);
 
     /// @brief Cette méthode permet de récupérer le mail de l'utilisateur.
     /// @return Le mail de l'utilisateur.
-    std::string getMail() const;
+    QString getMail() const;
 
     /// @brief Cette méthode permet de définir le mail de l'utilisateur.
     /// @param value Le nouveau mail de l'utilisateur.
-    void setMail(const std::string &value);
+    void setMail(const QString &value);
 
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Client.
     /// @return false
@@ -108,7 +109,7 @@ public:
     virtual bool estUnIngenieur();
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
-    std::string toString();
+    QString toString();
 };
 
 #endif // UTILISATEUR_H

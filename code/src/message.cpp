@@ -1,7 +1,7 @@
 #include "message.h"
 
 
-Message::Message(std::string id_message, std::string date_envoie, Utilisateur *user, Ticket *ticket, std::string message):
+Message::Message(QString id_message, QString date_envoie, Utilisateur *user, Ticket *ticket, QString message):
     id_message(id_message), date_envoi(date_envoie), user(user), ticket(ticket), message(message)
 {}
 
@@ -16,12 +16,12 @@ void Message::setTicket(Ticket* &value)
     ticket = value;
 }
 
-std::string Message::getDate_envoi() const
+QString Message::getDate_envoi() const
 {
     return date_envoi;
 }
 
-void Message::setDate_envoi(std::string value)
+void Message::setDate_envoi(QString value)
 {
     date_envoi = value;
 }
@@ -37,17 +37,17 @@ void Message::setUser(Utilisateur* &value)
 }
 
 
-std::string Message::getId_message() const
+QString Message::getId_message() const
 {
     return id_message;
 }
 
-void Message::setId_message(const std::string &value)
+void Message::setId_message(const QString &value)
 {
     id_message = value;
 }
 
-std::string Message::toString(){
+QString Message::toString(){
     return "Message = {\n\
             \tid: '" + id_message + "',\n\
             \tdate_creation: '" + date_envoi + "'\n\

@@ -2,6 +2,7 @@
 #define TECHNICIEN_H
 
 #include <vector>
+#include <QString>
 
 #include "personnel.h"
 #include "categorie.h"
@@ -27,11 +28,11 @@ public:
     /// @param mail        Le mail du technicien.
     /// @param categories  La liste de catégories maitrisées par le technicien.
     Technicien (
-        std::string id,
-        std::string nom,
-        std::string prenom,
-        std::string mdp,
-        std::string mail,
+        QString id,
+        QString nom,
+        QString prenom,
+        QString mdp,
+        QString mail,
         std::vector<Categorie*> categories
     );
 

@@ -6,7 +6,7 @@ Personnel::Personnel()
 {
 }
 
-Personnel::Personnel(std::string id, std::string nom, std::string prenom, std::string mdp, std::string mail) :
+Personnel::Personnel(QString id, QString nom, QString prenom, QString mdp, QString mail) :
     Utilisateur(id,nom,prenom,mdp,mail) {
 }
 

@@ -30,7 +30,7 @@ public:
     /// @param  id_utilisateur  l'identifiant de l'Utilisateur.
     /// @param  mdp             le mot de passe de l'Utilisateur.
     /// @return la catégorie de l'utilisateur s'il existe, null sinon
-    std::string type_utilisateur(QString id_utilisateur, QString mdp);
+    QString type_utilisateur(QString id_utilisateur, QString mdp);
 
 protected:
     /// @brief La base de donnée SQLite.

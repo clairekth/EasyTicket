@@ -1,8 +1,9 @@
 #include "admin.h"
+#include <QString>
 
 Admin::Admin() {}
 
-Admin::Admin(std::string id, std::string nom, std::string prenom, std::string mdp, std::string mail) :
+Admin::Admin(QString id, QString nom, QString prenom, QString mdp, QString mail) :
     Utilisateur(id, nom, prenom, mdp, mail) {
 }
 

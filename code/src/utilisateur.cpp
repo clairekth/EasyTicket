@@ -6,57 +6,57 @@ Utilisateur::Utilisateur()
 {
 }
 
-Utilisateur::Utilisateur(std::string id, std::string n, std::string p, std::string mdp, std::string mail) :
+Utilisateur::Utilisateur(QString id, QString n, QString p, QString mdp, QString mail) :
     id(id), nom(n), prenom(p), mdp(mdp), mail(mail) {}
 
 Utilisateur::~Utilisateur() {}
 
-std::string Utilisateur::getNom() const
+QString Utilisateur::getNom() const
 {
     return nom;
 }
 
-void Utilisateur::setNom(const std::string &value)
+void Utilisateur::setNom(const QString &value)
 {
     nom = value;
 }
 
-std::string Utilisateur::getPrenom() const
+QString Utilisateur::getPrenom() const
 {
     return prenom;
 }
 
-void Utilisateur::setPrenom(const std::string &value)
+void Utilisateur::setPrenom(const QString &value)
 {
     prenom = value;
 }
 
-std::string Utilisateur::getMDP() const
+QString Utilisateur::getMDP() const
 {
     return mdp;
 }
 
-void Utilisateur::setMDP(const std::string &value)
+void Utilisateur::setMDP(const QString &value)
 {
     mdp = value;
 }
 
-std::string Utilisateur::getMail() const
+QString Utilisateur::getMail() const
 {
     return mail;
 }
 
-void Utilisateur::setMail(const std::string &value)
+void Utilisateur::setMail(const QString &value)
 {
     mail = value;
 }
 
-std::string Utilisateur::getID() const
+QString Utilisateur::getID() const
 {
     return id;
 }
 
-void Utilisateur::setID(const std::string &value)
+void Utilisateur::setID(const QString &value)
 {
     id = value;
 }
@@ -77,7 +77,7 @@ bool Utilisateur::estUnIngenieur() {
     return false;
 }
 
-std::string Utilisateur::toString()
+QString Utilisateur::toString()
 {
     return "Utilisateur = {\n\
             \tid: '" + id + "',\n\
