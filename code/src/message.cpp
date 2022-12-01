@@ -11,7 +11,7 @@ void Message::setMessage(const QString &value)
     message = value;
 }
 
-Message::Message(QString id_message, QString date_envoie, Utilisateur *user, Ticket *ticket, QString message):
+Message::Message(QString date_envoie, Utilisateur *user, Ticket *ticket, QString message, int id_message):
     id_message(id_message), date_envoi(date_envoie), user(user), ticket(ticket), message(message)
 {}
 
@@ -21,7 +21,7 @@ Ticket* Message::getTicket() const
     return ticket;
 }
 
-void Message::setTicket(Ticket* &value)
+void Message::setTicket(Ticket* value)
 {
     ticket = value;
 }
@@ -47,19 +47,19 @@ void Message::setUser(Utilisateur* &value)
 }
 
 
-QString Message::getId_message() const
+int Message::getId_message() const
 {
     return id_message;
 }
 
-void Message::setId_message(const QString &value)
+void Message::setId_message(const int &value)
 {
     id_message = value;
 }
 
 QString Message::toString(){
     return "Message = {\n\
-            \tid: '" + id_message + "',\n\
+            \tid: '" + QString::number(id_message) + "',\n\
             \tdate_creation: '" + date_envoi + "'\n\
             \tmessage: '" + message + "'\n\
             \tauteur: '" + user->toString() + "'\n}";

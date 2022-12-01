@@ -5,7 +5,7 @@ Ticket::Ticket()
     
 }
 
-Ticket::Ticket(QString id_ticket, QString date_creation, Categorie categorie, Client auteur) :
+Ticket::Ticket(QString date_creation, Categorie categorie, Client auteur, int id_ticket) :
     id_ticket(id_ticket), date_creation(date_creation), categorie(categorie), client(auteur)
 {
     this->liste_messages = std::vector<Message*>{};
@@ -65,12 +65,12 @@ void Ticket::setLogiciel(const Logiciel &value)
     logiciel = value;
 }
 
-QString Ticket::getId_ticket() const
+int Ticket::getId_ticket() const
 {
     return id_ticket;
 }
 
-void Ticket::setId_ticket(const QString &value)
+void Ticket::setId_ticket(const int &value)
 {
     id_ticket = value;
 }
@@ -92,7 +92,7 @@ Personnel Ticket::getPersonnel(){
 QString Ticket::toString()
 {
     return "Ticket = {\n\
-            \tid: '" + id_ticket + "',\n\
+            \tid: '" + QString::number(id_ticket) + "',\n\
             \tdate_creation: '" + date_creation + "'\n\
             \tdate_fermeture: '" + date_fermeture + "'\n\
             \tauteur: '" + client.toString() + "'\n\

@@ -123,17 +123,37 @@ Client GestionnaireBDD::authentifier(QString id, QString mdp)
 }
 
 
-void GestionnaireBDD::enregistrer_ticket(Ticket ticket) {
+void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
     // Insertion du ticket
     QSqlQuery *query = new QSqlQuery();
-    query->prepare("insert into ticket (date_creation, id_categorie, id_client) values (:date_creation, :id_categorie, :id_client)");
+    query->prepare("insert into ticket (date_creation, id_categorie, id_systeme, id_logiciel, id_client) values (:date_creation, :id_categorie, :id_systeme, :id_logiciel, :id_client)");
     query->bindValue(":date_creation", ticket.getDate_creation());
     query->bindValue(":id_categorie", ticket.getCategorie().getID());
+    if (ticket.getSysteme().getId_systeme() != -1)
+        query->bindValue(":id_systeme", ticket.getSysteme().getId_systeme());
+    else
+        query->bindValue(":id_systeme", 0);
+    if (ticket.getLogiciel().getID() != -1)
+        query->bindValue(":id_logiciel", ticket.getLogiciel().getID());
+    else
+        query->bindValue(":id_logiciel", 0);
     query->bindValue(":id_client", ticket.getClient().getID());
     bool res = query->exec();
     qDebug() << res;
+
+    // Récupération de l'id du ticket qu'on vient d'insérer
+    query = new QSqlQuery();
+    query->prepare("SELECT id_ticket FROM ticket WHERE date_creation = :date");
+    query->bindValue(":date", ticket.getDate_creation());
+    query->exec();
+    res = query->first();
+    if (res)
+        ticket.setId_ticket(query->value(0).toInt());
+    qDebug() << res;
+
     // Insertion des messages du ticket
     for (Message *message : ticket.getListeMessages()) {
+        message->setTicket(&ticket);
         query = new QSqlQuery();
         query->prepare("insert into message (message, horodatage, id_utilisateur, id_ticket_associe) values (:message, :horodatage, :id_utilisateur, :id_ticket_associe)");
         query->bindValue(":message", message->getMessage());
@@ -143,11 +163,6 @@ void GestionnaireBDD::enregistrer_ticket(Ticket ticket) {
         res = query->exec();
         qDebug() << res;
     }
-
-
-
-
-
     query->clear();
 
 }

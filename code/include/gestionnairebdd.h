@@ -33,7 +33,7 @@ public:
     /// @return la catégorie de l'utilisateur s'il existe, null sinon
     QString type_utilisateur(QString id_utilisateur, QString mdp);
 
-    void enregistrer_ticket(Ticket ticket);
+    void enregistrer_ticket(Ticket &ticket);
 
     void setComboBox(QComboBox *box, QString type);
 

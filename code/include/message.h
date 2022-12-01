@@ -13,7 +13,7 @@ class Message
 {
 private:
     /// @brief Champs contenant l'id du Message.
-    QString id_message;
+    int id_message;
     /// @brief Champs contenant la date d'envoi du Message.
     QString date_envoi;
     /// @brief Champs contenant l'Utilisateur auteur du Message.
@@ -33,15 +33,15 @@ public:
     /// @param *user        Pointeur sur l'Utilisateur à l'origine du message.
     /// @param *ticket      Pointeur sur le Ticket rattaché au message.
     /// @param message      Le message du Message.
-    Message(QString id_message, QString date_envoi, Utilisateur *user, Ticket *ticket, QString message);
+    Message(QString date_envoi, Utilisateur *user, Ticket *ticket, QString message, int id_message = -1);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du message.
     /// @return l'identifiant du message
-    QString getId_message() const;
+    int getId_message() const;
 
     /// @brief Cette méthode permet de définir l'identifiant du message.
     /// @param value Le nouvel identifiant du message
-    void setId_message(const QString &value);
+    void setId_message(const int &value);
 
     /// @brief Cette méthode permet de récupérer la date à laquelle le message a été envoyé.
     /// @return la date d'envoi du message
@@ -65,7 +65,7 @@ public:
 
     /// @brief Cette méthode définis le Ticket dans lequel se trouve le message.
     /// @param  value Le nouveau Ticket
-    void setTicket(Ticket* &value);
+    void setTicket(Ticket* value);
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
     /// @return String avec les infos de la classe.

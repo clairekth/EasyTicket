@@ -61,15 +61,19 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         //Récupère la date+heure.
         QString date = QDateTime::currentDateTime().toString("dddd dd MMMM yyyy hh:mm:ss");
         Categorie cat = Categorie(id_cat, categorie);
-        Ticket t = Ticket("T1",date, cat, client);
+        Ticket t = Ticket(date, cat, client);
         if (!systeme.isEmpty()) {
             t.setSysteme(Systeme(id_systeme, systeme));
+        } else {
+            t.setSysteme(Systeme(-1, ""));
         }
 
         if (!logiciel.isEmpty()) {
             t.setLogiciel(Logiciel(id_logiciel, logiciel));
+        } else {
+            t.setLogiciel(Logiciel(-1, ""));
         }
-        Message m = Message("M1", date, &client,&t, message);
+        Message m = Message(date, &client,&t, message);
         t.addMessage(m);
         gestionnaire_dialogue->enregistrer_ticket(t);
 

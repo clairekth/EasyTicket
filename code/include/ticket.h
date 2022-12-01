@@ -19,7 +19,7 @@ class Ticket
 {
 private:
     /// @brief Champs contenant l'id du Ticket.
-    QString id_ticket;
+    int id_ticket;
     /// @brief Champs contenant la date de création du Ticket.
     QString date_creation;
     /// @brief Champs contenant la date de fermeture du Ticket.
@@ -46,18 +46,18 @@ public:
     /// @param  date_creation   la date de création du ticket
     /// @param  categorie       la Categorie concernée par le ticket
     /// @param  auteur          le Client auteur du ticket
-    Ticket(QString id_ticket,
-           QString date_creation,
+    Ticket(QString date_creation,
            Categorie categorie,
-           Client auteur);
+           Client auteur,
+           int id_ticket = -1);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du Ticket
     /// @return L'identifiant du ticket
-    QString getId_ticket() const;
+    int getId_ticket() const;
 
     /// @brief Cette méthode permet de définir l'identifiant du Ticket
     /// @param  value Le nouvel identifiant du ticket
-    void setId_ticket(const QString &value);
+    void setId_ticket(const int &value);
 
     /// @brief Cette méthode permet de récupérer la date de création du Ticket
     /// @return La date de création du ticket
