@@ -71,8 +71,17 @@ public:
     /// @return String avec les infos de la classe.
     QString toString();
 
+    /// @brief  Cette méthode permet de récupérer le contenu d'un message.
+    /// @return le contenu du message.
+    QString getMessage() const;
+
+    /// @brief  Cette méthode permet définir le contenu du message.
+    /// @param  value   Le nouveau contenu du message.
+    void setMessage(const QString &value);
+
     /// @brief Descructeur de la classe.
     ~Message() {}
+
 };
 
 #endif // MESSAGE_H

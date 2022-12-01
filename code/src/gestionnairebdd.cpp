@@ -125,20 +125,31 @@ Client GestionnaireBDD::authentifier(QString id, QString mdp)
 
 
 void GestionnaireBDD::enregistrer_ticket(Ticket ticket) {
-    // Il manque la date de fermeture
-    // status* -> statut
+    // Insertion du ticket
     QSqlQuery *query = new QSqlQuery();
     query->prepare("insert into ticket (date_creation, status, id_categorie, id_systeme, id_logiciel, id_client, id_personnel) values (:date_creation, :status, :id_categorie, :id_systeme, :id_logiciel, :id_client, :id_personnel)");
     query->bindValue(":date_creation", ticket.getDate_creation());
-    query->bindValue(":status", -1);
+    query->bindValue(":status", ticket.getDate_fermeture());
     query->bindValue(":id_categorie", -1);
     query->bindValue(":id_systeme", ticket.getSysteme().getId_systeme());
     query->bindValue(":id_logiciel", ticket.getLogiciel().getID());
     query->bindValue(":id_client", ticket.getClient().getID());
     query->bindValue(":id_personnel", "err");
-    bool res = query->exec();
 
-    qDebug() << res;
+    // Insertion des messages du ticket
+    for (Message *message : ticket.getListeMessages()) {
+        query = new QSqlQuery();
+        query->prepare("insert into message (message, horodatage, id_utilisateur, id_ticket_associe) values (:message, :horodatage, :id_utilisateur, :id_ticket_associe)");
+        query->bindValue(":message", message->getMessage());
+        query->bindValue(":horodatage", message->getDate_envoi());
+        query->bindValue(":id_utilisateur", message->getUser()->getID());
+        query->bindValue(":id_ticket_associe", message->getTicket()->getId_ticket());
+        bool res = query->exec();
+        qDebug() << res;
+    }
+
+
+
 
 
     query->clear();

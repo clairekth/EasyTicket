@@ -1,6 +1,16 @@
 #include "message.h"
 
 
+QString Message::getMessage() const
+{
+    return message;
+}
+
+void Message::setMessage(const QString &value)
+{
+    message = value;
+}
+
 Message::Message(QString id_message, QString date_envoie, Utilisateur *user, Ticket *ticket, QString message):
     id_message(id_message), date_envoi(date_envoie), user(user), ticket(ticket), message(message)
 {}
