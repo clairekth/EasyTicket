@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 
 #include "client.h"
+#include "ticket.h"
 
 /// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
@@ -31,6 +32,8 @@ public:
     /// @param  mdp             le mot de passe de l'Utilisateur.
     /// @return la catégorie de l'utilisateur s'il existe, null sinon
     QString type_utilisateur(QString id_utilisateur, QString mdp);
+
+    void enregistrer_ticket(Ticket ticket);
 
     void setComboBox(QComboBox *box, QString type);
 

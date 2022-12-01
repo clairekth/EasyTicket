@@ -40,4 +40,8 @@ void GestionnaireDialogue::setComboBox(QComboBox *box, QString type)
     bdd.setComboBox(box,type);
 }
 
+void GestionnaireDialogue::enregistrer_ticket(Ticket ticket) {
+    bdd.enregistrer_ticket(ticket);
+}
+
 

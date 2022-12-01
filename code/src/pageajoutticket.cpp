@@ -71,6 +71,8 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         }
         Message m = Message("M1", date, &client,&t, message);
         t.addMessage(m);
+        gestionnaire_dialogue->enregistrer_ticket(t);
+
         QMessageBox::information(this,"Ticket créé.",t.toString());
 
         //Retour page accueil si tout est ok
@@ -85,3 +87,4 @@ void PageAjoutTicket::creer_le_ticket_clicked()
 
 
 }
+

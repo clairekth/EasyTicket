@@ -34,7 +34,10 @@ public:
     /// @brief Méthode permettant de vérifier que le message est bon.
     /// @return true si le message est bon, false sinon.
     bool verificationMessage(QString message);
+
     void setComboBox(QComboBox *box, QString type);
+
+    void enregistrer_ticket(Ticket ticket);
 
 
 private:
