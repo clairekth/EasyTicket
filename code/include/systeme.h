@@ -10,7 +10,7 @@ class Systeme
 {
 private:
     /// @brief Champs contenant l'id du Système.
-    QString id_systeme;
+    int id_systeme;
     /// @brief Champs contenant le nom du Système.
     QString nom;
 
@@ -22,16 +22,16 @@ public:
     /// @param  id_systeme  L'identifiant du système d'exploitation
     /// @param  nom         Le nom du système d'exploitation
     Systeme(
-            QString id_systeme,
+            int id_systeme,
             QString nom);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du système
     /// @return l'identifiant du système
-    QString getId_systeme() const;
+    int getId_systeme() const;
 
     /// @brief Cette méthode permet de définir l'identifiant du système
     /// @param  value   l'identifiant du système
-    void setId_systeme(const QString &value);
+    void setId_systeme(const int &value);
 
     /// @brief Cette méthode permet de récupérer le nom du système
     /// @return le nom du système

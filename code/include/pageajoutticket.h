@@ -36,8 +36,6 @@ private slots:
     /// @brief Le bouton creer_le_ticket_clicked est cliqué. Cette méthode permet de créer un nouveau Ticket.
     void creer_le_ticket_clicked();
 
-    void on_creer_le_ticket_bouton_clicked();
-
 private:
     Ui::PageAjoutTicket *ui;
     /// @brief le GestionnaireDialogue de l'application

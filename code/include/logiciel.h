@@ -10,7 +10,7 @@ class Logiciel
 {
 private:
     /// @brief Champs contenant l'id du logiciel.
-    QString id_logiciel;
+    int id_logiciel;
     /// @brief Champs contenant le nom du logiciel.
     QString nom;
 
@@ -21,13 +21,13 @@ public:
     /// @brief  Constructeur de la classe logiciel.
     /// @param  id_logiciel     l'identifiant du logiciel
     /// @param  nom             le nom du logiciel
-    Logiciel(QString id_logiciel, QString nom);
+    Logiciel(int id_logiciel, QString nom);
 
     /// @brief Méthode permettant de récupérer le nom du Logiciel.
     /// @return nom
     QString getNom();
 
-    QString getID();
+    int getID();
 
 };
 

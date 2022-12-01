@@ -74,7 +74,7 @@ void GestionnaireBDD::setComboBox(QComboBox *box, QString type)
     while (query->next())
     {
 
-        QString id = query->value(0).toString();
+        int id = query->value(0).toInt();
         QString nom = query->value(1).toString();
         if (type == "categorie"){
             Categorie item = Categorie(id,nom);
@@ -127,15 +127,12 @@ Client GestionnaireBDD::authentifier(QString id, QString mdp)
 void GestionnaireBDD::enregistrer_ticket(Ticket ticket) {
     // Insertion du ticket
     QSqlQuery *query = new QSqlQuery();
-    query->prepare("insert into ticket (date_creation, status, id_categorie, id_systeme, id_logiciel, id_client, id_personnel) values (:date_creation, :status, :id_categorie, :id_systeme, :id_logiciel, :id_client, :id_personnel)");
+    query->prepare("insert into ticket (date_creation, id_categorie, id_client) values (:date_creation, :id_categorie, :id_client)");
     query->bindValue(":date_creation", ticket.getDate_creation());
-    query->bindValue(":status", ticket.getDate_fermeture());
-    query->bindValue(":id_categorie", -1);
-    query->bindValue(":id_systeme", ticket.getSysteme().getId_systeme());
-    query->bindValue(":id_logiciel", ticket.getLogiciel().getID());
+    query->bindValue(":id_categorie", ticket.getCategorie().getID());
     query->bindValue(":id_client", ticket.getClient().getID());
-    query->bindValue(":id_personnel", "err");
-
+    bool res = query->exec();
+    qDebug() << res;
     // Insertion des messages du ticket
     for (Message *message : ticket.getListeMessages()) {
         query = new QSqlQuery();
@@ -144,7 +141,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket ticket) {
         query->bindValue(":horodatage", message->getDate_envoi());
         query->bindValue(":id_utilisateur", message->getUser()->getID());
         query->bindValue(":id_ticket_associe", message->getTicket()->getId_ticket());
-        bool res = query->exec();
+        res = query->exec();
         qDebug() << res;
     }
 

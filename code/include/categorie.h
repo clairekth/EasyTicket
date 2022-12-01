@@ -10,7 +10,7 @@ class Categorie
 {
 private:
     /// @brief Champs contenant l'id de la catégorie.
-    QString id_categorie;
+    int id_categorie;
     /// @brief Champs contenant le nom de la catégorie.
     QString nom_categorie;
 
@@ -21,14 +21,14 @@ public:
     /// @param  id_categorie    l'identifiant de la catégorie
     /// @param  nom_categorie   le nom de la catégorie
     Categorie(
-            QString id_categorie,
+            int id_categorie,
             QString nom_categorie);
 
     /// @brief Méthode permettant de récupérer le nom de la Categorie.
     /// @return nom_categorie
     QString getNom();
 
-    QString getID();
+    int getID();
 
 };
 

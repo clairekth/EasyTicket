@@ -50,11 +50,11 @@ void PageAjoutTicket::retour_bouton_clicked()
 void PageAjoutTicket::creer_le_ticket_clicked()
 {
     QString categorie = categorie_box->currentText();
-    QString id_cat = categorie_box->currentData().toString();
+    int id_cat = categorie_box->currentData().toInt();
     QString systeme = systeme_box->currentText();
-    QString id_systeme = systeme_box->currentData().toString();
+    int id_systeme = systeme_box->currentData().toInt();
     QString logiciel = logiciel_box->currentText();
-    QString id_logiciel = logiciel_box->currentData().toString();
+    int id_logiciel = logiciel_box->currentData().toInt();
     QString message = message_text->toPlainText();
 
     if (gestionnaire_dialogue->verificationMessage(message)){

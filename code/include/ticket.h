@@ -123,6 +123,8 @@ public:
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
     QString toString();
 
+    Categorie getCategorie();
+
     /// @brief Destructeur.
     ~Ticket() {}
 };

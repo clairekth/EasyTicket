@@ -103,3 +103,8 @@ QString Ticket::toString()
 
 }
 
+Categorie Ticket::getCategorie()
+{
+    return categorie;
+}
+
