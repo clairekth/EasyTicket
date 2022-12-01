@@ -35,6 +35,9 @@ bool GestionnaireDialogue::verificationMessage(QString message)
     return true;
 }
 
-
+void GestionnaireDialogue::setComboBox(QComboBox *box, QString type)
+{
+    bdd.setComboBox(box,type);
+}
 
 

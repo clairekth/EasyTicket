@@ -12,3 +12,8 @@ QString Logiciel::getNom()
 {
     return nom;
 }
+
+QString Logiciel::getID()
+{
+    return id_logiciel;
+}

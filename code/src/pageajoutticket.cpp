@@ -18,8 +18,9 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
     this->categorie_box = ui->categorie_box;
     this->systeme_box = ui->systeme_box;
     this->logiciel_box = ui->logiciel_box;
-    //Pour l'instant les items ont été ajouté à la main directement dans la confection de l'ui mais avec la BDD : boucle qui pr chaque catégorie/logiciel/systeme
-    //->créer une Categorie(..), Logiciel(..), Systeme(...) et fait ensuite un nom_combobox->addItem(cat.getNom())
+    gestionnaire_dialogue->setComboBox(categorie_box, "categorie");
+    gestionnaire_dialogue->setComboBox(systeme_box, "systeme");
+    gestionnaire_dialogue->setComboBox(logiciel_box, "logiciel");
 
     this->message_text = ui->message_text;
     this->gestionnaire_dialogue = gestionnaire_dialogue;
@@ -49,20 +50,24 @@ void PageAjoutTicket::retour_bouton_clicked()
 void PageAjoutTicket::creer_le_ticket_clicked()
 {
     QString categorie = categorie_box->currentText();
+    QString id_cat = categorie_box->currentData().toString();
     QString systeme = systeme_box->currentText();
+    QString id_systeme = systeme_box->currentData().toString();
     QString logiciel = logiciel_box->currentText();
+    QString id_logiciel = logiciel_box->currentData().toString();
     QString message = message_text->toPlainText();
+
     if (gestionnaire_dialogue->verificationMessage(message)){
         //Récupère la date+heure.
         QString date = QDateTime::currentDateTime().toString("dddd dd MMMM yyyy hh:mm:ss");
-        Categorie cat = Categorie("C1", categorie);
+        Categorie cat = Categorie(id_cat, categorie);
         Ticket t = Ticket("T1",date, cat, client);
         if (!systeme.isEmpty()) {
-            t.setSysteme(Systeme("S1", systeme));
+            t.setSysteme(Systeme(id_systeme, systeme));
         }
 
         if (!logiciel.isEmpty()) {
-            t.setLogiciel(Logiciel("L1", logiciel));
+            t.setLogiciel(Logiciel(id_logiciel, logiciel));
         }
         Message m = Message("M1", date, &client,&t, message);
         t.addMessage(m);

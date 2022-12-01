@@ -22,28 +22,7 @@
     </widget>
    </item>
    <item row="1" column="2">
-    <widget class="QComboBox" name="categorie_box">
-     <item>
-      <property name="text">
-       <string>Incident logiciel</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Aide logiciel</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Message général</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Autres</string>
-      </property>
-     </item>
-    </widget>
+    <widget class="QComboBox" name="categorie_box"/>
    </item>
    <item row="2" column="1">
     <widget class="QLabel" name="label_2">
@@ -53,43 +32,7 @@
     </widget>
    </item>
    <item row="2" column="2">
-    <widget class="QComboBox" name="systeme_box">
-     <item>
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Windows</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>MacOS</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Linux</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Android</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>iOS</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Autre</string>
-      </property>
-     </item>
-    </widget>
+    <widget class="QComboBox" name="systeme_box"/>
    </item>
    <item row="3" column="1">
     <widget class="QLabel" name="label_3">
@@ -99,33 +42,7 @@
     </widget>
    </item>
    <item row="3" column="2">
-    <widget class="QComboBox" name="logiciel_box">
-     <item>
-      <property name="text">
-       <string/>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Word</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Excell</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Intellij</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Autre</string>
-      </property>
-     </item>
-    </widget>
+    <widget class="QComboBox" name="logiciel_box"/>
    </item>
    <item row="4" column="1" colspan="2">
     <widget class="QLabel" name="label_4">

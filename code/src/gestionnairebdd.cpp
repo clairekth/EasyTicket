@@ -1,6 +1,8 @@
 #include "gestionnairebdd.h"
 #include <iostream>
-
+#include "categorie.h"
+#include "logiciel.h"
+#include "systeme.h"
 
 GestionnaireBDD::GestionnaireBDD()
 {
@@ -58,6 +60,35 @@ QString GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString mdp) {
     query->clear();
 
     return res;
+}
+
+void GestionnaireBDD::setComboBox(QComboBox *box, QString type)
+{
+    QSqlQuery *query = new QSqlQuery();
+    query->prepare("select * from " + type);
+    query->exec();
+
+    if (type != "categorie"){
+        box->addItem(" ");
+    }
+    while (query->next())
+    {
+
+        QString id = query->value(0).toString();
+        QString nom = query->value(1).toString();
+        if (type == "categorie"){
+            Categorie item = Categorie(id,nom);
+            box->addItem(item.getNom(), item.getID());
+        } else if (type == "logiciel"){
+            Logiciel item = Logiciel(id, nom);
+            box->addItem(item.getNom(),item.getID());
+        } else {
+            Systeme item = Systeme(id,nom);
+            box->addItem(item.getNom(), item.getId_systeme());
+        }
+
+
+    }
 }
 
 Client GestionnaireBDD::authentifier(QString id, QString mdp)

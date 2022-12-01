@@ -13,4 +13,9 @@ QString Categorie::getNom()
     return nom_categorie;
 }
 
+QString Categorie::getID()
+{
+    return id_categorie;
+}
+
 

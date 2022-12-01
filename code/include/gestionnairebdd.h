@@ -32,6 +32,9 @@ public:
     /// @return la catégorie de l'utilisateur s'il existe, null sinon
     QString type_utilisateur(QString id_utilisateur, QString mdp);
 
+    void setComboBox(QComboBox *box, QString type);
+
+
 protected:
     /// @brief La base de donnée SQLite.
     QSqlDatabase my_db;

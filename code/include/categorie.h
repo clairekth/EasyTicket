@@ -28,6 +28,8 @@ public:
     /// @return nom_categorie
     QString getNom();
 
+    QString getID();
+
 };
 
 #endif // CATEGORIE_H

@@ -26,6 +26,9 @@ public:
     /// @brief Méthode permettant de récupérer le nom du Logiciel.
     /// @return nom
     QString getNom();
+
+    QString getID();
+
 };
 
 #endif // LOGICIEL_H
