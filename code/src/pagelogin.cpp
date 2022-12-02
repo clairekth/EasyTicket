@@ -30,31 +30,29 @@ void PageLogin::handle_validation()
     QString idU = id->text();
     QString mdpU = mdp->text();
 
-    //Récupère le type d'utilisateur, "null" si inconnu
-    QString typeUser = gestionnaire_dialogue->typeUtilisateur(idU, mdpU);
-
-    if (typeUser == "client"){
-        Client c = gestionnaire_dialogue->authentificationClient(idU, mdpU);
-        //Récupère le stack parent.
-        QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
-        if(stack){
-            //On récupère le widget suivant pour lui set le client actuellement connecté.
-            auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
-            auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
-            pageaccueil->setClient(c);
-            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
-       }
-    } if (typeUser == "ingenieur") {
-        QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
-        Ingenieur i = gestionnaire_dialogue->authentificationIngenieur(idU, mdpU);
-        if(stack){
-            auto *widget = stack->widget(ACCUEIL_PERSONNEL_PAGE);
-            auto *pageaccueil = qobject_cast<PageAccueilPersonnel*>(widget);
-            pageaccueil->setPersonnel(&i);
-            stack->setCurrentIndex(ACCUEIL_PERSONNEL_PAGE); //Connexion correct -> Accueil personnel
-       }
-    } else {
+    Utilisateur *user = gestionnaire_dialogue->authentification(idU,mdpU);
+    if (!user){
         QMessageBox::warning(this,"PageLogin","Identifiant ou mot de passe incorrect.");
-
+    } else {
+        if (user->estUnClient()){
+            QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
+            if(stack){
+                //On récupère le widget suivant pour lui set le client actuellement connecté.
+                auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
+                auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
+                Client *c = static_cast<Client*>(user);
+                pageaccueil->setClient(c);
+                stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
+           }
+        } else if (user->estUnIngenieur()){
+            QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
+            if(stack){
+                auto *widget = stack->widget(ACCUEIL_PERSONNEL_PAGE);
+                auto *pageaccueil = qobject_cast<PageAccueilPersonnel*>(widget);
+                Personnel *p = static_cast<Personnel*>(user);
+                pageaccueil->setPersonnel(p);
+                stack->setCurrentIndex(ACCUEIL_PERSONNEL_PAGE); //Connexion correct -> Accueil personnel
+           }
+        }
     }
 }

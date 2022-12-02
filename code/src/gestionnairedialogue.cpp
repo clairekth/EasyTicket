@@ -5,26 +5,13 @@ GestionnaireDialogue::GestionnaireDialogue()
     // bdd.select("SELECT * FROM utilisateur");
 }
 
-QString GestionnaireDialogue::typeUtilisateur(QString id, QString mdp)
-{
-    //BDD check de savoir quel type d'utilisateur correspondent les id & mdp et renvoie le type. Si null -> user existe pas. ?
-    QString id_categorie = bdd.type_utilisateur(id, mdp);
-
-    return id_categorie;
-}
-
-Client GestionnaireDialogue::authentificationClient(QString id, QString mdp)
+Utilisateur *GestionnaireDialogue::authentification(QString id, QString mdp)
 {
 
     //Récupère les info du Client dans la BDD
-    return bdd.authentifierClient(id, mdp);
+    return bdd.authentifier(id, mdp);
 }
 
-Ingenieur GestionnaireDialogue::authentificationIngenieur(QString id, QString mdp)
-{
-    //Récupère les info de l'ingénieur dans la BDD
-    return bdd.authentifierIngenieur(id, mdp);
-}
 
 bool GestionnaireDialogue::verificationMessage(QString message)
 {

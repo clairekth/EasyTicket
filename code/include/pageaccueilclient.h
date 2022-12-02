@@ -26,7 +26,7 @@ public:
 
     /// @brief Méthode permettant de set le Client actuellement connecté.
     /// @param client   le Client connecté.
-    void setClient(Client client);
+    void setClient(Client *client);
 
     /// @brief Destructeur.
     ~PageAccueilClient();
@@ -48,7 +48,7 @@ private:
     GestionnaireDialogue *gestionnaire_dialogue;
 
     /// @brief Champs contenant le Client connecté.
-    Client client;
+    Client *client;
 };
 
 #endif // PAGEACCUEILCLIENT_H

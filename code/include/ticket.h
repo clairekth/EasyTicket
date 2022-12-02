@@ -33,9 +33,9 @@ private:
     /// @brief Champs contenant la liste des Messages du Ticket.
     std::vector<Message*> liste_messages;
     /// @brief Champs contenant le Client à l'origine du Ticket.
-    Client client;
+    Client *client;
     /// @brief Champs contenant le Personnel attitré à la résolution du Ticket.
-    Personnel personnel;
+    Personnel *personnel;
 
 public:
     /// @brief Constructeur par défaut.
@@ -48,7 +48,7 @@ public:
     /// @param  auteur          le Client auteur du ticket
     Ticket(QString date_creation,
            Categorie categorie,
-           Client auteur,
+           Client *auteur,
            int id_ticket = -1);
 
     /// @brief Cette méthode permet de récupérer l'identifiant du Ticket
@@ -106,19 +106,19 @@ public:
 
     /// @brief Cette méthode permet de définir le Client auteur du Ticket
     /// @param value    Le Client auteur du Ticket
-    void setClient(Client &value);
+    void setClient(Client *value);
 
     /// @brief Cette méthode permet de récupérer le Client auteur du Ticket
     /// @return Le Client auteur du Ticket
-    Client getClient();
+    Client *getClient();
 
     /// @brief Cette méthode permet de définir le Personnel qui traite le Ticket
     /// @param value Le nouveau Personnel
-    void setPersonnel(Personnel &value);
+    void setPersonnel(Personnel *value);
 
     /// @brief Cette méthode permet de récupérer le Personnel qui traite le Ticket
     /// @return Le Personel traitant le Ticket
-    Personnel getPersonnel();
+    Personnel *getPersonnel();
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
     QString toString();

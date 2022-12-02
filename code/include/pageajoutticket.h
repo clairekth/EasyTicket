@@ -27,7 +27,7 @@ public:
 
     /// @brief Méthode permettant de set le Client actuellement connecté.
     /// @param client   le Client connecté.
-    void setClient(Client client);
+    void setClient(Client *client);
     ~PageAjoutTicket();
 
 private slots:
@@ -42,7 +42,7 @@ private:
     GestionnaireDialogue *gestionnaire_dialogue;
 
     /// @brief Champs contenant le Client connecté.
-    Client client;
+    Client *client;
 
     /// @brief Bouton de retour à la PageAccueilClient.
     QPushButton *bouton_retour;

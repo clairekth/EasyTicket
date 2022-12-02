@@ -29,7 +29,7 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
 
 }
 
-void PageAjoutTicket::setClient(Client client)
+void PageAjoutTicket::setClient(Client *client)
 {
     this->client = client;
 }
@@ -73,7 +73,7 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         } else {
             t.setLogiciel(Logiciel(-1, ""));
         }
-        Message m = Message(date, &client,&t, message);
+        Message m = Message(date, client,&t, message);
         t.addMessage(m);
         gestionnaire_dialogue->enregistrer_ticket(t);
 

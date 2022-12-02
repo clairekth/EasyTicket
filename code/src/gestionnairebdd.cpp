@@ -27,19 +27,6 @@ GestionnaireBDD::GestionnaireBDD()
     }
 }
 
-QString GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString mdp) {
-    QString res = "null";
-    QSqlQuery *query = new QSqlQuery();
-    query->prepare("SELECT type_utilisateur FROM utilisateur WHERE id_utilisateur = :id_utilisateur AND mot_de_passe= :mdp");
-    query->bindValue(":id_utilisateur", id_utilisateur);
-    query->bindValue(":mdp", mdp);
-    query->exec();
-    if (query->first())
-        res = query->value("type_utilisateur").toString();
-    query->clear();
-
-    return res;
-}
 
 void GestionnaireBDD::setComboBox(QComboBox *box, QString type)
 {
@@ -70,7 +57,7 @@ void GestionnaireBDD::setComboBox(QComboBox *box, QString type)
     }
 }
 
-Client GestionnaireBDD::authentifierClient(QString id, QString mdp)
+Utilisateur *GestionnaireBDD::authentifier(QString id, QString mdp)
 {
     QSqlQuery *query = new QSqlQuery();
     query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");
@@ -78,58 +65,38 @@ Client GestionnaireBDD::authentifierClient(QString id, QString mdp)
     query->bindValue(":mdp", mdp);
     query->exec();
 
-    Client client;
-
+    QString typeUser;
+    Utilisateur *user = NULL;
     if (query->first())
     {
-//        for (int i = 0; i < query->record().count(); i ++) {
-//            qDebug() << query->value(i).toString();
-//        }
+        typeUser = query->value("type_utilisateur").toString();
 
-        client = Client(
-                    query->value(0).toString(),  // Convertion : value -> QString -> QString
-                    query->value(2).toString(),
-                    query->value(1).toString(),
-                    query->value(3).toString(),
-                    query->value(4).toString());
-
-
-        qDebug() << "----------";
-
+        if (typeUser == "client"){
+            user = new Client(
+                        query->value(0).toString(),  // Convertion : value -> QString -> QString
+                        query->value(2).toString(),
+                        query->value(1).toString(),
+                        query->value(3).toString(),
+                        query->value(4).toString());
+        }
+        else if (typeUser == "ingenieur"){
+            user = new Ingenieur(
+                        query->value(0).toString(),  // Convertion : value -> QString -> QString
+                        query->value(2).toString(),
+                        query->value(1).toString(),
+                        query->value(3).toString(),
+                        query->value(4).toString());
+        }
     }
+
+
+
     query->clear();
 
-    return client;
+    return user;
 }
 
-Ingenieur GestionnaireBDD::authentifierIngenieur(QString id, QString mdp)
-{
-    QSqlQuery *query = new QSqlQuery();
-    query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");
-    query->bindValue(":id", id);
-    query->bindValue(":mdp", mdp);
-    query->exec();
 
-    Ingenieur ingenieur;
-
-    if (query->first())
-    {
-//        for (int i = 0; i < query->record().count(); i ++) {
-//            qDebug() << query->value(i).toString();
-//        }
-
-        ingenieur = Ingenieur(
-                    query->value(0).toString(),  // Convertion : value -> QString -> QString
-                    query->value(2).toString(),
-                    query->value(1).toString(),
-                    query->value(3).toString(),
-                    query->value(4).toString());
-
-    }
-    query->clear();
-
-    return ingenieur;
-}
 
 
 void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
@@ -146,7 +113,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
         query->bindValue(":id_logiciel", ticket.getLogiciel().getID());
     else
         query->bindValue(":id_logiciel", 0);
-    query->bindValue(":id_client", ticket.getClient().getID());
+    query->bindValue(":id_client", ticket.getClient()->getID());
     bool res = query->exec();
     //qDebug() << res;
 

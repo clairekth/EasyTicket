@@ -11,30 +11,18 @@
 
 /// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.1
+/// @version 2.2
 class GestionnaireBDD
 {
 public:
     /// @brief Constructeur par défaut.
     GestionnaireBDD();
 
-    /// @brief  Méthode qui permet d'authentifier un client.
-    /// @param  id  L'identifiant du client.
-    /// @param  mdp Le mot de passe du client.
-    /// @return  le Client identifié.
-    Client authentifierClient(QString id, QString mdp);
-
-    /// @brief  Méthode qui permet d'authentifier un Ingenieur.
-    /// @param  id  L'identifiant du Ingenieur.
-    /// @param  mdp Le mot de passe du Ingenieur.
-    /// @return  l'Ingenieur identifié.
-    Ingenieur authentifierIngenieur(QString id, QString mdp);
-
-    /// @brief  Méthode qui permet de récupérer la catégorie d'un Utilisateur.
-    /// @param  id_utilisateur  l'identifiant de l'Utilisateur.
-    /// @param  mdp             le mot de passe de l'Utilisateur.
-    /// @return la catégorie de l'utilisateur s'il existe, null sinon
-    QString type_utilisateur(QString id_utilisateur, QString mdp);
+    /// @brief Méthode permettant d'identifier un Utilisateur grâce à la BDD.
+    /// @param  id      l'identifiant de l'Utilisateur.
+    /// @param  mdp     le mot de passe de l'Utilisateur.
+    /// @return l'Utilisateur identifié.
+    Utilisateur *authentifier(QString id, QString mdp);
 
     /// @brief Méthode qui permet d'enregistrer un ticket dans la BDD.
     /// @param ticket Le ticket à enregistrer.

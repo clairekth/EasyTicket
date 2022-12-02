@@ -17,11 +17,11 @@ PageAccueilClient::PageAccueilClient(QWidget *parent, GestionnaireDialogue *gest
     this->gestionnaire_dialogue = gestionnaire_dialogue;
 }
 
-void PageAccueilClient::setClient(Client client)
+void PageAccueilClient::setClient(Client *client)
 {
     this->client = client;
     QLabel *bonjour = ui->bonjour_client;
-    bonjour->setText("Bonjour, " + (client.getPrenom()) + " " + (client.getNom()));
+    bonjour->setText("Bonjour, " + (client->getPrenom()) + " " + (client->getNom()));
 
 }
 
