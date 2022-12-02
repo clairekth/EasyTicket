@@ -76,7 +76,7 @@ protected :
     /// @brief Champs contenant le StackedWidget qui stock les différentes Page de l'application.
     QStackedWidget *stack;
     /// @brief Champs contenant le GestionnaireDialogue.
-    GestionnaireDialogue *gestionnaire_dialogue;
+    GestionnaireDialogue gestionnaire_dialogue;
     /// @brief Champs contenant la PageLogin.
     PageLogin *page_login;
     /// @brief Champs contenant la PageAccueilClient.
@@ -90,10 +90,6 @@ public:
     /// @brief Constructeur.
     /// @param  *parent Pointeur sur le Widget Parent.
     MainWindow(QWidget *parent = nullptr);
-
-    /// @brief Méthode pour set le GestionnaireDialogue.
-    /// @param g    Pointeur sur le GestionnaireDialogue.
-    void setGestionnaireDialogue(GestionnaireDialogue *g);
 
     /// @brief Destructeur.
     ~MainWindow();
