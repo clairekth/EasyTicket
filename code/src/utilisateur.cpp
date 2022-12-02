@@ -16,49 +16,16 @@ QString Utilisateur::getNom() const
     return nom;
 }
 
-void Utilisateur::setNom(const QString &value)
-{
-    nom = value;
-}
 
 QString Utilisateur::getPrenom() const
 {
     return prenom;
 }
 
-void Utilisateur::setPrenom(const QString &value)
-{
-    prenom = value;
-}
-
-QString Utilisateur::getMDP() const
-{
-    return mdp;
-}
-
-void Utilisateur::setMDP(const QString &value)
-{
-    mdp = value;
-}
-
-QString Utilisateur::getMail() const
-{
-    return mail;
-}
-
-void Utilisateur::setMail(const QString &value)
-{
-    mail = value;
-}
 
 QString Utilisateur::getID() const
 {
     return id;
-}
-
-void Utilisateur::setID(const QString &value)
-{
-    id = value;
 }
 
 bool Utilisateur::estUnClient() {

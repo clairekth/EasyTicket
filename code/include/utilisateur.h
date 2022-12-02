@@ -52,41 +52,14 @@ public:
     /// @return L'identifiant de l'utilisateur.
     QString getID() const;
 
-    /// @brief Cette méthode permet de définir l'identifiant de l'utilisateur.
-    /// @param value Le nouvel identifiant de l'utilisateur.
-    void setID(const QString &value);
-
     /// @brief Cette méthode permet de récupérer le nom de l'utilisateur.
     /// @return Le nom de l'utilisateur.
     QString getNom() const;
-
-    /// @brief Cette méthode permet de définir le nom de l'utilisateur.
-    /// @param value Le nouveau nom de l'utilisateur.
-    void setNom(const QString &value);
 
     /// @brief Cette méthode permet de récupérer le prénom de l'utilisateur.
     /// @return Le prénom de l'utilisateur.
     QString getPrenom() const;
 
-    /// @brief Cette méthode permet de définir le prénom de l'utilisateur.
-    /// @param value Le nouveau prénom de l'utilisateur.
-    void setPrenom(const QString &value);
-
-    /// @brief Cette métode permet de récupérer le mot de passe de l'utilisateur.
-    /// @return Le mot de passe de l'utilisateur.
-    QString getMDP() const;
-
-    /// @brief Cette méthode permet de définir le mot de passe de l'utilisateur.
-    /// @param value Le nouveau mot de passe de l'utilisateur.
-    void setMDP(const QString &value);
-
-    /// @brief Cette méthode permet de récupérer le mail de l'utilisateur.
-    /// @return Le mail de l'utilisateur.
-    QString getMail() const;
-
-    /// @brief Cette méthode permet de définir le mail de l'utilisateur.
-    /// @param value Le nouveau mail de l'utilisateur.
-    void setMail(const QString &value);
 
     /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Client.
     /// @return false
