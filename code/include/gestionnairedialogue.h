@@ -12,7 +12,7 @@
 
 /// @brief La classe GestionnaireDialogue correspond à l'interface de communication entre l'Utilisateur et le modèle.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.5
+/// @version 1.8
 class GestionnaireDialogue
 {
 public:

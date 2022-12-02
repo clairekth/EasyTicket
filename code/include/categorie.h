@@ -5,7 +5,7 @@
 
 /// @brief La classe Categorie permet de décrire les différentes catégories d'un Ticket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.5
+/// @version 1.8
 class Categorie
 {
 private:

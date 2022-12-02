@@ -5,7 +5,7 @@
 
 /// @brief La classe Logiciel permet de décrire un logiciel dans l'application EasyTicket
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.5
+/// @version 1.8
 class Logiciel
 {
 private:

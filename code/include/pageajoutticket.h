@@ -9,7 +9,7 @@
 
 /// @brief La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un nouveau Ticket.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
-/// @version 1.5
+/// @version 1.8
 namespace Ui {
 class PageAjoutTicket;
 }

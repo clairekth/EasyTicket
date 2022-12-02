@@ -10,7 +10,7 @@
 
 /// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.7
+/// @version 1.8
 class GestionnaireBDD
 {
 public:
