@@ -9,10 +9,9 @@
 #include "gestionnairebdd.h"
 
 
-
 /// @brief La classe GestionnaireDialogue correspond à l'interface de communication entre l'Utilisateur et le modèle.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.8
+/// @version 2.1
 class GestionnaireDialogue
 {
 public:
@@ -29,7 +28,14 @@ public:
     /// @param id   L'identifiant du Client.
     /// @param mdp  Le mot de passe du Client.
     /// @return le Client identifié.
-    Client authentification(QString id, QString mdp);
+    Client authentificationClient(QString id, QString mdp);
+
+    /// @brief Méthode qui permet d'identifier un Ingenieur.
+    /// @param id   L'identifiant du Ingenieur.
+    /// @param mdp  Le mot de passe du Ingenieur.
+    /// @return le Ingenieur identifié.
+    Ingenieur authentificationIngenieur(QString id, QString mdp);
+
 
     /// @brief Méthode permettant de vérifier que le message est bon.
     /// @return true si le message est bon, false sinon.

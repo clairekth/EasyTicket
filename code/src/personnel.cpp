@@ -15,3 +15,13 @@ Personnel::~Personnel() {}
 bool Personnel::estUnPersonnel() {
     return true;
 }
+
+bool Personnel::estUnIngenieur(){
+    return false;
+}
+
+bool Personnel::estUnTechnicien(){
+    return false;
+}
+
+

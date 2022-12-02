@@ -58,10 +58,11 @@
 #include "gestionnairedialogue.h"
 #include "pageaccueilclient.h"
 #include "pageajoutticket.h"
+#include "pageaccueilpersonnel.h"
 
 /// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.3
+/// @version 2.1
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -82,6 +83,8 @@ protected :
     PageAccueilClient *page_accueil_client;
     /// @brief Champs contenant la PageAjoutTicket
     PageAjoutTicket *page_ajout_ticket;
+    /// @brief Champs contenant la PageAccueilPersonnel
+    PageAccueilPersonnel *page_accueil_personnel;
 
 public:
     /// @brief Constructeur.

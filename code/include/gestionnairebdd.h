@@ -7,10 +7,11 @@
 
 #include "client.h"
 #include "ticket.h"
+#include "ingenieur.h"
 
 /// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 1.8
+/// @version 2.1
 class GestionnaireBDD
 {
 public:
@@ -21,7 +22,13 @@ public:
     /// @param  id  L'identifiant du client.
     /// @param  mdp Le mot de passe du client.
     /// @return  le Client identifié.
-    Client authentifier(QString id, QString mdp);
+    Client authentifierClient(QString id, QString mdp);
+
+    /// @brief  Méthode qui permet d'authentifier un Ingenieur.
+    /// @param  id  L'identifiant du Ingenieur.
+    /// @param  mdp Le mot de passe du Ingenieur.
+    /// @return  l'Ingenieur identifié.
+    Ingenieur authentifierIngenieur(QString id, QString mdp);
 
     /// @brief  Méthode qui permet de récupérer la catégorie d'un Utilisateur.
     /// @param  id_utilisateur  l'identifiant de l'Utilisateur.

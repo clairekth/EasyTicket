@@ -70,7 +70,7 @@ void GestionnaireBDD::setComboBox(QComboBox *box, QString type)
     }
 }
 
-Client GestionnaireBDD::authentifier(QString id, QString mdp)
+Client GestionnaireBDD::authentifierClient(QString id, QString mdp)
 {
     QSqlQuery *query = new QSqlQuery();
     query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");
@@ -100,6 +100,35 @@ Client GestionnaireBDD::authentifier(QString id, QString mdp)
     query->clear();
 
     return client;
+}
+
+Ingenieur GestionnaireBDD::authentifierIngenieur(QString id, QString mdp)
+{
+    QSqlQuery *query = new QSqlQuery();
+    query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");
+    query->bindValue(":id", id);
+    query->bindValue(":mdp", mdp);
+    query->exec();
+
+    Ingenieur ingenieur;
+
+    if (query->first())
+    {
+//        for (int i = 0; i < query->record().count(); i ++) {
+//            qDebug() << query->value(i).toString();
+//        }
+
+        ingenieur = Ingenieur(
+                    query->value(0).toString(),  // Convertion : value -> QString -> QString
+                    query->value(2).toString(),
+                    query->value(1).toString(),
+                    query->value(3).toString(),
+                    query->value(4).toString());
+
+    }
+    query->clear();
+
+    return ingenieur;
 }
 
 

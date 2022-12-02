@@ -34,6 +34,14 @@ public:
     /// @brief  Cette méthode permet de vérifier si l'Utilisateur est un Personnel.
     /// @return true
     virtual bool estUnPersonnel();
+
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Technicien.
+    /// @return false
+    virtual bool estUnTechnicien();
+
+    /// @brief Cette méthode permet de vérifier si l'Utilisateur est un Ingenieur.
+    /// @return false
+    virtual bool estUnIngenieur();
 };
 
 #endif // PERSONNEL_H

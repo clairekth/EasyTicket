@@ -13,12 +13,17 @@ QString GestionnaireDialogue::typeUtilisateur(QString id, QString mdp)
     return id_categorie;
 }
 
-Client GestionnaireDialogue::authentification(QString id, QString mdp)
+Client GestionnaireDialogue::authentificationClient(QString id, QString mdp)
 {
 
     //Récupère les info du Client dans la BDD
-    // Client c = Client(id, "Vous", "Même", mdp, id + "@easyticket.fr");
-    return bdd.authentifier(id, mdp);
+    return bdd.authentifierClient(id, mdp);
+}
+
+Ingenieur GestionnaireDialogue::authentificationIngenieur(QString id, QString mdp)
+{
+    //Récupère les info de l'ingénieur dans la BDD
+    return bdd.authentifierIngenieur(id, mdp);
 }
 
 bool GestionnaireDialogue::verificationMessage(QString message)
