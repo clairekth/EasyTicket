@@ -27,26 +27,6 @@ GestionnaireBDD::GestionnaireBDD()
     }
 }
 
-void GestionnaireBDD::select(QString query)
-{
-
-        qDebug() <<"Connexion réussie à la BDD";
-        QSqlQuery *statement = new QSqlQuery();
-        statement->exec(query);
-        QString res;
-        while (statement->next())
-        {
-            for (int i = 0; i < statement->record().count(); i ++){
-                qDebug() << statement->value(i).toString();
-            }
-            qDebug() << "----------";
-
-        }
-        statement->clear();
-
-
-}
-
 QString GestionnaireBDD::type_utilisateur(QString id_utilisateur, QString mdp) {
     QString res = "null";
     QSqlQuery *query = new QSqlQuery();
@@ -139,7 +119,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
         query->bindValue(":id_logiciel", 0);
     query->bindValue(":id_client", ticket.getClient().getID());
     bool res = query->exec();
-    qDebug() << res;
+    //qDebug() << res;
 
     // Récupération de l'id du ticket qu'on vient d'insérer
     query = new QSqlQuery();
@@ -149,7 +129,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
     res = query->first();
     if (res)
         ticket.setId_ticket(query->value(0).toInt());
-    qDebug() << res;
+    //qDebug() << res;
 
     // Insertion des messages du ticket
     for (Message *message : ticket.getListeMessages()) {
@@ -161,7 +141,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
         query->bindValue(":id_utilisateur", message->getUser()->getID());
         query->bindValue(":id_ticket_associe", message->getTicket()->getId_ticket());
         res = query->exec();
-        qDebug() << res;
+        //qDebug() << res;
     }
     query->clear();
 
