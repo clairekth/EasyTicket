@@ -1,6 +1,4 @@
-#include "ingenieur.h"
 #include "mainwindow.h"
-#include "gestionnairedialogue.h"
 
 #include <QApplication>
 
