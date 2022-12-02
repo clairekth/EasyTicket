@@ -8,6 +8,7 @@ PageAccueilPersonnel::PageAccueilPersonnel(QWidget *parent, GestionnaireDialogue
     ui->setupUi(this);
     consulter_tickets_bouton = ui->consulter_tickets_bouton;
     demander_ticket_bouton = ui->demander_ticket_bouton;
+    this->gestionnaire_dialogue = gestionnaire_dialogue;
 }
 
 void PageAccueilPersonnel::setPersonnel(Personnel *p)
