@@ -17,10 +17,6 @@ public:
     /// @brief Constructeur par défaut.
     GestionnaireBDD();
 
-    /// @brief Méthode qui permet d'afficher le résultat d'une requete passée en paramètre.
-    /// @param query La requête à envoyer à la bdd.
-    void select(QString query);
-
     /// @brief  Méthode qui permet d'authentifier un client.
     /// @param  id  L'identifiant du client.
     /// @param  mdp Le mot de passe du client.

@@ -77,8 +77,6 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         t.addMessage(m);
         gestionnaire_dialogue->enregistrer_ticket(t);
 
-        QMessageBox::information(this,"Ticket créé.",t.toString());
-
         //Retour page accueil si tout est ok
         QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
         if(stack){
