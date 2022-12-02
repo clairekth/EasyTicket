@@ -17,7 +17,7 @@ void PageAccueilPersonnel::setPersonnel(Personnel *p)
     if (this->personnel->estUnIngenieur()){
         qDebug() << "Inge";
     } else {
-        qDebug() << "WSH";
+        qDebug() << "Pas inge";
     }
     QLabel *bonjour = ui->bonjour_personnel;
     bonjour->setText("Bonjour, " + (personnel->getPrenom()) + " " + (personnel->getNom()));
