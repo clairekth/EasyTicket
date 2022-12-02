@@ -6,6 +6,8 @@ PageAccueilPersonnel::PageAccueilPersonnel(QWidget *parent, GestionnaireDialogue
     ui(new Ui::PageAccueilPersonnel)
 {
     ui->setupUi(this);
+    this->stack = qobject_cast<QStackedWidget*>(parent);
+
     consulter_tickets_bouton = ui->consulter_tickets_bouton;
     demander_ticket_bouton = ui->demander_ticket_bouton;
     this->gestionnaire_dialogue = gestionnaire_dialogue;

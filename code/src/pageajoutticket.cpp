@@ -12,6 +12,8 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
     ui(new Ui::PageAjoutTicket)
 {
     ui->setupUi(this);
+    this->stack = qobject_cast<QStackedWidget*>(parent);
+
     this->bouton_retour = ui->bouton_retour;
     this->bouton_creer_le_ticket = ui->creer_le_ticket_bouton;
 
@@ -41,10 +43,8 @@ PageAjoutTicket::~PageAjoutTicket()
 
 void PageAjoutTicket::retour_bouton_clicked()
 {
-    QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
-    if(stack){
         stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
-    }
+
 }
 
 void PageAjoutTicket::creer_le_ticket_clicked()
@@ -78,10 +78,8 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         gestionnaire_dialogue->enregistrer_ticket(t);
 
         //Retour page accueil si tout est ok
-        QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
-        if(stack){
             stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
-        }
+
     } else {
         QMessageBox::warning(this,"Erreur","Il n'y a pas de messages ou votre message est trop court.");
     }

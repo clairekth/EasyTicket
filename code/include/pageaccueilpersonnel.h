@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "gestionnairedialogue.h"
 #include <QPushButton>
+#include <QStackedWidget>
 
 /// @brief La classe PageAccueilPersonnel correspond à la vue de la page d'accueil pour le Personnel.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
@@ -39,6 +40,9 @@ private:
     QPushButton *consulter_tickets_bouton;
     /// @brief Champs contenant le Personnel actuellement connecté
     Personnel *personnel;
+
+    QStackedWidget *stack;
+
 };
 
 #endif // PAGEACCUEILPERSONNEL_H

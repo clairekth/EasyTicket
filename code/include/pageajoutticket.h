@@ -6,6 +6,7 @@
 #include <QComboBox>
 #include <QTextEdit>
 #include "gestionnairedialogue.h"
+#include <QStackedWidget>
 
 /// @brief La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un nouveau Ticket.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
@@ -58,6 +59,8 @@ private:
     QComboBox *logiciel_box;
     /// @brief Zone de de texte pour entrer le message.
     QTextEdit *message_text;
+
+    QStackedWidget *stack;
 
 
 };

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include "gestionnairedialogue.h"
+#include <QStackedWidget>
 
 /// @brief La classe PageAccueilClient correspond à la vue de la page d'accueil pour les Client.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
@@ -49,6 +50,9 @@ private:
 
     /// @brief Champs contenant le Client connecté.
     Client *client;
+
+    QStackedWidget *stack;
+
 };
 
 #endif // PAGEACCUEILCLIENT_H

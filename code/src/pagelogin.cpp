@@ -15,7 +15,7 @@ PageLogin::PageLogin(QWidget *parent, GestionnaireDialogue *gestionnaire_dialogu
     id = ui->identifiant;
     mdp = ui->password;
     connect(validation_bouton, &QPushButton::clicked,this,&PageLogin::handle_validation);
-
+    this->stack = qobject_cast<QStackedWidget*>(parent);
     this->gestionnaire_dialogue = gestionnaire_dialogue;
 
 }
@@ -35,24 +35,20 @@ void PageLogin::handle_validation()
         QMessageBox::warning(this,"PageLogin","Identifiant ou mot de passe incorrect.");
     } else {
         if (user->estUnClient()){
-            QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
-            if(stack){
-                //On récupère le widget suivant pour lui set le client actuellement connecté.
-                auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
-                auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
-                Client *c = static_cast<Client*>(user);
-                pageaccueil->setClient(c);
-                stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
-           }
+             //On récupère le widget suivant pour lui set le client actuellement connecté.
+             auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
+             auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
+             Client *c = static_cast<Client*>(user);
+             pageaccueil->setClient(c);
+             stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
+
         } else if (user->estUnIngenieur()){
-            QStackedWidget *stack = qobject_cast<QStackedWidget* >(parentWidget());
-            if(stack){
                 auto *widget = stack->widget(ACCUEIL_PERSONNEL_PAGE);
                 auto *pageaccueil = qobject_cast<PageAccueilPersonnel*>(widget);
                 Personnel *p = static_cast<Personnel*>(user);
                 pageaccueil->setPersonnel(p);
                 stack->setCurrentIndex(ACCUEIL_PERSONNEL_PAGE); //Connexion correct -> Accueil personnel
-           }
+
         }
     }
 }

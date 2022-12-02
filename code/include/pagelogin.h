@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include "gestionnairedialogue.h"
-
+#include <QStackedWidget>
 /// @brief La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
 /// @version 1.2
@@ -47,6 +47,8 @@ private:
 
     /// @brief le @ref GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
+
+    QStackedWidget *stack;
 };
 
 #endif // PAGELOGIN_H
