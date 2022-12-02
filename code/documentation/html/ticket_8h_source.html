@@ -73,101 +73,105 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TICKET_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;systeme.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;logiciel.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;client.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;personnel.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;message.h&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;categorie.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classTicket.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTicket.html">Ticket</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string id_ticket;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::string date_creation;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::string date_fermeture;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classSysteme.html">Systeme</a> systeme;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classLogiciel.html">Logiciel</a> logiciel;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classCategorie.html">Categorie</a> categorie;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::vector&lt;Message*&gt; liste_messages;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classClient.html">Client</a> client;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classPersonnel.html">Personnel</a> personnel;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classTicket.html#aba3a46c9223efb6ab0bde93a09403537">Ticket</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classTicket.html#aba3a46c9223efb6ab0bde93a09403537">Ticket</a>(std::string id_ticket,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;           std::string date_creation,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;           <a class="code" href="classCategorie.html">Categorie</a> categorie,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;           <a class="code" href="classClient.html">Client</a> auteur);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string <a class="code" href="classTicket.html#a2a0f5d1c8f94b85e59b7337892cc6f80">getId_ticket</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#abbd33913e1d68e39713b77f9872c685b">setId_ticket</a>(<span class="keyword">const</span> std::string &amp;value);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string <a class="code" href="classTicket.html#a3dd153aa62138b7b00428d5ed1153351">getDate_creation</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a4edfecc358856a742d2fce2ddc59e7a1">setDate_creation</a>(std::string value);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::string <a class="code" href="classTicket.html#a24799f106e03d146f0e5d938eb527445">getDate_fermeture</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a7e40c5549ad3da09a32bab068bd9510f">setDate_fermeture</a>(std::string value);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classSysteme.html">Systeme</a> <a class="code" href="classTicket.html#a71ea6606cc7b0d580b554dd94916dcc9">getSysteme</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a3ce88e0ac87f037ec8e3d3a85a378771">setSysteme</a>(<span class="keyword">const</span> <a class="code" href="classSysteme.html">Systeme</a> &amp;value);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classLogiciel.html">Logiciel</a> <a class="code" href="classTicket.html#a44050094872a8786ea7d5f5c18b50356">getLogiciel</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#aec217e45dcf9b9860c46c9998c24d082">setLogiciel</a>(<span class="keyword">const</span> <a class="code" href="classLogiciel.html">Logiciel</a> &amp;value);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::vector&lt;Message*&gt; <a class="code" href="classTicket.html#a29623c53265c6c60f6e1ff3071f45ca9">getListeMessages</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a2b387f4db64e0abc36d46cbc2b7ea17a">addMessage</a>(<a class="code" href="classMessage.html">Message</a> &amp;message);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#aa660357eaa3a59498abbdd3e6be20f7a">setListeMessages</a>(<span class="keyword">const</span> std::vector&lt;Message*&gt; &amp;value);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#ab7f07ba94b9cf52a1b29e75b3f887f28">setClient</a>(<a class="code" href="classClient.html">Client</a> &amp;value);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classClient.html">Client</a> <a class="code" href="classTicket.html#aa44d539be6addc6433dec590e308a8e3">getClient</a>();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#aeee62fd1b5fc4abecc3157fd204fca0c">setPersonnel</a>(<a class="code" href="classPersonnel.html">Personnel</a> &amp;value);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classPersonnel.html">Personnel</a> <a class="code" href="classTicket.html#a924a54267509f16c59b87ffe326dec7a">getPersonnel</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    std::string <a class="code" href="classTicket.html#a7e997f94042505f7360a3e54036aa941">toString</a>();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classTicket.html#a0acf9e1d74f108768d9d5a22f065da2d">  125</a></span>&#160;    <a class="code" href="classTicket.html#a0acf9e1d74f108768d9d5a22f065da2d">~Ticket</a>() {}</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;systeme.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;logiciel.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;client.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;personnel.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;message.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;categorie.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classTicket.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTicket.html">Ticket</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> id_ticket;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QString date_creation;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    QString date_fermeture;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classSysteme.html">Systeme</a> systeme;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classLogiciel.html">Logiciel</a> logiciel;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classCategorie.html">Categorie</a> categorie;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::vector&lt;Message*&gt; liste_messages;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classClient.html">Client</a> client;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classPersonnel.html">Personnel</a> personnel;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classTicket.html#aba3a46c9223efb6ab0bde93a09403537">Ticket</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classTicket.html#aba3a46c9223efb6ab0bde93a09403537">Ticket</a>(QString date_creation,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;           <a class="code" href="classCategorie.html">Categorie</a> categorie,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;           <a class="code" href="classClient.html">Client</a> auteur,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;           <span class="keywordtype">int</span> id_ticket = -1);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classTicket.html#ac646f4266e7bc82a1fc0c6414bb76e99">getId_ticket</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a9f8be6b5308a5b0e5ab3b76f6e5f2a54">setId_ticket</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;value);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    QString <a class="code" href="classTicket.html#a89d3fce7577ecc71f49b25b832cd6566">getDate_creation</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a887ac29349f4535d7c75ce5b7e45518a">setDate_creation</a>(QString value);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    QString <a class="code" href="classTicket.html#aa5c74f769239f1aae69938a25698132c">getDate_fermeture</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a23258ad1a4acb746405efa9f09f95797">setDate_fermeture</a>(QString value);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classSysteme.html">Systeme</a> <a class="code" href="classTicket.html#a71ea6606cc7b0d580b554dd94916dcc9">getSysteme</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a3ce88e0ac87f037ec8e3d3a85a378771">setSysteme</a>(<span class="keyword">const</span> <a class="code" href="classSysteme.html">Systeme</a> &amp;value);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classLogiciel.html">Logiciel</a> <a class="code" href="classTicket.html#a44050094872a8786ea7d5f5c18b50356">getLogiciel</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#aec217e45dcf9b9860c46c9998c24d082">setLogiciel</a>(<span class="keyword">const</span> <a class="code" href="classLogiciel.html">Logiciel</a> &amp;value);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::vector&lt;Message*&gt; <a class="code" href="classTicket.html#a29623c53265c6c60f6e1ff3071f45ca9">getListeMessages</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a2b387f4db64e0abc36d46cbc2b7ea17a">addMessage</a>(<a class="code" href="classMessage.html">Message</a> &amp;message);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#aa660357eaa3a59498abbdd3e6be20f7a">setListeMessages</a>(<span class="keyword">const</span> std::vector&lt;Message*&gt; &amp;value);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#ab7f07ba94b9cf52a1b29e75b3f887f28">setClient</a>(<a class="code" href="classClient.html">Client</a> &amp;value);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classClient.html">Client</a> <a class="code" href="classTicket.html#aa44d539be6addc6433dec590e308a8e3">getClient</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#aeee62fd1b5fc4abecc3157fd204fca0c">setPersonnel</a>(<a class="code" href="classPersonnel.html">Personnel</a> &amp;value);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="classPersonnel.html">Personnel</a> <a class="code" href="classTicket.html#a924a54267509f16c59b87ffe326dec7a">getPersonnel</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    QString <a class="code" href="classTicket.html#a1caa52636a57e675f3fc98a5a9e44d6c">toString</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="classCategorie.html">Categorie</a> getCategorie();</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// TICKET_H</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classTicket.html#a0acf9e1d74f108768d9d5a22f065da2d">  129</a></span>&#160;    <a class="code" href="classTicket.html#a0acf9e1d74f108768d9d5a22f065da2d">~Ticket</a>() {}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// TICKET_H</span></div>
 <div class="ttc" id="aclassCategorie_html"><div class="ttname"><a href="classCategorie.html">Categorie</a></div><div class="ttdoc">La classe Categorie permet de décrire les différentes catégories d'un Ticket.</div><div class="ttdef"><b>Definition:</b> categorie.h:10</div></div>
-<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdoc">La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket...</div><div class="ttdef"><b>Definition:</b> client.h:9</div></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdoc">La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket...</div><div class="ttdef"><b>Definition:</b> client.h:10</div></div>
 <div class="ttc" id="aclassLogiciel_html"><div class="ttname"><a href="classLogiciel.html">Logiciel</a></div><div class="ttdoc">La classe Logiciel permet de décrire un logiciel dans l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> logiciel.h:10</div></div>
-<div class="ttc" id="aclassMessage_html"><div class="ttname"><a href="classMessage.html">Message</a></div><div class="ttdoc">La classe Message est la classe correspondant à un Message sur un Ticket.</div><div class="ttdef"><b>Definition:</b> message.h:12</div></div>
-<div class="ttc" id="aclassPersonnel_html"><div class="ttname"><a href="classPersonnel.html">Personnel</a></div><div class="ttdoc">La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des Utilisateur apparte...</div><div class="ttdef"><b>Definition:</b> personnel.h:11</div></div>
+<div class="ttc" id="aclassMessage_html"><div class="ttname"><a href="classMessage.html">Message</a></div><div class="ttdoc">La classe Message est la classe correspondant à un Message sur un Ticket.</div><div class="ttdef"><b>Definition:</b> message.h:13</div></div>
+<div class="ttc" id="aclassPersonnel_html"><div class="ttname"><a href="classPersonnel.html">Personnel</a></div><div class="ttdoc">La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des Utilisateur apparte...</div><div class="ttdef"><b>Definition:</b> personnel.h:12</div></div>
 <div class="ttc" id="aclassSysteme_html"><div class="ttname"><a href="classSysteme.html">Systeme</a></div><div class="ttdoc">La classe Systeme permet de décrire un système d'exploitation dans l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> systeme.h:10</div></div>
-<div class="ttc" id="aclassTicket_html"><div class="ttname"><a href="classTicket.html">Ticket</a></div><div class="ttdoc">La classe Ticket permet de décrire un ticket dans l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> ticket.h:17</div></div>
-<div class="ttc" id="aclassTicket_html_a0acf9e1d74f108768d9d5a22f065da2d"><div class="ttname"><a href="classTicket.html#a0acf9e1d74f108768d9d5a22f065da2d">Ticket::~Ticket</a></div><div class="ttdeci">~Ticket()</div><div class="ttdoc">Destructeur.</div><div class="ttdef"><b>Definition:</b> ticket.h:125</div></div>
-<div class="ttc" id="aclassTicket_html_a24799f106e03d146f0e5d938eb527445"><div class="ttname"><a href="classTicket.html#a24799f106e03d146f0e5d938eb527445">Ticket::getDate_fermeture</a></div><div class="ttdeci">std::string getDate_fermeture() const</div><div class="ttdoc">Cette méthode permet de récupérer la date de fermeture du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:38</div></div>
+<div class="ttc" id="aclassTicket_html"><div class="ttname"><a href="classTicket.html">Ticket</a></div><div class="ttdoc">La classe Ticket permet de décrire un ticket dans l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> ticket.h:19</div></div>
+<div class="ttc" id="aclassTicket_html_a0acf9e1d74f108768d9d5a22f065da2d"><div class="ttname"><a href="classTicket.html#a0acf9e1d74f108768d9d5a22f065da2d">Ticket::~Ticket</a></div><div class="ttdeci">~Ticket()</div><div class="ttdoc">Destructeur de la classe.</div><div class="ttdef"><b>Definition:</b> ticket.h:129</div></div>
+<div class="ttc" id="aclassTicket_html_a1caa52636a57e675f3fc98a5a9e44d6c"><div class="ttname"><a href="classTicket.html#a1caa52636a57e675f3fc98a5a9e44d6c">Ticket::toString</a></div><div class="ttdeci">QString toString()</div><div class="ttdoc">Cette méthode permet d'afficher les attributs de la classe pour le débug.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:92</div></div>
+<div class="ttc" id="aclassTicket_html_a23258ad1a4acb746405efa9f09f95797"><div class="ttname"><a href="classTicket.html#a23258ad1a4acb746405efa9f09f95797">Ticket::setDate_fermeture</a></div><div class="ttdeci">void setDate_fermeture(QString value)</div><div class="ttdoc">Cette méthode permet de définir la date de fermeture du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:43</div></div>
 <div class="ttc" id="aclassTicket_html_a29623c53265c6c60f6e1ff3071f45ca9"><div class="ttname"><a href="classTicket.html#a29623c53265c6c60f6e1ff3071f45ca9">Ticket::getListeMessages</a></div><div class="ttdeci">std::vector&lt; Message * &gt; getListeMessages() const</div><div class="ttdoc">Cette méthode permet de récupérer la liste des Message concerné par le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:14</div></div>
-<div class="ttc" id="aclassTicket_html_a2a0f5d1c8f94b85e59b7337892cc6f80"><div class="ttname"><a href="classTicket.html#a2a0f5d1c8f94b85e59b7337892cc6f80">Ticket::getId_ticket</a></div><div class="ttdeci">std::string getId_ticket() const</div><div class="ttdoc">Cette méthode permet de récupérer l'identifiant du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:68</div></div>
 <div class="ttc" id="aclassTicket_html_a2b387f4db64e0abc36d46cbc2b7ea17a"><div class="ttname"><a href="classTicket.html#a2b387f4db64e0abc36d46cbc2b7ea17a">Ticket::addMessage</a></div><div class="ttdeci">void addMessage(Message &amp;message)</div><div class="ttdoc">Cette méthode permet d'ajouter un Message concerné par le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:23</div></div>
 <div class="ttc" id="aclassTicket_html_a3ce88e0ac87f037ec8e3d3a85a378771"><div class="ttname"><a href="classTicket.html#a3ce88e0ac87f037ec8e3d3a85a378771">Ticket::setSysteme</a></div><div class="ttdeci">void setSysteme(const Systeme &amp;value)</div><div class="ttdoc">Cette méthode permet de définir le Systeme concerné par le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:53</div></div>
-<div class="ttc" id="aclassTicket_html_a3dd153aa62138b7b00428d5ed1153351"><div class="ttname"><a href="classTicket.html#a3dd153aa62138b7b00428d5ed1153351">Ticket::getDate_creation</a></div><div class="ttdeci">std::string getDate_creation() const</div><div class="ttdoc">Cette méthode permet de récupérer la date de création du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:28</div></div>
 <div class="ttc" id="aclassTicket_html_a44050094872a8786ea7d5f5c18b50356"><div class="ttname"><a href="classTicket.html#a44050094872a8786ea7d5f5c18b50356">Ticket::getLogiciel</a></div><div class="ttdeci">Logiciel getLogiciel() const</div><div class="ttdoc">Cette méthode permet récupérer le Logiciel concerné par le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:58</div></div>
-<div class="ttc" id="aclassTicket_html_a4edfecc358856a742d2fce2ddc59e7a1"><div class="ttname"><a href="classTicket.html#a4edfecc358856a742d2fce2ddc59e7a1">Ticket::setDate_creation</a></div><div class="ttdeci">void setDate_creation(std::string value)</div><div class="ttdoc">Cette méthode permet de définir la date de création du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:33</div></div>
 <div class="ttc" id="aclassTicket_html_a71ea6606cc7b0d580b554dd94916dcc9"><div class="ttname"><a href="classTicket.html#a71ea6606cc7b0d580b554dd94916dcc9">Ticket::getSysteme</a></div><div class="ttdeci">Systeme getSysteme() const</div><div class="ttdoc">Cette méthode permet de récupérer le système d'exploitation concerné par le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:48</div></div>
-<div class="ttc" id="aclassTicket_html_a7e40c5549ad3da09a32bab068bd9510f"><div class="ttname"><a href="classTicket.html#a7e40c5549ad3da09a32bab068bd9510f">Ticket::setDate_fermeture</a></div><div class="ttdeci">void setDate_fermeture(std::string value)</div><div class="ttdoc">Cette méthode permet de définir la date de fermeture du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:43</div></div>
-<div class="ttc" id="aclassTicket_html_a7e997f94042505f7360a3e54036aa941"><div class="ttname"><a href="classTicket.html#a7e997f94042505f7360a3e54036aa941">Ticket::toString</a></div><div class="ttdeci">std::string toString()</div><div class="ttdoc">Cette méthode permet d'afficher les attributs de la classe pour le débug.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:92</div></div>
+<div class="ttc" id="aclassTicket_html_a887ac29349f4535d7c75ce5b7e45518a"><div class="ttname"><a href="classTicket.html#a887ac29349f4535d7c75ce5b7e45518a">Ticket::setDate_creation</a></div><div class="ttdeci">void setDate_creation(QString value)</div><div class="ttdoc">Cette méthode permet de définir la date de création du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:33</div></div>
+<div class="ttc" id="aclassTicket_html_a89d3fce7577ecc71f49b25b832cd6566"><div class="ttname"><a href="classTicket.html#a89d3fce7577ecc71f49b25b832cd6566">Ticket::getDate_creation</a></div><div class="ttdeci">QString getDate_creation() const</div><div class="ttdoc">Cette méthode permet de récupérer la date de création du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:28</div></div>
 <div class="ttc" id="aclassTicket_html_a924a54267509f16c59b87ffe326dec7a"><div class="ttname"><a href="classTicket.html#a924a54267509f16c59b87ffe326dec7a">Ticket::getPersonnel</a></div><div class="ttdeci">Personnel getPersonnel()</div><div class="ttdoc">Cette méthode permet de récupérer le Personnel qui traite le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:88</div></div>
+<div class="ttc" id="aclassTicket_html_a9f8be6b5308a5b0e5ab3b76f6e5f2a54"><div class="ttname"><a href="classTicket.html#a9f8be6b5308a5b0e5ab3b76f6e5f2a54">Ticket::setId_ticket</a></div><div class="ttdeci">void setId_ticket(const int &amp;value)</div><div class="ttdoc">Cette méthode permet de définir l'identifiant du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:73</div></div>
 <div class="ttc" id="aclassTicket_html_aa44d539be6addc6433dec590e308a8e3"><div class="ttname"><a href="classTicket.html#aa44d539be6addc6433dec590e308a8e3">Ticket::getClient</a></div><div class="ttdeci">Client getClient()</div><div class="ttdoc">Cette méthode permet de récupérer le Client auteur du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:81</div></div>
+<div class="ttc" id="aclassTicket_html_aa5c74f769239f1aae69938a25698132c"><div class="ttname"><a href="classTicket.html#aa5c74f769239f1aae69938a25698132c">Ticket::getDate_fermeture</a></div><div class="ttdeci">QString getDate_fermeture() const</div><div class="ttdoc">Cette méthode permet de récupérer la date de fermeture du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:38</div></div>
 <div class="ttc" id="aclassTicket_html_aa660357eaa3a59498abbdd3e6be20f7a"><div class="ttname"><a href="classTicket.html#aa660357eaa3a59498abbdd3e6be20f7a">Ticket::setListeMessages</a></div><div class="ttdeci">void setListeMessages(const std::vector&lt; Message * &gt; &amp;value)</div><div class="ttdoc">Cette méthode permet de définir la liste des @Message concerné par le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:19</div></div>
 <div class="ttc" id="aclassTicket_html_ab7f07ba94b9cf52a1b29e75b3f887f28"><div class="ttname"><a href="classTicket.html#ab7f07ba94b9cf52a1b29e75b3f887f28">Ticket::setClient</a></div><div class="ttdeci">void setClient(Client &amp;value)</div><div class="ttdoc">Cette méthode permet de définir le Client auteur du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:78</div></div>
 <div class="ttc" id="aclassTicket_html_aba3a46c9223efb6ab0bde93a09403537"><div class="ttname"><a href="classTicket.html#aba3a46c9223efb6ab0bde93a09403537">Ticket::Ticket</a></div><div class="ttdeci">Ticket()</div><div class="ttdoc">Constructeur par défaut.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:3</div></div>
-<div class="ttc" id="aclassTicket_html_abbd33913e1d68e39713b77f9872c685b"><div class="ttname"><a href="classTicket.html#abbd33913e1d68e39713b77f9872c685b">Ticket::setId_ticket</a></div><div class="ttdeci">void setId_ticket(const std::string &amp;value)</div><div class="ttdoc">Cette méthode permet de définir l'identifiant du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:73</div></div>
+<div class="ttc" id="aclassTicket_html_ac646f4266e7bc82a1fc0c6414bb76e99"><div class="ttname"><a href="classTicket.html#ac646f4266e7bc82a1fc0c6414bb76e99">Ticket::getId_ticket</a></div><div class="ttdeci">int getId_ticket() const</div><div class="ttdoc">Cette méthode permet de récupérer l'identifiant du Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:68</div></div>
 <div class="ttc" id="aclassTicket_html_aec217e45dcf9b9860c46c9998c24d082"><div class="ttname"><a href="classTicket.html#aec217e45dcf9b9860c46c9998c24d082">Ticket::setLogiciel</a></div><div class="ttdeci">void setLogiciel(const Logiciel &amp;value)</div><div class="ttdoc">Cette méthode permet définir le Logiciel concerné par le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:63</div></div>
 <div class="ttc" id="aclassTicket_html_aeee62fd1b5fc4abecc3157fd204fca0c"><div class="ttname"><a href="classTicket.html#aeee62fd1b5fc4abecc3157fd204fca0c">Ticket::setPersonnel</a></div><div class="ttdeci">void setPersonnel(Personnel &amp;value)</div><div class="ttdoc">Cette méthode permet de définir le Personnel qui traite le Ticket.</div><div class="ttdef"><b>Definition:</b> ticket.cpp:85</div></div>
 </div><!-- fragment --></div><!-- contents -->

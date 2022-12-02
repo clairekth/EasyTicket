@@ -11,6 +11,7 @@ class Logiciel
 private:
     /// @brief Champs contenant l'id du logiciel.
     int id_logiciel;
+
     /// @brief Champs contenant le nom du logiciel.
     QString nom;
 
@@ -27,6 +28,8 @@ public:
     /// @return nom
     QString getNom();
 
+    /// @brief Méthode retournant l'id du logiciel.
+    /// @return L'id du logiciel.
     int getID();
 
 };

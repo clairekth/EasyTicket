@@ -33,8 +33,13 @@ public:
     /// @return la catégorie de l'utilisateur s'il existe, null sinon
     QString type_utilisateur(QString id_utilisateur, QString mdp);
 
+    /// @brief Méthode qui permet d'enregistrer un ticket dans la BDD.
+    /// @param ticket Le ticket à enregistrer.
     void enregistrer_ticket(Ticket &ticket);
 
+    /// @brief Méthode qui remplit les comboBox de la page PageAjoutTicket en fct de la BDD.
+    /// @param box La ComboBox.
+    /// @param type Le type de donnée de la ComboBox (categorie, systeme, logiciel).
     void setComboBox(QComboBox *box, QString type);
 
 

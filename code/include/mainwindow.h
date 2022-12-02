@@ -42,6 +42,14 @@
 /// - Importer la bdd.
 ///
 /// - Faire un select sur la bdd, etc.
+///
+/// \subsection v1_8_subsec v1.8
+/// Ajout des fonctions pour communiquer avec la bdd :
+/// - Au niveau de la connexion.
+///
+/// - et de l'enregistrement d'un ticket et du message.
+///
+/// Création des ComboBox en fonction des tables de la BDD.
 
 #include <QMainWindow>
 #include <QStackedWidget>

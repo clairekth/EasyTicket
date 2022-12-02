@@ -125,7 +125,7 @@ public:
 
     Categorie getCategorie();
 
-    /// @brief Destructeur.
+    /// @brief Destructeur de la classe.
     ~Ticket() {}
 };
 

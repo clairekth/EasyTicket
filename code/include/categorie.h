@@ -11,12 +11,14 @@ class Categorie
 private:
     /// @brief Champs contenant l'id de la catégorie.
     int id_categorie;
+
     /// @brief Champs contenant le nom de la catégorie.
     QString nom_categorie;
 
 public:
     /// @brief Constructeur par défaut.
     Categorie();
+
     /// @brief  Constructeur de la classe Catégorie.
     /// @param  id_categorie    l'identifiant de la catégorie
     /// @param  nom_categorie   le nom de la catégorie
@@ -28,6 +30,8 @@ public:
     /// @return nom_categorie
     QString getNom();
 
+    /// @brief Méthode retournant l'id de la catégorie.
+    /// @return L'id de la categorie.
     int getID();
 
 };

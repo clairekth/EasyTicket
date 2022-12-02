@@ -73,34 +73,35 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INGENIEUR_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;personnel.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classIngenieur.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIngenieur.html">Ingenieur</a> : <span class="keyword">public</span> <a class="code" href="classPersonnel.html">Personnel</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classIngenieur.html#a4ba9ef0aba293ccd3f21fd3771a6b89a">Ingenieur</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classIngenieur.html#a4ba9ef0aba293ccd3f21fd3771a6b89a">Ingenieur</a> (</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::string <span class="keywordtype">id</span>,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string <a class="code" href="classUtilisateur.html#a04d1879dcf1e157f8606cc97b44b0cf6">nom</a>,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::string <a class="code" href="classUtilisateur.html#a7cbd4b405cdff4fed665d74ddca1a61f">prenom</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::string <a class="code" href="classUtilisateur.html#a49dcd340777b84cfd397c1249e7521d5">mdp</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::string <a class="code" href="classUtilisateur.html#abaabdf27157a48a5fb05be8d02362771">mail</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classIngenieur.html#a38f0b07ce713f3029ace2cc99386fc86">~Ingenieur</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classIngenieur.html#a7d3169d9d28d2210e17513db0f3ee5b0">estUnIngenieur</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// INGENIEUR_H</span></div>
-<div class="ttc" id="aclassIngenieur_html"><div class="ttname"><a href="classIngenieur.html">Ingenieur</a></div><div class="ttdoc">La classe Ingenieur permet de décrire un utilisateur appartenant au Personnel avec les droits ingénie...</div><div class="ttdef"><b>Definition:</b> ingenieur.h:9</div></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classIngenieur.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classIngenieur.html">Ingenieur</a> : <span class="keyword">public</span> <a class="code" href="classPersonnel.html">Personnel</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classIngenieur.html#a4ba9ef0aba293ccd3f21fd3771a6b89a">Ingenieur</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classIngenieur.html#a4ba9ef0aba293ccd3f21fd3771a6b89a">Ingenieur</a> (</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        QString <span class="keywordtype">id</span>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        QString <a class="code" href="classUtilisateur.html#a1096e809aca4b7cf453a7af93cb72502">nom</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        QString <a class="code" href="classUtilisateur.html#a1dd0779807b19298f30f39d9c371170f">prenom</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        QString <a class="code" href="classUtilisateur.html#a7a5960dc48aeee09c56d386371981df7">mdp</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        QString <a class="code" href="classUtilisateur.html#a2a4f3c552c52ff36115e398993e1b79c">mail</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classIngenieur.html#a38f0b07ce713f3029ace2cc99386fc86">~Ingenieur</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classIngenieur.html#a7d3169d9d28d2210e17513db0f3ee5b0">estUnIngenieur</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// INGENIEUR_H</span></div>
+<div class="ttc" id="aclassIngenieur_html"><div class="ttname"><a href="classIngenieur.html">Ingenieur</a></div><div class="ttdoc">La classe Ingenieur permet de décrire un utilisateur appartenant au Personnel avec les droits ingénie...</div><div class="ttdef"><b>Definition:</b> ingenieur.h:10</div></div>
 <div class="ttc" id="aclassIngenieur_html_a38f0b07ce713f3029ace2cc99386fc86"><div class="ttname"><a href="classIngenieur.html#a38f0b07ce713f3029ace2cc99386fc86">Ingenieur::~Ingenieur</a></div><div class="ttdeci">~Ingenieur()</div><div class="ttdoc">Destructeur de la classe.</div><div class="ttdef"><b>Definition:</b> ingenieur.cpp:8</div></div>
 <div class="ttc" id="aclassIngenieur_html_a4ba9ef0aba293ccd3f21fd3771a6b89a"><div class="ttname"><a href="classIngenieur.html#a4ba9ef0aba293ccd3f21fd3771a6b89a">Ingenieur::Ingenieur</a></div><div class="ttdeci">Ingenieur()</div><div class="ttdoc">Constructeur par défaut de la classe.</div><div class="ttdef"><b>Definition:</b> ingenieur.cpp:3</div></div>
 <div class="ttc" id="aclassIngenieur_html_a7d3169d9d28d2210e17513db0f3ee5b0"><div class="ttname"><a href="classIngenieur.html#a7d3169d9d28d2210e17513db0f3ee5b0">Ingenieur::estUnIngenieur</a></div><div class="ttdeci">bool estUnIngenieur()</div><div class="ttdoc">Cette méthode permet de vérifier si l'Utilisateur est un Ingénieur.</div><div class="ttdef"><b>Definition:</b> ingenieur.cpp:10</div></div>
-<div class="ttc" id="aclassPersonnel_html"><div class="ttname"><a href="classPersonnel.html">Personnel</a></div><div class="ttdoc">La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des Utilisateur apparte...</div><div class="ttdef"><b>Definition:</b> personnel.h:11</div></div>
-<div class="ttc" id="aclassUtilisateur_html_a04d1879dcf1e157f8606cc97b44b0cf6"><div class="ttname"><a href="classUtilisateur.html#a04d1879dcf1e157f8606cc97b44b0cf6">Utilisateur::nom</a></div><div class="ttdeci">std::string nom</div><div class="ttdoc">Champs contenant le nom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:19</div></div>
-<div class="ttc" id="aclassUtilisateur_html_a49dcd340777b84cfd397c1249e7521d5"><div class="ttname"><a href="classUtilisateur.html#a49dcd340777b84cfd397c1249e7521d5">Utilisateur::mdp</a></div><div class="ttdeci">std::string mdp</div><div class="ttdoc">Champs contenant le mot de passe de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:23</div></div>
-<div class="ttc" id="aclassUtilisateur_html_a7cbd4b405cdff4fed665d74ddca1a61f"><div class="ttname"><a href="classUtilisateur.html#a7cbd4b405cdff4fed665d74ddca1a61f">Utilisateur::prenom</a></div><div class="ttdeci">std::string prenom</div><div class="ttdoc">Champs contenant le prénom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:21</div></div>
-<div class="ttc" id="aclassUtilisateur_html_abaabdf27157a48a5fb05be8d02362771"><div class="ttname"><a href="classUtilisateur.html#abaabdf27157a48a5fb05be8d02362771">Utilisateur::mail</a></div><div class="ttdeci">std::string mail</div><div class="ttdoc">Champs contenant l'adresse e-mail de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:25</div></div>
+<div class="ttc" id="aclassPersonnel_html"><div class="ttname"><a href="classPersonnel.html">Personnel</a></div><div class="ttdoc">La classe Personnel est une classe abstraite qui permet de décrire l'ensemble des Utilisateur apparte...</div><div class="ttdef"><b>Definition:</b> personnel.h:12</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a1096e809aca4b7cf453a7af93cb72502"><div class="ttname"><a href="classUtilisateur.html#a1096e809aca4b7cf453a7af93cb72502">Utilisateur::nom</a></div><div class="ttdeci">QString nom</div><div class="ttdoc">Champs contenant le nom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:20</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a1dd0779807b19298f30f39d9c371170f"><div class="ttname"><a href="classUtilisateur.html#a1dd0779807b19298f30f39d9c371170f">Utilisateur::prenom</a></div><div class="ttdeci">QString prenom</div><div class="ttdoc">Champs contenant le prénom de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:22</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a2a4f3c552c52ff36115e398993e1b79c"><div class="ttname"><a href="classUtilisateur.html#a2a4f3c552c52ff36115e398993e1b79c">Utilisateur::mail</a></div><div class="ttdeci">QString mail</div><div class="ttdoc">Champs contenant l'adresse e-mail de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:26</div></div>
+<div class="ttc" id="aclassUtilisateur_html_a7a5960dc48aeee09c56d386371981df7"><div class="ttname"><a href="classUtilisateur.html#a7a5960dc48aeee09c56d386371981df7">Utilisateur::mdp</a></div><div class="ttdeci">QString mdp</div><div class="ttdoc">Champs contenant le mot de passe de l'utilisateur.</div><div class="ttdef"><b>Definition:</b> utilisateur.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

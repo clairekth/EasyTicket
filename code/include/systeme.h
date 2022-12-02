@@ -41,6 +41,7 @@ public:
     /// @param  value   le nouveau nom du système
     void setNom(const QString &value);
 
+    /// @brief Destructeur de la classe.
     ~Systeme() {}
 };
 
