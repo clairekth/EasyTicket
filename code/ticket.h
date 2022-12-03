@@ -17,7 +17,7 @@ class Ticket
 public:
     Ticket();
 
-    Ticket(QString &date_creation,
+    Ticket(QString date_creation,
            Categorie *categorie,
            Client *auteur,
            int id_ticket = -1);

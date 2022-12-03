@@ -5,7 +5,7 @@ Ticket::Ticket()
 
 }
 
-Ticket::Ticket(QString &date_creation, Categorie *categorie, Client *auteur, int id_ticket):
+Ticket::Ticket(QString date_creation, Categorie *categorie, Client *auteur, int id_ticket):
     date_creation(date_creation), categorie(categorie), auteur(auteur), id_ticket(id_ticket)
 {
 

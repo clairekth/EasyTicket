@@ -38,6 +38,7 @@ PageAjoutTicket::~PageAjoutTicket()
 void PageAjoutTicket::setClient(Client *client)
 {
     this->client = client;
+    qDebug() << this->client->toString();
 }
 
 void PageAjoutTicket::retour_bouton_clicked()
@@ -62,19 +63,23 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         Categorie cat = Categorie(id_cat, categorie);
         Ticket t = Ticket(date, &cat, client);
         if (!systeme.isEmpty()) {
-            t.setSysteme(new Systeme(id_systeme, systeme));
+            Systeme sys = Systeme(id_systeme,systeme);
+            t.setSysteme(&sys);
         } else {
-            t.setSysteme(new Systeme(-1, ""));
+            Systeme sys = Systeme(-1, "");
+            t.setSysteme(&sys);
         }
 
         if (!logiciel.isEmpty()) {
-            t.setLogiciel(new Logiciel(id_logiciel, logiciel));
+            Logiciel log = Logiciel(id_logiciel, logiciel);
+            t.setLogiciel(&log);
         } else {
-            t.setLogiciel(new Logiciel(-1, ""));
+            Logiciel log = Logiciel(-1, "");
+            t.setLogiciel(&log);
         }
-        Message* m = new Message(date, client, &t, message);
-        t.addMessage(m);
-        gestionnaire_dialogue->enregistrer_ticket(t);
+        Message m = Message(date, client, &t, message);
+        t.addMessage(&m);
+        gestionnaire_dialogue->enregistrer_ticket(&t);
 
         //Retour page accueil si tout est ok
             stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);

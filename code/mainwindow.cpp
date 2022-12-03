@@ -24,9 +24,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    delete page_ajout_ticket;
-    delete page_accueil_client;
-    delete page_login;
+    //delete page_ajout_ticket;
+    //delete page_accueil_client;
+    //delete page_login;
     delete ui;
     qDebug() << "Destruction  mainWindow\n";
 }
