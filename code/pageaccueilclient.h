@@ -51,7 +51,7 @@ private:
     /// @brief Bouton pour voir l'historique des tickets.
     QPushButton *historique_tickets_bouton;
 
-    Client client;
+    Client *client;
 
     QStackedWidget *stack;
 

@@ -10,6 +10,7 @@
 #include "categorie.h"
 #include "logiciel.h"
 #include "systeme.h"
+#include "message.h"
 
 /// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
@@ -33,7 +34,7 @@ public:
     /// @brief Méthode qui remplit les comboBox de la page PageAjoutTicket en fct de la BDD.
     /// @param box La ComboBox.
     /// @param type Le type de donnée de la ComboBox (categorie, systeme, logiciel).
-    void setComboBox(QComboBox *box, QString &type);
+    void setComboBox(QComboBox *box, const QString &type);
 
 
 protected:

@@ -8,12 +8,12 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
     ui->setupUi(this);
     this->stack = qobject_cast<QStackedWidget*>(parent);
 
-    this->bouton_retour = ui->bouton_retour;
-    this->bouton_creer_le_ticket = ui->creer_le_ticket_bouton;
+    bouton_retour = ui->bouton_retour;
+    bouton_creer_le_ticket = ui->creer_le_ticket_bouton;
 
-    this->categorie_box = ui->categorie_box;
-    this->systeme_box = ui->systeme_box;
-    this->logiciel_box = ui->logiciel_box;
+    categorie_box = ui->categorie_box;
+    systeme_box = ui->systeme_box;
+    logiciel_box = ui->logiciel_box;
     gestionnaire_dialogue->setComboBox(categorie_box, "categorie");
     gestionnaire_dialogue->setComboBox(systeme_box, "systeme");
     gestionnaire_dialogue->setComboBox(logiciel_box, "logiciel");
@@ -31,7 +31,7 @@ PageAjoutTicket::~PageAjoutTicket()
 
 void PageAjoutTicket::setClient(Client *client)
 {
-    this->client = *client;
+    this->client = client;
 }
 
 void PageAjoutTicket::retour_bouton_clicked()

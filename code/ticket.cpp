@@ -5,7 +5,7 @@ Ticket::Ticket()
 
 }
 
-Ticket::Ticket(QString &date_creation, Categorie &categorie, Client *auteur, int id_ticket):
+Ticket::Ticket(QString &date_creation, Categorie *categorie, Client *auteur, int id_ticket):
     date_creation(date_creation), categorie(categorie), auteur(auteur), id_ticket(id_ticket)
 {
 
@@ -21,27 +21,27 @@ QString Ticket::getDate_creation() const
     return date_creation;
 }
 
-Categorie Ticket::getCategorie() const
+Categorie *Ticket::getCategorie() const
 {
     return categorie;
 }
 
-Logiciel Ticket::getLogiciel() const
+Logiciel *Ticket::getLogiciel() const
 {
     return logiciel;
 }
 
-Systeme Ticket::getSysteme() const
+Systeme *Ticket::getSysteme() const
 {
     return systeme;
 }
 
-Client Ticket::getAuteur() const
+Client *Ticket::getAuteur() const
 {
-    return *auteur;
+    return auteur;
 }
 
-QVector<Message> Ticket::getMessages() const
+QVector<Message*> Ticket::getMessages()
 {
     return liste_messages;
 }

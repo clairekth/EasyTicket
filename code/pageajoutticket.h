@@ -48,7 +48,7 @@ private:
     GestionnaireDialogue *gestionnaire_dialogue;
 
     /// @brief Champs contenant le Client connecté.
-    Client client;
+    Client *client;
 
     /// @brief Bouton de retour à la PageAccueilClient.
     QPushButton *bouton_retour;

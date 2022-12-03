@@ -24,7 +24,7 @@ GestionnaireBDD::GestionnaireBDD()
 }
 
 
-void GestionnaireBDD::setComboBox(QComboBox *box, QString &type)
+void GestionnaireBDD::setComboBox(QComboBox *box, const QString &type)
 {
     QSqlQuery *query = new QSqlQuery();
     query->prepare("select * from " + type);
@@ -97,16 +97,16 @@ void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
     QSqlQuery *query = new QSqlQuery();
     query->prepare("insert into ticket (date_creation, id_categorie, id_systeme, id_logiciel, id_client) values (:date_creation, :id_categorie, :id_systeme, :id_logiciel, :id_client)");
     query->bindValue(":date_creation", ticket.getDate_creation());
-    query->bindValue(":id_categorie", ticket.getCategorie().getId());
-    if (ticket.getSysteme().getId() != -1)
-        query->bindValue(":id_systeme", ticket.getSysteme().getId());
+    query->bindValue(":id_categorie", ticket.getCategorie()->getId());
+    if (ticket.getSysteme()->getId() != -1)
+        query->bindValue(":id_systeme", ticket.getSysteme()->getId());
     else
         query->bindValue(":id_systeme", 0);
-    if (ticket.getLogiciel().getId() != -1)
-        query->bindValue(":id_logiciel", ticket.getLogiciel().getId());
+    if (ticket.getLogiciel()->getId() != -1)
+        query->bindValue(":id_logiciel", ticket.getLogiciel()->getId());
     else
         query->bindValue(":id_logiciel", 0);
-    query->bindValue(":id_client", ticket.getAuteur().getId());
+    query->bindValue(":id_client", ticket.getAuteur()->getId());
 
     bool res = query->exec();
     //qDebug() << res;
@@ -122,14 +122,16 @@ void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
     //qDebug() << res;
 
     // Insertion des messages du ticket
-    for (Message message : ticket.getMessages()) {
-        message.setTicket(&ticket);
+    foreach (Message *message, ticket.getMessages()) {
+
+        message->setTicket(&ticket);
+
         query = new QSqlQuery();
         query->prepare("insert into message (message, horodatage, id_utilisateur, id_ticket_associe) values (:message, :horodatage, :id_utilisateur, :id_ticket_associe)");
-        query->bindValue(":message", message.getMessage());
-        query->bindValue(":horodatage", message.getDate_envoi());
-        query->bindValue(":id_utilisateur", message.getAuteur()->getId());
-        query->bindValue(":id_ticket_associe", message.getTicket()->getId());
+        query->bindValue(":message", message->getMessage());
+        query->bindValue(":horodatage", message->getDate_envoi());
+        query->bindValue(":id_utilisateur", message->getAuteur()->getId());
+        query->bindValue(":id_ticket_associe", message->getTicket()->getId());
         res = query->exec();
         //qDebug() << res;
     }

@@ -10,6 +10,8 @@
 #include "ticket.h"
 #include "gestionnairebdd.h"
 
+class Client;
+
 class GestionnaireDialogue
 {
 public:
@@ -26,7 +28,7 @@ public:
     /// @brief Méthode qui remplit les comboBox de la page PageAjoutTicket en fct de la BDD.
     /// @param box La ComboBox.
     /// @param type Le type de donnée de la ComboBox (categorie, systeme, logiciel).
-    void setComboBox(QComboBox *box, QString &type);
+    void setComboBox(QComboBox *box, const QString &type);
 
     /// @brief Méthode qui permet d'enregistrer le ticket dans la BDD.
     /// @param ticket Le ticket à enregistrer.

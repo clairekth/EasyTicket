@@ -28,11 +28,11 @@ public:
 
     virtual QString getId() const;
 
-    virtual void addTicket(const Ticket &ticket);
+    virtual void addTicket(Ticket *ticket);
 
 protected:
     QString id, nom, prenom, email, mdp;
-    QVector<Ticket> liste_tickets;
+    QVector<Ticket*> liste_tickets;
 };
 
 #endif // UTILISATEUR_H

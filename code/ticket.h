@@ -6,12 +6,11 @@
 
 #include "systeme.h"
 #include "logiciel.h"
-#include "client.h"
 #include "categorie.h"
-#include "message.h"
 #include "personnel.h"
 
 class Client;
+class Message;
 
 class Ticket
 {
@@ -19,7 +18,7 @@ public:
     Ticket();
 
     Ticket(QString &date_creation,
-           Categorie &categorie,
+           Categorie *categorie,
            Client *auteur,
            int id_ticket = -1);
 
@@ -27,15 +26,15 @@ public:
 
     QString getDate_creation() const;
 
-    Categorie getCategorie() const;
+    Categorie *getCategorie() const;
 
-    Logiciel getLogiciel() const;
+    Logiciel *getLogiciel() const;
 
-    Systeme getSysteme() const;
+    Systeme *getSysteme() const;
 
-    Client getAuteur() const;
+    Client *getAuteur() const;
 
-    QVector<Message> getMessages() const;
+    QVector<Message*> getMessages();
 
     int getId() const;
 
@@ -44,17 +43,17 @@ public:
 private:
     QString date_creation, date_fermeture;
 
-    Categorie categorie;
+    Categorie *categorie;
 
-    Logiciel logiciel;
+    Logiciel *logiciel;
 
-    Systeme systeme;
+    Systeme *systeme;
 
-    QVector<Message> liste_messages;
+    QVector<Message*> liste_messages;
 
     Client *auteur;
 
-    Personnel personnel;
+    Personnel *personnel;
 
     int id_ticket;
 

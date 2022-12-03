@@ -31,7 +31,7 @@ Utilisateur *Message::getAuteur()
     return auteur;
 }
 
-Ticket *Message::getTicket() const
+Ticket *Message::getTicket()
 {
     return ticket;
 }

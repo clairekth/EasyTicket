@@ -11,6 +11,11 @@ Logiciel::Logiciel(int id_logiciel, QString nom_logiciel) :
 
 }
 
+Logiciel::~Logiciel()
+{
+
+}
+
 QString Logiciel::getNom() const
 {
     return nom_logiciel;

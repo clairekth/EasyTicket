@@ -12,7 +12,6 @@ Utilisateur::Utilisateur(const QString &id, const QString &nom, const QString &p
     email(email),
     mdp(mdp)
 {
-    liste_tickets = QVector<Ticket>();
 }
 
 Utilisateur::~Utilisateur()
@@ -35,7 +34,7 @@ QString Utilisateur::getId() const
     return id;
 }
 
-void Utilisateur::addTicket(const Ticket &ticket)
+void Utilisateur::addTicket(Ticket *ticket)
 {
-    liste_tickets.push_back(ticket);
+    liste_tickets.push_front(ticket);
 }

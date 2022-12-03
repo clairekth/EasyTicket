@@ -2,8 +2,9 @@
 #define CLIENT_H
 
 #include <QString>
-#include <utilisateur.h>
 #include <QDebug>
+
+#include "utilisateur.h"
 
 
 class Client: public Utilisateur
