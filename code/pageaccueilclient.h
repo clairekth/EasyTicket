@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include <QPushButton>
-#include "gestionnairedialogue.h"
 #include <QStackedWidget>
 
 /// @brief La classe PageAccueilClient correspond à la vue de la page d'accueil pour les Client.
@@ -23,11 +22,7 @@ public:
     /// @brief Constructeur par défaut.
     /// @param *parent                  Widget parent.
     /// @param *gestionnaire_dialogue   le GestionnaireDialogue de l'application
-    explicit PageAccueilClient(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
-
-    /// @brief Méthode permettant de set le Client actuellement connecté.
-    /// @param client   le Client connecté.
-    void setClient(Client *client);
+    explicit PageAccueilClient(QWidget *parent = nullptr);
 
     /// @brief Destructeur.
     ~PageAccueilClient();
@@ -44,12 +39,6 @@ private:
 
     /// @brief Bouton pour voir l'historique des tickets.
     QPushButton *historique_tickets_bouton;
-
-    /// @brief Champs correspondant au GestionnaireDialogue.
-    GestionnaireDialogue *gestionnaire_dialogue;
-
-    /// @brief Champs contenant le Client connecté.
-    Client *client;
 
     QStackedWidget *stack;
 

@@ -4,8 +4,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-INCLUDEPATH = include/
-
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -18,53 +16,25 @@ INCLUDEPATH = include/
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    src/gestionnairebdd.cpp \
-    src/pageajoutticket.cpp \
-    src/systeme.cpp \
-    src/logiciel.cpp \
-    src/mainwindow.cpp \
-    src/categorie.cpp \
-    src/ticket.cpp \
-    src/utilisateur.cpp \
-    src/message.cpp \
-    src/client.cpp \
-    src/admin.cpp \
-    src/personnel.cpp \
-    src/ingenieur.cpp \
-    src/technicien.cpp \
-    src/main.cpp \
-    src/pagelogin.cpp \
-    src/pageaccueilclient.cpp \
-    src/gestionnairedialogue.cpp \
-    src/pageaccueilpersonnel.cpp
+    mainwindow.cpp \
+    main.cpp \
+    pagelogin.cpp \
+    pageaccueilclient.cpp \
+    utilisateur.cpp
 
 HEADERS += \
-    include/systeme.h \
-    include/logiciel.h \
-    include/mainwindow.h \
-    include/categorie.h \
-    include/ticket.h \
-    include/utilisateur.h \
-    include/message.h \
-    include/client.h \
-    include/admin.h \
-    include/personnel.h \
-    include/ingenieur.h \
-    include/technicien.h \
-    include/constantes.h \
-    include/pagelogin.h \
-    include/pageaccueilclient.h \
-    include/gestionnairedialogue.h \
-    include/pageajoutticket.h \
-    include/gestionnairebdd.h \
-    include/pageaccueilpersonnel.h
+    mainwindow.h \
+    constantes.h \
+    pagelogin.h \
+    pageaccueilclient.h \
+    utilisateur.h
 
 FORMS += \
-    forms/mainwindow.ui \
-    forms/pagelogin.ui \
-    forms/pageaccueilclient.ui \
-    forms/pageajoutticket.ui \
-    forms/pageaccueilpersonnel.ui
+    mainwindow.ui \
+    pagelogin.ui \
+    pageaccueilclient.ui \
+    pageajoutticket.ui \
+    pageaccueilpersonnel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -72,5 +42,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    resources/database.db
+    database.db
 

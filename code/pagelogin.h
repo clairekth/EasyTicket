@@ -4,7 +4,6 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QLineEdit>
-#include "gestionnairedialogue.h"
 #include <QStackedWidget>
 /// @brief La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
@@ -24,7 +23,7 @@ public:
     /// @brief Constructeur
     /// @param parent                   Widget parent.
     /// @param *gestionnaire_dialogue   le GestionnaireDialogue de l'application
-    explicit PageLogin(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
+    explicit PageLogin(QWidget *parent = nullptr);
 
     /// @brief Destructeur.
     ~PageLogin();
@@ -44,9 +43,6 @@ private:
 
     /// @brief Champs où l'Utilisateur rentre son mot de passe.
     QLineEdit *mdp;
-
-    /// @brief le @ref GestionnaireDialogue de l'application
-    GestionnaireDialogue *gestionnaire_dialogue;
 
     QStackedWidget *stack;
 };
