@@ -42,37 +42,37 @@ void PageAjoutTicket::retour_bouton_clicked()
 
 void PageAjoutTicket::creer_le_ticket_clicked()
 {
-//    QString categorie = categorie_box->currentText();
-//    int id_cat = categorie_box->currentData().toInt();
-//    QString systeme = systeme_box->currentText();
-//    int id_systeme = systeme_box->currentData().toInt();
-//    QString logiciel = logiciel_box->currentText();
-//    int id_logiciel = logiciel_box->currentData().toInt();
-//    QString message = message_text->toPlainText();
+    QString categorie = categorie_box->currentText();
+    int id_cat = categorie_box->currentData().toInt();
+    QString systeme = systeme_box->currentText();
+    int id_systeme = systeme_box->currentData().toInt();
+    QString logiciel = logiciel_box->currentText();
+    int id_logiciel = logiciel_box->currentData().toInt();
+    QString message = message_text->toPlainText();
 
-//    if (gestionnaire_dialogue->verificationMessage(message)){
-//        //Récupère la date+heure.
-//        QString date = QDateTime::currentDateTime().toString("dddd dd MMMM yyyy hh:mm:ss");
-//        Categorie cat = Categorie(id_cat, categorie);
-//        Ticket t = Ticket(date, cat, client);
-//        if (!systeme.isEmpty()) {
-//            t.setSysteme(Systeme(id_systeme, systeme));
-//        } else {
-//            t.setSysteme(Systeme(-1, ""));
-//        }
+    if (gestionnaire_dialogue->verificationMessage(message)){
+        //Récupère la date+heure.
+        QString date = QDateTime::currentDateTime().toString("dddd dd MMMM yyyy hh:mm:ss");
+        Categorie cat = Categorie(id_cat, categorie);
+        Ticket t = Ticket(date, &cat, client);
+        if (!systeme.isEmpty()) {
+            t.setSysteme(new Systeme(id_systeme, systeme));
+        } else {
+            t.setSysteme(new Systeme(-1, ""));
+        }
 
-//        if (!logiciel.isEmpty()) {
-//            t.setLogiciel(Logiciel(id_logiciel, logiciel));
-//        } else {
-//            t.setLogiciel(Logiciel(-1, ""));
-//        }
-//        Message m = Message(date, client,&t, message);
-//        t.addMessage(m);
-//        gestionnaire_dialogue->enregistrer_ticket(t);
+        if (!logiciel.isEmpty()) {
+            t.setLogiciel(new Logiciel(id_logiciel, logiciel));
+        } else {
+            t.setLogiciel(new Logiciel(-1, ""));
+        }
+        Message* m = new Message(date, client, &t, message);
+        t.addMessage(m);
+        gestionnaire_dialogue->enregistrer_ticket(t);
 
-//        //Retour page accueil si tout est ok
-//            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
-//    } else {
-//        QMessageBox::warning(this,"Erreur","Il n'y a pas de messages ou votre message est trop court.");
-//    }
+        //Retour page accueil si tout est ok
+            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
+    } else {
+        QMessageBox::warning(this,"Erreur","Il n'y a pas de messages ou votre message est trop court.");
+    }
 }

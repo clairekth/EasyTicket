@@ -12,7 +12,7 @@ class Message
 public:
     Message();
 
-    Message(QString &date_envoi, Utilisateur *user, Ticket &ticket, QString &message, int id_message = -1);
+    Message(QString &date_envoi, Utilisateur *user, Ticket *ticket, QString &message, int id_message = -1);
 
     ~Message();
 

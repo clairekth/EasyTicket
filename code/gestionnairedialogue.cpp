@@ -12,9 +12,7 @@ GestionnaireDialogue::~GestionnaireDialogue()
 
 Utilisateur *GestionnaireDialogue::authentification(QString &id, QString &mdp)
 {
-    if (id == "client" && mdp == "client")
-        return new Client(id, mdp);
-    return nullptr;
+    return bdd.authentifier(id, mdp);
 }
 
 bool GestionnaireDialogue::verificationMessage(QString &message)

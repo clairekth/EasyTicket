@@ -56,4 +56,19 @@ void Ticket::setId(const int id)
     id_ticket = id;
 }
 
+void Ticket::setSysteme(Systeme *systeme)
+{
+    this->systeme = systeme;
+}
+
+void Ticket::setLogiciel(Logiciel *logiciel)
+{
+    this->logiciel = logiciel;
+}
+
+void Ticket::addMessage(Message *message)
+{
+    liste_messages.push_back(message);
+}
+
 

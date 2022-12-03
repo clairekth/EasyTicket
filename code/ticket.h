@@ -40,6 +40,12 @@ public:
 
     void setId(const int id);
 
+    void setSysteme(Systeme *systeme);
+
+    void setLogiciel(Logiciel *logiciel);
+
+    void addMessage(Message *message);
+
 private:
     QString date_creation, date_fermeture;
 
