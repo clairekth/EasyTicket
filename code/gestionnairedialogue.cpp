@@ -17,7 +17,7 @@ Utilisateur *GestionnaireDialogue::authentification(QString &id, QString &mdp)
     return nullptr;
 }
 
-bool GestionnaireDialogue::verificationMessage(QString message)
+bool GestionnaireDialogue::verificationMessage(QString &message)
 {
     //Supprime tous les espaces
     for (int i = message.length() - 1 ; i > -1 ; i--)
@@ -34,12 +34,12 @@ bool GestionnaireDialogue::verificationMessage(QString message)
     return true;
 }
 
-void GestionnaireDialogue::setComboBox(QComboBox *box, QString type)
+void GestionnaireDialogue::setComboBox(QComboBox *box, QString &type)
 {
-    // A compléter avec la BDD.
+    bdd.setComboBox(box, type);
 }
 
-void GestionnaireDialogue::enregistrer_ticket(Ticket ticket)
+void GestionnaireDialogue::enregistrer_ticket(Ticket &ticket)
 {
-    // A compléter avec la BDD.
+    bdd.enregistrer_ticket(ticket);
 }

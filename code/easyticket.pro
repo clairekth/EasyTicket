@@ -16,24 +16,36 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    categorie.cpp \
     client.cpp \
+    gestionnairebdd.cpp \
     gestionnairedialogue.cpp \
+    logiciel.cpp \
     mainwindow.cpp \
     main.cpp \
+    message.cpp \
     pageajoutticket.cpp \
     pagelogin.cpp \
     pageaccueilclient.cpp \
+    personnel.cpp \
+    systeme.cpp \
     ticket.cpp \
     utilisateur.cpp
 
 HEADERS += \
+    categorie.h \
     client.h \
+    gestionnairebdd.h \
     gestionnairedialogue.h \
+    logiciel.h \
     mainwindow.h \
     constantes.h \
+    message.h \
     pageajoutticket.h \
     pagelogin.h \
     pageaccueilclient.h \
+    personnel.h \
+    systeme.h \
     ticket.h \
     utilisateur.h
 
