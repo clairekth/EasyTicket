@@ -26,6 +26,12 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
 
 PageAjoutTicket::~PageAjoutTicket()
 {
+    delete message_text;
+    delete bouton_creer_le_ticket;
+    delete bouton_retour;
+    delete categorie_box;
+    delete logiciel_box;
+    delete systeme_box;
     delete ui;
 }
 
