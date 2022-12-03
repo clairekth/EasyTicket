@@ -21,6 +21,7 @@ PageLogin::~PageLogin()
     delete id;
     delete validation_bouton;
     delete ui;
+    delete user;
     qDebug() << "Destruction  pageLogin\n";
 }
 
@@ -28,7 +29,7 @@ void PageLogin::handle_validation()
 {
     QString idU = id->text();
     QString mdpU = mdp->text();
-    Utilisateur *user = gestionnaire_dialogue->authentification(idU, mdpU);
+    user = gestionnaire_dialogue->authentification(idU, mdpU);
     if (user != nullptr)
     {
         auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);

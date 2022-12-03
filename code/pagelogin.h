@@ -57,6 +57,8 @@ private:
     QLineEdit *mdp;
 
     QStackedWidget *stack;
+
+    Utilisateur *user;
 };
 
 #endif // PAGELOGIN_H
