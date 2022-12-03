@@ -53,6 +53,8 @@
 
 #include <QMainWindow>
 #include <QStackedWidget>
+#include <QDebug>
+
 #include "pagelogin.h"
 #include "constantes.h"
 #include "pageaccueilclient.h"

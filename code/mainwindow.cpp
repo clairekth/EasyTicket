@@ -25,5 +25,6 @@ MainWindow::~MainWindow()
     delete ui;
     delete page_accueil_client;
     delete page_login;
+    qDebug() << "Destruction  mainWindow\n";
 }
 

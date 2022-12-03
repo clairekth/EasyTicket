@@ -1,9 +1,5 @@
 #include "pagelogin.h"
-#include "ui_pagelogin.h"
-#include <QMessageBox>
-#include <QStackedWidget>
-#include "include/constantes.h"
-#include "pageaccueilclient.h"
+#include <ui_pagelogin.h>
 
 PageLogin::PageLogin(QWidget *parent) :
     QWidget(parent),
@@ -21,10 +17,19 @@ PageLogin::PageLogin(QWidget *parent) :
 PageLogin::~PageLogin()
 {
     delete ui;
+    delete validation_bouton;
+    delete id;
+    delete mdp;
+    delete stack;
+    qDebug() << "Destruction  pageLogin\n";
 }
 
 void PageLogin::handle_validation()
 {
-    QString idU = id->text();
-    QString mdpU = mdp->text();
+//    QString idU = id->text();
+//    QString mdpU = mdp->text();
+//    GestionnaireDialogue gestionnaire;
+//    Utilisateur *user = gestionnaire.authentification(idU, mdpU);
+
+//    qDebug() << user->toString();
 }

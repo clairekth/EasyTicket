@@ -4,6 +4,9 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QStackedWidget>
+#include <QDebug>
+
+#include "constantes.h"
 
 /// @brief La classe PageAccueilClient correspond à la vue de la page d'accueil pour les Client.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth

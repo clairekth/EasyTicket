@@ -5,6 +5,14 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QStackedWidget>
+#include <QDebug>
+#include <QMessageBox>
+
+#include "constantes.h"
+#include "pageaccueilclient.h"
+#include "gestionnairedialogue.h"
+#include "utilisateur.h"
+
 /// @brief La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
 /// @version 1.2

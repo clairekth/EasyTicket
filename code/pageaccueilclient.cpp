@@ -1,8 +1,5 @@
 #include "pageaccueilclient.h"
 #include "ui_pageaccueilclient.h"
-#include <QStackedWidget>
-
-#include "constantes.h"
 
 PageAccueilClient::PageAccueilClient(QWidget *parent) :
     QWidget(parent),
@@ -20,6 +17,8 @@ PageAccueilClient::PageAccueilClient(QWidget *parent) :
 PageAccueilClient::~PageAccueilClient()
 {
     delete ui;
+    delete creer_ticket_bouton;
+    delete historique_tickets_bouton;
 }
 
 void PageAccueilClient::creation_ticket()
