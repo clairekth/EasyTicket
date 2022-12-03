@@ -32,7 +32,7 @@ public:
 
     /// @brief Méthode qui permet d'enregistrer le ticket dans la BDD.
     /// @param ticket Le ticket à enregistrer.
-    void enregistrer_ticket(Ticket &ticket);
+    void enregistrer_ticket(Ticket *ticket);
 
 private:
     GestionnaireBDD bdd;

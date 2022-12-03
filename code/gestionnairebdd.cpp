@@ -92,39 +92,39 @@ Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
 
 
 
-void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
+void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
     // Insertion du ticket
     QSqlQuery *query = new QSqlQuery();
     query->prepare("insert into ticket (date_creation, id_categorie, id_systeme, id_logiciel, id_client) values (:date_creation, :id_categorie, :id_systeme, :id_logiciel, :id_client)");
-    query->bindValue(":date_creation", ticket.getDate_creation());
-    query->bindValue(":id_categorie", ticket.getCategorie()->getId());
-    if (ticket.getSysteme()->getId() != -1)
-        query->bindValue(":id_systeme", ticket.getSysteme()->getId());
+    query->bindValue(":date_creation", ticket->getDate_creation());
+    query->bindValue(":id_categorie", ticket->getCategorie()->getId());
+    if (ticket->getSysteme()->getId() != -1)
+        query->bindValue(":id_systeme", ticket->getSysteme()->getId());
     else
         query->bindValue(":id_systeme", 0);
-    if (ticket.getLogiciel()->getId() != -1)
-        query->bindValue(":id_logiciel", ticket.getLogiciel()->getId());
+    if (ticket->getLogiciel()->getId() != -1)
+        query->bindValue(":id_logiciel", ticket->getLogiciel()->getId());
     else
         query->bindValue(":id_logiciel", 0);
-    query->bindValue(":id_client", ticket.getAuteur()->getId());
+    query->bindValue(":id_client", ticket->getAuteur()->getId());
 
     bool res = query->exec();
-    //qDebug() << res;
+    qDebug() << res;
 
     // Récupération de l'id du ticket qu'on vient d'insérer
     query = new QSqlQuery();
     query->prepare("SELECT id_ticket FROM ticket WHERE date_creation = :date");
-    query->bindValue(":date", ticket.getDate_creation());
+    query->bindValue(":date", ticket->getDate_creation());
     query->exec();
     res = query->first();
     if (res)
-        ticket.setId(query->value(0).toInt());
-    //qDebug() << res;
+        ticket->setId(query->value(0).toInt());
+    qDebug() << res;
 
     // Insertion des messages du ticket
-    foreach (Message *message, ticket.getMessages()) {
+    foreach (Message *message, ticket->getMessages()) {
 
-        message->setTicket(&ticket);
+        message->setTicket(ticket);
 
         query = new QSqlQuery();
         query->prepare("insert into message (message, horodatage, id_utilisateur, id_ticket_associe) values (:message, :horodatage, :id_utilisateur, :id_ticket_associe)");
@@ -133,7 +133,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket &ticket) {
         query->bindValue(":id_utilisateur", message->getAuteur()->getId());
         query->bindValue(":id_ticket_associe", message->getTicket()->getId());
         res = query->exec();
-        //qDebug() << res;
+        qDebug() << res;
     }
     query->clear();
 

@@ -29,7 +29,7 @@ public:
 
     /// @brief Méthode qui permet d'enregistrer un ticket dans la BDD.
     /// @param ticket Le ticket à enregistrer.
-    void enregistrer_ticket(Ticket &ticket);
+    void enregistrer_ticket(Ticket *ticket);
 
     /// @brief Méthode qui remplit les comboBox de la page PageAjoutTicket en fct de la BDD.
     /// @param box La ComboBox.

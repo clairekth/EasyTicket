@@ -31,18 +31,16 @@ void PageLogin::handle_validation()
     Utilisateur *user = gestionnaire_dialogue->authentification(idU, mdpU);
     if (user != nullptr)
     {
-        if (true)
-        {
-            auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
-            auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
-            pageaccueil->setClient(dynamic_cast<Client*>(user));
-            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
-        }
+        auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
+        auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
+        pageaccueil->setClient(dynamic_cast<Client*>(user));
+        stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
+
     }
     else
     {
         QMessageBox::warning(this, "Connexion", "Identifiant ou mot de passe incorrect");
     }
 
-    delete user;
+    //delete user;
 }
