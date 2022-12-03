@@ -17,10 +17,5 @@ Utilisateur::Utilisateur(const QString &id, const QString &nom, const QString &p
 
 Utilisateur::~Utilisateur()
 {
-    qDebug() << "Destruction  client\n";
-}
-
-QString Utilisateur::toString() const
-{
-    return "Merde";
+    qDebug() << "Destruction  utilisateur\n";
 }

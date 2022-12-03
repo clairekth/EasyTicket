@@ -19,6 +19,7 @@ PageAccueilClient::~PageAccueilClient()
     delete ui;
     delete creer_ticket_bouton;
     delete historique_tickets_bouton;
+    qDebug() << "Destruction  pageAccueilClient\n";
 }
 
 void PageAccueilClient::creation_ticket()

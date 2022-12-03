@@ -18,7 +18,7 @@ public:
 
     virtual ~Utilisateur();
 
-    virtual QString toString() const;
+    virtual QString toString() const = 0;
 
 protected:
     QString id, nom, prenom, email, mdp;

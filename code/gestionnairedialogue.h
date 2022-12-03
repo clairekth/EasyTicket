@@ -16,7 +16,7 @@ public:
 
     ~GestionnaireDialogue();
 
-//    Utilisateur* authentification(QString &id, QString &mdp);
+    Utilisateur* authentification(QString &id, QString &mdp);
 
 };
 

@@ -16,20 +16,26 @@ PageLogin::PageLogin(QWidget *parent) :
 
 PageLogin::~PageLogin()
 {
-    delete ui;
-    delete validation_bouton;
-    delete id;
     delete mdp;
-    delete stack;
+    delete id;
+    delete validation_bouton;
+    delete ui;
     qDebug() << "Destruction  pageLogin\n";
 }
 
 void PageLogin::handle_validation()
 {
-//    QString idU = id->text();
-//    QString mdpU = mdp->text();
-//    GestionnaireDialogue gestionnaire;
-//    Utilisateur *user = gestionnaire.authentification(idU, mdpU);
+    QString idU = id->text();
+    QString mdpU = mdp->text();
+    GestionnaireDialogue gestionnaire;
+    Utilisateur *user = gestionnaire.authentification(idU, mdpU);
+    if (user != nullptr)
+        qDebug() << user->toString();
 
-//    qDebug() << user->toString();
+    Utilisateur *test = gestionnaire.authentification(idU, mdpU);
+    if (test != nullptr)
+        qDebug() << test->toString();
+
+    delete user;
+    delete test;
 }
