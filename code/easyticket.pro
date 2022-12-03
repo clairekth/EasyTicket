@@ -20,8 +20,10 @@ SOURCES += \
     gestionnairedialogue.cpp \
     mainwindow.cpp \
     main.cpp \
+    pageajoutticket.cpp \
     pagelogin.cpp \
     pageaccueilclient.cpp \
+    ticket.cpp \
     utilisateur.cpp
 
 HEADERS += \
@@ -29,16 +31,17 @@ HEADERS += \
     gestionnairedialogue.h \
     mainwindow.h \
     constantes.h \
+    pageajoutticket.h \
     pagelogin.h \
     pageaccueilclient.h \
+    ticket.h \
     utilisateur.h
 
 FORMS += \
     mainwindow.ui \
     pagelogin.ui \
-    pageaccueilclient.ui \
     pageajoutticket.ui \
-    pageaccueilpersonnel.ui
+    pageaccueilclient.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -19,3 +19,13 @@ Utilisateur::~Utilisateur()
 {
     qDebug() << "Destruction  utilisateur\n";
 }
+
+QString Utilisateur::getNom() const
+{
+    return nom;
+}
+
+QString Utilisateur::getPrenom() const
+{
+    return prenom;
+}

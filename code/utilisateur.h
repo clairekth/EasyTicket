@@ -12,13 +12,17 @@ public:
 
     Utilisateur(const QString &id,
                 const QString &mdp,
-                const QString &nom = QString::fromStdString("Oui"),
-                const QString &prenom = "Oui",
-                const QString &email = "oui-oui.easyticket.fr");
+                const QString &nom,
+                const QString &prenom,
+                const QString &email);
 
     virtual ~Utilisateur();
 
     virtual QString toString() const = 0;
+
+    virtual QString getNom() const;
+
+    virtual QString getPrenom() const;
 
 protected:
     QString id, nom, prenom, email, mdp;

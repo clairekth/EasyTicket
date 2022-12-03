@@ -1,8 +1,9 @@
 #include "pageaccueilclient.h"
 #include "ui_pageaccueilclient.h"
 
-PageAccueilClient::PageAccueilClient(QWidget *parent) :
+PageAccueilClient::PageAccueilClient(QWidget *parent, GestionnaireDialogue *gestionnaire) :
     QWidget(parent),
+    gestionnaire_dialogue(gestionnaire),
     ui(new Ui::PageAccueilClient)
 {
     ui->setupUi(this);
@@ -16,14 +17,24 @@ PageAccueilClient::PageAccueilClient(QWidget *parent) :
 
 PageAccueilClient::~PageAccueilClient()
 {
-    delete ui;
     delete creer_ticket_bouton;
     delete historique_tickets_bouton;
+    delete ui;
     qDebug() << "Destruction  pageAccueilClient\n";
+}
+
+void PageAccueilClient::setClient(Client *client)
+{
+    this->client = *client;
+    QLabel *bonjour = ui->bonjour_client;
+    bonjour->setText("Bonjour, " + this->client.getPrenom() + " " + (this->client.getNom()));
 }
 
 void PageAccueilClient::creation_ticket()
 {
         //On transfère le client à la page suivante.
+        auto *widget = stack->widget(AJOUT_TICKET_PAGE);
+        auto *ajoutticket = qobject_cast<PageAjoutTicket*>(widget);
+        ajoutticket->setClient(&client);
         stack->setCurrentIndex(AJOUT_TICKET_PAGE);
 }

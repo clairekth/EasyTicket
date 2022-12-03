@@ -29,9 +29,9 @@ class PageLogin : public QWidget
 
 public:
     /// @brief Constructeur
-    /// @param parent                   Widget parent.
-    /// @param *gestionnaire_dialogue   le GestionnaireDialogue de l'application
-    explicit PageLogin(QWidget *parent = nullptr);
+    /// @param parent Widget parent.
+    /// @param *gestionnaire_dialogue Le GestionnaireDialogue de l'application.
+    explicit PageLogin(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire = nullptr);
 
     /// @brief Destructeur.
     ~PageLogin();
@@ -41,8 +41,12 @@ public slots:
     void handle_validation();
 
 private:
+    /// @brief le GestionnaireDialogue de l'application
+    GestionnaireDialogue *gestionnaire_dialogue;
+
     /// @brief Champs correspondant à la vue de PageLogin.
     Ui::PageLogin *ui;
+
     /// @brief Bouton de validation de la connexion.
     QPushButton *validation_bouton;
 

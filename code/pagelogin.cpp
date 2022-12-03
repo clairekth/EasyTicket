@@ -1,8 +1,9 @@
 #include "pagelogin.h"
 #include <ui_pagelogin.h>
 
-PageLogin::PageLogin(QWidget *parent) :
+PageLogin::PageLogin(QWidget *parent, GestionnaireDialogue *gestionnaire) :
     QWidget(parent),
+    gestionnaire_dialogue(gestionnaire),
     ui(new Ui::PageLogin)
 {
     ui->setupUi(this);
@@ -27,15 +28,21 @@ void PageLogin::handle_validation()
 {
     QString idU = id->text();
     QString mdpU = mdp->text();
-    GestionnaireDialogue gestionnaire;
-    Utilisateur *user = gestionnaire.authentification(idU, mdpU);
+    Utilisateur *user = gestionnaire_dialogue->authentification(idU, mdpU);
     if (user != nullptr)
-        qDebug() << user->toString();
-
-    Utilisateur *test = gestionnaire.authentification(idU, mdpU);
-    if (test != nullptr)
-        qDebug() << test->toString();
+    {
+        if (true)
+        {
+            auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
+            auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
+            pageaccueil->setClient(dynamic_cast<Client*>(user));
+            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
+        }
+    }
+    else
+    {
+        QMessageBox::warning(this, "Connexion", "Identifiant ou mot de passe incorrect");
+    }
 
     delete user;
-    delete test;
 }
