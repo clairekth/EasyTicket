@@ -16,7 +16,7 @@ Utilisateur::Utilisateur(const QString id, const QString nom, const QString pren
 
 Utilisateur::~Utilisateur()
 {
-    qDebug() << "Destruction  utilisateur\n";
+    //qDebug() << "Destruction  utilisateur\n";
 }
 
 QString Utilisateur::getNom() const

@@ -7,7 +7,7 @@ GestionnaireDialogue::GestionnaireDialogue()
 
 GestionnaireDialogue::~GestionnaireDialogue()
 {
-    qDebug() << "Destruction  gestionnaireDialogue\n";
+    //qDebug() << "Destruction  gestionnaireDialogue\n";
 }
 
 Utilisateur *GestionnaireDialogue::authentification(QString id, QString mdp)

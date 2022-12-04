@@ -38,12 +38,12 @@ PageAjoutTicket::~PageAjoutTicket()
 void PageAjoutTicket::setClient(Client *client)
 {
     this->client = client;
-    qDebug() << this->client->toString();
+    //qDebug() << this->client->toString();
 }
 
 void PageAjoutTicket::retour_bouton_clicked()
 {
-        stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
+    stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE); //Connexion correct -> Accueil client
 
 }
 

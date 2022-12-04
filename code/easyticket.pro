@@ -51,7 +51,8 @@ HEADERS += \
     ticket.h \
     utilisateur.h \
     ingenieur.h \
-    pageaccueilpersonnel.h
+    pageaccueilpersonnel.h \
+    versionnage.h
 
 FORMS += \
     mainwindow.ui \

@@ -109,7 +109,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
     query->bindValue(":id_client", ticket->getAuteur()->getId());
 
     bool res = query->exec();
-    qDebug() << res;
+    //qDebug() << res;
 
     // Récupération de l'id du ticket qu'on vient d'insérer
     query = new QSqlQuery();
@@ -119,7 +119,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
     res = query->first();
     if (res)
         ticket->setId(query->value(0).toInt());
-    qDebug() << res;
+    //qDebug() << res;
 
     // Insertion des messages du ticket
     foreach (Message *message, ticket->getMessages()) {
@@ -133,7 +133,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
         query->bindValue(":id_utilisateur", message->getAuteur()->getId());
         query->bindValue(":id_ticket_associe", message->getTicket()->getId());
         res = query->exec();
-        qDebug() << res;
+        //qDebug() << res;
     }
     query->clear();
 

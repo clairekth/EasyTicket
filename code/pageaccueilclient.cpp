@@ -20,7 +20,7 @@ PageAccueilClient::~PageAccueilClient()
     delete historique_tickets_bouton;
     delete label;
     delete ui;
-    qDebug() << "Destruction  pageAccueilClient\n";
+   // qDebug() << "Destruction  pageAccueilClient\n";
 }
 
 void PageAccueilClient::setClient(Client *client)

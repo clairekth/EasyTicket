@@ -13,7 +13,7 @@ Client::Client(const QString id, const QString mdp,  const QString nom, const QS
 
 Client::~Client()
 {
-    qDebug() << "Destruction  client\n";
+    //qDebug() << "Destruction  client\n";
 }
 
 QString Client::toString() const

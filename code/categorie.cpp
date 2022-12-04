@@ -13,7 +13,6 @@ Categorie::Categorie(int id_categorie, QString nom_categorie):
 
 Categorie::~Categorie()
 {
-
 }
 
 int Categorie::getId() const

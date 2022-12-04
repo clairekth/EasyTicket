@@ -20,7 +20,7 @@ PageLogin::~PageLogin()
     delete validation_bouton;
     delete ui;
     delete user;
-    qDebug() << "Destruction  pageLogin\n";
+    //qDebug() << "Destruction  pageLogin\n";
 }
 
 void PageLogin::handle_validation()
@@ -48,5 +48,4 @@ void PageLogin::handle_validation()
         QMessageBox::warning(this, "Connexion", "Identifiant ou mot de passe incorrect");
     }
 
-    //delete user;
 }
