@@ -56,19 +56,28 @@
 ///
 /// \subsection v2_2_subsec v2.2
 /// Correction de l'application pour pouvoir appliquer le polymorphisme :
+///
 /// - Suppresion de typeUtilisateur(QString id, QString mdp) dans GestionnaireBDD et dans GestionnaireDialogue.
+///
 /// - Transformation des fonctions qui retourner un Client et un Ingénieur pour n'en faire qu'une qui retourne un Utilisateur
 /// dans GestionnaireBDD et GestionnaireDialogue.
+///
 /// - Application des fonctions estUnClient() et estUnPersonnel() dans PageLogin sur l'Utilisateur.
 ///
 /// \subsection v2_3_subsec v2.3
 /// Correction du code suite au retour par mail :
+///
 /// - Correction du GestionanireDialogue qui était alloué dynamiquement. Instancié automatiquement par MainWindow puis
 /// passage par référence à PageLogin, PageAccueilClient, PageAjoutTicket, PageAccueilPersonnel.
+///
 /// - Ajout des différents delete pour les Page dans le destructeur de MainWindow car alloué dynamiquement avec un New.
+///
 /// - Correction des problèmes d'incohérences (paramètres avec référence et const, ou passés en copie, dans le même fichier).
+///
 /// - Correction du QStackedWidget qui était dupliqué lors de la récupération : passée dans les constructeurs de
 /// PageLogin, PageAjoutTicket, PageAccueilClient, PageAccueilPersonnel
+///
+/// - Page principale de la documentation dans versionnage.h à la place de MainWindow.h
 
 
 #endif // VERSIONNAGE_H
