@@ -14,8 +14,13 @@
 #include "gestionnairedialogue.h"
 #include "utilisateur.h"
 
-/// @brief La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur. L'interface graphique
-/// est composé de 2 QLineEdit permettant de rentrer l'identifiant et le mot de passe de l'Utilisateur souhaitant
+namespace Ui {
+class PageLogin;
+}
+
+/// @brief La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.
+///
+/// L'interface graphique est composé de 2 QLineEdit permettant de rentrer l'identifiant et le mot de passe de l'Utilisateur souhaitant
 /// se connecter. La QLineEdit du mot de passe n'affiche pas le mot de passe. L'interface graphique est également
 /// composée d'un QPushButton permettant de valider et de vérifier l'identifiant et le mot de passe de l'Utilisateur
 /// essayant de se connecter. Si l'identifiant et le mot de passe ne correspondent à aucun Utilisateur, affichage d'une
@@ -23,11 +28,6 @@
 /// un Personnel, il affiche la PageAccueilPersonnel du QStackedWidget parent.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
 /// @version 1.2
-
-namespace Ui {
-class PageLogin;
-}
-
 class PageLogin : public QWidget
 {
     Q_OBJECT

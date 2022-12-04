@@ -10,18 +10,17 @@
 #include "gestionnairedialogue.h"
 #include "pageajoutticket.h"
 
-/// @brief La classe PageAccueilClient correspond à la vue de la page d'accueil pour les Client. L'interface graghique
-/// comporte un QLabel contenant "Bonjour," suivit du prénom et nom du Client connecté. Elle contient également deux
-/// QPushButton : un permettant de créer un nouveau ticket et l'autre permettant d'accéder à l'historique des tickets
-/// du Client.
-/// @author Victor Dallé, Nicolas Robert, Claire Kurth
-/// @version 2.3
-
 namespace Ui {
 class PageAccueilClient;
 }
 
-
+/// @brief La classe PageAccueilClient correspond à la vue de la page d'accueil pour les Client.
+///
+/// L'interface graghique comporte un QLabel contenant "Bonjour," suivit du prénom et nom du Client connecté. Elle contient également deux
+/// QPushButton : un permettant de créer un nouveau ticket et l'autre permettant d'accéder à l'historique des tickets
+/// du Client.
+/// @author Victor Dallé, Nicolas Robert, Claire Kurth
+/// @version 2.3
 class PageAccueilClient : public QWidget
 {
     Q_OBJECT

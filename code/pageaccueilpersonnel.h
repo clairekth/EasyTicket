@@ -10,17 +10,18 @@
 #include "gestionnairedialogue.h"
 #include "pageresolutionticket.h"
 
-/// @brief La classe PageAccueilPersonne correspond à la vue de la page d'accueil pour les membres du Personnel.
+namespace Ui {
+class PageAccueilPersonnel;
+}
+
+/// @brief La classe PageAccueilPersonnel correspond à la vue de la page d'accueil pour les membres du Personnel.
+///
 /// L'interface graghique comporte un QLabel contenant "Bonjour," suivit du prénom, nom et de la fonction (Ingénieur ou
 /// Technicien) du Personnel actuellement connecté. L'interface contient également deux QPushButton : un permettant de
 /// demander un nouveau ticket à traiter et l'autre permettant d'accéder aux tickets en cours de résolution par le
 /// Personnel connecté.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
 /// @version 2.3
-namespace Ui {
-class PageAccueilPersonnel;
-}
-
 class PageAccueilPersonnel : public QWidget
 {
     Q_OBJECT

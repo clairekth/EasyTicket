@@ -13,16 +13,17 @@
 #include "pageaccueilpersonnel.h"
 #include "pageresolutionticket.h"
 
-/// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket. Elle contient un QStackedWidget
-/// contenant plusieurs Pages définie par des index (voir constantes.h) permettant de naviguer entre ces différentes
-/// pages suivant les actions de l'Utilisateur connecté.
-/// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.1
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+
+/// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket.
+///
+/// Elle contient un QStackedWidget contenant plusieurs Pages définie par des index (voir constantes.h) permettant de naviguer entre ces différentes
+/// pages suivant les actions de l'Utilisateur connecté.
+/// @authors Nicolas Robert, Victor Dallé, Claire Kurth
+/// @version 2.1
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
