@@ -14,6 +14,7 @@ public:
               const QString email);
     virtual ~Personnel();
     virtual QString toString() const;
+    bool estUnPersonnel();
     virtual bool estUnIngenieur();
 };
 

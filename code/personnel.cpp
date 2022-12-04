@@ -22,6 +22,11 @@ QString Personnel::toString() const
     return "Personnel" + prenom +", " + nom;
 }
 
+bool Personnel::estUnPersonnel()
+{
+    return true;
+}
+
 bool Personnel::estUnIngenieur()
 {
     return false;

@@ -26,8 +26,5 @@ void PageAccueilPersonnel::setPersonnel(Personnel *pers)
     this->personnel = pers;
     if (personnel->estUnIngenieur()){
         label->setText("Bonjour, " + personnel->getPrenom() + " " + personnel->getNom() + " (Ingénieur)");
-        qDebug() << "Inge";
-    } else {
-        qDebug() << "nn";
     }
 }

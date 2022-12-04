@@ -44,7 +44,8 @@ bool Utilisateur::estUnClient()
     return false;
 }
 
-bool Utilisateur::estUnIngenieur()
+bool Utilisateur::estUnPersonnel()
 {
     return false;
 }
+

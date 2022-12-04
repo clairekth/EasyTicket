@@ -35,7 +35,7 @@ void PageLogin::handle_validation()
             auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
             pageaccueil->setClient(dynamic_cast<Client*>(user));
             stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
-        } else if (user->estUnIngenieur()){
+        } else if (user->estUnPersonnel()){
             auto *widget = stack->widget(ACCUEIL_PERSONNEL_PAGE);
             auto *pageaccueilpersonnel = qobject_cast<PageAccueilPersonnel*>(widget);
             pageaccueilpersonnel->setPersonnel(dynamic_cast<Personnel*>(user));

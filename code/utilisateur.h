@@ -29,7 +29,7 @@ public:
     virtual QString getId() const;
     virtual void addTicket(Ticket *ticket);
     virtual bool estUnClient();
-    virtual bool estUnIngenieur();
+    virtual bool estUnPersonnel();
 
 protected:
     QString id, nom, prenom, email, mdp;
