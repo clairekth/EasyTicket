@@ -1,12 +1,12 @@
 #include "pageajoutticket.h"
 #include "ui_pageajoutticket.h"
 
-PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionnaire_dialogue) :
+PageAjoutTicket::PageAjoutTicket(QStackedWidget *parent, GestionnaireDialogue *gestionnaire_dialogue) :
     QWidget(parent),
+    gestionnaire_dialogue(gestionnaire_dialogue), stack(parent),
     ui(new Ui::PageAjoutTicket)
 {
     ui->setupUi(this);
-    this->stack = qobject_cast<QStackedWidget*>(parent);
 
     bouton_retour = ui->bouton_retour;
     bouton_creer_le_ticket = ui->creer_le_ticket_bouton;
@@ -18,8 +18,8 @@ PageAjoutTicket::PageAjoutTicket(QWidget *parent, GestionnaireDialogue *gestionn
     gestionnaire_dialogue->setComboBox(systeme_box, "systeme");
     gestionnaire_dialogue->setComboBox(logiciel_box, "logiciel");
 
-    this->message_text = ui->message_text;
-    this->gestionnaire_dialogue = gestionnaire_dialogue;
+    message_text = ui->message_text;
+
     connect(bouton_retour, &QPushButton::clicked,this,&PageAjoutTicket::retour_bouton_clicked);
     connect(bouton_creer_le_ticket, &QPushButton::clicked, this, &PageAjoutTicket::creer_le_ticket_clicked);
 }

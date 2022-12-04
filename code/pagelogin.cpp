@@ -1,9 +1,9 @@
 #include "pagelogin.h"
 #include <ui_pagelogin.h>
 
-PageLogin::PageLogin(QWidget *parent, GestionnaireDialogue *gestionnaire) :
+PageLogin::PageLogin(QStackedWidget *parent, GestionnaireDialogue *gestionnaire) :
     QWidget(parent),
-    gestionnaire_dialogue(gestionnaire),
+    gestionnaire_dialogue(gestionnaire),stack(parent),
     ui(new Ui::PageLogin)
 {
     ui->setupUi(this);
@@ -11,8 +11,6 @@ PageLogin::PageLogin(QWidget *parent, GestionnaireDialogue *gestionnaire) :
     id = ui->identifiant;
     mdp = ui->password;
     connect(validation_bouton, &QPushButton::clicked,this,&PageLogin::handle_validation);
-    this->stack = qobject_cast<QStackedWidget*>(parent);
-
 }
 
 PageLogin::~PageLogin()

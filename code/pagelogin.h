@@ -31,7 +31,7 @@ public:
     /// @brief Constructeur
     /// @param parent Widget parent.
     /// @param *gestionnaire_dialogue Le GestionnaireDialogue de l'application.
-    explicit PageLogin(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire = nullptr);
+    explicit PageLogin(QStackedWidget *parent = nullptr, GestionnaireDialogue *gestionnaire = nullptr);
 
     /// @brief Destructeur.
     ~PageLogin();
@@ -44,6 +44,8 @@ private:
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
 
+    QStackedWidget *stack;
+
     /// @brief Champs correspondant à la vue de PageLogin.
     Ui::PageLogin *ui;
 
@@ -55,8 +57,6 @@ private:
 
     /// @brief Champs où l'Utilisateur rentre son mot de passe.
     QLineEdit *mdp;
-
-    QStackedWidget *stack;
 
     Utilisateur *user;
 };

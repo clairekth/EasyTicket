@@ -27,7 +27,7 @@ public:
     /// @brief Constructeur par défaut.
     /// @param *parent                  Widget parent.
     /// @param *gestionnaire_dialogue   le GestionnaireDialogue de l'application
-    explicit PageAccueilClient(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire = nullptr);
+    explicit PageAccueilClient(QStackedWidget *parent = nullptr, GestionnaireDialogue *gestionnaire = nullptr);
 
     /// @brief Destructeur.
     ~PageAccueilClient();
@@ -41,6 +41,7 @@ private slots:
 private:
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
+    QStackedWidget *stack;
 
     /// @brief Champs correspondant à la vue de PageAccueilClient.
     Ui::PageAccueilClient *ui;
@@ -53,7 +54,6 @@ private:
 
     Client *client;
 
-    QStackedWidget *stack;
 
 };
 

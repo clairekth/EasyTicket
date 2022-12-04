@@ -26,7 +26,7 @@ public:
     /// @brief Constructeur
     /// @param parent Widget parent.
     /// @param gestionnaire_dialogue Le pointeur vers GestionnaireDialogue de l'application.
-    PageAjoutTicket(QWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
+    PageAjoutTicket(QStackedWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
 
     ~PageAjoutTicket();
 
@@ -42,10 +42,12 @@ private slots:
     void creer_le_ticket_clicked();
 
 private:
-    Ui::PageAjoutTicket *ui;
-
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
+
+    QStackedWidget *stack;
+
+    Ui::PageAjoutTicket *ui;
 
     /// @brief Champs contenant le Client connecté.
     Client *client;
@@ -68,7 +70,6 @@ private:
     /// @brief Zone de de texte pour entrer le message.
     QTextEdit *message_text;
 
-    QStackedWidget *stack;
 
 
 };

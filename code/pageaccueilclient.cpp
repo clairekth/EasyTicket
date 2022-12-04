@@ -1,13 +1,12 @@
 #include "pageaccueilclient.h"
 #include "ui_pageaccueilclient.h"
 
-PageAccueilClient::PageAccueilClient(QWidget *parent, GestionnaireDialogue *gestionnaire) :
+PageAccueilClient::PageAccueilClient(QStackedWidget *parent, GestionnaireDialogue *gestionnaire) :
     QWidget(parent),
-    gestionnaire_dialogue(gestionnaire),
+    gestionnaire_dialogue(gestionnaire), stack(parent),
     ui(new Ui::PageAccueilClient)
 {
     ui->setupUi(this);
-    this->stack = qobject_cast<QStackedWidget*>(parent);
 
     creer_ticket_bouton = ui->creer_ticket_bouton;
     historique_tickets_bouton = ui->historique_tickets_bouton;
