@@ -10,7 +10,7 @@ PageAccueilClient::PageAccueilClient(QStackedWidget *parent, GestionnaireDialogu
 
     creer_ticket_bouton = ui->creer_ticket_bouton;
     historique_tickets_bouton = ui->historique_tickets_bouton;
-
+    label = ui->bonjour_client;
     connect(creer_ticket_bouton, &QPushButton::clicked, this, &PageAccueilClient::creation_ticket);
 }
 
@@ -18,6 +18,7 @@ PageAccueilClient::~PageAccueilClient()
 {
     delete creer_ticket_bouton;
     delete historique_tickets_bouton;
+    delete label;
     delete ui;
     qDebug() << "Destruction  pageAccueilClient\n";
 }
@@ -25,8 +26,7 @@ PageAccueilClient::~PageAccueilClient()
 void PageAccueilClient::setClient(Client *client)
 {
     this->client = client;
-    QLabel *bonjour = ui->bonjour_client;
-    bonjour->setText("Bonjour, " + this->client->getPrenom() + " " + (this->client->getNom()));
+    label->setText("Bonjour, " + this->client->getPrenom() + " " + (this->client->getNom()));
 }
 
 void PageAccueilClient::creation_ticket()
