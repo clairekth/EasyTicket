@@ -50,6 +50,106 @@ void GestionnaireBDD::setComboBox(QComboBox *box, const QString &type)
     }
 }
 
+void GestionnaireBDD::linkToTicket(Ticket *ticket, Personnel *pers)
+{
+
+    QSqlQuery *query = new QSqlQuery();
+    query->prepare("UPDATE ticket id_personnel = :id_p WHERE id_ticket = :id_ticket");
+    query->bindValue(":id_p", pers->getId());
+    query->bindValue(":id_ticket", ticket->getId());
+    query->exec();
+}
+
+Ticket *GestionnaireBDD::getPlusVieuxTicket()
+{
+    /*
+     * Il faut penser à vérifier que le ticket n'a pas été cloturé et qu'il n'a pas déjà été attribué
+     */
+    Ticket *ticket = nullptr;
+    Client *auteur = nullptr;
+    Categorie *categorie = nullptr;
+    Logiciel *logiciel = nullptr;
+    Systeme *systeme = nullptr;
+    QSqlQuery *query = new QSqlQuery();
+    query->prepare("SELECT * FROM ticket ORDER BY date_creation");
+    query->exec();
+
+    QString id_client;
+    QString id_categorie;
+    QString id_logiciel;
+    QString id_systeme;
+
+    QString date_creation;
+    int id_ticket = -1;
+
+    if (query->first())
+    {
+        id_client = query->value("id_client").toString();
+        id_categorie = query->value("id_categorie").toString();
+        id_logiciel = query->value("id_logiciel").toString();
+        id_systeme = query->value("id_systeme").toString();
+        date_creation = query->value("date_creation").toString();
+        id_ticket = query->value("id_ticket").toInt();
+    }
+    query->clear();
+// -----------------------
+    query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = " + id_client);
+    query->exec();
+
+    if (query->first())
+    {
+        if (query->value("type_utilisateur").toString() == "client")
+        {
+            auteur = new Client(query->value(0).toString(),
+                                query->value(2).toString(),
+                                query->value(1).toString(),
+                                query->value(3).toString(),
+                                query->value(4).toString());
+        }
+    }
+    query->clear();
+// -----------------------
+    query->prepare("SELECT * FROM categorie WHERE id_categorie = " + id_categorie);
+    query->exec();
+
+    if (query->first())
+    {
+        categorie = new Categorie(query->value("id_categorie").toInt(), query->value("nom").toString());
+    }
+    query->clear();
+// -----------------------
+    if (id_logiciel != "0") {
+        query->prepare("SELECT * FROM logiciel WHERE id_logiciel = " + id_logiciel);
+        query->exec();
+
+        if (query->first())
+        {
+            logiciel = new Logiciel(query->value("id_logiciel").toInt(), query->value("nom").toString());
+        }
+        query->clear();
+    }
+// -----------------------
+    if (id_systeme != "0") {
+        query->prepare("SELECT * FROM systeme WHERE id_systeme = " + id_systeme);
+        query->exec();
+
+        if (query->first())
+        {
+            systeme = new Systeme(query->value("id_systeme").toInt(), query->value("nom").toString());
+        }
+        query->clear();
+    }
+    delete query;
+
+    ticket = new Ticket(date_creation, categorie, auteur, id_ticket);
+    if (logiciel != nullptr)
+        ticket->setLogiciel(logiciel);
+    if (systeme != nullptr)
+        ticket->setSysteme(systeme);
+
+    return ticket;
+}
+
 Utilisateur* GestionnaireBDD::authentifier(QString id, QString mdp)
 {
     QSqlQuery *query = new QSqlQuery();

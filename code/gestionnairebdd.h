@@ -38,6 +38,15 @@ public:
     /// @param type Le type de donnée de la ComboBox (categorie, systeme, logiciel).
     void setComboBox(QComboBox *box, const QString &type);
 
+    /// @brief Méthode qui permet de lier un Personnel à un ticket.
+    /// @param ticket Le ticket à lier au Personnel.
+    /// @param pers Le personnel qui va traiter le ticket.
+    void linkToTicket(Ticket *ticket, Personnel *pers);
+
+    /// @brief Méthode qui renvoie le plus vieux ticket qui n'a pas encore été traité.
+    /// @return Le plus vieux ticket non résolu.
+    Ticket *getPlusVieuxTicket();
+
 
 protected:
     /// @brief La base de données SQLite.

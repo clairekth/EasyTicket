@@ -11,6 +11,7 @@
 #include "pageaccueilclient.h"
 #include "pageajoutticket.h"
 #include "pageaccueilpersonnel.h"
+#include "pageresolutionticket.h"
 
 /// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket. Elle contient un QStackedWidget
 /// contenant plusieurs Pages définie par des index (voir constantes.h) permettant de naviguer entre ces différentes
@@ -52,6 +53,9 @@ protected :
 
     /// @brief Champs correspondant à la PageAccueilClient.
     PageAccueilPersonnel *page_accueil_personnel;
+
+    /// @brief Champs correspondant à la PageResolutionTicket.
+    PageResolutionTicket *page_resolution_ticket;
 
 private:
     Ui::MainWindow *ui;

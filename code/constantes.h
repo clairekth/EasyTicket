@@ -18,4 +18,7 @@
 /// @brief Define de l'index de PageAccueilPersonnel.
 #define ACCUEIL_PERSONNEL_PAGE 3
 
+/// @brief Define de l'index de PageResolutionTicket.
+#define RESOLUTION_TICKET_PAGE 4
+
 #endif // CONSTANTES_H

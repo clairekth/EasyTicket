@@ -45,6 +45,10 @@ public:
     /// @param ticket Le ticket à enregistrer.
     void enregistrer_ticket(Ticket *ticket);
 
+    void linkToTicket(Ticket *ticket, Personnel *per);
+
+    Ticket *getPlusVieuxTicket();
+
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.
     GestionnaireBDD bdd;

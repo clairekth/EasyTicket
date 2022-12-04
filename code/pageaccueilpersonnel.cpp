@@ -10,6 +10,8 @@ PageAccueilPersonnel::PageAccueilPersonnel(QStackedWidget *parent, GestionnaireD
     demander_ticket_bouton = ui->demander_ticket_bouton;
     voir_ticket_bouton = ui->consulter_tickets_bouton;
     label = ui->label;
+
+    connect(demander_ticket_bouton, &QPushButton::clicked, this, &PageAccueilPersonnel::nouveau_ticket_a_traiter);
 }
 
 PageAccueilPersonnel::~PageAccueilPersonnel()
@@ -27,4 +29,12 @@ void PageAccueilPersonnel::setPersonnel(Personnel *pers)
     if (personnel->estUnIngenieur()){
         label->setText("Bonjour, " + personnel->getPrenom() + " " + personnel->getNom() + " (Ingénieur)");
     }
+}
+
+void PageAccueilPersonnel::nouveau_ticket_a_traiter()
+{
+    auto *widget = stack->widget(RESOLUTION_TICKET_PAGE);
+    auto *resolution_ticket = qobject_cast<PageResolutionTicket*>(widget);
+    resolution_ticket->setPersonnel(personnel);
+    stack->setCurrentIndex(RESOLUTION_TICKET_PAGE);
 }

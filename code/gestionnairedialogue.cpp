@@ -41,3 +41,13 @@ void GestionnaireDialogue::enregistrer_ticket(Ticket *ticket)
 {
     bdd.enregistrer_ticket(ticket);
 }
+
+void GestionnaireDialogue::linkToTicket(Ticket *ticket, Personnel *per)
+{
+    bdd.linkToTicket(ticket, per);
+}
+
+Ticket *GestionnaireDialogue::getPlusVieuxTicket()
+{
+    return bdd.getPlusVieuxTicket();
+}

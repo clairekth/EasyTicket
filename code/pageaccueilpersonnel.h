@@ -6,7 +6,9 @@
 #include <QPushButton>
 #include <QLabel>
 
+#include "constantes.h"
 #include "gestionnairedialogue.h"
+#include "pageresolutionticket.h"
 
 /// @brief La classe PageAccueilPersonne correspond à la vue de la page d'accueil pour les membres du Personnel.
 /// L'interface graghique comporte un QLabel contenant "Bonjour," suivit du prénom, nom et de la fonction (Ingénieur ou
@@ -34,6 +36,9 @@ public:
 
     /// @brief Cette méthode permet de définir le Personnel actuellement connecté à la page d'accueil.
     void setPersonnel(Personnel *pers);
+
+private slots:
+    void nouveau_ticket_a_traiter();
 
 private:
     /// @brief le GestionnaireDialogue de l'application.

@@ -27,6 +27,7 @@ SOURCES += \
     pageajoutticket.cpp \
     pagelogin.cpp \
     pageaccueilclient.cpp \
+    pageresolutionticket.cpp \
     personnel.cpp \
     systeme.cpp \
     ticket.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     pageajoutticket.h \
     pagelogin.h \
     pageaccueilclient.h \
+    pageresolutionticket.h \
     personnel.h \
     systeme.h \
     ticket.h \
@@ -59,7 +61,8 @@ FORMS += \
     pagelogin.ui \
     pageajoutticket.ui \
     pageaccueilclient.ui \
-    pageaccueilpersonnel.ui
+    pageaccueilpersonnel.ui \
+    pageresolutionticket.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

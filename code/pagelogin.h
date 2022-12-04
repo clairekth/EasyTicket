@@ -43,7 +43,7 @@ public:
     /// @brief Destructeur.
     ~PageLogin();
 
-public slots:
+private slots:
     /// @brief Cette méthode est appelée lors d'un click sur le bouton validation_bouton. Elle permet la connexion
     /// de l'Utilisateur si celui ci existe. Si l'Utilisateur est un Client, affichage de la PageAccueilClient. Si
     /// c'est un Personnel, affichage de la PageAccuilPersonnel.
