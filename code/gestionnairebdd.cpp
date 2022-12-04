@@ -50,7 +50,7 @@ void GestionnaireBDD::setComboBox(QComboBox *box, const QString &type)
     }
 }
 
-Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
+Utilisateur* GestionnaireBDD::authentifier(QString id, QString mdp)
 {
     QSqlQuery *query = new QSqlQuery();
     query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");

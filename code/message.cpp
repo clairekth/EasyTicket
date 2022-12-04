@@ -5,7 +5,7 @@ Message::Message()
 
 }
 
-Message::Message(QString date_envoi, Utilisateur *user, Ticket *ticket, QString message, int id_message):
+Message::Message(const QString date_envoi, Utilisateur *user, Ticket *ticket, QString message, int id_message):
     date_envoi(date_envoi), auteur(user), ticket(ticket), message(message), id_message(id_message)
 {
 
@@ -13,7 +13,6 @@ Message::Message(QString date_envoi, Utilisateur *user, Ticket *ticket, QString 
 
 Message::~Message()
 {
-    // Surement des choses à rajouter dedans mais y'a des bugs pour certains champs...
 }
 
 void Message::setTicket(Ticket *ticket)

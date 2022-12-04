@@ -11,6 +11,11 @@ Ingenieur::Ingenieur(const QString id, const QString mdp, const QString nom, con
 
 }
 
+Ingenieur::~Ingenieur()
+{
+
+}
+
 bool Ingenieur::estUnIngenieur()
 {
     return true;

@@ -13,7 +13,8 @@
 #include "message.h"
 #include "ingenieur.h"
 
-/// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet et le GestionnaireDialogue.
+/// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet contenue dans une
+/// base de données SQLite et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
 /// @version 2.2
 class GestionnaireBDD
@@ -26,20 +27,20 @@ public:
     /// @param  id      l'identifiant de l'Utilisateur.
     /// @param  mdp     le mot de passe de l'Utilisateur.
     /// @return l'Utilisateur identifié.
-    Utilisateur *authentifier(QString &id, QString &mdp);
+    Utilisateur *authentifier(QString id, QString mdp);
 
     /// @brief Méthode qui permet d'enregistrer un ticket dans la BDD.
     /// @param ticket Le ticket à enregistrer.
     void enregistrer_ticket(Ticket *ticket);
 
-    /// @brief Méthode qui remplit les comboBox de la page PageAjoutTicket en fct de la BDD.
-    /// @param box La ComboBox.
+    /// @brief Méthode qui remplit les comboBox de la page PageAjoutTicket en fonction de la BDD.
+    /// @param box  La ComboBox.
     /// @param type Le type de donnée de la ComboBox (categorie, systeme, logiciel).
     void setComboBox(QComboBox *box, const QString &type);
 
 
 protected:
-    /// @brief La base de donnée SQLite.
+    /// @brief La base de données SQLite.
     QSqlDatabase my_db;
 };
 

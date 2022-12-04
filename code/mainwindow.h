@@ -62,7 +62,9 @@
 #include "pageajoutticket.h"
 #include "pageaccueilpersonnel.h"
 
-/// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket.
+/// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket. Elle contient un QStackedWidget
+/// contenant plusieurs Pages définie par des index (voir constantes.h) permettant de naviguer entre ces différentes
+/// pages suivant les actions de l'Utilisateur connecté.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
 /// @version 2.1
 
@@ -75,29 +77,30 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    /// @brief Constructeur.
+    /// @brief Constructeur par défaut.
     /// @param  *parent Pointeur sur le Widget Parent.
     MainWindow(QWidget *parent = nullptr);
 
-    /// @brief Destructeur.
+    /// @brief Destructeur de la classe.
     ~MainWindow();
 
 protected :
-    /// @brief Champs contenant le StackedWidget qui stock les différentes Page de l'application.
+    /// @brief Champs correspondant au StackedWidget qui stock les différentes Page de l'application.
     QStackedWidget *stack;
 
-    /// @brief Champs contenant le GestionnaireDialogue.
+    /// @brief Champs correspondant au GestionnaireDialogue.
     GestionnaireDialogue gestionnaire_dialogue;
 
-    /// @brief Champs contenant la PageLogin.
+    /// @brief Champs correspondant à la PageLogin.
     PageLogin *page_login;
 
-    /// @brief Champs contenant la PageAccueilClient.
+    /// @brief Champs correspondant à la PageAccueilClient.
     PageAccueilClient *page_accueil_client;
 
-    /// @brief Champs contenant la PageAjoutTicket
+    /// @brief Champs correspondant à la PageAjoutTicket.
     PageAjoutTicket *page_ajout_ticket;
 
+    /// @brief Champs correspondant à la PageAccueilClient.
     PageAccueilPersonnel *page_accueil_personnel;
 
 private:

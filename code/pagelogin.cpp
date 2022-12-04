@@ -28,6 +28,7 @@ void PageLogin::handle_validation()
     QString idU = id->text();
     QString mdpU = mdp->text();
     user = gestionnaire_dialogue->authentification(idU, mdpU);
+
     if (user != nullptr)
     {
         if (user->estUnClient()){
