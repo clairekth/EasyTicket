@@ -5,7 +5,7 @@ Utilisateur::Utilisateur()
 
 }
 
-Utilisateur::Utilisateur(const QString &id, const QString &nom, const QString &prenom, const QString &email, const QString &mdp):
+Utilisateur::Utilisateur(const QString id, const QString nom, const QString prenom, const QString email, const QString mdp):
     id(id),
     nom(nom),
     prenom(prenom),
@@ -37,4 +37,14 @@ QString Utilisateur::getId() const
 void Utilisateur::addTicket(Ticket *ticket)
 {
     liste_tickets.push_front(ticket);
+}
+
+bool Utilisateur::estUnClient()
+{
+    return false;
+}
+
+bool Utilisateur::estUnIngenieur()
+{
+    return false;
 }

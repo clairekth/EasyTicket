@@ -18,9 +18,10 @@ public:
            const QString prenom = "Oui",
            const QString email = "oui-oui@easyticket.fr");
 
-    virtual ~Client();
+    ~Client();
 
-    virtual QString toString() const;
+    QString toString() const;
+    bool estUnClient();
 };
 
 #endif // CLIENT_H

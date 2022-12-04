@@ -30,7 +30,8 @@ SOURCES += \
     personnel.cpp \
     systeme.cpp \
     ticket.cpp \
-    utilisateur.cpp
+    utilisateur.cpp \
+    ingenieur.cpp
 
 HEADERS += \
     categorie.h \
@@ -47,7 +48,8 @@ HEADERS += \
     personnel.h \
     systeme.h \
     ticket.h \
-    utilisateur.h
+    utilisateur.h \
+    ingenieur.h
 
 FORMS += \
     mainwindow.ui \

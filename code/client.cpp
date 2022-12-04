@@ -18,5 +18,10 @@ Client::~Client()
 
 QString Client::toString() const
 {
-    return "Client : " + nom + ", " + prenom + " tickets";
+    return "Client : " + nom + ", " + prenom;
+}
+
+bool Client::estUnClient()
+{
+    return true;
 }

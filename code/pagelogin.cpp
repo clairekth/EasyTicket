@@ -30,10 +30,15 @@ void PageLogin::handle_validation()
     user = gestionnaire_dialogue->authentification(idU, mdpU);
     if (user != nullptr)
     {
-        auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
-        auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
-        pageaccueil->setClient(dynamic_cast<Client*>(user));
-        stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
+        if (user->estUnClient()){
+            auto *widget = stack->widget(ACCUEIL_CLIENT_PAGE);
+            auto *pageaccueil = qobject_cast<PageAccueilClient*>(widget);
+            pageaccueil->setClient(dynamic_cast<Client*>(user));
+            stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
+        } else if (user->estUnIngenieur()){
+            qDebug() << "inge";
+        }
+
 
     }
     else

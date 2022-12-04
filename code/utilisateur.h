@@ -12,11 +12,11 @@ class Utilisateur
 public:
     Utilisateur();
 
-    Utilisateur(const QString &id,
-                const QString &mdp,
-                const QString &nom,
-                const QString &prenom,
-                const QString &email);
+    Utilisateur(const QString id,
+                const QString mdp,
+                const QString nom,
+                const QString prenom,
+                const QString email);
 
     virtual ~Utilisateur();
 
@@ -27,8 +27,9 @@ public:
     virtual QString getPrenom() const;
 
     virtual QString getId() const;
-
     virtual void addTicket(Ticket *ticket);
+    virtual bool estUnClient();
+    virtual bool estUnIngenieur();
 
 protected:
     QString id, nom, prenom, email, mdp;

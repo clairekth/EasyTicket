@@ -7,8 +7,8 @@
 #include "systeme.h"
 #include "logiciel.h"
 #include "categorie.h"
-#include "personnel.h"
 
+class Personnel;
 class Client;
 class Message;
 
