@@ -36,10 +36,11 @@ void PageLogin::handle_validation()
             pageaccueil->setClient(dynamic_cast<Client*>(user));
             stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
         } else if (user->estUnIngenieur()){
-            qDebug() << "inge";
+            auto *widget = stack->widget(ACCUEIL_PERSONNEL_PAGE);
+            auto *pageaccueilpersonnel = qobject_cast<PageAccueilPersonnel*>(widget);
+            pageaccueilpersonnel->setPersonnel(dynamic_cast<Personnel*>(user));
+            stack->setCurrentIndex(ACCUEIL_PERSONNEL_PAGE);
         }
-
-
     }
     else
     {

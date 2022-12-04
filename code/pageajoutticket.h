@@ -26,7 +26,7 @@ public:
     /// @brief Constructeur
     /// @param parent Widget parent.
     /// @param gestionnaire_dialogue Le pointeur vers GestionnaireDialogue de l'application.
-    PageAjoutTicket(QStackedWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
+    explicit PageAjoutTicket(QStackedWidget *parent = nullptr, GestionnaireDialogue *gestionnaire_dialogue = nullptr);
 
     ~PageAjoutTicket();
 

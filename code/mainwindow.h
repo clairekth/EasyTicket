@@ -60,6 +60,7 @@
 #include "pagelogin.h"
 #include "pageaccueilclient.h"
 #include "pageajoutticket.h"
+#include "pageaccueilpersonnel.h"
 
 /// @brief Classe correspondant à la fenêtre principale de l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
@@ -96,6 +97,8 @@ protected :
 
     /// @brief Champs contenant la PageAjoutTicket
     PageAjoutTicket *page_ajout_ticket;
+
+    PageAccueilPersonnel *page_accueil_personnel;
 
 private:
     Ui::MainWindow *ui;

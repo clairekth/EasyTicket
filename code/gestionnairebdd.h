@@ -11,6 +11,7 @@
 #include "logiciel.h"
 #include "systeme.h"
 #include "message.h"
+#include "ingenieur.h"
 
 /// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth

@@ -10,6 +10,7 @@
 
 #include "constantes.h"
 #include "pageaccueilclient.h"
+#include "pageaccueilpersonnel.h"
 #include "gestionnairedialogue.h"
 #include "utilisateur.h"
 

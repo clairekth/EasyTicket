@@ -72,14 +72,14 @@ Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
                         query->value(3).toString(),
                         query->value(4).toString());
         }
-//        else if (typeUser == "ingenieur"){
-//            user = new Ingenieur(
-//                        query->value(0).toString(),  // Convertion : value -> QString -> QString
-//                        query->value(2).toString(),
-//                        query->value(1).toString(),
-//                        query->value(3).toString(),
-//                        query->value(4).toString());
-//        }
+        else if (typeUser == "ingenieur"){
+            user = new Ingenieur(
+                        query->value(0).toString(),  // Convertion : value -> QString -> QString
+                        query->value(2).toString(),
+                        query->value(1).toString(),
+                        query->value(3).toString(),
+                        query->value(4).toString());
+        }
     }
 
 

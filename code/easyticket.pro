@@ -31,7 +31,8 @@ SOURCES += \
     systeme.cpp \
     ticket.cpp \
     utilisateur.cpp \
-    ingenieur.cpp
+    ingenieur.cpp \
+    pageaccueilpersonnel.cpp
 
 HEADERS += \
     categorie.h \
@@ -49,13 +50,15 @@ HEADERS += \
     systeme.h \
     ticket.h \
     utilisateur.h \
-    ingenieur.h
+    ingenieur.h \
+    pageaccueilpersonnel.h
 
 FORMS += \
     mainwindow.ui \
     pagelogin.ui \
     pageajoutticket.ui \
-    pageaccueilclient.ui
+    pageaccueilclient.ui \
+    pageaccueilpersonnel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
