@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EasyTicket: include/mainwindow.h Source File</title>
+<title>EasyTicket: mainwindow.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,6 +45,7 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +60,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">mainwindow.h</div>  </div>
@@ -72,56 +68,62 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MAINWINDOW_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MAINWINDOW_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QStackedWidget&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;constantes.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;pagelogin.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;pageaccueilclient.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;pageajoutticket.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;pageaccueilpersonnel.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;QT_BEGIN_NAMESPACE</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>Ui { <span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a>; }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;QT_END_NAMESPACE</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classMainWindow.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;protected :</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classMainWindow.html#ad1eef01717c9576331c392e772ce0e8b">   40</a></span>&#160;    QStackedWidget *<a class="code" href="classMainWindow.html#ad1eef01717c9576331c392e772ce0e8b">stack</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classMainWindow.html#a160c22b41546aad399746bf4109c5101">   43</a></span>&#160;    <a class="code" href="classGestionnaireDialogue.html">GestionnaireDialogue</a> <a class="code" href="classMainWindow.html#a160c22b41546aad399746bf4109c5101">gestionnaire_dialogue</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classMainWindow.html#a472409b6e29153925c62233ba0ebc750">   46</a></span>&#160;    <a class="code" href="classPageLogin.html">PageLogin</a> *<a class="code" href="classMainWindow.html#a472409b6e29153925c62233ba0ebc750">page_login</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classMainWindow.html#a7174f3cf4dc2d9a938847c9b4bd22f8b">   49</a></span>&#160;    <a class="code" href="classPageAccueilClient.html">PageAccueilClient</a> *<a class="code" href="classMainWindow.html#a7174f3cf4dc2d9a938847c9b4bd22f8b">page_accueil_client</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classMainWindow.html#add5e75e860e006e3c0e3675efa09bb10">   52</a></span>&#160;    <a class="code" href="classPageAjoutTicket.html">PageAjoutTicket</a> *<a class="code" href="classMainWindow.html#add5e75e860e006e3c0e3675efa09bb10">page_ajout_ticket</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;QStackedWidget&gt;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;pagelogin.h&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;constantes.h&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;gestionnairedialogue.h&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;pageaccueilclient.h&quot;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;pageajoutticket.h&quot;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;QT_BEGIN_NAMESPACE</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespaceUi.html">   67</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceUi.html">Ui</a> { <span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a>; }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;QT_END_NAMESPACE</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classMainWindow.html">   70</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMainWindow.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;protected :</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classMainWindow.html#ad1eef01717c9576331c392e772ce0e8b">   76</a></span>&#160;    QStackedWidget *<a class="code" href="classMainWindow.html#ad1eef01717c9576331c392e772ce0e8b">stack</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classMainWindow.html#a3447a6269e749c09f988630b3e883324">   78</a></span>&#160;    <a class="code" href="classGestionnaireDialogue.html">GestionnaireDialogue</a> *<a class="code" href="classMainWindow.html#a3447a6269e749c09f988630b3e883324">gestionnaire_dialogue</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classMainWindow.html#a472409b6e29153925c62233ba0ebc750">   80</a></span>&#160;    <a class="code" href="classPageLogin.html">PageLogin</a> *<a class="code" href="classMainWindow.html#a472409b6e29153925c62233ba0ebc750">page_login</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classMainWindow.html#a7174f3cf4dc2d9a938847c9b4bd22f8b">   82</a></span>&#160;    <a class="code" href="classPageAccueilClient.html">PageAccueilClient</a> *<a class="code" href="classMainWindow.html#a7174f3cf4dc2d9a938847c9b4bd22f8b">page_accueil_client</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classMainWindow.html#add5e75e860e006e3c0e3675efa09bb10">   84</a></span>&#160;    <a class="code" href="classPageAjoutTicket.html">PageAjoutTicket</a> *<a class="code" href="classMainWindow.html#add5e75e860e006e3c0e3675efa09bb10">page_ajout_ticket</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMainWindow.html#ab4da9607ca0b52daedeba63aeb2e14b2">setGestionnaireDialogue</a>(<a class="code" href="classGestionnaireDialogue.html">GestionnaireDialogue</a> *g);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">~MainWindow</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    Ui::MainWindow *ui;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
-<div class="ttc" id="aclassGestionnaireDialogue_html"><div class="ttname"><a href="classGestionnaireDialogue.html">GestionnaireDialogue</a></div><div class="ttdoc">La classe GestionnaireDialogue correspond à l'interface de communication entre l'Utilisateur et le mo...</div><div class="ttdef"><b>Definition:</b> gestionnairedialogue.h:17</div></div>
-<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdef"><b>Definition:</b> mainwindow.h:71</div></div>
-<div class="ttc" id="aclassMainWindow_html_a3447a6269e749c09f988630b3e883324"><div class="ttname"><a href="classMainWindow.html#a3447a6269e749c09f988630b3e883324">MainWindow::gestionnaire_dialogue</a></div><div class="ttdeci">GestionnaireDialogue * gestionnaire_dialogue</div><div class="ttdoc">Champs contenant le GestionnaireDialogue.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:78</div></div>
-<div class="ttc" id="aclassMainWindow_html_a472409b6e29153925c62233ba0ebc750"><div class="ttname"><a href="classMainWindow.html#a472409b6e29153925c62233ba0ebc750">MainWindow::page_login</a></div><div class="ttdeci">PageLogin * page_login</div><div class="ttdoc">Champs contenant la PageLogin.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:80</div></div>
-<div class="ttc" id="aclassMainWindow_html_a7174f3cf4dc2d9a938847c9b4bd22f8b"><div class="ttname"><a href="classMainWindow.html#a7174f3cf4dc2d9a938847c9b4bd22f8b">MainWindow::page_accueil_client</a></div><div class="ttdeci">PageAccueilClient * page_accueil_client</div><div class="ttdoc">Champs contenant la PageAccueilClient.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:82</div></div>
-<div class="ttc" id="aclassMainWindow_html_a996c5a2b6f77944776856f08ec30858d"><div class="ttname"><a href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Constructeur.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:4</div></div>
-<div class="ttc" id="aclassMainWindow_html_ab4da9607ca0b52daedeba63aeb2e14b2"><div class="ttname"><a href="classMainWindow.html#ab4da9607ca0b52daedeba63aeb2e14b2">MainWindow::setGestionnaireDialogue</a></div><div class="ttdeci">void setGestionnaireDialogue(GestionnaireDialogue *g)</div><div class="ttdoc">Méthode pour set le GestionnaireDialogue.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:29</div></div>
-<div class="ttc" id="aclassMainWindow_html_ad1eef01717c9576331c392e772ce0e8b"><div class="ttname"><a href="classMainWindow.html#ad1eef01717c9576331c392e772ce0e8b">MainWindow::stack</a></div><div class="ttdeci">QStackedWidget * stack</div><div class="ttdoc">Champs contenant le StackedWidget qui stock les différentes Page de l'application.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:76</div></div>
-<div class="ttc" id="aclassMainWindow_html_add5e75e860e006e3c0e3675efa09bb10"><div class="ttname"><a href="classMainWindow.html#add5e75e860e006e3c0e3675efa09bb10">MainWindow::page_ajout_ticket</a></div><div class="ttdeci">PageAjoutTicket * page_ajout_ticket</div><div class="ttdoc">Champs contenant la PageAjoutTicket.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:84</div></div>
-<div class="ttc" id="aclassMainWindow_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdoc">Destructeur.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:24</div></div>
-<div class="ttc" id="aclassPageAccueilClient_html"><div class="ttname"><a href="classPageAccueilClient.html">PageAccueilClient</a></div><div class="ttdef"><b>Definition:</b> pageaccueilclient.h:18</div></div>
-<div class="ttc" id="aclassPageAjoutTicket_html"><div class="ttname"><a href="classPageAjoutTicket.html">PageAjoutTicket</a></div><div class="ttdef"><b>Definition:</b> pageajoutticket.h:18</div></div>
-<div class="ttc" id="aclassPageLogin_html"><div class="ttname"><a href="classPageLogin.html">PageLogin</a></div><div class="ttdef"><b>Definition:</b> pagelogin.h:18</div></div>
-<div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="namespaceUi.html">Ui</a></div><div class="ttdoc">Classe correspondant à la fenêtre principale de l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:67</div></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classMainWindow.html#abdd301958b533ec3a488df90247c312f">   55</a></span>&#160;    <a class="code" href="classPageAccueilPersonnel.html">PageAccueilPersonnel</a> *<a class="code" href="classMainWindow.html#abdd301958b533ec3a488df90247c312f">page_accueil_personnel</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    Ui::MainWindow *ui;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MAINWINDOW_H</span></div>
+<div class="ttc" id="aclassGestionnaireDialogue_html"><div class="ttname"><a href="classGestionnaireDialogue.html">GestionnaireDialogue</a></div><div class="ttdoc">La classe GestionnaireDialogue correspond à l'interface de communication entre l'Utilisateur et le mo...</div><div class="ttdef"><b>Definition:</b> gestionnairedialogue.h:20</div></div>
+<div class="ttc" id="aclassMainWindow_html"><div class="ttname"><a href="classMainWindow.html">MainWindow</a></div><div class="ttdoc">Classe correspondant à la fenêtre principale de l'application EasyTicket.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:27</div></div>
+<div class="ttc" id="aclassMainWindow_html_a160c22b41546aad399746bf4109c5101"><div class="ttname"><a href="classMainWindow.html#a160c22b41546aad399746bf4109c5101">MainWindow::gestionnaire_dialogue</a></div><div class="ttdeci">GestionnaireDialogue gestionnaire_dialogue</div><div class="ttdoc">Champs correspondant au GestionnaireDialogue.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:43</div></div>
+<div class="ttc" id="aclassMainWindow_html_a472409b6e29153925c62233ba0ebc750"><div class="ttname"><a href="classMainWindow.html#a472409b6e29153925c62233ba0ebc750">MainWindow::page_login</a></div><div class="ttdeci">PageLogin * page_login</div><div class="ttdoc">Champs correspondant à la PageLogin.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:46</div></div>
+<div class="ttc" id="aclassMainWindow_html_a7174f3cf4dc2d9a938847c9b4bd22f8b"><div class="ttname"><a href="classMainWindow.html#a7174f3cf4dc2d9a938847c9b4bd22f8b">MainWindow::page_accueil_client</a></div><div class="ttdeci">PageAccueilClient * page_accueil_client</div><div class="ttdoc">Champs correspondant à la PageAccueilClient.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:49</div></div>
+<div class="ttc" id="aclassMainWindow_html_a996c5a2b6f77944776856f08ec30858d"><div class="ttname"><a href="classMainWindow.html#a996c5a2b6f77944776856f08ec30858d">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(QWidget *parent=nullptr)</div><div class="ttdoc">Constructeur par défaut.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:4</div></div>
+<div class="ttc" id="aclassMainWindow_html_abdd301958b533ec3a488df90247c312f"><div class="ttname"><a href="classMainWindow.html#abdd301958b533ec3a488df90247c312f">MainWindow::page_accueil_personnel</a></div><div class="ttdeci">PageAccueilPersonnel * page_accueil_personnel</div><div class="ttdoc">Champs correspondant à la PageAccueilClient.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:55</div></div>
+<div class="ttc" id="aclassMainWindow_html_ad1eef01717c9576331c392e772ce0e8b"><div class="ttname"><a href="classMainWindow.html#ad1eef01717c9576331c392e772ce0e8b">MainWindow::stack</a></div><div class="ttdeci">QStackedWidget * stack</div><div class="ttdoc">Champs correspondant au StackedWidget qui stock les différentes Page de l'application.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:40</div></div>
+<div class="ttc" id="aclassMainWindow_html_add5e75e860e006e3c0e3675efa09bb10"><div class="ttname"><a href="classMainWindow.html#add5e75e860e006e3c0e3675efa09bb10">MainWindow::page_ajout_ticket</a></div><div class="ttdeci">PageAjoutTicket * page_ajout_ticket</div><div class="ttdoc">Champs correspondant à la PageAjoutTicket.</div><div class="ttdef"><b>Definition:</b> mainwindow.h:52</div></div>
+<div class="ttc" id="aclassMainWindow_html_ae98d00a93bc118200eeef9f9bba1dba7"><div class="ttname"><a href="classMainWindow.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow()</div><div class="ttdoc">Destructeur de la classe.</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:27</div></div>
+<div class="ttc" id="aclassPageAccueilClient_html"><div class="ttname"><a href="classPageAccueilClient.html">PageAccueilClient</a></div><div class="ttdoc">La classe PageAccueilClient correspond à la vue de la page d'accueil pour les Client.</div><div class="ttdef"><b>Definition:</b> pageaccueilclient.h:25</div></div>
+<div class="ttc" id="aclassPageAccueilPersonnel_html"><div class="ttname"><a href="classPageAccueilPersonnel.html">PageAccueilPersonnel</a></div><div class="ttdoc">La classe PageAccueilPersonnel correspond à la vue de la page d'accueil pour les membres du Personnel...</div><div class="ttdef"><b>Definition:</b> pageaccueilpersonnel.h:24</div></div>
+<div class="ttc" id="aclassPageAjoutTicket_html"><div class="ttname"><a href="classPageAjoutTicket.html">PageAjoutTicket</a></div><div class="ttdoc">La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un no...</div><div class="ttdef"><b>Definition:</b> pageajoutticket.h:31</div></div>
+<div class="ttc" id="aclassPageLogin_html"><div class="ttname"><a href="classPageLogin.html">PageLogin</a></div><div class="ttdoc">La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.</div><div class="ttdef"><b>Definition:</b> pagelogin.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

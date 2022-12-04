@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['addmessage_0',['addMessage',['../classTicket.html#a2b387f4db64e0abc36d46cbc2b7ea17a',1,'Ticket']]],
-  ['admin_1',['Admin',['../classAdmin.html',1,'Admin'],['../classAdmin.html#a7b21d01e6b55b0d9afb7d44e8e6e2738',1,'Admin::Admin()'],['../classAdmin.html#ad87b534934cb8515a8eb36b54974d6b9',1,'Admin::Admin(QString id, QString nom, QString prenom, QString mdp, QString mail)']]],
-  ['authentification_2',['authentification',['../classGestionnaireDialogue.html#ad9b81f37636dbd9fd68138bcc401c59a',1,'GestionnaireDialogue']]],
-  ['authentifier_3',['authentifier',['../classGestionnaireBDD.html#ade0f41a0bbad7250536b2eec5402a07b',1,'GestionnaireBDD']]]
+  ['addmessage_0',['addMessage',['../classTicket.html#ad729fbaf6abd73c9c2a1450ade5aa82b',1,'Ticket']]],
+  ['addticket_1',['addTicket',['../classUtilisateur.html#a08aef31a9a2178ed7ce49660b5e54f6a',1,'Utilisateur']]],
+  ['authentification_2',['authentification',['../classGestionnaireDialogue.html#a929bcdfdda3ce594e197d02453119426',1,'GestionnaireDialogue']]],
+  ['authentifier_3',['authentifier',['../classGestionnaireBDD.html#a2bf7e3af51318cc7a06576773c5b877c',1,'GestionnaireBDD']]]
 ];

@@ -73,11 +73,11 @@ v1.1</h2>
 <p>Peut importe le login et le mot de passe, on affiche un message contenant le 'toString' de notre objet <a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a>.</p>
 <h2><a class="anchor" id="v1_2_subsec"></a>
 v1.2</h2>
-<p>Une fois connecté avec un compte 'client', l'utilisateur accède à la page d'accueil (<a class="el" href="classPageAccueilClient.html">PageAccueilClient</a>).</p>
+<p>Une fois connecté avec un compte 'client', l'utilisateur accède à la page d'accueil (<a class="el" href="classPageAccueilClient.html" title="La classe PageAccueilClient correspond à la vue de la page d&#39;accueil pour les Client.">PageAccueilClient</a>).</p>
 <p>Ajout d'un <a class="el" href="classGestionnaireDialogue.html" title="La classe GestionnaireDialogue correspond à l&#39;interface de communication entre l&#39;Utilisateur et le mo...">GestionnaireDialogue</a> qui fait le lien entre l'utilisateur et les données.</p>
 <h2><a class="anchor" id="v1_3_subsec"></a>
 v1.3</h2>
-<p>Le bouton de création de ticket mène à une page vierge qui servira pour créer les tickets (<a class="el" href="classPageAjoutTicket.html">PageAjoutTicket</a>).</p>
+<p>Le bouton de création de ticket mène à une page vierge qui servira pour créer les tickets (<a class="el" href="classPageAjoutTicket.html" title="La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un no...">PageAjoutTicket</a>).</p>
 <p>Ajout d'un bouton de retour à la page d'accueil quand on est sur la page de création de ticket.</p>
 <h2><a class="anchor" id="v1_4_subsec"></a>
 v1.4</h2>
@@ -90,11 +90,11 @@ v1.5</h2>
 <h2><a class="anchor" id="v1_6_subsec"></a>
 v1.6</h2>
 <p>Implémentation de l'ajout de <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> dans le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> au moment de sa création. Au moment du clic pour créer le <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a>, on affiche les données du <a class="el" href="classTicket.html" title="La classe Ticket permet de décrire un ticket dans l&#39;application EasyTicket.">Ticket</a> ainsi que le <a class="el" href="classMessage.html" title="La classe Message est la classe correspondant à un Message sur un Ticket.">Message</a> ajouté.</p>
-<p>Si tout est ok, on retourne à la page d'accueil (<a class="el" href="classPageAccueilClient.html">PageAccueilClient</a>).</p>
+<p>Si tout est ok, on retourne à la page d'accueil (<a class="el" href="classPageAccueilClient.html" title="La classe PageAccueilClient correspond à la vue de la page d&#39;accueil pour les Client.">PageAccueilClient</a>).</p>
 <h2><a class="anchor" id="v1_7_subsec"></a>
 v1.7</h2>
 <p>Ajout de la base de donnée au format db avec SQLite.</p>
-<p>Ajout d'une classe <a class="el" href="classGestionnaireBDD.html" title="La classe GestionnaireBDD correspond à l&#39;interface de communication entre les données du projet et le...">GestionnaireBDD</a> pour gérer l'interfaçage avec le bdd.</p>
+<p>Ajout d'une classe <a class="el" href="classGestionnaireBDD.html" title="La classe GestionnaireBDD correspond à l&#39;interface de communication entre les données du projet conte...">GestionnaireBDD</a> pour gérer l'interfaçage avec le bdd.</p>
 <ul>
 <li>Importer la bdd.</li>
 <li>Faire un select sur la bdd, etc.</li>
@@ -105,7 +105,28 @@ v1.8</h2>
 <li>Au niveau de la connexion.</li>
 <li>et de l'enregistrement d'un ticket et du message.</li>
 </ul>
-<p>Création des ComboBox en fonction des tables de la BDD. </p>
+<p>Création des ComboBox en fonction des tables de la BDD.</p>
+<h2><a class="anchor" id="v2_1_subsec"></a>
+v2.1</h2>
+<p>Une fois connecté avec un compte '<a class="el" href="classPersonnel.html" title="La classe Personnel est une classe abstraite qui permet de décrire l&#39;ensemble des Utilisateur apparte...">Personnel</a>', l'utilisateur accède à la page d'accueil (<a class="el" href="classPageAccueilPersonnel.html" title="La classe PageAccueilPersonnel correspond à la vue de la page d&#39;accueil pour les membres du Personnel...">PageAccueilPersonnel</a>).</p>
+<h2><a class="anchor" id="v2_2_subsec"></a>
+v2.2</h2>
+<p>Correction de l'application pour pouvoir appliquer le polymorphisme :</p>
+<ul>
+<li>Suppresion de typeUtilisateur(QString id, QString mdp) dans <a class="el" href="classGestionnaireBDD.html" title="La classe GestionnaireBDD correspond à l&#39;interface de communication entre les données du projet conte...">GestionnaireBDD</a> et dans <a class="el" href="classGestionnaireDialogue.html" title="La classe GestionnaireDialogue correspond à l&#39;interface de communication entre l&#39;Utilisateur et le mo...">GestionnaireDialogue</a>.</li>
+<li>Transformation des fonctions qui retourner un <a class="el" href="classClient.html" title="La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket...">Client</a> et un Ingénieur pour n'en faire qu'une qui retourne un <a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a> dans <a class="el" href="classGestionnaireBDD.html" title="La classe GestionnaireBDD correspond à l&#39;interface de communication entre les données du projet conte...">GestionnaireBDD</a> et <a class="el" href="classGestionnaireDialogue.html" title="La classe GestionnaireDialogue correspond à l&#39;interface de communication entre l&#39;Utilisateur et le mo...">GestionnaireDialogue</a>.</li>
+<li>Application des fonctions estUnClient() et estUnPersonnel() dans <a class="el" href="classPageLogin.html" title="La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.">PageLogin</a> sur l'<a class="el" href="classUtilisateur.html" title="La classe Utilisateur est une classe abstraite qui permet de décrire l&#39;ensemble des utilisateurs dans...">Utilisateur</a>.</li>
+</ul>
+<h2><a class="anchor" id="v2_3_subsec"></a>
+v2.3</h2>
+<p>Correction du code suite au retour par mail :</p>
+<ul>
+<li>Correction du GestionanireDialogue qui était alloué dynamiquement. Instancié automatiquement par <a class="el" href="classMainWindow.html" title="Classe correspondant à la fenêtre principale de l&#39;application EasyTicket.">MainWindow</a> puis passage par référence à <a class="el" href="classPageLogin.html" title="La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.">PageLogin</a>, <a class="el" href="classPageAccueilClient.html" title="La classe PageAccueilClient correspond à la vue de la page d&#39;accueil pour les Client.">PageAccueilClient</a>, <a class="el" href="classPageAjoutTicket.html" title="La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un no...">PageAjoutTicket</a>, <a class="el" href="classPageAccueilPersonnel.html" title="La classe PageAccueilPersonnel correspond à la vue de la page d&#39;accueil pour les membres du Personnel...">PageAccueilPersonnel</a>.</li>
+<li>Ajout des différents delete pour les Page dans le destructeur de <a class="el" href="classMainWindow.html" title="Classe correspondant à la fenêtre principale de l&#39;application EasyTicket.">MainWindow</a> car alloué dynamiquement avec un New.</li>
+<li>Correction des problèmes d'incohérences (paramètres avec référence et const, ou passés en copie, dans le même fichier).</li>
+<li>Correction du QStackedWidget qui était dupliqué lors de la récupération : passée dans les constructeurs de <a class="el" href="classPageLogin.html" title="La classe PageLogin correspond à la vue de la page de connexion pour les Utilisateur.">PageLogin</a>, <a class="el" href="classPageAjoutTicket.html" title="La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un no...">PageAjoutTicket</a>, <a class="el" href="classPageAccueilClient.html" title="La classe PageAccueilClient correspond à la vue de la page d&#39;accueil pour les Client.">PageAccueilClient</a>, <a class="el" href="classPageAccueilPersonnel.html" title="La classe PageAccueilPersonnel correspond à la vue de la page d&#39;accueil pour les membres du Personnel...">PageAccueilPersonnel</a></li>
+<li>Page principale de la documentation dans <a class="el" href="versionnage_8h_source.html">versionnage.h</a> à la place de MainWindow.h </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

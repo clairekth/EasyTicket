@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EasyTicket: include/categorie.h Source File</title>
+<title>EasyTicket: categorie.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,6 +45,7 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +60,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">categorie.h</div>  </div>
@@ -76,29 +72,29 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classCategorie.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCategorie.html">Categorie</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> id_categorie;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classCategorie.html#a9e8664a11a471f717c149c0b108e35f5">Categorie</a>();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    QString nom_categorie;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classCategorie.html#a9e8664a11a471f717c149c0b108e35f5">Categorie</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classCategorie.html#a9e8664a11a471f717c149c0b108e35f5">Categorie</a>(</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordtype">int</span> id_categorie,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            QString nom_categorie);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QString <a class="code" href="classCategorie.html#ab3bd41f7be00faf167fbf149b77aa009">getNom</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCategorie.html#a8cda95b8ac56726e7a7da93a97383688">getID</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classCategorie.html#a9e8664a11a471f717c149c0b108e35f5">Categorie</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> id_categorie, <span class="keyword">const</span> QString nom_categorie);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classCategorie.html#a10aecfd7f44073af2c158b3d697fbf8f">~Categorie</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCategorie.html#ae8f5b19bb9c7af606fa31cadccd1f9ec">getId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    QString <a class="code" href="classCategorie.html#a91a9f801a755f19e021350eb6e7dad5b">getNom</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> id_categorie;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    QString nom_categorie;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CATEGORIE_H</span></div>
 <div class="ttc" id="aclassCategorie_html"><div class="ttname"><a href="classCategorie.html">Categorie</a></div><div class="ttdoc">La classe Categorie permet de décrire les différentes catégories d'un Ticket.</div><div class="ttdef"><b>Definition:</b> categorie.h:10</div></div>
-<div class="ttc" id="aclassCategorie_html_a8cda95b8ac56726e7a7da93a97383688"><div class="ttname"><a href="classCategorie.html#a8cda95b8ac56726e7a7da93a97383688">Categorie::getID</a></div><div class="ttdeci">int getID()</div><div class="ttdoc">Méthode retournant l'id de la catégorie.</div><div class="ttdef"><b>Definition:</b> categorie.cpp:16</div></div>
+<div class="ttc" id="aclassCategorie_html_a10aecfd7f44073af2c158b3d697fbf8f"><div class="ttname"><a href="classCategorie.html#a10aecfd7f44073af2c158b3d697fbf8f">Categorie::~Categorie</a></div><div class="ttdeci">~Categorie()</div><div class="ttdoc">Destructeur de la classe Categorie.</div><div class="ttdef"><b>Definition:</b> categorie.cpp:14</div></div>
+<div class="ttc" id="aclassCategorie_html_a91a9f801a755f19e021350eb6e7dad5b"><div class="ttname"><a href="classCategorie.html#a91a9f801a755f19e021350eb6e7dad5b">Categorie::getNom</a></div><div class="ttdeci">QString getNom() const</div><div class="ttdoc">Méthode retournant le nom de la categorie.</div><div class="ttdef"><b>Definition:</b> categorie.cpp:23</div></div>
 <div class="ttc" id="aclassCategorie_html_a9e8664a11a471f717c149c0b108e35f5"><div class="ttname"><a href="classCategorie.html#a9e8664a11a471f717c149c0b108e35f5">Categorie::Categorie</a></div><div class="ttdeci">Categorie()</div><div class="ttdoc">Constructeur par défaut.</div><div class="ttdef"><b>Definition:</b> categorie.cpp:3</div></div>
-<div class="ttc" id="aclassCategorie_html_ab3bd41f7be00faf167fbf149b77aa009"><div class="ttname"><a href="classCategorie.html#ab3bd41f7be00faf167fbf149b77aa009">Categorie::getNom</a></div><div class="ttdeci">QString getNom()</div><div class="ttdoc">Méthode permettant de récupérer le nom de la Categorie.</div><div class="ttdef"><b>Definition:</b> categorie.cpp:11</div></div>
+<div class="ttc" id="aclassCategorie_html_ae8f5b19bb9c7af606fa31cadccd1f9ec"><div class="ttname"><a href="classCategorie.html#ae8f5b19bb9c7af606fa31cadccd1f9ec">Categorie::getId</a></div><div class="ttdeci">int getId() const</div><div class="ttdoc">Méthode retournant l'id de la categorie.</div><div class="ttdef"><b>Definition:</b> categorie.cpp:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

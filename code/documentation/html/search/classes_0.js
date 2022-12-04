@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['admin_98',['Admin',['../classAdmin.html',1,'']]]
+  ['categorie_74',['Categorie',['../classCategorie.html',1,'']]],
+  ['client_75',['Client',['../classClient.html',1,'']]]
 ];

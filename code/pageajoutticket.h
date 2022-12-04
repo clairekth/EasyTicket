@@ -12,7 +12,12 @@
 #include "constantes.h"
 #include "gestionnairedialogue.h"
 
+namespace Ui {
+class PageAjoutTicket;
+}
+
 /// @brief La classe PageAjoutTicket correspond à la vue de la page qui permet au Client connecté de créer un nouveau Ticket.
+///
 /// L'interface graphique est composée d'un QPushButton permettant de retourner à la PageAccueilClient. Elle contient
 /// également 3 QComboBox contenant les différentes Categorie, Logiciel et Systeme disponibles à spécifier pour la
 /// création du Ticket. Le Client est obligé de choisir une Categorie alors qu'il peut laisser en blanc pour le choix du
@@ -22,10 +27,6 @@
 /// PageAccueilClient.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
 /// @version 2.3
-namespace Ui {
-class PageAjoutTicket;
-}
-
 class PageAjoutTicket : public QWidget
 {
     Q_OBJECT
