@@ -43,6 +43,14 @@ public:
     /// @param *t Pointeur sur le Ticket entrain d'être résolu.
     void setTicket(Ticket *t);
 
+    /// @brief Cette méthode permet de set le QTableWidget qui contient la liste des messages du ticket.
+    /// @param  liste_messages  la nouvelles liste des messages.
+    void setListeMessages(QTableWidget* liste_messages);
+
+    /// @brief Cette méthode permet de get le QTableWidget qui contient la liste des messages du ticket.
+    /// @return  la liste des messages.
+    QTableWidget* getListeMessage();
+
 private slots:
     /// @brief Cette méthode est appelée lors d'un click sur le bouton retour_bouton.
     /// Elle permet de renvoyer le Personnel sur la page d'accueil.
