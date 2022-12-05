@@ -71,4 +71,11 @@ void Ticket::addMessage(Message *message)
     liste_messages.push_back(message);
 }
 
+QString Ticket::toString()
+{
+    return "Ticket: date de création" + this->date_creation + "\n" +
+            "auteur:" + this->auteur->toString() +"\n" +
+            "categorie" + this->categorie->getNom() +"\n";
+}
+
 

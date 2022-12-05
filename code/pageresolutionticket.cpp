@@ -3,7 +3,7 @@
 
 PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireDialogue *gestionnaire) :
     QWidget(parent),
-    gestionnaire_dialogue(gestionnaire),
+    gestionnaire_dialogue(gestionnaire), stack(parent),
     ui(new Ui::PageResolutionTicket)
 {
     ui->setupUi(this);

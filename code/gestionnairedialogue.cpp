@@ -32,7 +32,7 @@ bool GestionnaireDialogue::verificationMessage(QString message)
     return true;
 }
 
-void GestionnaireDialogue::setComboBox(QComboBox *box, const QString &type)
+void GestionnaireDialogue::setComboBox(QComboBox *box, const QString type)
 {
     bdd.setComboBox(box, type);
 }
@@ -47,7 +47,7 @@ void GestionnaireDialogue::linkToTicket(Ticket *ticket, Personnel *per)
     bdd.linkToTicket(ticket, per);
 }
 
-Ticket *GestionnaireDialogue::getPlusVieuxTicket()
+Ticket GestionnaireDialogue::getPlusVieuxTicket()
 {
     return bdd.getPlusVieuxTicket();
 }

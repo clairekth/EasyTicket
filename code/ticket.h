@@ -6,11 +6,10 @@
 
 #include "systeme.h"
 #include "logiciel.h"
+#include "client.h"
+#include "personnel.h"
+#include "message.h"
 #include "categorie.h"
-
-class Personnel;
-class Client;
-class Message;
 
 
 /// @brief La classe Ticket permet de décrire un ticket dans l'application EasyTicket.
@@ -78,6 +77,8 @@ public:
     /// @brief Cette méthode permet d'ajouter un Message à la liste des messages appartenant au Ticket
     /// @param  *message le pointeur sur le Message à ajouter à la liste des messages du Ticket.
     void addMessage(Message *message);
+
+    QString toString();
 
 private:
     /// @brief Champs correspondant à l'heure et la date de création du ticket.

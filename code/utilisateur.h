@@ -5,7 +5,7 @@
 #include <QVector>
 #include <QDebug>
 
-#include "ticket.h"
+class Ticket;
 
 /// @brief La classe Utilisateur est une classe abstraite qui permet de décrire l'ensemble des utilisateurs dans
 /// l'application EasyTicket.

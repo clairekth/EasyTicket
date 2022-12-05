@@ -36,7 +36,7 @@ public:
     /// @brief Méthode qui remplit les comboBox de la page PageAjoutTicket en fonction de la BDD.
     /// @param box  La ComboBox.
     /// @param type Le type de donnée de la ComboBox (categorie, systeme, logiciel).
-    void setComboBox(QComboBox *box, const QString &type);
+    void setComboBox(QComboBox *box, const QString type);
 
     /// @brief Méthode qui permet de lier un Personnel à un ticket.
     /// @param ticket Le ticket à lier au Personnel.
@@ -45,7 +45,7 @@ public:
 
     /// @brief Méthode qui renvoie le plus vieux ticket qui n'a pas encore été traité.
     /// @return Le plus vieux ticket non résolu.
-    Ticket *getPlusVieuxTicket();
+    Ticket getPlusVieuxTicket();
 
 
 protected:
