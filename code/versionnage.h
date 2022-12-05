@@ -82,7 +82,7 @@
 /// \subsection v2_4_subsec v2.4
 /// Le bouton "Demander un ticket" de la PageAccueilPersonnel permet maintenant de récupérer le ticket le plus ancien qui n'a pas été
 /// cloturé ou attribué à un Personnel. Il redirige vers la PageResolutionTicket qui n'a pour l'instant qu'un seul bouton "Retour"
-/// permettant de retourner à la PageAccueilPersonnel.
+/// permettant de retourner à la PageAccueilPersonnel. Si il n'y a pas de tickets sans Personnel, affichage d'une QMessageBox.
 
 
 
