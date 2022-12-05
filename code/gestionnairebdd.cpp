@@ -172,7 +172,7 @@ Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
 
         if (typeUser == "client"){
             user = new Client(
-                        query.value(0).toString(),  // Convertion : value -> QString -> QString
+                        query.value(0).toString(),
                         query.value(2).toString(),
                         query.value(1).toString(),
                         query.value(3).toString(),
@@ -180,7 +180,7 @@ Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
         }
         else if (typeUser == "ingenieur"){
             user = new Ingenieur(
-                        query.value(0).toString(),  // Convertion : value -> QString -> QString
+                        query.value(0).toString(),
                         query.value(2).toString(),
                         query.value(1).toString(),
                         query.value(3).toString(),
