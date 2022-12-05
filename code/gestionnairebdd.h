@@ -45,7 +45,7 @@ public:
 
     /// @brief Méthode qui renvoie le plus vieux ticket qui n'a pas encore été traité.
     /// @return Le plus vieux ticket non résolu.
-    Ticket getPlusVieuxTicket();
+    Ticket *getPlusVieuxTicket();
 
 
 protected:

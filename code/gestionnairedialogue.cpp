@@ -47,7 +47,11 @@ void GestionnaireDialogue::linkToTicket(Ticket *ticket, Personnel *per)
     bdd.linkToTicket(ticket, per);
 }
 
-Ticket GestionnaireDialogue::getPlusVieuxTicket()
+Ticket *GestionnaireDialogue::getPlusVieuxTicket()
 {
-    return bdd.getPlusVieuxTicket();
+    Ticket *ticket = bdd.getPlusVieuxTicket();
+    qDebug() << "Dans le gestionnairedialogue";
+    qDebug() << ticket->getAuteur()->getPrenom();
+
+    return ticket;
 }

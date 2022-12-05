@@ -47,7 +47,7 @@ public:
 
     void linkToTicket(Ticket *ticket, Personnel *per);
 
-    Ticket getPlusVieuxTicket();
+    Ticket *getPlusVieuxTicket();
 
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.

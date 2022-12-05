@@ -60,16 +60,17 @@ void GestionnaireBDD::linkToTicket(Ticket *ticket, Personnel *pers)
     query.exec();
 }
 
-Ticket GestionnaireBDD::getPlusVieuxTicket()
+Ticket *GestionnaireBDD::getPlusVieuxTicket()
 {
     /*
      * Il faut penser à vérifier que le ticket n'a pas été cloturé et qu'il n'a pas déjà été attribué
      */
-    Ticket ticket;
-    Client auteur;
-    Categorie categorie;
-    Logiciel logiciel;
-    Systeme systeme;
+    Ticket *ticket = nullptr;
+    Client *auteur = nullptr;
+    Categorie *categorie= nullptr;
+    Logiciel *logiciel = nullptr;
+    Systeme *systeme = nullptr;
+
     QSqlQuery query = QSqlQuery();
     query.prepare("SELECT * FROM ticket ORDER BY date_creation");
     query.exec();
@@ -101,14 +102,14 @@ Ticket GestionnaireBDD::getPlusVieuxTicket()
     {
         if (query.value("type_utilisateur").toString() == "client")
         {
-            auteur = Client(query.value(0).toString(),
+            auteur = new Client(query.value(0).toString(),
                                 query.value(2).toString(),
                                 query.value(1).toString(),
                                 query.value(3).toString(),
                                 query.value(4).toString());
         }
     }
-    qDebug() << auteur.toString();
+    qDebug() << auteur->toString();
     query.clear();
 // -----------------------
     query.prepare("SELECT * FROM categorie WHERE id_categorie = " + id_categorie);
@@ -116,9 +117,10 @@ Ticket GestionnaireBDD::getPlusVieuxTicket()
 
     if (query.first())
     {
-        categorie = Categorie(query.value("id_categorie").toInt(), query.value("nom").toString());
+        categorie = new Categorie(query.value("id_categorie").toInt(), query.value("nom").toString());
     }
     query.clear();
+    qDebug() << "categorie recup";
 // -----------------------
     if (id_logiciel != "0") {
         query.prepare("SELECT * FROM logiciel WHERE id_logiciel = " + id_logiciel);
@@ -126,9 +128,10 @@ Ticket GestionnaireBDD::getPlusVieuxTicket()
 
         if (query.first())
         {
-            logiciel = Logiciel(query.value("id_logiciel").toInt(), query.value("nom").toString());
+            logiciel = new Logiciel(query.value("id_logiciel").toInt(), query.value("nom").toString());
         }
         query.clear();
+        qDebug() << "logiciel recup";
     }
 // -----------------------
     if (id_systeme != "0") {
@@ -137,17 +140,20 @@ Ticket GestionnaireBDD::getPlusVieuxTicket()
 
         if (query.first())
         {
-            systeme = Systeme(query.value("id_systeme").toInt(), query.value("nom").toString());
+            systeme = new Systeme(query.value("id_systeme").toInt(), query.value("nom").toString());
         }
         query.clear();
+        qDebug() << "systeme recup";
     }
 
-    ticket = Ticket(date_creation, &categorie, &auteur, id_ticket);
+    ticket = new Ticket(date_creation, categorie, auteur, id_ticket);
+    qDebug() << "ticket créé";
+    qDebug() << ticket->getAuteur()->getPrenom();
     //qDebug() << ticket.toString();
-    /*if (logiciel != nullptr)
+    if (logiciel != nullptr)
         ticket->setLogiciel(logiciel);
     if (systeme != nullptr)
-        ticket->setSysteme(systeme);*/
+        ticket->setSysteme(systeme);
 
     return ticket;
 }

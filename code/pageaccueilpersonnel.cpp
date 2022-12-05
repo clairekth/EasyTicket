@@ -33,8 +33,13 @@ void PageAccueilPersonnel::setPersonnel(Personnel *pers)
 
 void PageAccueilPersonnel::nouveau_ticket_a_traiter()
 {
-    Ticket t = gestionnaire_dialogue->getPlusVieuxTicket();
-    qDebug() << t.getAuteur()->toString();
+    Ticket *t = gestionnaire_dialogue->getPlusVieuxTicket();
+
+    if (t)
+        qDebug() << t->toString();
+    qDebug() << "ticket récupéré";
+
+
     auto *widget = stack->widget(RESOLUTION_TICKET_PAGE);
     auto *resolution_ticket = qobject_cast<PageResolutionTicket*>(widget);
     resolution_ticket->setPersonnel(personnel);
