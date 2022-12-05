@@ -14,7 +14,7 @@
 
 /// @brief La classe Ticket permet de décrire un ticket dans l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.4
+/// @version 2.5
 class Ticket
 {
 public:
@@ -26,7 +26,7 @@ public:
     /// @param  categorie       pointeur sur la Categorie concernée par le ticket
     /// @param  auteur          pointeur sur le Client auteur du ticket
     /// @param  id_ticket       l'identifiant du ticket
-    Ticket(const QString date_creation,
+    Ticket(const QString &date_creation,
            Categorie &categorie,
            Client *auteur,
            int id_ticket = -1);

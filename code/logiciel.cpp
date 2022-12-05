@@ -5,7 +5,7 @@ Logiciel::Logiciel()
 
 }
 
-Logiciel::Logiciel(int id_logiciel, QString nom_logiciel) :
+Logiciel::Logiciel(const int id_logiciel, const QString &nom_logiciel) :
     id_logiciel(id_logiciel), nom_logiciel(nom_logiciel)
 {
 

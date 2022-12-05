@@ -9,7 +9,7 @@ class Ticket;
 
 /// @brief La classe Message est la classe correspondant à un Message sur un Ticket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.3
+/// @version 2.5
 class Message
 {
 public:
@@ -22,7 +22,7 @@ public:
     /// @param *ticket      Pointeur sur le Ticket rattaché au message.
     /// @param message      Le message du Message.
     /// @param id_message   L'id du message.
-    Message(const QString date_envoi, Utilisateur *user, Ticket *ticket, QString message, int id_message = -1);
+    Message(const QString &date_envoi, Utilisateur *user, Ticket *ticket, QString &message, int id_message = -1);
 
     /// @brief Destructeur de la classe.
     ~Message();

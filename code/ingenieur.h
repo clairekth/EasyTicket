@@ -8,7 +8,7 @@
 /// le programme EasyTicket.
 /// Elle hérite de la classe Personnel.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
-/// @version 2.3
+/// @version 2.5
 class Ingenieur: public Personnel
 {
 public:
@@ -21,11 +21,11 @@ public:
     /// @param nom      le nom du ingenieur.
     /// @param prenom   le prenom du ingenieur.
     /// @param email    l'email du ingenieur.
-    Ingenieur(const QString id,
-              const QString mdp,
-              const QString nom,
-              const QString prenom,
-              const QString email);
+    Ingenieur(const QString &id,
+              const QString &mdp,
+              const QString &nom,
+              const QString &prenom,
+              const QString &email);
 
     /// @brief Destructeur de la classe.
     ~Ingenieur();

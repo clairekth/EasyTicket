@@ -12,7 +12,7 @@ class Ticket;
 ///
 /// Elle sert de classe mère aux classes Client et Personnel.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
-/// @version 2.3
+/// @version 2.5
 class Utilisateur
 {
 public:
@@ -25,11 +25,11 @@ public:
     /// @param nom      le nom du utilisateur.
     /// @param prenom   le prenom du utilisateur.
     /// @param email    l'email du utilisateur.
-    Utilisateur(const QString id,
-                const QString mdp,
-                const QString nom,
-                const QString prenom,
-                const QString email);
+    Utilisateur(const QString &id,
+                const QString &mdp,
+                const QString &nom,
+                const QString &prenom,
+                const QString &email);
 
     /// @brief Destructeur de la classe.
     virtual ~Utilisateur();

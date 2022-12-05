@@ -21,7 +21,7 @@ class PageAccueilPersonnel;
 /// demander un nouveau ticket à traiter et l'autre permettant d'accéder aux tickets en cours de résolution par le
 /// Personnel connecté.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
-/// @version 2.3
+/// @version 2.4
 class PageAccueilPersonnel : public QWidget
 {
     Q_OBJECT
