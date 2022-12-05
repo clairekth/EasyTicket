@@ -35,6 +35,7 @@ void PageAccueilPersonnel::nouveau_ticket_a_traiter()
 {
     Ticket *t = gestionnaire_dialogue->getPlusVieuxTicket();
 
+    gestionnaire_dialogue->linkToTicket(t, personnel);
     if (t)
         qDebug() << t->toString();
     qDebug() << "ticket récupéré";

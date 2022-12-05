@@ -54,10 +54,13 @@ void GestionnaireBDD::linkToTicket(Ticket *ticket, Personnel *pers)
 {
 
     QSqlQuery query = QSqlQuery();
-    query.prepare("UPDATE ticket id_personnel = :id_p WHERE id_ticket = :id_ticket");
+    qDebug() << "id_ticket" << ticket->getId();
+    qDebug() << "id_pers" << pers->getId();
+    query.prepare("UPDATE ticket SET id_personnel = :id_p WHERE id_ticket = :id_ticket");
     query.bindValue(":id_p", pers->getId());
     query.bindValue(":id_ticket", ticket->getId());
-    query.exec();
+    qDebug() << "update ticket : " << query.exec();
+
 }
 
 Ticket *GestionnaireBDD::getPlusVieuxTicket()
