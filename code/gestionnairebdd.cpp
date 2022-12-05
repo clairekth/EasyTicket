@@ -247,18 +247,6 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
 
 }
 
-Utilisateur* GestionnaireBDD::recuperer_utilisateur(QString id_utilisateur) {
-    // a compléter
-    return new Client();
-}
-
-Ticket* GestionnaireBDD::recuperer_ticket(int id_ticket) {
-    // a compléter
-    Categorie categorie = Categorie();
-    return new Ticket("test", categorie, new Client(), 28);
-}
-
-
 std::vector<Message> GestionnaireBDD::recuperer_messages(Ticket ticket) {
     std::vector<Message> liste_messages;
 
@@ -275,9 +263,8 @@ std::vector<Message> GestionnaireBDD::recuperer_messages(Ticket ticket) {
         QString id_utilisateur = query.value(3).toString();
         int id_ticket_associe = query.value(4).toInt();
 
-        Utilisateur *utilisateur = recuperer_utilisateur(id_utilisateur);
-        Ticket *ticket = recuperer_ticket(id_ticket_associe);
-        liste_messages.push_back(Message(horodatage, utilisateur, ticket, message, id_message));
+        Utilisateur *utilisateur = ticket.getAuteur();
+        liste_messages.push_back(Message(horodatage, utilisateur, &ticket, message, id_message));
     }
 
     query.clear();

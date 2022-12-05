@@ -51,16 +51,6 @@ public:
     /// @return la liste des messages
     std::vector<Message> recuperer_messages(Ticket ticket);
 
-    /// @brief Méthode qui permet de trouver un utilisateur dans la bdd à partir de son identifiant.
-    /// @param  id_utilisateur  l'identifiant de l'utilisateur à trouver.
-    /// @return l'utilisateur en question
-    Utilisateur* recuperer_utilisateur(QString id_utilisateur);
-
-    /// @brief Méthode qui permet de trouver un ticket dans la bdd à partir de son identifiant.
-    /// @param  id_ticket   l'identifiant du ticket à trouver.
-    /// @return le ticket en question
-    Ticket *recuperer_ticket(int id_ticket);
-
 protected:
     /// @brief La base de données SQLite.
     QSqlDatabase my_db;
