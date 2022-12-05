@@ -75,7 +75,7 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
     Systeme *systeme = nullptr;
 
     QSqlQuery query = QSqlQuery();
-    query.prepare("SELECT * FROM ticket ORDER BY date_creation");
+    query.prepare("SELECT * FROM ticket WHERE date_cloture IS NULL AND id_personnel IS NULL ORDER BY date_creation;");
     query.exec();
 
     QString id_client;
@@ -85,7 +85,7 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
 
     QString date_creation;
     int id_ticket = -1;
-
+    bool presence_ticket = false;
     if (query.first())
     {
         id_client = query.value("id_client").toString();
@@ -94,70 +94,73 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
         id_systeme = query.value("id_systeme").toString();
         date_creation = query.value("date_creation").toString();
         id_ticket = query.value("id_ticket").toInt();
+        presence_ticket = true;
     }
     query.clear();
 // -----------------------
-    query.prepare("SELECT * FROM utilisateur WHERE id_utilisateur=:id");
-    query.bindValue(":id",id_client);
-    query.exec();
-
-    if (query.first())
-    {
-        if (query.value("type_utilisateur").toString() == "client")
-        {
-            auteur = new Client(query.value(0).toString(),
-                                query.value(2).toString(),
-                                query.value(1).toString(),
-                                query.value(3).toString(),
-                                query.value(4).toString());
-        }
-    }
-    qDebug() << auteur->toString();
-    query.clear();
-// -----------------------
-    query.prepare("SELECT * FROM categorie WHERE id_categorie = " + id_categorie);
-    query.exec();
-
-    if (query.first())
-    {
-        categorie = new Categorie(query.value("id_categorie").toInt(), query.value("nom").toString());
-    }
-    query.clear();
-    qDebug() << "categorie recup";
-// -----------------------
-    if (id_logiciel != "0") {
-        query.prepare("SELECT * FROM logiciel WHERE id_logiciel = " + id_logiciel);
+    qDebug() << presence_ticket;
+    if (presence_ticket){
+        query.prepare("SELECT * FROM utilisateur WHERE id_utilisateur=:id");
+        query.bindValue(":id",id_client);
         query.exec();
 
         if (query.first())
         {
-            logiciel = new Logiciel(query.value("id_logiciel").toInt(), query.value("nom").toString());
+            if (query.value("type_utilisateur").toString() == "client")
+            {
+                auteur = new Client(query.value(0).toString(),
+                                    query.value(2).toString(),
+                                    query.value(1).toString(),
+                                    query.value(3).toString(),
+                                    query.value(4).toString());
+            }
         }
+        //qDebug() << auteur->toString();
         query.clear();
-        qDebug() << "logiciel recup";
-    }
-// -----------------------
-    if (id_systeme != "0") {
-        query.prepare("SELECT * FROM systeme WHERE id_systeme = " + id_systeme);
+    // -----------------------
+        query.prepare("SELECT * FROM categorie WHERE id_categorie = " + id_categorie);
         query.exec();
 
         if (query.first())
         {
-            systeme = new Systeme(query.value("id_systeme").toInt(), query.value("nom").toString());
+            categorie = new Categorie(query.value("id_categorie").toInt(), query.value("nom").toString());
         }
         query.clear();
-        qDebug() << "systeme recup";
+        //qDebug() << "categorie recup";
+    // -----------------------
+        if (id_logiciel != "0") {
+            query.prepare("SELECT * FROM logiciel WHERE id_logiciel = " + id_logiciel);
+            query.exec();
+
+            if (query.first())
+            {
+                logiciel = new Logiciel(query.value("id_logiciel").toInt(), query.value("nom").toString());
+            }
+            query.clear();
+            //qDebug() << "logiciel recup";
+        }
+    // -----------------------
+        if (id_systeme != "0") {
+            query.prepare("SELECT * FROM systeme WHERE id_systeme = " + id_systeme);
+            query.exec();
+
+            if (query.first())
+            {
+                systeme = new Systeme(query.value("id_systeme").toInt(), query.value("nom").toString());
+            }
+            query.clear();
+            qDebug() << "systeme recup";
+        }
+
+        ticket = new Ticket(date_creation, *categorie, auteur, id_ticket);
+        //qDebug() << "ticket créé";
+        //qDebug() << ticket->getAuteur()->getPrenom();
+        //qDebug() << ticket.toString();
+        if (logiciel != nullptr)
+            ticket->setLogiciel(*logiciel);
+        if (systeme != nullptr)
+            ticket->setSysteme(*systeme);
     }
-
-    ticket = new Ticket(date_creation, *categorie, auteur, id_ticket);
-    qDebug() << "ticket créé";
-    qDebug() << ticket->getAuteur()->getPrenom();
-    //qDebug() << ticket.toString();
-    if (logiciel != nullptr)
-        ticket->setLogiciel(*logiciel);
-    if (systeme != nullptr)
-        ticket->setSysteme(*systeme);
-
     return ticket;
 }
 

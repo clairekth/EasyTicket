@@ -8,7 +8,6 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
 {
     ui->setupUi(this);
     retour_btn = ui->retour_bouton;
-    label = ui->label;
 
     connect(retour_btn, &QPushButton::clicked, this, &PageResolutionTicket::retour_accueil);
 
@@ -21,7 +20,6 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
 PageResolutionTicket::~PageResolutionTicket()
 {
     delete retour_btn;
-    delete label;
     delete ui;
 }
 

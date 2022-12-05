@@ -35,6 +35,7 @@ public:
     virtual ~Utilisateur();
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
+    /// @return les attributs de la classe en QString.
     virtual QString toString() const = 0;
 
     /// @brief Cette méthode permet de retourner le nom de l'utilisateur.

@@ -1,5 +1,6 @@
 #include "pageaccueilpersonnel.h"
 #include "ui_pageaccueilpersonnel.h"
+#include <QMessageBox>
 
 PageAccueilPersonnel::PageAccueilPersonnel(QStackedWidget *parent, GestionnaireDialogue *gestionnaire) :
     QWidget(parent),
@@ -35,15 +36,18 @@ void PageAccueilPersonnel::nouveau_ticket_a_traiter()
 {
     Ticket *t = gestionnaire_dialogue->getPlusVieuxTicket();
 
-    gestionnaire_dialogue->linkToTicket(t, personnel);
-    if (t)
-        qDebug() << t->toString();
-    qDebug() << "ticket récupéré";
+    if (t){
+        gestionnaire_dialogue->linkToTicket(t, personnel);
+        auto *widget = stack->widget(RESOLUTION_TICKET_PAGE);
+        auto *resolution_ticket = qobject_cast<PageResolutionTicket*>(widget);
+        resolution_ticket->setPersonnel(personnel);
+        resolution_ticket->setTicket(t);
+        stack->setCurrentIndex(RESOLUTION_TICKET_PAGE);
+    } else {
+        QMessageBox::warning(stack, "Erreur", "Il n'y a plus de tickets sans gestionnaire");
+    }
 
 
-    auto *widget = stack->widget(RESOLUTION_TICKET_PAGE);
-    auto *resolution_ticket = qobject_cast<PageResolutionTicket*>(widget);
-    resolution_ticket->setPersonnel(personnel);
-    resolution_ticket->setTicket(t);
-    stack->setCurrentIndex(RESOLUTION_TICKET_PAGE);
+
+
 }

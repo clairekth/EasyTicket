@@ -16,7 +16,7 @@
 /// @brief La classe GestionnaireBDD correspond à l'interface de communication entre les données du projet contenue dans une
 /// base de données SQLite et le GestionnaireDialogue.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.2
+/// @version 2.4
 class GestionnaireBDD
 {
 public:
@@ -39,8 +39,8 @@ public:
     void setComboBox(QComboBox *box, const QString type);
 
     /// @brief Méthode qui permet de lier un Personnel à un ticket.
-    /// @param ticket Le ticket à lier au Personnel.
-    /// @param pers Le personnel qui va traiter le ticket.
+    /// @param ticket   Le ticket à lier au Personnel.
+    /// @param pers     Le personnel qui va traiter le ticket.
     void linkToTicket(Ticket *ticket, Personnel *pers);
 
     /// @brief Méthode qui renvoie le plus vieux ticket qui n'a pas encore été traité.

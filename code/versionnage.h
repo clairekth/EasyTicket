@@ -78,6 +78,12 @@
 /// PageLogin, PageAjoutTicket, PageAccueilClient, PageAccueilPersonnel
 ///
 /// - Page principale de la documentation dans versionnage.h à la place de MainWindow.h
+///
+/// \subsection v2_4_subsec v2.4
+/// Le bouton "Demander un ticket" de la PageAccueilPersonnel permet maintenant de récupérer le ticket le plus ancien qui n'a pas été
+/// cloturé ou attribué à un Personnel. Il redirige vers la PageResolutionTicket qui n'a pour l'instant qu'un seul bouton "Retour"
+/// permettant de retourner à la PageAccueilPersonnel.
+
 
 
 #endif // VERSIONNAGE_H

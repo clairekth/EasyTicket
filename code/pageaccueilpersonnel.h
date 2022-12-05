@@ -39,6 +39,9 @@ public:
     void setPersonnel(Personnel *pers);
 
 private slots:
+    /// @brief Cette méthode est rattachée au bouton demander_ticket_bouton.
+    /// Elle permet de récupérer le plus ancien ticket sans Personnel qui n'a pas été cloturé. Si il y a bien un ticket, elle
+    /// envoit vers la PageResolutionTicket et link le Personnel au Ticket. Si il n'y a pas de ticket, affichage d'une QMessageBox.
     void nouveau_ticket_a_traiter();
 
 private:

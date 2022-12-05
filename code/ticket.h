@@ -14,7 +14,7 @@
 
 /// @brief La classe Ticket permet de décrire un ticket dans l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.3
+/// @version 2.4
 class Ticket
 {
 public:
@@ -78,6 +78,8 @@ public:
     /// @param  *message le pointeur sur le Message à ajouter à la liste des messages du Ticket.
     void addMessage(Message *message);
 
+    /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
+    /// @return les attributs de la classe en QString.
     QString toString();
 
 private:

@@ -15,7 +15,7 @@ class Client;
 
 /// @brief La classe GestionnaireDialogue correspond à l'interface de communication entre l'Utilisateur et le modèle.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.2
+/// @version 2.4
 class GestionnaireDialogue
 {
 public:
@@ -45,8 +45,13 @@ public:
     /// @param ticket Le ticket à enregistrer.
     void enregistrer_ticket(Ticket *ticket);
 
+    /// @brief Méthode qui permet de lier un Personnel à un ticket.
+    /// @param ticket   Le ticket à lier au Personnel.
+    /// @param pers     Le personnel qui va traiter le ticket.
     void linkToTicket(Ticket *ticket, Personnel *per);
 
+    /// @brief Méthode qui renvoie le plus vieux ticket qui n'a pas encore été traité.
+    /// @return Le plus vieux ticket non résolu.
     Ticket *getPlusVieuxTicket();
 
 private:
