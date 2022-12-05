@@ -256,35 +256,31 @@ Ticket* GestionnaireBDD::recuperer_ticket(int id_ticket) {
     // a compléter
     Categorie categorie = Categorie();
     return new Ticket("test", categorie, new Client(), 28);
-    /// @param  date_creation   la date et l'heure de création du ticket
-    /// @param  categorie       pointeur sur la Categorie concernée par le ticket
-    /// @param  auteur          pointeur sur le Client auteur du ticket
-    /// @param  id_ticket       l'identifiant du ticket
 }
 
 
 std::vector<Message> GestionnaireBDD::recuperer_messages(Ticket ticket) {
     std::vector<Message> liste_messages;
 
-    QSqlQuery *query = new QSqlQuery();
-    query->prepare("select id_message, message, horodatage, id_utilisateur, id_ticket_associe from message where id_ticket_associe = :id_ticket_associe");
-    query->bindValue(":id_ticket_associe", ticket.getId());
-    query->exec();
+    QSqlQuery query = QSqlQuery();
+    query.prepare("select * where id_ticket_associe = :id_ticket_associe");
+    query.bindValue(":id_ticket_associe", ticket.getId());
+    query.exec();
 
-    while (query->next())
+    while (query.next())
     {
-        int id_message = query->value(0).toInt();
-        QString message = query->value(1).toString();
-        const QString horodatage = query->value(2).toString();
-        QString id_utilisateur = query->value(3).toString();
-        int id_ticket_associe = query->value(4).toInt();
+        int id_message = query.value(0).toInt();
+        QString message = query.value(1).toString();
+        const QString horodatage = query.value(2).toString();
+        QString id_utilisateur = query.value(3).toString();
+        int id_ticket_associe = query.value(4).toInt();
 
-        Utilisateur *utilisateur = recuperer_utilisateur(id_utilisateur); // obligé d'utiliser un new aussi sinon pb de cast
+        Utilisateur *utilisateur = recuperer_utilisateur(id_utilisateur);
         Ticket *ticket = recuperer_ticket(id_ticket_associe);
         liste_messages.push_back(Message(horodatage, utilisateur, ticket, message, id_message));
     }
 
-    query->clear();
+    query.clear();
 
     return liste_messages;
 }
