@@ -59,7 +59,7 @@ void PageAjoutTicket::creer_le_ticket_clicked()
 
     if (gestionnaire_dialogue->verificationMessage(message)){
         //Récupère la date+heure.
-        QString date = QDateTime::currentDateTime().toString("dd MM yyyy hh:mm:ss");
+        QString date = QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss");
         Categorie cat = Categorie(id_cat, categorie);
         Ticket t = Ticket(date, &cat, client);
         if (!systeme.isEmpty()) {
