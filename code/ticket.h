@@ -27,7 +27,7 @@ public:
     /// @param  auteur          pointeur sur le Client auteur du ticket
     /// @param  id_ticket       l'identifiant du ticket
     Ticket(const QString date_creation,
-           Categorie *categorie,
+           Categorie &categorie,
            Client *auteur,
            int id_ticket = -1);
 
@@ -40,15 +40,15 @@ public:
 
     /// @brief Cette méthode permet de retourner le pointeur de la Categorie concernée par le ticket.
     /// @return un pointeur sur la categorie concernée par le ticket.
-    Categorie *getCategorie() const;
+    Categorie getCategorie() const;
 
     /// @brief Cette méthode permet de retourner le pointeur du Logiciel concerné par le ticket.
     /// @return un pointeur sur le logiciel concerné par le ticket.
-    Logiciel *getLogiciel() const;
+    Logiciel getLogiciel() const;
 
     /// @brief Cette méthode permet de retourner le pointeur du Systeme concerné par le ticket.
     /// @return un pointeur sur le systeme concerné par le ticket.
-    Systeme *getSysteme() const;
+    Systeme getSysteme() const;
 
     /// @brief Cette méthode permet de retourner le pointeur du Client auteur du ticket.
     /// @return un pointeur sur le Client concerné par le ticket.
@@ -68,11 +68,11 @@ public:
 
     /// @brief Cette méthode permet de définir le pointeur sur le systeme concerné du ticket.
     /// @param *systeme   le pointeur sur le systeme
-    void setSysteme(Systeme *systeme);
+    void setSysteme(Systeme &systeme);
 
     /// @brief Cette méthode permet de définir le pointeur sur le logiciel concerné du ticket.
     /// @param *logiciel   le pointeur sur le logiciel
-    void setLogiciel(Logiciel *logiciel);
+    void setLogiciel(Logiciel &logiciel);
 
     /// @brief Cette méthode permet d'ajouter un Message à la liste des messages appartenant au Ticket
     /// @param  *message le pointeur sur le Message à ajouter à la liste des messages du Ticket.
@@ -86,11 +86,11 @@ private:
     /// @brief Champs correspondant à l'heure et la date de création du ticket.
     QString date_fermeture;
     /// @brief Champs correspondant à la Categorie concernée par le ticket.
-    Categorie *categorie;
+    Categorie categorie;
     /// @brief Champs correspondant au Logiciel concerné par le ticket.
-    Logiciel *logiciel;
+    Logiciel logiciel;
     /// @brief Champs correspondant au Systeme concerné par le ticket.
-    Systeme *systeme;
+    Systeme systeme;
     /// @brief Champs correspondant à la liste des messages contenant les Message appartenant au ticket.
     QVector<Message*> liste_messages;
     /// @brief Champs correspondant au Client auteur du ticket.

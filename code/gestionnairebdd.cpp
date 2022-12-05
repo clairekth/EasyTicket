@@ -146,14 +146,14 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
         qDebug() << "systeme recup";
     }
 
-    ticket = new Ticket(date_creation, categorie, auteur, id_ticket);
+    ticket = new Ticket(date_creation, *categorie, auteur, id_ticket);
     qDebug() << "ticket créé";
     qDebug() << ticket->getAuteur()->getPrenom();
     //qDebug() << ticket.toString();
     if (logiciel != nullptr)
-        ticket->setLogiciel(logiciel);
+        ticket->setLogiciel(*logiciel);
     if (systeme != nullptr)
-        ticket->setSysteme(systeme);
+        ticket->setSysteme(*systeme);
 
     return ticket;
 }
@@ -199,13 +199,13 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
     QSqlQuery *query = new QSqlQuery();
     query->prepare("insert into ticket (date_creation, id_categorie, id_systeme, id_logiciel, id_client) values (:date_creation, :id_categorie, :id_systeme, :id_logiciel, :id_client)");
     query->bindValue(":date_creation", ticket->getDate_creation());
-    query->bindValue(":id_categorie", ticket->getCategorie()->getId());
-    if (ticket->getSysteme()->getId() != -1)
-        query->bindValue(":id_systeme", ticket->getSysteme()->getId());
+    query->bindValue(":id_categorie", ticket->getCategorie().getId());
+    if (ticket->getSysteme().getId() != -1)
+        query->bindValue(":id_systeme", ticket->getSysteme().getId());
     else
         query->bindValue(":id_systeme", 0);
-    if (ticket->getLogiciel()->getId() != -1)
-        query->bindValue(":id_logiciel", ticket->getLogiciel()->getId());
+    if (ticket->getLogiciel().getId() != -1)
+        query->bindValue(":id_logiciel", ticket->getLogiciel().getId());
     else
         query->bindValue(":id_logiciel", 0);
     query->bindValue(":id_client", ticket->getAuteur()->getId());

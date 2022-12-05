@@ -61,21 +61,21 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         //Récupère la date+heure.
         QString date = QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss");
         Categorie cat = Categorie(id_cat, categorie);
-        Ticket t = Ticket(date, &cat, client);
+        Ticket t = Ticket(date, cat, client);
         if (!systeme.isEmpty()) {
             Systeme sys = Systeme(id_systeme,systeme);
-            t.setSysteme(&sys);
+            t.setSysteme(sys);
         } else {
             Systeme sys = Systeme(-1, "");
-            t.setSysteme(&sys);
+            t.setSysteme(sys);
         }
 
         if (!logiciel.isEmpty()) {
             Logiciel log = Logiciel(id_logiciel, logiciel);
-            t.setLogiciel(&log);
+            t.setLogiciel(log);
         } else {
             Logiciel log = Logiciel(-1, "");
-            t.setLogiciel(&log);
+            t.setLogiciel(log);
         }
         Message m = Message(date, client, &t, message);
         t.addMessage(&m);
