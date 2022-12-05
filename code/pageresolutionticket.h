@@ -10,6 +10,7 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QMessageBox>
+#include <QTableWidget>
 
 
 /// @brief La classe PageResolutionTicket correspond à la vue de la page permettant aux Personnel de résoudre un Ticket.
@@ -65,6 +66,9 @@ private:
 
     /// @brief Le bouton permettant de retourner à la PageAccueilPersonnel.
     QPushButton *retour_btn;
+
+    /// @brief La liste des tickets
+    QTableWidget *liste_messages;
 
 };
 

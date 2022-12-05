@@ -55,3 +55,7 @@ Ticket *GestionnaireDialogue::getPlusVieuxTicket()
 
     return bdd.getPlusVieuxTicket();
 }
+
+std::vector<Message> GestionnaireDialogue::recuperer_messages(Ticket ticket) {
+    return bdd.recuperer_messages(ticket);
+}

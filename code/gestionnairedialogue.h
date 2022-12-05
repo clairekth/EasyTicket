@@ -4,6 +4,7 @@
 #include <QString>
 #include <QDebug>
 #include <QComboBox>
+#include <vector>
 
 #include "utilisateur.h"
 #include "client.h"
@@ -53,6 +54,10 @@ public:
     /// @brief Méthode qui renvoie le plus vieux ticket qui n'a pas encore été traité.
     /// @return Le plus vieux ticket non résolu.
     Ticket *getPlusVieuxTicket();
+
+    /// @brief Méthode qui renvoie la liste des messages concernant un ticket
+    /// @return la liste des messages
+    std::vector<Message> recuperer_messages(Ticket ticket);
 
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.
