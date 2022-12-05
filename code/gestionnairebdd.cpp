@@ -189,16 +189,10 @@ Utilisateur* GestionnaireBDD::authentifier(QString id, QString mdp)
                         query->value(4).toString());
         }
     }
-
-
-
     query->clear();
 
     return user;
 }
-
-
-
 
 void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
     // Insertion du ticket

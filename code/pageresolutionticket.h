@@ -9,6 +9,7 @@
 #include <QStackedWidget>
 #include <QPushButton>
 #include <QLabel>
+#include <QMessageBox>
 
 namespace Ui {
 class PageResolutionTicket;
@@ -24,6 +25,8 @@ public:
     ~PageResolutionTicket();
 
     void setPersonnel(Personnel *pers);
+
+    void setTicket(Ticket *t);
 
 private slots:
     /// @brief Cette méthode est appelée lors d'un click sur le bouton retour_bouton.

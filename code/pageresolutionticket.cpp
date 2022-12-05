@@ -30,6 +30,13 @@ void PageResolutionTicket::setPersonnel(Personnel *pers)
     personnel = pers;
 }
 
+void PageResolutionTicket::setTicket(Ticket *t)
+{
+    ticket = t;
+
+    QMessageBox::information(stack, "Information ticket", t->toString());
+}
+
 void PageResolutionTicket::retour_accueil()
 {
     stack->setCurrentIndex(ACCUEIL_PERSONNEL_PAGE);

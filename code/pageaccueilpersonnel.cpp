@@ -43,5 +43,6 @@ void PageAccueilPersonnel::nouveau_ticket_a_traiter()
     auto *widget = stack->widget(RESOLUTION_TICKET_PAGE);
     auto *resolution_ticket = qobject_cast<PageResolutionTicket*>(widget);
     resolution_ticket->setPersonnel(personnel);
+    resolution_ticket->setTicket(t);
     stack->setCurrentIndex(RESOLUTION_TICKET_PAGE);
 }
