@@ -5,7 +5,7 @@ Categorie::Categorie()
 
 }
 
-Categorie::Categorie(int id_categorie, QString nom_categorie):
+Categorie::Categorie(const int id_categorie, const QString &nom_categorie):
     id_categorie(id_categorie), nom_categorie(nom_categorie)
 {
 

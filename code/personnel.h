@@ -7,7 +7,7 @@
 /// au personnel dans l'application EasyTicket.
 /// Elle hérite de la classe Utilisateur et sert de classe mère à la classe Ingenieur.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
-/// @version 2.3
+/// @version 2.5
 class Personnel: public Utilisateur
 {
 public:
@@ -20,11 +20,11 @@ public:
     /// @param nom      le nom du personnel.
     /// @param prenom   le prenom du personnel.
     /// @param email    l'email du personnel.
-    Personnel(const QString id,
-              const QString mdp,
-              const QString nom,
-              const QString prenom,
-              const QString email);
+    Personnel(const QString &id,
+              const QString &mdp,
+              const QString &nom,
+              const QString &prenom,
+              const QString &email);
 
     /// @brief Destructeur de la classe Personnel.
     virtual ~Personnel();

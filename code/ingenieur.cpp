@@ -5,7 +5,7 @@ Ingenieur::Ingenieur()
 
 }
 
-Ingenieur::Ingenieur(const QString id, const QString mdp, const QString nom, const QString prenom, const QString email):
+Ingenieur::Ingenieur(const QString &id, const QString &mdp, const QString &nom, const QString &prenom, const QString &email):
     Personnel(id,mdp,nom,prenom,email)
 {
 

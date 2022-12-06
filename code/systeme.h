@@ -5,7 +5,7 @@
 
 /// @brief La classe Systeme permet de décrire les différents systèmes d'exploitation d'un Ticket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.3
+/// @version 2.5
 class Systeme
 {
 public:
@@ -15,7 +15,7 @@ public:
     /// @brief  Constructeur de la classe Systeme.
     /// @param  id_systeme      l'identifiant du système.
     /// @param  nom_systeme     le nom du système.
-    Systeme(const int id_systeme, const QString nom_systeme);
+    Systeme(const int id_systeme, const QString &nom_systeme);
 
     /// @brief Destructeur de la classe.
     ~Systeme();

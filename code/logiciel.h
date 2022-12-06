@@ -5,7 +5,7 @@
 
 /// @brief La classe Logiciel permet de décrire les différents logiciel d'un Ticket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.3
+/// @version 2.5
 class Logiciel
 {
 public:
@@ -15,7 +15,7 @@ public:
     /// @brief  Constructeur de la classe Logiciel.
     /// @param  id_logiciel   l'identifiant du logiciel
     /// @param  nom_logiciel   le nom dulogiciel
-    Logiciel(const int id_logiciel, const QString nom_logiciel);
+    Logiciel(const int id_logiciel, const QString &nom_logiciel);
 
     /// @brief Destructeur de la classe.
     ~Logiciel();

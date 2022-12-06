@@ -9,7 +9,7 @@
 /// @brief La classe Client permet de décrire un utilisateur avec les droits clients sur le programme EasyTicket.
 /// Elle hérite de la classe Utilisateur.
 /// @authors Claire Kurth, Nicolas Robert, Victor Dallé
-/// @version 2.3
+/// @version 2.5
 class Client: public Utilisateur
 {
 public:
@@ -22,11 +22,11 @@ public:
     /// @param nom      le nom du client.
     /// @param prenom   le prenom du client.
     /// @param email    l'email du client.
-    Client(const QString id,
-           const QString mdp,
-           const QString nom,
-           const QString prenom,
-           const QString email);
+    Client(const QString &id,
+           const QString &mdp,
+           const QString &nom,
+           const QString &prenom,
+           const QString &email);
 
     /// @brief Destructeur de la classe Client.
     ~Client();

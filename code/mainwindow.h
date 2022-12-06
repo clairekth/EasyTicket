@@ -23,7 +23,7 @@ QT_END_NAMESPACE
 /// Elle contient un QStackedWidget contenant plusieurs Pages définie par des index (voir constantes.h) permettant de naviguer entre ces différentes
 /// pages suivant les actions de l'Utilisateur connecté.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.1
+/// @version 2.4
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

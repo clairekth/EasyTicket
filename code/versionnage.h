@@ -83,6 +83,14 @@
 /// Le bouton "Demander un ticket" de la PageAccueilPersonnel permet maintenant de récupérer le ticket le plus ancien qui n'a pas été
 /// cloturé ou attribué à un Personnel. Il redirige vers la PageResolutionTicket qui n'a pour l'instant qu'un seul bouton "Retour"
 /// permettant de retourner à la PageAccueilPersonnel. Si il n'y a pas de tickets sans Personnel, affichage d'une QMessageBox.
+///
+/// \subsection v2_5_subsec v2.5
+/// Correction du code :
+/// - Suppresion de la création d'une Categorie/Logiciel/Systeme lorsque l'on set une QComboBox car inutile
+///
+/// - Suppression des New liés aux QSqlQuery
+///
+/// - Passage par référence au lieu de l'objet là où c'est possible
 
 
 

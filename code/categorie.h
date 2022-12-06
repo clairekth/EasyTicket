@@ -5,7 +5,7 @@
 
 /// @brief La classe Categorie permet de décrire les différentes catégories d'un Ticket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.3
+/// @version 2.5
 class Categorie
 {
 public:
@@ -15,7 +15,7 @@ public:
     /// @brief  Constructeur de la classe Categorie.
     /// @param  id_categorie    l'identifiant de la categorie
     /// @param  nom_categorie   le nom de la categorie
-    Categorie(const int id_categorie, const QString nom_categorie);
+    Categorie(const int id_categorie, const QString &nom_categorie);
 
     /// @brief Destructeur de la classe Categorie.
     ~Categorie();

@@ -24,7 +24,7 @@ GestionnaireBDD::GestionnaireBDD()
 }
 
 
-void GestionnaireBDD::setComboBox(QComboBox *box, const QString type)
+void GestionnaireBDD::setComboBox(QComboBox *box, const QString &type)
 {
     QSqlQuery query = QSqlQuery();
     query.prepare("select * from " + type);
@@ -37,16 +37,8 @@ void GestionnaireBDD::setComboBox(QComboBox *box, const QString type)
     {
         int id = query.value(0).toInt();
         QString nom = query.value(1).toString();
-        if (type == "categorie"){
-            Categorie item = Categorie(id,nom);
-            box->addItem(item.getNom(), item.getId());
-        } else if (type == "logiciel"){
-            Logiciel item = Logiciel(id, nom);
-            box->addItem(item.getNom(),item.getId());
-        } else {
-            Systeme item = Systeme(id,nom);
-            box->addItem(item.getNom(), item.getId());
-        }
+        box->addItem(nom, id);
+
     }
 }
 
@@ -70,9 +62,9 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
      */
     Ticket *ticket = nullptr;
     Client *auteur = nullptr;
-    Categorie *categorie= nullptr;
-    Logiciel *logiciel = nullptr;
-    Systeme *systeme = nullptr;
+    Categorie categorie;
+    Logiciel logiciel;
+    Systeme systeme;
 
     QSqlQuery query = QSqlQuery();
     query.prepare("SELECT * FROM ticket WHERE date_cloture IS NULL AND id_personnel IS NULL ORDER BY date_creation;");
@@ -98,8 +90,8 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
     }
     query.clear();
 // -----------------------
-    qDebug() << presence_ticket;
-    if (presence_ticket){
+    //qDebug() << presence_ticket;
+    if (presence_ticket){//Il y a bien un ticket qui n'a pas de gestionnaire et qui n'est pas fermé.
         query.prepare("SELECT * FROM utilisateur WHERE id_utilisateur=:id");
         query.bindValue(":id",id_client);
         query.exec();
@@ -123,7 +115,7 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
 
         if (query.first())
         {
-            categorie = new Categorie(query.value("id_categorie").toInt(), query.value("nom").toString());
+            categorie = Categorie(query.value("id_categorie").toInt(), query.value("nom").toString());
         }
         query.clear();
         //qDebug() << "categorie recup";
@@ -134,7 +126,7 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
 
             if (query.first())
             {
-                logiciel = new Logiciel(query.value("id_logiciel").toInt(), query.value("nom").toString());
+                logiciel = Logiciel(query.value("id_logiciel").toInt(), query.value("nom").toString());
             }
             query.clear();
             //qDebug() << "logiciel recup";
@@ -146,56 +138,56 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
 
             if (query.first())
             {
-                systeme = new Systeme(query.value("id_systeme").toInt(), query.value("nom").toString());
+                systeme = Systeme(query.value("id_systeme").toInt(), query.value("nom").toString());
             }
             query.clear();
             qDebug() << "systeme recup";
         }
 
-        ticket = new Ticket(date_creation, *categorie, auteur, id_ticket);
+        ticket = new Ticket(date_creation, categorie, auteur, id_ticket);
         //qDebug() << "ticket créé";
         //qDebug() << ticket->getAuteur()->getPrenom();
         //qDebug() << ticket.toString();
-        if (logiciel != nullptr)
-            ticket->setLogiciel(*logiciel);
-        if (systeme != nullptr)
-            ticket->setSysteme(*systeme);
+        if (id_logiciel != "0")
+            ticket->setLogiciel(logiciel);
+        if (id_systeme != "0")
+            ticket->setSysteme(systeme);
     }
     return ticket;
 }
 
-Utilisateur* GestionnaireBDD::authentifier(QString id, QString mdp)
+Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
 {
-    QSqlQuery *query = new QSqlQuery();
-    query->prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");
-    query->bindValue(":id", id);
-    query->bindValue(":mdp", mdp);
-    query->exec();
+    QSqlQuery query = QSqlQuery();
+    query.prepare("SELECT * FROM utilisateur WHERE id_utilisateur = :id AND mot_de_passe = :mdp");
+    query.bindValue(":id", id);
+    query.bindValue(":mdp", mdp);
+    query.exec();
 
     QString typeUser;
-    Utilisateur *user = NULL;
-    if (query->first())
+    Utilisateur *user = nullptr;
+    if (query.first())
     {
-        typeUser = query->value("type_utilisateur").toString();
+        typeUser = query.value("type_utilisateur").toString();
 
         if (typeUser == "client"){
             user = new Client(
-                        query->value(0).toString(),  // Convertion : value -> QString -> QString
-                        query->value(2).toString(),
-                        query->value(1).toString(),
-                        query->value(3).toString(),
-                        query->value(4).toString());
+                        query.value(0).toString(),
+                        query.value(2).toString(),
+                        query.value(1).toString(),
+                        query.value(3).toString(),
+                        query.value(4).toString());
         }
         else if (typeUser == "ingenieur"){
             user = new Ingenieur(
-                        query->value(0).toString(),  // Convertion : value -> QString -> QString
-                        query->value(2).toString(),
-                        query->value(1).toString(),
-                        query->value(3).toString(),
-                        query->value(4).toString());
+                        query.value(0).toString(),
+                        query.value(2).toString(),
+                        query.value(1).toString(),
+                        query.value(3).toString(),
+                        query.value(4).toString());
         }
     }
-    query->clear();
+    query.clear();
 
     return user;
 }
@@ -218,9 +210,10 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
 
     bool res = query.exec();
     //qDebug() << res;
+    query.clear();
 
-    // Récupération de l'id du ticket qu'on vient d'insérer
-    query = QSqlQuery();
+    // Récupération de l'id du ticket qu'on vient d'insérer    query = QSqlQuery();
+
     query.prepare("SELECT id_ticket FROM ticket WHERE date_creation = :date");
     query.bindValue(":date", ticket->getDate_creation());
     query.exec();
@@ -229,6 +222,7 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
         ticket->setId(query.value(0).toInt());
     //qDebug() << res;
 
+    query.clear();
     // Insertion des messages du ticket
     foreach (Message *message, ticket->getMessages()) {
 
