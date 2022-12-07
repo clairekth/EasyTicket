@@ -253,12 +253,11 @@ void GestionnaireBDD::recuperer_messages(Ticket *ticket) {
         Utilisateur *user = nullptr;
         if (query.value("type_utilisateur") == "client")
         {
-            Client c = Client(query.value("id_utilisateur").toString(), query.value("nom").toString(), query.value("prenom").toString(), query.value("email").toString());
-            user = &c;
+            user = new  Client(query.value("id_utilisateur").toString(), query.value("nom").toString(), query.value("prenom").toString(), query.value("email").toString());
         }
 
-        Message mess = Message(horodatage, user, ticket, message, id_message);
-        ticket->addMessage(&mess);
+        Message *mess = new Message(horodatage, user, ticket, message, id_message);
+        ticket->addMessage(mess);
     }
 
     query.clear();

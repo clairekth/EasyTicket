@@ -19,6 +19,10 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     personnelGestionnaire = ui->personnelGestionnaire;
     proprietaire = ui->proprietaire;
     liste_messages = ui->liste_messages;
+    liste_messages->setColumnWidth(0, 150);
+    liste_messages->setColumnWidth(1, 130);
+    liste_messages->setColumnWidth(2, 300);
+    liste_messages->setWordWrap(true);
 
 
 
@@ -58,19 +62,20 @@ void PageResolutionTicket::setTicket(Ticket *t)
     personnelGestionnaire->setText("Gestionnaire : " + ticket->getPersonnel()->getPrenom() + " " + ticket->getPersonnel()->getNom());
     int row = 0;
 // Bug
-//    liste_messages->insertRow(row);
-//    liste_messages->setItem(row, 0, new QTableWidgetItem(t->getMessage()->getDate_envoi()));
+//    liste_messages->insertColumn(1);
 //    liste_messages->setItem(row, 1, new QTableWidgetItem(t->getMessage()->getAuteur()->getPrenom() + " " + t->getMessage()->getAuteur()->getNom()));
+//    liste_messages->insertColumn(2);
 //    liste_messages->setItem(row, 2, new QTableWidgetItem(t->getMessage()->getMessage()));
-
-//    for (Message *m: t->getMessages())
-//    {
-//        liste_messages->insertRow(row);
-//        liste_messages->setItem(row, 0, new QTableWidgetItem(m->getDate_envoi()));
-//        liste_messages->setItem(row, 1, new QTableWidgetItem(m->getAuteur()->getPrenom() + " " + m->getAuteur()->getNom()));
-//        liste_messages->setItem(row, 2, new QTableWidgetItem(m->getMessage()));
-//        row++;
-//    }
+    for (Message *m: t->getMessages())
+    {
+        qDebug() << m->getDate_envoi();
+        liste_messages->insertRow(row);
+        liste_messages->setItem(row, 0, new QTableWidgetItem(m->getDate_envoi()));
+        liste_messages->setItem(row, 1, new QTableWidgetItem(m->getAuteur()->getPrenom() + " " + m->getAuteur()->getNom()));
+        liste_messages->setItem(row, 2, new QTableWidgetItem(m->getMessage()));
+        row++;
+    }
+    liste_messages->resizeRowsToContents();
 
 }
 
