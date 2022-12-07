@@ -14,6 +14,8 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     categorie = ui->categorie;
     systeme = ui->systeme;
     logiciel = ui->logiciel;
+    id_ticket = ui->id_ticket;
+    date = ui ->date;
 
 
 
@@ -44,10 +46,12 @@ Ticket* PageResolutionTicket::getTicket() {
 void PageResolutionTicket::setTicket(Ticket *t)
 {
     ticket = t;
-    QMessageBox::information(stack, "Information ticket", t->toString());
-    categorie->setText(ticket->getCategorie().getNom());
-    systeme->setText(ticket->getSysteme().getNom());
-    logiciel->setText(ticket->getLogiciel().getNom());
+    categorie->setText("Categorie : " + ticket->getCategorie().getNom());
+    systeme->setText("Système : " + ticket->getSysteme().getNom());
+    logiciel->setText("Ticket : " + ticket->getLogiciel().getNom());
+    id_ticket->setText("Ticket : " + QString::number(ticket->getId()));
+    date->setText("Date : " + ticket->getDate_creation() );
+
 }
 
 void PageResolutionTicket::retour_accueil()

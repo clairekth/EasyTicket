@@ -87,6 +87,8 @@ private:
     QLabel *categorie;
     QLabel *systeme;
     QLabel *logiciel;
+    QLabel *id_ticket;
+    QLabel *date;
 };
 
 #endif // PAGERESOLUTIONTICKET_H
