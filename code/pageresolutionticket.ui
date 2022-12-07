@@ -154,11 +154,7 @@
     <rect>
      <x>120</x>
      <y>340</y>
-<<<<<<< HEAD
-     <width>601</width>
-=======
      <width>591</width>
->>>>>>> 47ebbdc31b2e495b61fa0faf05f1492b24d92d4e
      <height>111</height>
     </rect>
    </property>
@@ -170,11 +166,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-<<<<<<< HEAD
-      <width>599</width>
-=======
       <width>589</width>
->>>>>>> 47ebbdc31b2e495b61fa0faf05f1492b24d92d4e
       <height>109</height>
      </rect>
     </property>
@@ -183,7 +175,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>591</width>
+       <width>451</width>
        <height>111</height>
       </rect>
      </property>
@@ -272,15 +264,9 @@ p, li { white-space: pre-wrap; }
    <property name="geometry">
     <rect>
      <x>90</x>
-<<<<<<< HEAD
-     <y>451</y>
-     <width>631</width>
-     <height>91</height>
-=======
      <y>471</y>
      <width>631</width>
      <height>71</height>
->>>>>>> 47ebbdc31b2e495b61fa0faf05f1492b24d92d4e
     </rect>
    </property>
    <property name="title">

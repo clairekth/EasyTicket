@@ -18,6 +18,7 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     date = ui ->date;
     personnelGestionnaire = ui->personnelGestionnaire;
     proprietaire = ui->proprietaire;
+    liste_messages = ui->liste_messages;
 
 
 
@@ -48,11 +49,6 @@ Ticket* PageResolutionTicket::getTicket() {
 void PageResolutionTicket::setTicket(Ticket *t)
 {
     ticket = t;
-<<<<<<< HEAD
-    categorie->setText(ticket->getCategorie().getNom());
-    systeme->setText(ticket->getSysteme().getNom());
-    logiciel->setText(ticket->getLogiciel().getNom());
-=======
     categorie->setText("Categorie : " + ticket->getCategorie().getNom());
     systeme->setText("Système : " + ticket->getSysteme().getNom());
     logiciel->setText("Ticket : " + ticket->getLogiciel().getNom());
@@ -60,7 +56,22 @@ void PageResolutionTicket::setTicket(Ticket *t)
     date->setText("Date : " + ticket->getDate_creation() );
     proprietaire->setText("Propriétaire : " + ticket->getAuteur()->getPrenom() + " " + ticket->getAuteur()->getNom());
     personnelGestionnaire->setText("Gestionnaire : " + ticket->getPersonnel()->getPrenom() + " " + ticket->getPersonnel()->getNom());
->>>>>>> 47ebbdc31b2e495b61fa0faf05f1492b24d92d4e
+    int row = 0;
+// Bug
+//    liste_messages->insertRow(row);
+//    liste_messages->setItem(row, 0, new QTableWidgetItem(t->getMessage()->getDate_envoi()));
+//    liste_messages->setItem(row, 1, new QTableWidgetItem(t->getMessage()->getAuteur()->getPrenom() + " " + t->getMessage()->getAuteur()->getNom()));
+//    liste_messages->setItem(row, 2, new QTableWidgetItem(t->getMessage()->getMessage()));
+
+//    for (Message *m: t->getMessages())
+//    {
+//        liste_messages->insertRow(row);
+//        liste_messages->setItem(row, 0, new QTableWidgetItem(m->getDate_envoi()));
+//        liste_messages->setItem(row, 1, new QTableWidgetItem(m->getAuteur()->getPrenom() + " " + m->getAuteur()->getNom()));
+//        liste_messages->setItem(row, 2, new QTableWidgetItem(m->getMessage()));
+//        row++;
+//    }
+
 }
 
 void PageResolutionTicket::retour_accueil()
@@ -68,10 +79,4 @@ void PageResolutionTicket::retour_accueil()
     stack->setCurrentIndex(ACCUEIL_PERSONNEL_PAGE);
 }
 
-QTableWidget* PageResolutionTicket::getListeMessage() {
-    return liste_messages;
-}
 
-void PageResolutionTicket::setListeMessages(QTableWidget* liste_messages) {
-    this->liste_messages = liste_messages;
-}

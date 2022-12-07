@@ -86,6 +86,8 @@ public:
     /// @return les attributs de la classe en QString.
     QString toString();
 
+    Message *getMessage();
+
 private:
     /// @brief Champs correspondant à l'heure et la date de création du ticket.
     QString date_creation;

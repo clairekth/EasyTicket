@@ -88,4 +88,9 @@ QString Ticket::toString()
             "categorie" + categorie.getNom() +"\n";
 }
 
+Message *Ticket::getMessage()
+{
+    return liste_messages.at(0);
+}
+
 
