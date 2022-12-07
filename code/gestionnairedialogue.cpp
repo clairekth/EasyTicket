@@ -17,15 +17,16 @@ Utilisateur *GestionnaireDialogue::authentification(QString &id, QString &mdp)
 
 bool GestionnaireDialogue::verificationMessage(QString &message)
 {
-    //Supprime tous les espaces
+    int nb = 0;
+    //Compte tous les espaces
     for (int i = message.length() - 1 ; i > -1 ; i--)
     {
-       if(message[i]==' ')
+       if(message[i]!=' ')
        {
-           message.remove(i, 1);
+            nb++;
        }
     }
-    if (message == "" || message.length() < 15)
+    if (nb == 0 || nb < 15)
     {
        return false;
     }
