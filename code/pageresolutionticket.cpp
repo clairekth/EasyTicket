@@ -10,6 +10,13 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
 {
     ui->setupUi(this);
     retour_btn = ui->retour_bouton;
+    zoneMessage = ui->zoneMessage;
+    categorie = ui->categorie;
+    systeme = ui->systeme;
+    logiciel = ui->logiciel;
+
+
+
 
     connect(retour_btn, &QPushButton::clicked, this, &PageResolutionTicket::retour_accueil);
 
@@ -30,11 +37,17 @@ void PageResolutionTicket::setPersonnel(Personnel *pers)
     personnel = pers;
 }
 
+Ticket* PageResolutionTicket::getTicket() {
+    return ticket;
+}
+
 void PageResolutionTicket::setTicket(Ticket *t)
 {
     ticket = t;
-
     QMessageBox::information(stack, "Information ticket", t->toString());
+    categorie->setText(ticket->getCategorie().getNom());
+    systeme->setText(ticket->getSysteme().getNom());
+    logiciel->setText(ticket->getLogiciel().getNom());
 }
 
 void PageResolutionTicket::retour_accueil()

@@ -82,21 +82,21 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="categorie">
       <property name="text">
        <string>Catégorie : Aide Logiciel</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="systeme">
       <property name="text">
        <string>Système : Window</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="logiciel">
       <property name="text">
        <string>Logiciel : Word</string>
       </property>
@@ -241,7 +241,7 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
-     <widget class="QTextEdit" name="textEdit">
+     <widget class="QTextEdit" name="zoneMessage">
       <property name="html">
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -252,7 +252,7 @@ p, li { white-space: pre-wrap; }
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="boutonEnvoyerMessage">
       <property name="text">
        <string>Envoyer</string>
       </property>

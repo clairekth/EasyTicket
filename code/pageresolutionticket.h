@@ -11,6 +11,7 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QTableWidget>
+#include <QTextEdit>
 
 
 /// @brief La classe PageResolutionTicket correspond à la vue de la page permettant aux Personnel de résoudre un Ticket.
@@ -42,6 +43,8 @@ public:
     /// @brief Cette méthode permet de set le Ticket qui est entrain d'être résolu par le Personnel.
     /// @param *t Pointeur sur le Ticket entrain d'être résolu.
     void setTicket(Ticket *t);
+
+    Ticket* getTicket();
 
     /// @brief Cette méthode permet de set le QTableWidget qui contient la liste des messages du ticket.
     /// @param  liste_messages  la nouvelles liste des messages.
@@ -75,9 +78,15 @@ private:
     /// @brief Le bouton permettant de retourner à la PageAccueilPersonnel.
     QPushButton *retour_btn;
 
-    /// @brief La liste des tickets
+    /// @brief La liste des tickets.
     QTableWidget *liste_messages;
 
+    /// @brief La zone pour écrire un nouveau message.
+    QTextEdit *zoneMessage;
+
+    QLabel *categorie;
+    QLabel *systeme;
+    QLabel *logiciel;
 };
 
 #endif // PAGERESOLUTIONTICKET_H

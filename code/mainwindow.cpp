@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     stack->insertWidget(RESOLUTION_TICKET_PAGE, page_resolution_ticket);
 
     //Set l'index actuel sur la page de login
-    stack->setCurrentIndex(RESOLUTION_TICKET_PAGE);
+    stack->setCurrentIndex(LOGIN_PAGE);
 }
 
 MainWindow::~MainWindow()
