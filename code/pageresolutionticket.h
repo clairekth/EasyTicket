@@ -54,10 +54,16 @@ public:
     /// @return  la liste des messages.
     QTableWidget* getListeMessage();
 
+    /// @brief Cetet méthode de get la zone pour écrire un nouveau message
+    /// return  la zone de message
+    QTextEdit* getZoneMessage();
+
 private slots:
     /// @brief Cette méthode est appelée lors d'un click sur le bouton retour_bouton.
     /// Elle permet de renvoyer le Personnel sur la page d'accueil.
     void retour_accueil();
+
+    void on_boutonEnvoyerMessage_clicked();
 
 private:
     /// @brief le GestionnaireDialogue de l'application

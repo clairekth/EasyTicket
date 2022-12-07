@@ -51,6 +51,9 @@ public:
     /// @return la liste des messages
     std::vector<Message> recuperer_messages(Ticket ticket);
 
+    void enregistrerMessage(Ticket ticket, QString message);
+
+
 protected:
     /// @brief La base de données SQLite.
     QSqlDatabase my_db;

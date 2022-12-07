@@ -264,3 +264,20 @@ std::vector<Message> GestionnaireBDD::recuperer_messages(Ticket ticket) {
 
     return liste_messages;
 }
+
+void GestionnaireBDD::enregistrerMessage(Ticket ticket, QString message)
+{
+    qDebug() << "test";
+
+    QSqlQuery query = QSqlQuery();
+
+    query.prepare("insert into message (message, horodatage, id_utilisateur, id_ticket_associe) values (:message, datetime('now'), :id_utilisateur, :id_ticket_associe)");
+    query.bindValue(":message", message);
+    query.bindValue(":id_utilisateur", ticket.getAuteur()->getId());
+    query.bindValue(":id_ticket_associe", ticket.getId());
+    query.exec();
+
+
+
+    query.clear();
+}

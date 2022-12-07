@@ -62,3 +62,16 @@ QTableWidget* PageResolutionTicket::getListeMessage() {
 void PageResolutionTicket::setListeMessages(QTableWidget* liste_messages) {
     this->liste_messages = liste_messages;
 }
+
+QTextEdit* PageResolutionTicket::getZoneMessage()
+{
+    return zoneMessage;
+}
+void PageResolutionTicket::on_boutonEnvoyerMessage_clicked()
+{
+
+    QString message = getZoneMessage()->toPlainText();
+    qDebug() << getTicket();
+    gestionnaire_dialogue->enregistrerMessage(*getTicket(), message);
+
+}

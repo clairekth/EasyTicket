@@ -59,3 +59,8 @@ Ticket *GestionnaireDialogue::getPlusVieuxTicket()
 std::vector<Message> GestionnaireDialogue::recuperer_messages(Ticket ticket) {
     return bdd.recuperer_messages(ticket);
 }
+
+void GestionnaireDialogue::enregistrerMessage(Ticket ticket, QString message) {
+    qDebug() << "test";
+    bdd.enregistrerMessage(ticket, message);
+}

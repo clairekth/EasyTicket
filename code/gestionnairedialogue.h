@@ -59,6 +59,8 @@ public:
     /// @return la liste des messages
     std::vector<Message> recuperer_messages(Ticket ticket);
 
+    void enregistrerMessage(Ticket ticket, QString message);
+
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.
     GestionnaireBDD bdd;
