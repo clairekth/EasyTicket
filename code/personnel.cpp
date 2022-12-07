@@ -6,8 +6,8 @@ Personnel::Personnel()
 
 }
 
-Personnel::Personnel(const QString &id, const QString& mdp, const QString &nom, const QString &prenom, const QString &email):
-    Utilisateur(id,mdp,nom,prenom,email)
+Personnel::Personnel(const QString &id, const QString &nom, const QString &prenom, const QString &email):
+    Utilisateur(id,nom,prenom,email)
 {
 
 }

@@ -17,12 +17,10 @@ public:
 
     /// @brief Constructeur de la classe Ingenieur.
     /// @param id       l'identifiant du ingenieur.
-    /// @param mdp      le mot de passe du ingenieur.
     /// @param nom      le nom du ingenieur.
     /// @param prenom   le prenom du ingenieur.
     /// @param email    l'email du ingenieur.
     Ingenieur(const QString &id,
-              const QString &mdp,
               const QString &nom,
               const QString &prenom,
               const QString &email);

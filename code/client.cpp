@@ -5,8 +5,8 @@ Client::Client()
 
 }
 
-Client::Client(const QString &id, const QString &mdp,  const QString &nom, const QString &prenom, const QString &email):
-    Utilisateur(id, nom, prenom, email, mdp)
+Client::Client(const QString &id,  const QString &nom, const QString &prenom, const QString &email):
+    Utilisateur(id, nom, prenom, email)
 {
 
 }

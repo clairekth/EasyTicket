@@ -5,12 +5,11 @@ Utilisateur::Utilisateur()
 
 }
 
-Utilisateur::Utilisateur(const QString &id, const QString &nom, const QString &prenom, const QString &email, const QString &mdp):
+Utilisateur::Utilisateur(const QString &id, const QString &nom, const QString &prenom, const QString &email):
     id(id),
     nom(nom),
     prenom(prenom),
-    email(email),
-    mdp(mdp)
+    email(email)
 {
 }
 

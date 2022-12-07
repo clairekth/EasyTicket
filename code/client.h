@@ -18,12 +18,10 @@ public:
 
     /// @brief Constructeur de la classe Client.
     /// @param id       l'identifiant du client.
-    /// @param mdp      le mot de passe du client.
     /// @param nom      le nom du client.
     /// @param prenom   le prenom du client.
     /// @param email    l'email du client.
     Client(const QString &id,
-           const QString &mdp,
            const QString &nom,
            const QString &prenom,
            const QString &email);

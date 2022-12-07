@@ -41,24 +41,8 @@ void PageAccueilPersonnel::nouveau_ticket_a_traiter()
         auto *widget = stack->widget(RESOLUTION_TICKET_PAGE);
         auto *resolution_ticket = qobject_cast<PageResolutionTicket*>(widget);
         resolution_ticket->setPersonnel(personnel);
-        resolution_ticket->setTicket(t);
 
-        QTableWidget *liste_messages = resolution_ticket->getListeMessage();
-
-        Categorie categorie = Categorie();
-
-        std::vector<Message> messages = gestionnaire_dialogue->recuperer_messages(*t);
-
-        for (Message m : messages) {
-            liste_messages->insertRow(liste_messages->rowCount());
-            liste_messages->setItem(liste_messages->rowCount() - 1, 0, new QTableWidgetItem(m.getDate_envoi()));
-            liste_messages->setItem(liste_messages->rowCount() - 1, 1, new QTableWidgetItem(m.getAuteur()->getNom()));
-            liste_messages->setItem(liste_messages->rowCount() - 1, 2, new QTableWidgetItem(m.getMessage()));
-        }
-
-        resolution_ticket->setListeMessages(liste_messages);
-
-
+        gestionnaire_dialogue->recuperer_messages(t);
 
         resolution_ticket->setTicket(t);
 

@@ -16,12 +16,10 @@ public:
 
     /// @brief Constructeur de la classe Personnel.
     /// @param id       l'identifiant du personnel.
-    /// @param mdp      le mot de passe du personnel.
     /// @param nom      le nom du personnel.
     /// @param prenom   le prenom du personnel.
     /// @param email    l'email du personnel.
     Personnel(const QString &id,
-              const QString &mdp,
               const QString &nom,
               const QString &prenom,
               const QString &email);

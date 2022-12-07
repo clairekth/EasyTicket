@@ -44,7 +44,6 @@ Ticket* PageResolutionTicket::getTicket() {
 void PageResolutionTicket::setTicket(Ticket *t)
 {
     ticket = t;
-    QMessageBox::information(stack, "Information ticket", t->toString());
     categorie->setText(ticket->getCategorie().getNom());
     systeme->setText(ticket->getSysteme().getNom());
     logiciel->setText(ticket->getLogiciel().getNom());

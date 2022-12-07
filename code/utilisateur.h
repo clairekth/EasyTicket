@@ -21,12 +21,10 @@ public:
 
     /// @brief Constructeur de la classe Utilisateur.
     /// @param id       l'identifiant du utilisateur.
-    /// @param mdp      le mot de passe du utilisateur.
     /// @param nom      le nom du utilisateur.
     /// @param prenom   le prenom du utilisateur.
     /// @param email    l'email du utilisateur.
     Utilisateur(const QString &id,
-                const QString &mdp,
                 const QString &nom,
                 const QString &prenom,
                 const QString &email);
@@ -71,8 +69,6 @@ protected:
     QString prenom;
     /// @brief Champs correspondant à l'email de l'utilisateur.
     QString email;
-    /// @brief Champs correspondant au mot de passe de l'utilisateur.
-    QString mdp;
     /// @brief Champs correspondant à la liste des tickets contenant les Ticket de l'utilisateur.
     QVector<Ticket*> liste_tickets;
 };

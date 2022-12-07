@@ -101,7 +101,6 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
             if (query.value("type_utilisateur").toString() == "client")
             {
                 auteur = new Client(query.value(0).toString(),
-                                    query.value(2).toString(),
                                     query.value(1).toString(),
                                     query.value(3).toString(),
                                     query.value(4).toString());
@@ -173,7 +172,6 @@ Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
         if (typeUser == "client"){
             user = new Client(
                         query.value(0).toString(),
-                        query.value(2).toString(),
                         query.value(1).toString(),
                         query.value(3).toString(),
                         query.value(4).toString());
@@ -181,7 +179,6 @@ Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
         else if (typeUser == "ingenieur"){
             user = new Ingenieur(
                         query.value(0).toString(),
-                        query.value(2).toString(),
                         query.value(1).toString(),
                         query.value(3).toString(),
                         query.value(4).toString());
@@ -241,11 +238,10 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
 
 }
 
-std::vector<Message> GestionnaireBDD::recuperer_messages(Ticket ticket) {
-    std::vector<Message> liste_messages;
+void GestionnaireBDD::recuperer_messages(Ticket *ticket) {
     QSqlQuery query = QSqlQuery();
-    query.prepare("select * where id_ticket_associe = :id_ticket_associe");
-    query.bindValue(":id_ticket_associe", ticket.getId());
+    query.prepare("SELECT id_message, message, horodatage, id_utilisateur, id_ticket, prenom, nom, email, type_utilisateur FROM ticket INNER JOIN message ON ticket.id_ticket = message.id_ticket_associe NATURAL JOIN utilisateur WHERE id_ticket = :id_ticket");
+    query.bindValue(":id_ticket", ticket->getId());
     query.exec();
 
     while (query.next())
@@ -254,13 +250,16 @@ std::vector<Message> GestionnaireBDD::recuperer_messages(Ticket ticket) {
         QString message = query.value(1).toString();
         const QString horodatage = query.value(2).toString();
         QString id_utilisateur = query.value(3).toString();
-        int id_ticket_associe = query.value(4).toInt();
+        Utilisateur *user = nullptr;
+        if (query.value("type_utilisateur") == "client")
+        {
+            Client c = Client(query.value("id_utilisateur").toString(), query.value("nom").toString(), query.value("prenom").toString(), query.value("email").toString());
+            user = &c;
+        }
 
-        Utilisateur *utilisateur = ticket.getAuteur();
-        liste_messages.push_back(Message(horodatage, utilisateur, &ticket, message, id_message));
+        Message mess = Message(horodatage, user, ticket, message, id_message);
+        ticket->addMessage(&mess);
     }
 
     query.clear();
-
-    return liste_messages;
 }

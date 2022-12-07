@@ -57,7 +57,7 @@ public:
 
     /// @brief Méthode qui renvoie la liste des messages concernant un ticket
     /// @return la liste des messages
-    std::vector<Message> recuperer_messages(Ticket ticket);
+    void recuperer_messages(Ticket *ticket);
 
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.
