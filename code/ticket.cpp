@@ -46,6 +46,11 @@ QVector<Message*> Ticket::getMessages()
     return liste_messages;
 }
 
+Personnel *Ticket::getPersonnel() const
+{
+    return personnel;
+}
+
 int Ticket::getId() const
 {
     return id_ticket;
@@ -69,6 +74,11 @@ void Ticket::setLogiciel(Logiciel &logiciel)
 void Ticket::addMessage(Message *message)
 {
     liste_messages.push_back(message);
+}
+
+void Ticket::setPersonnel(Personnel *personnel)
+{
+    this->personnel = personnel;
 }
 
 QString Ticket::toString()

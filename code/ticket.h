@@ -58,6 +58,8 @@ public:
     /// @return La liste de Message appartenant au ticket
     QVector<Message*> getMessages();
 
+    Personnel *getPersonnel() const;
+
     /// @brief Cette méthode permet de retourner l'identifiant du ticket.
     /// @return l'identifiant du ticket sous la forme d'un int.
     int getId() const;
@@ -77,6 +79,8 @@ public:
     /// @brief Cette méthode permet d'ajouter un Message à la liste des messages appartenant au Ticket
     /// @param  *message le pointeur sur le Message à ajouter à la liste des messages du Ticket.
     void addMessage(Message *message);
+
+    void setPersonnel(Personnel *personnel);
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
     /// @return les attributs de la classe en QString.

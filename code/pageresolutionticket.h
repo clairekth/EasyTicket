@@ -89,6 +89,8 @@ private:
     QLabel *logiciel;
     QLabel *id_ticket;
     QLabel *date;
+    QLabel *proprietaire;
+    QLabel *personnelGestionnaire;
 };
 
 #endif // PAGERESOLUTIONTICKET_H

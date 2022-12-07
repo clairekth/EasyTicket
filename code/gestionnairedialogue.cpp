@@ -44,6 +44,7 @@ void GestionnaireDialogue::enregistrer_ticket(Ticket *ticket)
 
 void GestionnaireDialogue::linkToTicket(Ticket *ticket, Personnel *per)
 {
+    ticket->setPersonnel(per);
     bdd.linkToTicket(ticket, per);
 }
 

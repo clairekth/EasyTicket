@@ -16,6 +16,8 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     logiciel = ui->logiciel;
     id_ticket = ui->id_ticket;
     date = ui ->date;
+    personnelGestionnaire = ui->personnelGestionnaire;
+    proprietaire = ui->proprietaire;
 
 
 
@@ -51,7 +53,8 @@ void PageResolutionTicket::setTicket(Ticket *t)
     logiciel->setText("Ticket : " + ticket->getLogiciel().getNom());
     id_ticket->setText("Ticket : " + QString::number(ticket->getId()));
     date->setText("Date : " + ticket->getDate_creation() );
-
+    proprietaire->setText("Propriétaire : " + ticket->getAuteur()->getPrenom() + " " + ticket->getAuteur()->getNom());
+    personnelGestionnaire->setText("Gestionnaire : " + ticket->getPersonnel()->getPrenom() + " " + ticket->getPersonnel()->getNom());
 }
 
 void PageResolutionTicket::retour_accueil()
