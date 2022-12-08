@@ -14,7 +14,7 @@
 
 /// @brief La classe Ticket permet de décrire un ticket dans l'application EasyTicket.
 /// @authors Nicolas Robert, Victor Dallé, Claire Kurth
-/// @version 2.5
+/// @version 2.6
 class Ticket
 {
 public:
@@ -58,6 +58,8 @@ public:
     /// @return La liste de Message appartenant au ticket
     QVector<Message*> getMessages();
 
+    /// @brief Cette méthode permet de retourner le Personnel chargé de résoudre le Ticket.
+    /// @return Le Personnel qui résout le Ticket.
     Personnel *getPersonnel() const;
 
     /// @brief Cette méthode permet de retourner l'identifiant du ticket.
@@ -80,13 +82,13 @@ public:
     /// @param  *message le pointeur sur le Message à ajouter à la liste des messages du Ticket.
     void addMessage(Message *message);
 
+    /// @brief Cette méthode permet d'attribuer au Ticket un membre du Personnel chargé de résoudre ce Ticket.
+    /// @param *personnel Pointeur sur le Personnel chargé de résoudre ce Ticket.
     void setPersonnel(Personnel *personnel);
 
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
     /// @return les attributs de la classe en QString.
     QString toString();
-
-    Message *getMessage();
 
 private:
     /// @brief Champs correspondant à l'heure et la date de création du ticket.

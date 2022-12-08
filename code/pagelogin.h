@@ -63,7 +63,7 @@ private:
     QLineEdit *id;
     /// @brief Champs où l'Utilisateur rentre son mot de passe.
     QLineEdit *mdp;
-
+    /// @brief Champs correspondant à l'utilisateur qui s'est connecté.
     Utilisateur *user;
 };
 

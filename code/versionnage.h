@@ -86,11 +86,14 @@
 ///
 /// \subsection v2_5_subsec v2.5
 /// Correction du code :
-/// - Suppresion de la création d'une Categorie/Logiciel/Systeme lorsque l'on set une QComboBox car inutile
+/// - Suppresion de la création d'une Categorie/Logiciel/Systeme lorsque l'on set une QComboBox car inutil
 ///
 /// - Suppression des New liés aux QSqlQuery
 ///
 /// - Passage par référence au lieu de l'objet là où c'est possible
+///
+/// \subsection v2_6_subsec v2.6
+/// - Mise en place de l'interface graphique de la PageResolutionTicket. Les informations du Ticket sont affichés.
 
 
 
