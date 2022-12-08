@@ -19,25 +19,28 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     personnelGestionnaire = ui->personnelGestionnaire;
     proprietaire = ui->proprietaire;
     liste_messages = ui->liste_messages;
-    liste_messages->setColumnWidth(0, 150);
-    liste_messages->setColumnWidth(1, 130);
-    liste_messages->setColumnWidth(2, 300);
+    liste_messages->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     liste_messages->setWordWrap(true);
-
+    liste_messages->setStyleSheet("QHeaderView::section{background-color: rgb(220, 220, 220); height: 32px;}");
 
 
 
     connect(retour_btn, &QPushButton::clicked, this, &PageResolutionTicket::retour_accueil);
 
-//    if (personnel->estUnIngenieur())
-//    {
-//        label->setText(personnel->getPrenom() + " " + personnel->getNom() + ", (Ingénieur)");
-//    }
 }
 
 PageResolutionTicket::~PageResolutionTicket()
 {
     delete retour_btn;
+    delete zoneMessage;
+    delete categorie;
+    delete systeme;
+    delete logiciel;
+    delete id_ticket;
+    delete date;
+    delete personnelGestionnaire;
+    delete proprietaire;
+    delete liste_messages;
     delete ui;
 }
 
@@ -46,9 +49,6 @@ void PageResolutionTicket::setPersonnel(Personnel *pers)
     personnel = pers;
 }
 
-Ticket* PageResolutionTicket::getTicket() {
-    return ticket;
-}
 
 void PageResolutionTicket::setTicket(Ticket *t)
 {
@@ -61,11 +61,7 @@ void PageResolutionTicket::setTicket(Ticket *t)
     proprietaire->setText("Propriétaire : " + ticket->getAuteur()->getPrenom() + " " + ticket->getAuteur()->getNom());
     personnelGestionnaire->setText("Gestionnaire : " + ticket->getPersonnel()->getPrenom() + " " + ticket->getPersonnel()->getNom());
     int row = 0;
-// Bug
-//    liste_messages->insertColumn(1);
-//    liste_messages->setItem(row, 1, new QTableWidgetItem(t->getMessage()->getAuteur()->getPrenom() + " " + t->getMessage()->getAuteur()->getNom()));
-//    liste_messages->insertColumn(2);
-//    liste_messages->setItem(row, 2, new QTableWidgetItem(t->getMessage()->getMessage()));
+
     for (Message *m: t->getMessages())
     {
         qDebug() << m->getDate_envoi();
