@@ -32,10 +32,10 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
 
 PageResolutionTicket::~PageResolutionTicket()
 {
-    delete ticket;
-    delete retour_btn;
-    delete retour_btn;
-    delete changer_cat_btn;
+//    delete ticket;
+//    delete retour_btn;
+//    delete retour_btn;
+//    delete changer_cat_btn;
     delete zoneMessage;
     delete categorie;
     delete systeme;
@@ -94,11 +94,13 @@ void PageResolutionTicket::ajouter_message()
 
 void PageResolutionTicket::changer_categorie()
 {
-    QStringList categories = gestionnaire_dialogue->getCategories();
+    QStringList categories = gestionnaire_dialogue->get_categories();
 
     QString choix = QInputDialog::getItem(this, "Choisir une nouvelle catégorie", "Catégorie :", categories);
 
     qDebug() << "nouvelle catégorie" << choix;
+    gestionnaire_dialogue->changer_categorie(ticket->getId(), choix);
+    categorie->setText("Categorie : " + choix);
 }
 
 

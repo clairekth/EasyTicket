@@ -265,7 +265,7 @@ void GestionnaireBDD::enregistrer_message(const QString &auteur, const int id_ti
     query.clear();
 }
 
-QStringList GestionnaireBDD::getCategories()
+QStringList GestionnaireBDD::get_categories()
 {
     QStringList liste;
     QSqlQuery query = QSqlQuery();
@@ -279,4 +279,23 @@ QStringList GestionnaireBDD::getCategories()
     }
 
     return liste;
+}
+
+void GestionnaireBDD::changer_categorie(const int id_ticket, QString &nom_categorie)
+{
+    // Bug dans le retour de la requête...
+    QSqlQuery query = QSqlQuery();
+    query.prepare("SELECT * FROM categorie WHERE nom = :nom_cat");
+    query.bindValue(":nom_cat", nom_categorie);
+    query.first();
+    int id_cat = query.value(0).toInt();
+    query.clear();
+    qDebug() << "id_cat recup : " << id_cat;
+
+    query.prepare("UPDATE ticket SET id_categorie = :id_c WHERE id_ticket = :id_tic");
+    query.bindValue("id_c", id_cat);
+    query.bindValue(":id_tic", id_ticket);
+    bool res = query.exec();
+    if (res)
+        qDebug() << "update de la cat de ticket";
 }

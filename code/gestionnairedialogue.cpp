@@ -67,7 +67,12 @@ void GestionnaireDialogue::enregistrer_message(const QString &auteur, const int 
     bdd.enregistrer_message(auteur, id_ticket, message, date);
 }
 
-QStringList GestionnaireDialogue::getCategories()
+QStringList GestionnaireDialogue::get_categories()
 {
-    return bdd.getCategories();
+    return bdd.get_categories();
+}
+
+void GestionnaireDialogue::changer_categorie(const int id_ticket, QString &nom_categorie)
+{
+    bdd.changer_categorie(id_ticket, nom_categorie);
 }

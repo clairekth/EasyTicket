@@ -61,7 +61,9 @@ public:
 
     /// @brief Méthode permettant de récupérer les catégories.
     /// @return La liste des catégories.
-    QStringList getCategories();
+    QStringList get_categories();
+
+    void changer_categorie(const int id_ticket, QString &nom_categorie);
 
 protected:
     /// @brief La base de données SQLite.
