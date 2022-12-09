@@ -90,7 +90,6 @@ void PageResolutionTicket::ajouter_message()
     if (!message.isEmpty()) {
         gestionnaire_dialogue->enregistrer_message(personnel->getId(), ticket->getId(), message, QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss"));
     }
-    retour_accueil();
 }
 
 void PageResolutionTicket::changer_categorie()
