@@ -45,6 +45,7 @@ PageResolutionTicket::~PageResolutionTicket()
     delete personnelGestionnaire;
     delete proprietaire;
     delete liste_messages;
+    delete ticket;
     delete ui;
 }
 
@@ -98,7 +99,7 @@ void PageResolutionTicket::changer_categorie()
 
     QString choix = QInputDialog::getItem(this, "Choisir une nouvelle catégorie", "Catégorie :", categories);
 
-    qDebug() << "nouvelle catégorie" << choix;
+    //qDebug() << "nouvelle catégorie" << choix;
     gestionnaire_dialogue->changer_categorie(ticket->getId(), choix);
     categorie->setText("Categorie : " + choix);
 }
