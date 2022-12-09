@@ -31,6 +31,7 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
 
 PageResolutionTicket::~PageResolutionTicket()
 {
+    delete ticket;
     delete retour_btn;
     delete zoneMessage;
     delete categorie;
