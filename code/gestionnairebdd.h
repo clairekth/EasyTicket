@@ -51,6 +51,9 @@ public:
     /// @return la liste des messages
     void recuperer_messages(Ticket *ticket);
 
+
+    void enregistrer_message(QString &auteur, int id_ticket, QString &message, QString &date);
+
 protected:
     /// @brief La base de données SQLite.
     QSqlDatabase my_db;

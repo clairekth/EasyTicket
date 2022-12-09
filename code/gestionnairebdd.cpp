@@ -262,3 +262,17 @@ void GestionnaireBDD::recuperer_messages(Ticket *ticket) {
 
     query.clear();
 }
+
+void GestionnaireBDD::enregistrer_message(QString &auteur, int id_ticket, QString &message, QString &date)
+{
+    QSqlQuery query = QSqlQuery();
+    query.prepare("INSERT INTO message (message, horodatage, id_utilisateur, id_ticket_associe) VALUES (:message, :date, :id_auteur, :id_ticket_ass)");
+    query.bindValue(":message", message);
+    query.bindValue(":date", date);
+    query.bindValue("id_auteur", auteur);
+    query.bindValue("id_ticket_ass", id_ticket);
+
+    if (query.exec())
+        qDebug() << "Ajout du message dans la bdd";
+    query.clear();
+}
