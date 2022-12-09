@@ -86,7 +86,7 @@
 ///
 /// \subsection v2_5_subsec v2.5
 /// Correction du code :
-/// - Suppresion de la création d'une Categorie/Logiciel/Systeme lorsque l'on set une QComboBox car inutil
+/// - Suppresion de la création d'une Categorie/Logiciel/Systeme lorsque l'on set une QComboBox car inutile.
 ///
 /// - Suppression des New liés aux QSqlQuery
 ///
