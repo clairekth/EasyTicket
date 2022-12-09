@@ -49,7 +49,7 @@ void GestionnaireBDD::linkToTicket(Ticket *ticket, Personnel *pers)
     query.prepare("UPDATE ticket SET id_personnel = :id_p WHERE id_ticket = :id_ticket");
     query.bindValue(":id_p", pers->getId());
     query.bindValue(":id_ticket", ticket->getId());
-
+    query.exec();
 }
 
 Ticket *GestionnaireBDD::getPlusVieuxTicket()
