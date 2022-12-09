@@ -61,3 +61,8 @@ Ticket *GestionnaireDialogue::getPlusVieuxTicket()
 void GestionnaireDialogue::recuperer_messages(Ticket *ticket) {
     bdd.recuperer_messages(ticket);
 }
+
+void GestionnaireDialogue::enregistrer_message(const QString &auteur, const int id_ticket, const QString &message, const QString &date)
+{
+    bdd.enregistrer_message(auteur, id_ticket, message, date);
+}

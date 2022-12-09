@@ -59,6 +59,13 @@ public:
     /// @return la liste des messages
     void recuperer_messages(Ticket *ticket);
 
+    /// @brief Méthode qui permet d'enregistrer un nouveau message et de l'associer à un ticket.
+    /// @param auteur L'auteur du message.
+    /// @param id_ticket L'identifiant du ticket associé au message.
+    /// @param message Le message à enregistrer.
+    /// @param date La date d'enregistrement du message.
+    void enregistrer_message(const QString &auteur, const int id_ticket, const QString &message, const QString &date);
+
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.
     GestionnaireBDD bdd;

@@ -46,12 +46,9 @@ void GestionnaireBDD::linkToTicket(Ticket *ticket, Personnel *pers)
 {
 
     QSqlQuery query = QSqlQuery();
-    qDebug() << "id_ticket" << ticket->getId();
-    qDebug() << "id_pers" << pers->getId();
     query.prepare("UPDATE ticket SET id_personnel = :id_p WHERE id_ticket = :id_ticket");
     query.bindValue(":id_p", pers->getId());
     query.bindValue(":id_ticket", ticket->getId());
-    qDebug() << "update ticket : " << query.exec();
 
 }
 
@@ -90,7 +87,6 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
     }
     query.clear();
 // -----------------------
-    //qDebug() << presence_ticket;
     if (presence_ticket){//Il y a bien un ticket qui n'a pas de gestionnaire et qui n'est pas fermé.
         query.prepare("SELECT * FROM utilisateur WHERE id_utilisateur=:id");
         query.bindValue(":id",id_client);
@@ -106,7 +102,6 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
                                     query.value(4).toString());
             }
         }
-        //qDebug() << auteur->toString();
         query.clear();
     // -----------------------
         query.prepare("SELECT * FROM categorie WHERE id_categorie = " + id_categorie);
@@ -117,7 +112,6 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
             categorie = Categorie(query.value("id_categorie").toInt(), query.value("nom").toString());
         }
         query.clear();
-        //qDebug() << "categorie recup";
     // -----------------------
         if (id_logiciel != "0") {
             query.prepare("SELECT * FROM logiciel WHERE id_logiciel = " + id_logiciel);
@@ -128,7 +122,6 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
                 logiciel = Logiciel(query.value("id_logiciel").toInt(), query.value("nom").toString());
             }
             query.clear();
-            //qDebug() << "logiciel recup";
         }
     // -----------------------
         if (id_systeme != "0") {
@@ -140,13 +133,9 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
                 systeme = Systeme(query.value("id_systeme").toInt(), query.value("nom").toString());
             }
             query.clear();
-            qDebug() << "systeme recup";
         }
 
         ticket = new Ticket(date_creation, categorie, auteur, id_ticket);
-        //qDebug() << "ticket créé";
-        //qDebug() << ticket->getAuteur()->getPrenom();
-        //qDebug() << ticket.toString();
         if (id_logiciel != "0")
             ticket->setLogiciel(logiciel);
         if (id_systeme != "0")
@@ -206,7 +195,6 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
     query.bindValue(":id_client", ticket->getAuteur()->getId());
 
     bool res = query.exec();
-    //qDebug() << res;
     query.clear();
 
     // Récupération de l'id du ticket qu'on vient d'insérer    query = QSqlQuery();
@@ -217,7 +205,6 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
     res = query.first();
     if (res)
         ticket->setId(query.value(0).toInt());
-    //qDebug() << res;
 
     query.clear();
     // Insertion des messages du ticket
@@ -232,7 +219,6 @@ void GestionnaireBDD::enregistrer_ticket(Ticket *ticket) {
         query.bindValue(":id_utilisateur", message->getAuteur()->getId());
         query.bindValue(":id_ticket_associe", message->getTicket()->getId());
         res = query.exec();
-        //qDebug() << res;
     }
     query.clear();
 
@@ -263,16 +249,18 @@ void GestionnaireBDD::recuperer_messages(Ticket *ticket) {
     query.clear();
 }
 
-void GestionnaireBDD::enregistrer_message(QString &auteur, int id_ticket, QString &message, QString &date)
+void GestionnaireBDD::enregistrer_message(const QString &auteur, const int id_ticket, const QString &message, const QString &date)
 {
+//    qDebug() << "auteur_id : " << auteur << "| id_ticket : " << QString::number(id_ticket) << " | date : " << date;
+//    qDebug() << "message : " << message;
     QSqlQuery query = QSqlQuery();
     query.prepare("INSERT INTO message (message, horodatage, id_utilisateur, id_ticket_associe) VALUES (:message, :date, :id_auteur, :id_ticket_ass)");
     query.bindValue(":message", message);
     query.bindValue(":date", date);
-    query.bindValue("id_auteur", auteur);
-    query.bindValue("id_ticket_ass", id_ticket);
-
-    if (query.exec())
-        qDebug() << "Ajout du message dans la bdd";
+    query.bindValue(":id_auteur", auteur);
+    query.bindValue(":id_ticket_ass", id_ticket);
+    bool res = query.exec();
+//    if (res)
+//        qDebug() << "Ajout du message dans la bdd";
     query.clear();
 }

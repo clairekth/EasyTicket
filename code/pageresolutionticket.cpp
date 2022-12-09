@@ -10,6 +10,7 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
 {
     ui->setupUi(this);
     retour_btn = ui->retour_bouton;
+    envoyer_btn = ui->boutonEnvoyerMessage;
     zoneMessage = ui->zoneMessage;
     categorie = ui->categorie;
     systeme = ui->systeme;
@@ -23,9 +24,10 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     liste_messages->setWordWrap(true);
     liste_messages->setStyleSheet("QHeaderView::section{background-color: rgb(220, 220, 220); height: 32px;}");
 
-
-
     connect(retour_btn, &QPushButton::clicked, this, &PageResolutionTicket::retour_accueil);
+
+    connect(envoyer_btn, &QPushButton::clicked, this, &PageResolutionTicket::ajouter_message);
+
 
 }
 
@@ -65,7 +67,6 @@ void PageResolutionTicket::setTicket(Ticket *t)
 
     for (Message *m: t->getMessages())
     {
-        qDebug() << m->getDate_envoi();
         liste_messages->insertRow(row);
         liste_messages->setItem(row, 0, new QTableWidgetItem(m->getDate_envoi()));
         liste_messages->setItem(row, 1, new QTableWidgetItem(m->getAuteur()->getPrenom() + " " + m->getAuteur()->getNom()));
@@ -79,6 +80,15 @@ void PageResolutionTicket::setTicket(Ticket *t)
 void PageResolutionTicket::retour_accueil()
 {
     stack->setCurrentIndex(ACCUEIL_PERSONNEL_PAGE);
+}
+
+void PageResolutionTicket::ajouter_message()
+{
+    QString message = zoneMessage->toPlainText();
+    if (!message.isEmpty()) {
+        gestionnaire_dialogue->enregistrer_message(personnel->getId(), ticket->getId(), message, QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss"));
+    }
+    retour_accueil();
 }
 
 
