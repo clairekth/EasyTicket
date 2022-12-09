@@ -93,7 +93,12 @@
 /// - Passage par référence au lieu de l'objet là où c'est possible
 ///
 /// \subsection v2_6_subsec v2.6
-/// - Mise en place de l'interface graphique de la PageResolutionTicket. Les informations du Ticket sont affichés.
+/// - Mise en place de l'interface graphique de la PageResolutionTicket.
+///
+/// - Affichage des informations du ticket.
+///
+/// \subsection v2_7_subsec v2.7
+/// Mise en place de l'enregistrement d'un nouveau message par un Personnel au moment du traitement d'un Ticket.
 
 
 
