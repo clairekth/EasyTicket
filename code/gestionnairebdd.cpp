@@ -303,3 +303,14 @@ void GestionnaireBDD::changer_categorie(const int id_ticket, QString &nom_catego
     if (res)
         qDebug() << "update de la cat de ticket";
 }
+
+void GestionnaireBDD::clore_ticket(const int id_ticket, const QString &date)
+{
+    QSqlQuery query = QSqlQuery();
+    query.prepare("UPDATE ticket SET date_cloture = :date WHERE id_ticket = :id_ticket");
+    query.bindValue(":date", date);
+    query.bindValue(":id_ticket", id_ticket);
+    bool res = query.exec();
+    if (res)
+        qDebug() << "cloture du ticket";
+}

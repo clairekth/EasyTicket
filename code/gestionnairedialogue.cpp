@@ -76,3 +76,8 @@ void GestionnaireDialogue::changer_categorie(const int id_ticket, QString &nom_c
 {
     bdd.changer_categorie(id_ticket, nom_categorie);
 }
+
+void GestionnaireDialogue::clore_ticket(const int id_ticket, const QString &date)
+{
+    bdd.clore_ticket(id_ticket, date);
+}

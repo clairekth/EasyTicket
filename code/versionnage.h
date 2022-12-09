@@ -102,6 +102,9 @@
 ///
 /// \subsection v2_8_subsec v2.8
 /// Ajout de la possibilité de changer la catégorie d'un ticket.
+///
+/// \subsection v2_9_subsec v2.9
+/// Ajout de la possibilité de clore un ticket en lui définissant une date et une heure de cloture.
 
 
 

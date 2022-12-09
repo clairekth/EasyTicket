@@ -242,7 +242,7 @@ p, li { white-space: pre-wrap; }
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="clore_boutton">
+       <widget class="QPushButton" name="clore_bouton">
         <property name="text">
          <string>Clore</string>
         </property>

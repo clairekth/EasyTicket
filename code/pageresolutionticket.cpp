@@ -10,6 +10,7 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     retour_btn = ui->retour_bouton;
     envoyer_btn = ui->boutonEnvoyerMessage;
     changer_cat_btn = ui->changer_cat_bouton;
+    clore_btn = ui->clore_bouton;
     zoneMessage = ui->zoneMessage;
     categorie = ui->categorie;
     systeme = ui->systeme;
@@ -28,14 +29,16 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     connect(envoyer_btn, &QPushButton::clicked, this, &PageResolutionTicket::ajouter_message);
 
     connect(changer_cat_btn, &QPushButton::clicked, this, &PageResolutionTicket::changer_categorie);
+
+    connect(clore_btn, &QPushButton::clicked, this, &PageResolutionTicket::clore_ticket);
 }
 
 PageResolutionTicket::~PageResolutionTicket()
 {
-//    delete ticket;
 //    delete retour_btn;
 //    delete retour_btn;
 //    delete changer_cat_btn;
+//    delete clore_btn;
     delete zoneMessage;
     delete categorie;
     delete systeme;
@@ -102,6 +105,13 @@ void PageResolutionTicket::changer_categorie()
     //qDebug() << "nouvelle catégorie" << choix;
     gestionnaire_dialogue->changer_categorie(ticket->getId(), choix);
     categorie->setText("Categorie : " + choix);
+}
+
+void PageResolutionTicket::clore_ticket()
+{
+    qDebug() << "le ticket a été clos à : " << QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss");
+    gestionnaire_dialogue->clore_ticket(ticket->getId(), QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss"));
+    retour_accueil();
 }
 
 

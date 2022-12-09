@@ -70,7 +70,15 @@ public:
     /// @return La liste des catégories.
     QStringList get_categories();
 
+    /// @brief Méthode permettant de changer la catégorie d'un ticket.
+    /// @param id_ticket Le ticket concerné par le changement de catégorie.
+    /// @param nom_categorie Le nom de la nouvelle catégorie.
     void changer_categorie(const int id_ticket, QString &nom_categorie);
+
+    /// @brief Méthode permettant de clore un ticket.
+    /// @param id_ticket Le ticket à clore.
+    /// @param date La date de cloture
+    void clore_ticket(const int id_ticket, const QString &date);
 
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.

@@ -75,6 +75,10 @@ private slots:
     /// Elle permet de changer la catégorie d'un ticket si le client l'a mal définie.
     void changer_categorie();
 
+    /// @brief Cette méthode est appelée lors d'un clic sur le bouton clore_bouton.
+    /// Elle permet de clore un ticket lorsqu'il a été résolu.
+    void clore_ticket();
+
 private:
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
@@ -102,6 +106,10 @@ private:
     /// @brief Le bouton permettant de changer la catégorie du ticket.
     /// Il est connecté au slot changer_categorie().
     QPushButton *changer_cat_btn;
+
+    /// @brief Le bouton permettant de clore un ticket.
+    /// Il est connecté au slot clore_ticket().
+    QPushButton *clore_btn;
 
     /// @brief La QTableWidget permet d'afficher tous les Message appartenant au Ticket.
     QTableWidget *liste_messages;
