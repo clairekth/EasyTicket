@@ -66,3 +66,8 @@ void GestionnaireDialogue::enregistrer_message(const QString &auteur, const int 
 {
     bdd.enregistrer_message(auteur, id_ticket, message, date);
 }
+
+QStringList GestionnaireDialogue::getCategories()
+{
+    return bdd.getCategories();
+}

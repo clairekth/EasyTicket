@@ -4,6 +4,7 @@
 #include <QtSql>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QStringList>
 
 #include "client.h"
 #include "ticket.h"
@@ -57,6 +58,10 @@ public:
     /// @param message Le message à enregistrer.
     /// @param date La date d'enregistrement du message.
     void enregistrer_message(const QString &auteur, const int id_ticket, const QString &message, const QString &date);
+
+    /// @brief Méthode permettant de récupérer les catégories.
+    /// @return La liste des catégories.
+    QStringList getCategories();
 
 protected:
     /// @brief La base de données SQLite.
