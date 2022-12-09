@@ -51,7 +51,7 @@ private:
     /// @brief le QStackedWidget de l'application.
     QStackedWidget *stack;
 
-    /// @brief Champs correspondant à la vue de PageAccueilClient.
+    /// @brief Champs correspondant à la vue de PageAccueilPersonnel.
     Ui::PageAccueilPersonnel *ui;
 
     /// @brief Bouton de demander d'un nouveau Ticket à traiter.

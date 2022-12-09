@@ -59,6 +59,7 @@ protected :
     PageResolutionTicket *page_resolution_ticket;
 
 private:
+    /// @brief Champs correspondant à la vue de MainWindow.
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

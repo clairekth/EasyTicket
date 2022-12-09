@@ -62,8 +62,6 @@ private:
 
     /// @brief Champs correspondant au Client connecté.
     Client *client;
-
-
 };
 
 #endif // PAGEACCUEILCLIENT_H

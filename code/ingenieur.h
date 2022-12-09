@@ -35,8 +35,6 @@ public:
     /// @brief Cette méthode permet d'afficher les attributs de la classe pour le débug.
     /// @return "Ingenieur" ainsi que le nom et le prénom de l'ingénieur en QString.
     QString toString() const;
-
-
 };
 
 #endif // INGENIEUR_H

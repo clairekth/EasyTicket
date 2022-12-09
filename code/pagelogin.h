@@ -32,8 +32,6 @@ class PageLogin : public QWidget
 {
     Q_OBJECT
 
-
-
 public:
     /// @brief Constructeur par défaut.
     /// @param *parent                  le QStackedWidget parent

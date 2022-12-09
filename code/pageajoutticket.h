@@ -59,7 +59,7 @@ private:
     /// @brief le QStackedWidget de l'application.
     QStackedWidget *stack;
 
-    /// @brief Champs correspondant à la vue de PageAccueilClient.
+    /// @brief Champs correspondant à la vue de PageAjoutTicket.
     Ui::PageAjoutTicket *ui;
 
     /// @brief Champs contenant le Client connecté.

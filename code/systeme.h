@@ -31,6 +31,7 @@ public:
 private:
     /// @brief Champs correspondant à l'id du système.
     int id_systeme;
+
     /// @brief Champs correspondant au nom du système.
     QString nom_systeme;
 };

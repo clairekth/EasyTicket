@@ -31,6 +31,7 @@ public:
 private:
     /// @brief Champs correspondant à l'id du logiciel.
     int id_logiciel;
+
     /// @brief Champs correspondant au nom dud logiciel.
     QString nom_logiciel;
 };
