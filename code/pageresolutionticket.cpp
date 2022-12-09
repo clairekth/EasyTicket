@@ -89,6 +89,7 @@ void PageResolutionTicket::ajouter_message()
     QString message = zoneMessage->toPlainText();
     if (!message.isEmpty()) {
         gestionnaire_dialogue->enregistrer_message(personnel->getId(), ticket->getId(), message, QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss"));
+        zoneMessage->setText("");
     }
 }
 
