@@ -14,6 +14,9 @@
 #include <QTextEdit>
 #include <QInputDialog>
 
+namespace Ui {
+class PageResolutionTicket;
+}
 
 /// @brief La classe PageResolutionTicket correspond à la vue de la page permettant aux Personnel de résoudre un Ticket.
 ///
@@ -37,10 +40,6 @@
 ///     - "Clore" qui permet de clore un Ticket.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
 /// @version 2.6
-namespace Ui {
-class PageResolutionTicket;
-}
-
 class PageResolutionTicket : public QWidget
 {
     Q_OBJECT
@@ -79,39 +78,55 @@ private slots:
 private:
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
+
     /// @brief le QStackedWidget de l'application.
     QStackedWidget *stack;
+
     /// @brief Champs correspondant à la vue de PageResolutionTicket.
     Ui::PageResolutionTicket *ui;
+
     /// @brief Champs correspondant au Personnel chargé de résoudre le Ticket.
     Personnel *personnel;
+
     /// @brief Champs correspondant au Ticket à résoudre.
     Ticket *ticket;
+
     /// @brief Le bouton permettant de retourner à la PageAccueilPersonnel.
     /// Il est connecté au slot retour_accueil().
     QPushButton *retour_btn;
+
     /// @brief Le bouton permettant d'envoyer un message.
     /// Il est connecté au slot ajouter_message().
     QPushButton *envoyer_btn;
+
     /// @brief Le bouton permettant de changer la catégorie du ticket.
     /// Il est connecté au slot changer_categorie().
     QPushButton *changer_cat_btn;
+
     /// @brief La QTableWidget permet d'afficher tous les Message appartenant au Ticket.
     QTableWidget *liste_messages;
+
     /// @brief La zone pour écrire un nouveau message.
     QTextEdit *zoneMessage;
+
     /// @brief Le label où la catégorie du Ticket est affiché.
     QLabel *categorie;
+
     /// @brief Le label où le système du Ticket est affiché.
     QLabel *systeme;
+
     /// @brief Le label où le logiciel du Ticket est affiché.
     QLabel *logiciel;
+
     /// @brief Le label où l'identifiant du Ticket est affiché.
     QLabel *id_ticket;
+
     /// @brief Le label où la date de création du Ticket est affichée.
     QLabel *date;
+
     /// @brief Le label où le propriétaire du Ticket est affiché.
     QLabel *proprietaire;
+
     /// @brief Le label où le personne qui résout le Ticket est affiché.
     QLabel *personnelGestionnaire;
 };

@@ -93,23 +93,30 @@ public:
 private:
     /// @brief Champs correspondant à l'heure et la date de création du ticket.
     QString date_creation;
+
     /// @brief Champs correspondant à l'heure et la date de création du ticket.
     QString date_fermeture;
+
     /// @brief Champs correspondant à la Categorie concernée par le ticket.
     Categorie categorie;
+
     /// @brief Champs correspondant au Logiciel concerné par le ticket.
     Logiciel logiciel;
+
     /// @brief Champs correspondant au Systeme concerné par le ticket.
     Systeme systeme;
+
     /// @brief Champs correspondant à la liste des messages contenant les Message appartenant au ticket.
     QVector<Message*> liste_messages;
+
     /// @brief Champs correspondant au Client auteur du ticket.
     Client *auteur;
+
     /// @brief Champs correspondant au Personnel chargé de résoudre le ticket.
     Personnel *personnel;
+
     /// @brief Champs correspondant à l'identifiant du ticket.
     int id_ticket;
-
 };
 
 

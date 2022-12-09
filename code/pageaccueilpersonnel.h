@@ -47,17 +47,23 @@ private slots:
 private:
     /// @brief le GestionnaireDialogue de l'application.
     GestionnaireDialogue *gestionnaire_dialogue;
+
     /// @brief le QStackedWidget de l'application.
     QStackedWidget *stack;
+
     /// @brief Champs correspondant à la vue de PageAccueilClient.
     Ui::PageAccueilPersonnel *ui;
+
     /// @brief Bouton de demander d'un nouveau Ticket à traiter.
     QPushButton *demander_ticket_bouton;
+
     /// @brief Bouton permettant d'accéder aux Ticket entrain d'être traité par le Personnel connecté.
     QPushButton *voir_ticket_bouton;
+
     /// @brief Label affichant "Bonjour" ainsi que le prénom, nom et fonction (Ingénieur ou Technicien)
     /// du Personnel connecté.
     QLabel *label;
+
     /// @brief Champs correspondant au Personnel connecté.
     Personnel *personnel;
 };

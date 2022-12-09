@@ -99,6 +99,9 @@
 ///
 /// \subsection v2_7_subsec v2.7
 /// Mise en place de l'enregistrement d'un nouveau message par un Personnel au moment du traitement d'un Ticket.
+///
+/// \subsection v2_8_subsec v2.8
+/// Ajout de la possibilité de changer la catégorie d'un ticket.
 
 
 

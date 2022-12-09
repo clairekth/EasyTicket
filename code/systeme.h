@@ -27,6 +27,7 @@ public:
     /// @brief Méthode retournant le nom du système.
     /// @return le nom du système en QString.
     QString getNom() const;
+
 private:
     /// @brief Champs correspondant à l'id du système.
     int id_systeme;

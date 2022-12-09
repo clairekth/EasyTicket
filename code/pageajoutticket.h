@@ -55,28 +55,34 @@ private slots:
 private:
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
+
     /// @brief le QStackedWidget de l'application.
     QStackedWidget *stack;
+
     /// @brief Champs correspondant à la vue de PageAccueilClient.
     Ui::PageAjoutTicket *ui;
+
     /// @brief Champs contenant le Client connecté.
     Client *client;
+
     /// @brief Bouton de retour à la PageAccueilClient.
     QPushButton *bouton_retour;
+
     /// @brief Bouton de validation qui permet de créer le Ticket et de retourner à la PageAccueilClient si la création
     /// du Ticket est valide.
     QPushButton *bouton_creer_le_ticket;
+
     /// @brief ComboBox correspondant aux différentes catégories disponibles.
     QComboBox *categorie_box;
+
     /// @brief ComboBox correspondant aux différents systèmes disponibles.
     QComboBox *systeme_box;
+
     /// @brief ComboBox correspondant aux différents logiciels disponibles.
     QComboBox *logiciel_box;
+
     /// @brief Zone de de texte pour entrer le message.
     QTextEdit *message_text;
-
-
-
 };
 
 #endif // PAGEAJOUTTICKET_H

@@ -63,12 +63,16 @@ public:
 protected:
     /// @brief Champs correspondant à l'identifiant de l'utilisateur.
     QString id;
+
     /// @brief Champs correspondant au nom de l'utilisateur.
     QString nom;
+
     /// @brief Champs correspondant au prénom de l'utilisateur.
     QString prenom;
+
     /// @brief Champs correspondant à l'email de l'utilisateur.
     QString email;
+
     /// @brief Champs correspondant à la liste des tickets contenant les Ticket de l'utilisateur.
     QVector<Ticket*> liste_tickets;
 };

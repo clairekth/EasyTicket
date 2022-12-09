@@ -52,17 +52,22 @@ private slots:
 private:
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
+
     /// @brief le QStackedWidget de l'application.
     QStackedWidget *stack;
 
     /// @brief Champs correspondant à la vue de PageLogin.
     Ui::PageLogin *ui;
+
     /// @brief Bouton de validation de la connexion.
     QPushButton *validation_bouton;
+
     /// @brief Champs où l'Utilisateur rentre son identifiant.
     QLineEdit *id;
+
     /// @brief Champs où l'Utilisateur rentre son mot de passe.
     QLineEdit *mdp;
+
     /// @brief Champs correspondant à l'utilisateur qui s'est connecté.
     Utilisateur *user;
 };
