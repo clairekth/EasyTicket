@@ -1,8 +1,6 @@
 #include "pageresolutionticket.h"
 #include "ui_pageresolutionticket.h"
 
-#include <vector>
-
 PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireDialogue *gestionnaire) :
     QWidget(parent),
     gestionnaire_dialogue(gestionnaire), stack(parent),
@@ -11,6 +9,7 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
     ui->setupUi(this);
     retour_btn = ui->retour_bouton;
     envoyer_btn = ui->boutonEnvoyerMessage;
+    changer_cat_btn = ui->changer_cat_bouton;
     zoneMessage = ui->zoneMessage;
     categorie = ui->categorie;
     systeme = ui->systeme;
@@ -28,13 +27,15 @@ PageResolutionTicket::PageResolutionTicket(QStackedWidget *parent, GestionnaireD
 
     connect(envoyer_btn, &QPushButton::clicked, this, &PageResolutionTicket::ajouter_message);
 
-
+    connect(changer_cat_btn, &QPushButton::clicked, this, &PageResolutionTicket::changer_categorie);
 }
 
 PageResolutionTicket::~PageResolutionTicket()
 {
     delete ticket;
     delete retour_btn;
+    delete retour_btn;
+    delete changer_cat_btn;
     delete zoneMessage;
     delete categorie;
     delete systeme;
@@ -89,6 +90,15 @@ void PageResolutionTicket::ajouter_message()
         gestionnaire_dialogue->enregistrer_message(personnel->getId(), ticket->getId(), message, QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss"));
     }
     retour_accueil();
+}
+
+void PageResolutionTicket::changer_categorie()
+{
+    QStringList categories = gestionnaire_dialogue->getCategories();
+
+    QString choix = QInputDialog::getItem(this, "Choisir une nouvelle catégorie", "Catégorie :", categories);
+
+    qDebug() << "nouvelle catégorie" << choix;
 }
 
 

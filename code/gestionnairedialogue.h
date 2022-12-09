@@ -66,6 +66,10 @@ public:
     /// @param date La date d'enregistrement du message.
     void enregistrer_message(const QString &auteur, const int id_ticket, const QString &message, const QString &date);
 
+    /// @brief Méthode permettant de récupérer les catégories.
+    /// @return La liste des catégories.
+    QStringList getCategories();
+
 private:
     /// @brief Champs correspondant au gestionnaire de la base de données.
     GestionnaireBDD bdd;

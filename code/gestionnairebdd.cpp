@@ -264,3 +264,19 @@ void GestionnaireBDD::enregistrer_message(const QString &auteur, const int id_ti
 //        qDebug() << "Ajout du message dans la bdd";
     query.clear();
 }
+
+QStringList GestionnaireBDD::getCategories()
+{
+    QStringList liste;
+    QSqlQuery query = QSqlQuery();
+    query.prepare("SELECT nom FROM categorie");
+
+    query.exec();
+
+    while (query.next())
+    {
+        liste << query.value("nom").toString();
+    }
+
+    return liste;
+}

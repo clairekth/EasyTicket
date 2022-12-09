@@ -12,6 +12,7 @@
 #include <QMessageBox>
 #include <QTableWidget>
 #include <QTextEdit>
+#include <QInputDialog>
 
 
 /// @brief La classe PageResolutionTicket correspond à la vue de la page permettant aux Personnel de résoudre un Ticket.
@@ -71,6 +72,10 @@ private slots:
     /// Elle permet d'enregistrer le message saisi par le Personnel.
     void ajouter_message();
 
+    /// @brief Cette méthode est appelée lors d'un click sur le bouton changer_cat_bouton.
+    /// Elle permet de changer la catégorie d'un ticket si le client l'a mal définie.
+    void changer_categorie();
+
 private:
     /// @brief le GestionnaireDialogue de l'application
     GestionnaireDialogue *gestionnaire_dialogue;
@@ -85,9 +90,12 @@ private:
     /// @brief Le bouton permettant de retourner à la PageAccueilPersonnel.
     /// Il est connecté au slot retour_accueil().
     QPushButton *retour_btn;
-    /// @brief Le bouton permettant d'e retourner à la PageAccueilPersonnel'envoyer un message.
+    /// @brief Le bouton permettant d'envoyer un message.
     /// Il est connecté au slot ajouter_message().
     QPushButton *envoyer_btn;
+    /// @brief Le bouton permettant de changer la catégorie du ticket.
+    /// Il est connecté au slot changer_categorie().
+    QPushButton *changer_cat_btn;
     /// @brief La QTableWidget permet d'afficher tous les Message appartenant au Ticket.
     QTableWidget *liste_messages;
     /// @brief La zone pour écrire un nouveau message.
