@@ -9,11 +9,11 @@ public:
     /// @brief Constructeur par défaut.
     Technicien();
 
-    /// @brief Constructeur de la classe Ingenieur.
-    /// @param id       l'identifiant du ingenieur.
-    /// @param nom      le nom du ingenieur.
-    /// @param prenom   le prenom du ingenieur.
-    /// @param email    l'email du ingenieur.
+    /// @brief Constructeur de la classe Technicien.
+    /// @param id       l'identifiant du technicien.
+    /// @param nom      le nom du technicien.
+    /// @param prenom   le prenom du technicien.
+    /// @param email    l'email du technicien.
     Technicien(const QString &id,
               const QString &nom,
               const QString &prenom,
