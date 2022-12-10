@@ -82,6 +82,10 @@ void PageAjoutTicket::creer_le_ticket_clicked()
         gestionnaire_dialogue->enregistrer_ticket(&t);
 
         //Retour page accueil si tout est ok
+        message_text->setText("");
+        categorie_box->setCurrentIndex(0);
+        logiciel_box->setCurrentIndex(0);
+        systeme_box->setCurrentIndex(0);
             stack->setCurrentIndex(ACCUEIL_CLIENT_PAGE);
     } else {
         QMessageBox::warning(this,"Erreur","Il n'y a pas de messages ou votre message est trop court.");

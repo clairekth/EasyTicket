@@ -105,6 +105,9 @@
 ///
 /// \subsection v2_9_subsec v2.9
 /// Ajout de la possibilité de clore un ticket en lui définissant une date et une heure de cloture.
+///
+/// \subsection v2_10_subsec v2.10
+/// Réinitialisation des champs saisis lors de la création d'un nouveau ticket, si jamais on désire en créer un autre dans la même session.
 
 
 

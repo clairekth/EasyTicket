@@ -39,7 +39,7 @@ class PageResolutionTicket;
 ///     - "Transmettre à ..." qui permet de transmettre à un autre membre du Personnel. Ce bouton est invisible si c'est un Ingenieur.
 ///     - "Clore" qui permet de clore un Ticket.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
-/// @version 2.6
+/// @version 2.9
 class PageResolutionTicket : public QWidget
 {
     Q_OBJECT

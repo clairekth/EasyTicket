@@ -26,7 +26,7 @@ class PageAjoutTicket;
 /// les champs obligatoires (categorie et message) sont remplis. Si tout est valide, ce dernier permet de retourner à la
 /// PageAccueilClient.
 /// @author Victor Dallé, Nicolas Robert, Claire Kurth
-/// @version 2.3
+/// @version 2.10
 class PageAjoutTicket : public QWidget
 {
     Q_OBJECT

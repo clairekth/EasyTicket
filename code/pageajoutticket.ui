@@ -52,7 +52,11 @@
     </widget>
    </item>
    <item row="5" column="1" colspan="3">
-    <widget class="QTextEdit" name="message_text"/>
+    <widget class="QTextEdit" name="message_text">
+     <property name="placeholderText">
+      <string>Envoyer un nouveau message ...</string>
+     </property>
+    </widget>
    </item>
    <item row="6" column="2">
     <widget class="QPushButton" name="creer_le_ticket_bouton">
