@@ -17,8 +17,8 @@ PageAccueilPersonnel::PageAccueilPersonnel(QStackedWidget *parent, GestionnaireD
 
 PageAccueilPersonnel::~PageAccueilPersonnel()
 {
-    delete demander_ticket_bouton;
-    delete voir_ticket_bouton;
+//    delete demander_ticket_bouton;
+//    delete voir_ticket_bouton;
     delete label;
     delete ui;
 }

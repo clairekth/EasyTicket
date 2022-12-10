@@ -17,7 +17,7 @@ PageLogin::~PageLogin()
 {
     delete mdp;
     delete id;
-    delete validation_bouton;
+    //delete validation_bouton;
     delete ui;
     delete user;
     //qDebug() << "Destruction  pageLogin\n";

@@ -48,7 +48,7 @@ PageResolutionTicket::~PageResolutionTicket()
     delete personnelGestionnaire;
     delete proprietaire;
     delete liste_messages;
-    delete ticket;
+    //delete ticket;
     delete ui;
 }
 

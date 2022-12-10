@@ -16,8 +16,8 @@ PageAccueilClient::PageAccueilClient(QStackedWidget *parent, GestionnaireDialogu
 
 PageAccueilClient::~PageAccueilClient()
 {
-    delete creer_ticket_bouton;
-    delete historique_tickets_bouton;
+//    delete creer_ticket_bouton;
+//    delete historique_tickets_bouton;
     delete label;
     delete ui;
    // qDebug() << "Destruction  pageAccueilClient\n";
