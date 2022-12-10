@@ -1,4 +1,5 @@
 #include "gestionnairebdd.h"
+#include "technicien.h"
 
 GestionnaireBDD::GestionnaireBDD()
 {
@@ -52,7 +53,7 @@ void GestionnaireBDD::linkToTicket(Ticket *ticket, Personnel *pers)
     query.exec();
 }
 
-Ticket *GestionnaireBDD::getPlusVieuxTicket()
+Ticket *GestionnaireBDD::getPlusVieuxTicket(Personnel personnel)
 {
     /*
      * Il faut penser à vérifier que le ticket n'a pas été cloturé et qu'il n'a pas déjà été attribué
@@ -64,8 +65,21 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
     Systeme systeme;
 
     QSqlQuery query = QSqlQuery();
-    query.prepare("SELECT * FROM ticket WHERE date_cloture IS NULL AND id_personnel IS NULL ORDER BY date_creation;");
+
+    if (personnel.estUnIngenieur()) { // si c'est un ingénieur, il peut traiter toutes les catégories de ticket
+        query.prepare("SELECT * FROM ticket WHERE date_cloture IS NULL AND id_personnel IS NULL ORDER BY date_creation;");
+
+    } else { // sinon c'est un technicien et il peut traiter que certaines catégories
+        query.prepare(
+                    "SELECT * FROM ticket t, peut_resoudre pr, utilisateur u WHERE t.date_cloture IS NULL AND t.id_personnel  IS NULL and u.type_utilisateur = \"technicien\" and u.id_utilisateur  = pr.id_technicien and pr.id_technicien  = :id_utilisateur and pr.id_categorie = t.id_categorie ORDER BY date_creation"
+        );
+
+        query.bindValue(":id_utilisateur", personnel.getId());
+    }
+
+
     query.exec();
+
 
     QString id_client;
     QString id_categorie;
@@ -75,6 +89,7 @@ Ticket *GestionnaireBDD::getPlusVieuxTicket()
     QString date_creation;
     int id_ticket = -1;
     bool presence_ticket = false;
+
     if (query.first())
     {
         id_client = query.value("id_client").toString();
@@ -167,6 +182,13 @@ Utilisateur* GestionnaireBDD::authentifier(QString &id, QString &mdp)
         }
         else if (typeUser == "ingenieur"){
             user = new Ingenieur(
+                        query.value(0).toString(),
+                        query.value(1).toString(),
+                        query.value(3).toString(),
+                        query.value(4).toString());
+        }
+        else if (typeUser == "technicien") {
+            user = new Technicien( // enlever les new ?
                         query.value(0).toString(),
                         query.value(1).toString(),
                         query.value(3).toString(),

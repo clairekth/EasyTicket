@@ -30,6 +30,7 @@ SOURCES += \
     pageresolutionticket.cpp \
     personnel.cpp \
     systeme.cpp \
+    technicien.cpp \
     ticket.cpp \
     utilisateur.cpp \
     ingenieur.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     pageresolutionticket.h \
     personnel.h \
     systeme.h \
+    technicien.h \
     ticket.h \
     utilisateur.h \
     ingenieur.h \

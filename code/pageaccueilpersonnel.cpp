@@ -25,16 +25,18 @@ PageAccueilPersonnel::~PageAccueilPersonnel()
 
 void PageAccueilPersonnel::setPersonnel(Personnel *pers)
 {
-
     this->personnel = pers;
     if (personnel->estUnIngenieur()){
         label->setText("Bonjour, " + personnel->getPrenom() + " " + personnel->getNom() + " (Ingénieur)");
+    } else if (personnel->estUnTechnicien()) {
+        label->setText("Bonjour, " + personnel->getPrenom() + " " + personnel->getNom() + " (Technicien)");
+
     }
 }
 
 void PageAccueilPersonnel::nouveau_ticket_a_traiter()
 {
-    Ticket *t = gestionnaire_dialogue->getPlusVieuxTicket();
+    Ticket *t = gestionnaire_dialogue->getPlusVieuxTicket(*personnel);
 
     if (t){
         gestionnaire_dialogue->linkToTicket(t, personnel);

@@ -31,3 +31,8 @@ bool Personnel::estUnIngenieur()
 {
     return false;
 }
+
+bool Personnel::estUnTechnicien()
+{
+    return false;
+}

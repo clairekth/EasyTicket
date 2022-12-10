@@ -38,6 +38,10 @@ public:
     /// @brief Cette méthode permet de savoir si le Personnel est un Ingenieur.
     /// @return false
     virtual bool estUnIngenieur();
+
+    /// @brief Cette méthode permet de savoir si le Personnel est un Technicien
+    /// @return false
+    virtual bool estUnTechnicien();
 };
 
 #endif // PERSONNEL_H
