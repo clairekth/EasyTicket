@@ -109,7 +109,7 @@ void PageResolutionTicket::changer_categorie()
 
 void PageResolutionTicket::clore_ticket()
 {
-    qDebug() << "le ticket a été clos à : " << QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss");
+    //qDebug() << "le ticket a été clos à : " << QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss");
     gestionnaire_dialogue->clore_ticket(ticket->getId(), QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss"));
     retour_accueil();
 }

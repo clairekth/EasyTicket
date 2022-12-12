@@ -311,6 +311,6 @@ void GestionnaireBDD::clore_ticket(const int id_ticket, const QString &date)
     query.bindValue(":date", date);
     query.bindValue(":id_ticket", id_ticket);
     bool res = query.exec();
-    if (res)
-        qDebug() << "cloture du ticket";
+//    if (res)
+//        qDebug() << "cloture du ticket";
 }

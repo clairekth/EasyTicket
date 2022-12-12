@@ -49,6 +49,6 @@ void PageAccueilPersonnel::nouveau_ticket_a_traiter()
 
         stack->setCurrentIndex(RESOLUTION_TICKET_PAGE);
     } else {
-        QMessageBox::warning(stack, "Erreur", "Il n'y a plus de tickets sans gestionnaire");
+        QMessageBox::warning(stack, "Erreur", "Il n'y a plus de tickets dans le gestionnaire");
     }
 }
